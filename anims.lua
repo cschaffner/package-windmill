@@ -60,7 +60,7 @@ end
 function M.moving_font(S, E, x, y, text, size, r, g, b, a)
     return move_in_move_out(S, E, x, y,
         rotating_entry_exit(S, E, function(t)
-            return res.font:write(0, 0, text, size, r, g, b, a)
+            return utils.flag_write(res.font, 0, 0, text, size, r, g, b, a)
         end)
     )
 end

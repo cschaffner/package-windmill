@@ -46,7 +46,7 @@
 }, {
     "module": "text",
     "options": {
-        "text": "Want to show your project on this screen? Contact 32c3@info-beamer.com"
+        "text": "Want to show your your country flag:fr on this screen? Contact flag:es@info-beamer.com"
     },
     "chance": 0.2
 }]
