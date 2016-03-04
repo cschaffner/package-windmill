@@ -8,7 +8,7 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
     while true do
         flag_start, flag_end = string.find(text, "flag:", index)
         if flag_start == nil then
---            print(string.sub(text, index))
+            print(string.sub(text, index))
             width = width + font:write(x, y, string.sub(text, index), size, r, g, b, a)
             return width
         else
