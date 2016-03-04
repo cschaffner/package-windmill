@@ -146,7 +146,7 @@ Scroller = (function()
                     if #texts < idx then
                         table.insert(texts, generator.next())
                     end
-                    local width = font:write(xoff, y-200, texts[idx] .. "   -   ", size, unpack(color))
+                    local width = utils.flag_write(font, xoff, y-200, texts[idx] .. "   -   ", size, unpack(color))
                     xoff = xoff + width
                     if xoff < 0 then
                         current_left = xoff
@@ -201,7 +201,7 @@ Scroller = (function()
 
     local text = my_new_running_text{
         font = res.font;
-        size = 40;
+        size = 100;
         speed = 120;
         color = {1,1,1,.8};
         generator = util.generator(feeder)
