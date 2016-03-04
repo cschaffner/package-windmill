@@ -6,31 +6,30 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
     local flag_start
     local flag_end
     local country = ""
-    res.flag_ch:draw(x+width, y, x+width+size, y+size, a)
-    return size+font:write(x, y, text, size, r, g, b, a)
---    while true do
---        flag_start, flag_end = string.find(text, "flag:", index)
---        if flag_start == nil then
-----            print(string.sub(text, index))
---            width = width + font:write(x, y, string.sub(text, index), size, r, g, b, a)
---            return width
---        else
---            if flag_start > 1 then
-----                print(string.sub(text, index, flag_start-1))
---                width = width + font:write(x, y, string.sub(text, index, flag_start-1), size, r, g, b, a)
---            end
---            country = string.sub(text, flag_end+1, flag_end+2)
-----            print("flag: "..country)
---            if country=="ch" then
---                res.flag_ch:draw(x+width, y, x+width+size, y+size, a)
---            elseif country=="us" then
---                res.flag_us:draw(x+width, y, x+width+size, y+size, a)
---            elseif country=="gb" then
---                res.flag_gb:draw(x+width, y, x+width+size, y+size, a)
---            end
---            width = width + size
---        end
---    end
+--    return size+font:write(x, y, text, size, r, g, b, a)
+    while true do
+        flag_start, flag_end = string.find(text, "flag:", index)
+        if flag_start == nil then
+--            print(string.sub(text, index))
+            width = width + font:write(x, y, string.sub(text, index), size, r, g, b, a)
+            return width
+        else
+            if flag_start > 1 then
+--                print(string.sub(text, index, flag_start-1))
+                width = width + font:write(x, y, string.sub(text, index, flag_start-1), size, r, g, b, a)
+            end
+            country = string.sub(text, flag_end+1, flag_end+2)
+--            print("flag: "..country)
+            if country=="ch" then
+                res.flag_ch:draw(x+width, y, x+width+size, y+size, a)
+            elseif country=="us" then
+                res.flag_us:draw(x+width, y, x+width+size, y+size, a)
+            elseif country=="gb" then
+                res.flag_gb:draw(x+width, y, x+width+size, y+size, a)
+            end
+            width = width + size
+        end
+    end
 end
 
 function M.Animations()
