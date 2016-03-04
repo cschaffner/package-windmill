@@ -6,7 +6,8 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
     local flag_start
     local flag_end
     local country = ""
-    return font:write(x, y, text, size, r, g, b, a)
+    res.flag_ch:draw(x+width, y, x+width+size, y+size, a)
+    return size+font:write(x, y, text, size, r, g, b, a)
 --    while true do
 --        flag_start, flag_end = string.find(text, "flag:", index)
 --        if flag_start == nil then
