@@ -11,12 +11,12 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
         flag_start, flag_end = string.find(text, "flag:", index)
         if flag_start == nil then
 --            print(string.sub(text, index))
-            width = width + font:write(x, y, string.sub(text, index), size, r, g, b, a)
+            width = width + font:write(x + width, y, string.sub(text, index), size, r, g, b, a)
             return width
         else
             if flag_start > 1 then
 --                print(string.sub(text, index, flag_start-1))
-                width = width + font:write(x, y, string.sub(text, index, flag_start-1), size, r, g, b, a)
+                width = width + font:write(x + width, y, string.sub(text, index, flag_start-1), size, r, g, b, a)
             end
             country = string.sub(text, flag_end+1, flag_end+2)
 --            print("flag: "..country)
