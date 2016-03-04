@@ -20,8 +20,36 @@ res = util.resource_loader({
     "house1.png";
     "house2.png";
     "tower.png";
+    "flag_at.png";
+    "flag_be.png";
+    "flag_by.png";
+    "flag_ca.png";
+    "flag_cc.png";
     "flag_ch.png";
+    "flag_co.png";
+    "flag_cz.png";
+    "flag_de.png";
+    "flag_dk.png";
+    "flag_ee.png";
+    "flag_es.png";
+    "flag_fr.png";
     "flag_gb.png";
+    "flag_hu.png";
+    "flag_ie.png";
+    "flag_il.png";
+    "flag_io.png";
+    "flag_ir.png";
+    "flag_is.png";
+    "flag_it.png";
+    "flag_no.png";
+    "flag_nr.png";
+    "flag_pl.png";
+    "flag_pt.png";
+    "flag_ru.png";
+    "flag_se.png";
+    "flag_sk.png";
+    "flag_tr.png";
+    "flag_ua.png";
     "flag_us.png";
 }, {})
 
