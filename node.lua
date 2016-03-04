@@ -20,6 +20,9 @@ res = util.resource_loader({
     "house1.png";
     "house2.png";
     "tower.png";
+    "flag_ch.png";
+    "flag_gb.png";
+    "flag_us.png";
 }, {})
 
 local json = require "json"
@@ -122,6 +125,48 @@ Fadeout = (function()
 end)()
 
 Scroller = (function()
+    local function my_new_running_text(opt)
+        local current_idx = 1
+        local current_left = 0
+        local last = sys.now()
+
+        local generator = opt.generator
+        local font = opt.font
+        local size = opt.size or 10
+        local speed = opt.speed or 10
+        local color = opt.color or {1,1,1,1}
+
+        local texts = {}
+        return {
+            draw = function(self, y)
+                local now = sys.now()
+                local xoff = current_left
+                local idx = 1
+                while xoff < WIDTH do
+                    if #texts < idx then
+                        table.insert(texts, generator.next())
+                    end
+                    local width = utils.flag_write(font, xoff, y, texts[idx] .. "   -   ", size, unpack(color))
+                    xoff = xoff + width
+                    if xoff < 0 then
+                        current_left = xoff
+                        table.remove(texts, idx)
+                    else
+                        idx = idx + 1
+                    end
+                end
+                local delta = now - last
+                last = now
+                current_left = current_left - delta * speed
+            end;
+            add = function(self, text)
+                generator:add(text)
+            end;
+        }
+    end
+
+
+
     local workshops = {}
     util.file_watch("workshops.json", function(content)
         print("reloading workshops")
@@ -154,7 +199,7 @@ Scroller = (function()
         return out
     end
 
-    local text = util.running_text{
+    local text = my_new_running_text{
         font = res.font;
         size = 40;
         speed = 120;
