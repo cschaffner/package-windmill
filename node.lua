@@ -146,7 +146,7 @@ Scroller = (function()
                     if #texts < idx then
                         table.insert(texts, generator.next())
                     end
-                    local width = font:write(font, xoff, y-200, texts[idx] .. "   -   ", size, unpack(color))
+                    local width = font:write(xoff, y-200, texts[idx] .. "   -   ", size, unpack(color))
                     xoff = xoff + width
                     if xoff < 0 then
                         current_left = xoff
