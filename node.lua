@@ -199,7 +199,7 @@ Scroller = (function()
         return out
     end
 
-    local text = util.running_text{
+    local text = my_new_running_text{
         font = res.font;
         size = 40;
         speed = 120;
