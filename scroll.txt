@@ -1,3 +1,3 @@
-@infobeamer
+flag:gb @infobeamer
 Switzerland flag:ch
-Have a safe trip home. See you next year at 33C3.
+Have a safe trip flag:usflag:chhome. See you next year at 33C3.
