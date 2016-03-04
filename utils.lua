@@ -27,7 +27,7 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
             elseif country=="gb" then
                 res.flag_gb:draw(x+width, y, x+width+size, y+size, a)
             end
-            width = width + 2*size
+            width = width + size
             index = flag_end + 3
         end
     end
