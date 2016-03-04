@@ -2,6 +2,7 @@ local M = {}
 
 function M.flag_write(font, x, y, text, size, r, g, b, a)
     print('now in flag_write')
+    local index = 0
     local width = 0
     local flag_start
     local flag_end
@@ -28,6 +29,7 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
                 res.flag_gb:draw(x+width, y, x+width+size, y+size, a)
             end
             width = width + size
+            index = flag_end + 3
         end
     end
 end
