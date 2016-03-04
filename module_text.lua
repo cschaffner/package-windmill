@@ -21,7 +21,7 @@ function M.run(duration, lines, fn)
     local E = duration
 
     for idx = 1, #lines do
-        a.add(anims.moving_font(S, E, 200, y, lines[idx], 150, 1,1,1,1)); S=S+0.1; y=y+150
+        a.add(anims.my_moving_font(S, E, 200, y, lines[idx], 150, 1,1,1,1)); S=S+0.1; y=y+150
     end
 
     fn.wait_t(0)
