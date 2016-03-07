@@ -1,5 +1,5 @@
 {
-    "name": "32c3",
+    "name": "Windmill",
     "options": [    
     {
         "title": "Clock",
@@ -12,7 +12,7 @@
         "hint": "The timezone",
         "options": [
             ["UTC", "UTC"],
-            ["Europe/Berlin", "Europe/Berlin"]
+            ["Europe/Amsterdam", "Europe/Amsterdam"]
         ],
         "default": "UTC"
     }]

@@ -1,0 +1,4 @@
+{ "tournaments" : [{"nameOverride": "Women", "tournament_id": 19747, "color": "#d73300"},
+                   {"nameOverride": "Mixed", "tournament_id": 19750, "color": "#a50078"},
+                   {"nameOverride": "Open",  "tournament_id": 19746, "color": "#e58700"}]
+}

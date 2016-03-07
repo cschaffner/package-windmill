@@ -1,4 +1,11 @@
-= 32c3 package (running on all the screens)
+= Windmill package (running on all the screens)
+
+== Content
+Info screens at [[http://windmilltournament.com|Windmill Tournament]],
+the yearly Ultimate frisbee festival held in Amsterdam.
+
+
+== Old README
 
 This is the code that ran on a single RPI2 during the [[https://events.ccc.de/congress/2015/wiki/Static:Main_Page|32c3]]
 conference. I updated code and added images/videos while the visualization was running numerous times during the conference
