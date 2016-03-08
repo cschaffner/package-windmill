@@ -1,0 +1,587 @@
+{
+  "start_time":"Friday 12:30",
+  "games":[
+    {
+      "field":"Field 1. Stadium",
+      "team_2_score":4,
+      "team_1_score":15,
+      "team_1":"flag:DE Germany U23 Open ",
+      "team_2":"Crazy Dogs"
+    },
+    {
+      "field":"Field 2. Stadium",
+      "team_2_score":6,
+      "team_1_score":8,
+      "team_1":"flag:CZ Czech Open",
+      "team_2":"Russia Open"
+    },
+    {
+      "field":"Field 3. Entrance",
+      "team_2_score":10,
+      "team_1_score":15,
+      "team_1":"flag:DE Heidees",
+      "team_2":"Fire"
+    },
+    {
+      "field":"Field 4. Entrance",
+      "team_2_score":13,
+      "team_1_score":11,
+      "team_1":"flag:GB GB U23 Open",
+      "team_2":"Chevy"
+    },
+    {
+      "field":"Field 5.",
+      "team_2_score":15,
+      "team_1_score":8,
+      "team_1":"flag:DE Bad Skid",
+      "team_2":"Italy Open"
+    },
+    {
+      "field":"Field 6.",
+      "team_2_score":15,
+      "team_1_score":13,
+      "team_1":"flag:DK Denmark Open",
+      "team_2":"France Open"
+    },
+    {
+      "field":"Field 7.",
+      "team_2_score":14,
+      "team_1_score":15,
+      "team_1":"flag:GB GB Master Open",
+      "team_2":"Finland Open"
+    },
+    {
+      "field":"Field 8.",
+      "team_2_score":15,
+      "team_1_score":12,
+      "team_1":"flag:DE M.U.C.",
+      "team_2":"Netherlands Open"
+    },
+    {
+      "field":"Field 9.",
+      "team_2_score":5,
+      "team_1_score":15,
+      "team_1":"flag:GB GB Open",
+      "team_2":"Freespeed"
+    },
+    {
+      "field":"Field 10.",
+      "team_2_score":14,
+      "team_1_score":11,
+      "team_1":"flag:AT FWD>>",
+      "team_2":"thebigEZ"
+    },
+    {
+      "field":"Field 11.",
+      "team_2_score":15,
+      "team_1_score":8,
+      "team_1":"flag:CH FAB",
+      "team_2":"Belgium"
+    },
+    {
+      "field":"Field 17. Far Middle",
+      "team_2_score":15,
+      "team_1_score":14,
+      "team_1":"flag:DE Frizzly Bears",
+      "team_2":"Catchup"
+    },
+    {
+      "field":"Field 13.",
+      "team_2_score":15,
+      "team_1_score":14,
+      "team_1":"flag:DE Gummis",
+      "team_2":"Tower"
+    },
+    {
+      "field":"Field 14. Far Right",
+      "team_2_score":15,
+      "team_1_score":12,
+      "team_1":"flag:AT INNsiders",
+      "team_2":"Lézer Pávák"
+    },
+    {
+      "field":"Field 15. Far Right",
+      "team_2_score":15,
+      "team_1_score":14,
+      "team_1":"flag:ES Spain Open",
+      "team_2":"Frank N"
+    },
+    {
+      "field":"Field 16. Far Middle",
+      "team_2_score":9,
+      "team_1_score":15,
+      "team_1":"flag:PL Poland Open",
+      "team_2":"7 Schwaben"
+    },
+    {
+      "field":"Field 12.",
+      "team_2_score":15,
+      "team_1_score":14,
+      "team_1":"flag:GB CUlt",
+      "team_2":"Wall City"
+    },
+    {
+      "field":"Field 18. Far Middle",
+      "team_2_score":14,
+      "team_1_score":12,
+      "team_1":"flag:FR Friselis",
+      "team_2":"Italy U23 Open"
+    },
+    {
+      "field":"Field 19. Far Left",
+      "team_2_score":15,
+      "team_1_score":5,
+      "team_1":"flag:RU LuckyGrass",
+      "team_2":"Gravity"
+    },
+    {
+      "field":"Field 20. Far Left",
+      "team_2_score":11,
+      "team_1_score":8,
+      "team_1":"flag:IE Maynooth Ultimate",
+      "team_2":"Mooncatchers"
+    }
+  ],
+  "standings":[
+    {
+      "ranking":1,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"-1.13",
+      "team_id":27914,
+      "swiss_score":"10.38",
+      "team":"Germany U23 Open ",
+      "ties":0,
+      "avg_goal_difference":"11.50"
+    },
+    {
+      "ranking":2,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"1",
+      "team_id":27883,
+      "swiss_score":"7.50",
+      "team":"Czech Open",
+      "ties":0,
+      "avg_goal_difference":"6.50"
+    },
+    {
+      "ranking":3,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"-0.12",
+      "team_id":27929,
+      "swiss_score":"7.38",
+      "team":"Italy Open",
+      "ties":0,
+      "avg_goal_difference":"7.50"
+    },
+    {
+      "ranking":4,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"-0.38",
+      "team_id":27921,
+      "swiss_score":"7.12",
+      "team":"Heidees",
+      "ties":0,
+      "avg_goal_difference":"7.50"
+    },
+    {
+      "ranking":5,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"-1.12",
+      "team_id":27912,
+      "swiss_score":"5.37",
+      "team":"GB Open",
+      "ties":0,
+      "avg_goal_difference":"6.50"
+    },
+    {
+      "ranking":6,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"-0.25",
+      "team_id":27878,
+      "swiss_score":"4.75",
+      "team":"Chevy",
+      "ties":0,
+      "avg_goal_difference":"5.00"
+    },
+    {
+      "ranking":7,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"-0.13",
+      "team_id":27900,
+      "swiss_score":"3.88",
+      "team":"France Open",
+      "ties":0,
+      "avg_goal_difference":"4.00"
+    },
+    {
+      "ranking":8,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"0.25",
+      "team_id":27913,
+      "swiss_score":"3.75",
+      "team":"GB U23 Open",
+      "ties":0,
+      "avg_goal_difference":"3.50"
+    },
+    {
+      "ranking":9,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-1",
+      "team_id":27954,
+      "swiss_score":"3.50",
+      "team":"Russia Open",
+      "ties":0,
+      "avg_goal_difference":"4.50"
+    },
+    {
+      "ranking":10,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"0.25",
+      "team_id":27911,
+      "swiss_score":"3.25",
+      "team":"GB Master Open",
+      "ties":0,
+      "avg_goal_difference":"3.00"
+    },
+    {
+      "ranking":11,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"0.13",
+      "team_id":27884,
+      "swiss_score":"3.12",
+      "team":"Denmark Open",
+      "ties":0,
+      "avg_goal_difference":"3.00"
+    },
+    {
+      "ranking":12,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"0.37",
+      "team_id":27890,
+      "swiss_score":"2.88",
+      "team":"Fire",
+      "ties":0,
+      "avg_goal_difference":"2.50"
+    },
+    {
+      "ranking":13,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"-0.37",
+      "team_id":27886,
+      "swiss_score":"2.63",
+      "team":"Netherlands Open",
+      "ties":0,
+      "avg_goal_difference":"3.00"
+    },
+    {
+      "ranking":14,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-0.25",
+      "team_id":27889,
+      "swiss_score":"1.75",
+      "team":"Finland Open",
+      "ties":0,
+      "avg_goal_difference":"2.00"
+    },
+    {
+      "ranking":15,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-1.38",
+      "team_id":27870,
+      "swiss_score":"1.63",
+      "team":"Belgium",
+      "ties":0,
+      "avg_goal_difference":"3.00"
+    },
+    {
+      "ranking":16,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"-1.38",
+      "team_id":27962,
+      "swiss_score":"1.13",
+      "team":"thebigEZ",
+      "ties":0,
+      "avg_goal_difference":"2.50"
+    },
+    {
+      "ranking":17,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"1.13",
+      "team_id":27880,
+      "swiss_score":"1.12",
+      "team":"Crazy Dogs",
+      "ties":0,
+      "avg_goal_difference":"0.00"
+    },
+    {
+      "ranking":18,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"0.38",
+      "team_id":27938,
+      "swiss_score":"0.88",
+      "team":"M.U.C.",
+      "ties":0,
+      "avg_goal_difference":"0.50"
+    },
+    {
+      "ranking":19,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"0.13",
+      "team_id":27866,
+      "swiss_score":"0.63",
+      "team":"Bad Skid",
+      "ties":0,
+      "avg_goal_difference":"0.50"
+    },
+    {
+      "ranking":20,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"1.38",
+      "team_id":27887,
+      "swiss_score":"0.37",
+      "team":"FWD>>",
+      "ties":0,
+      "avg_goal_difference":"-1.00"
+    },
+    {
+      "ranking":21,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"1.12",
+      "team_id":27872,
+      "swiss_score":"0.12",
+      "team":"Catchup",
+      "ties":0,
+      "avg_goal_difference":"-1.00"
+    },
+    {
+      "ranking":22,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"0.13",
+      "team_id":27953,
+      "swiss_score":"-0.88",
+      "team":"Poland Open",
+      "ties":0,
+      "avg_goal_difference":"-1.00"
+    },
+    {
+      "ranking":23,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-0.25",
+      "team_id":27937,
+      "swiss_score":"-1.25",
+      "team":"Lézer Pávák",
+      "ties":0,
+      "avg_goal_difference":"-1.00"
+    },
+    {
+      "ranking":24,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-1",
+      "team_id":27885,
+      "swiss_score":"-1.50",
+      "team":"Gravity",
+      "ties":0,
+      "avg_goal_difference":"-0.50"
+    },
+    {
+      "ranking":25,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"0.38",
+      "team_id":27915,
+      "swiss_score":"-1.62",
+      "team":"Gummis",
+      "ties":0,
+      "avg_goal_difference":"-2.00"
+    },
+    {
+      "ranking":26,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-0.37",
+      "team_id":27956,
+      "swiss_score":"-1.87",
+      "team":"Tower",
+      "ties":0,
+      "avg_goal_difference":"-1.50"
+    },
+    {
+      "ranking":27,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"1.12",
+      "team_id":27896,
+      "swiss_score":"-2.37",
+      "team":"Freespeed",
+      "ties":0,
+      "avg_goal_difference":"-3.50"
+    },
+    {
+      "ranking":28,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"1.38",
+      "team_id":27891,
+      "swiss_score":"-3.13",
+      "team":"FAB",
+      "ties":0,
+      "avg_goal_difference":"-4.50"
+    },
+    {
+      "ranking":29,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"-1.12",
+      "team_id":27904,
+      "swiss_score":"-3.13",
+      "team":"Frizzly Bears",
+      "ties":0,
+      "avg_goal_difference":"-2.00"
+    },
+    {
+      "ranking":30,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"1.13",
+      "team_id":27944,
+      "swiss_score":"-3.38",
+      "team":"Mooncatchers",
+      "ties":0,
+      "avg_goal_difference":"-4.50"
+    },
+    {
+      "ranking":31,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"0.13",
+      "team_id":27955,
+      "swiss_score":"-3.38",
+      "team":"Spain Open",
+      "ties":0,
+      "avg_goal_difference":"-3.50"
+    },
+    {
+      "ranking":32,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-0.13",
+      "team_id":27893,
+      "swiss_score":"-3.62",
+      "team":"Frank N",
+      "ties":0,
+      "avg_goal_difference":"-3.50"
+    },
+    {
+      "ranking":33,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"0.37",
+      "team_id":27930,
+      "swiss_score":"-3.63",
+      "team":"Italy U23 Open",
+      "ties":0,
+      "avg_goal_difference":"-4.00"
+    },
+    {
+      "ranking":34,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"0.25",
+      "team_id":27928,
+      "swiss_score":"-3.75",
+      "team":"INNsiders",
+      "ties":0,
+      "avg_goal_difference":"-4.00"
+    },
+    {
+      "ranking":35,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-0.25",
+      "team_id":27958,
+      "swiss_score":"-4.25",
+      "team":"Wall City",
+      "ties":0,
+      "avg_goal_difference":"-4.00"
+    },
+    {
+      "ranking":36,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"0.25",
+      "team_id":27871,
+      "swiss_score":"-4.25",
+      "team":"CUlt",
+      "ties":0,
+      "avg_goal_difference":"-4.50"
+    },
+    {
+      "ranking":37,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"-0.38",
+      "team_id":27901,
+      "swiss_score":"-6.38",
+      "team":"Friselis",
+      "ties":0,
+      "avg_goal_difference":"-6.00"
+    },
+    {
+      "ranking":38,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"-0.12",
+      "team_id":27860,
+      "swiss_score":"-7.12",
+      "team":"7 Schwaben",
+      "ties":0,
+      "avg_goal_difference":"-7.00"
+    },
+    {
+      "ranking":39,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"-1.13",
+      "team_id":27952,
+      "swiss_score":"-8.12",
+      "team":"Maynooth Ultimate",
+      "ties":0,
+      "avg_goal_difference":"-7.00"
+    },
+    {
+      "ranking":40,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"1",
+      "team_id":27931,
+      "swiss_score":"-9.50",
+      "team":"LuckyGrass",
+      "ties":0,
+      "avg_goal_difference":"-10.50"
+    }
+  ]
+}

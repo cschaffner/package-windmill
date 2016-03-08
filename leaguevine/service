@@ -19,37 +19,67 @@ with file("config.json") as f:
     CONFIG = json.load(f)
 
 
-
 de_tz = pytz.timezone('Europe/Amsterdam')
 
 tournaments = {}   # = Windmill divisions
 teams = {}
+schedule = CONFIG['schedule']
 
+def currentround(datetime):
+    # which round is currently being played?
+    for round in CONFIG['schedule']['open']:
+        round_start = datetime.strptime(round['start'], '%Y-%m-%dT%H:%M:%S')
+        round_end = datetime.strptime(round['end'], '%Y-%m-%dT%H:%M:%S')
+        if round_start < datetime and datetime < round_end:
+            return round['name']
 
-def update(tournament_id):
+def update(current_datetime):
+    global teams
     # pull data from leaguevine
-    r = requests.get('http://api.localhost:8000/v1/swiss_rounds/?tournament_id=19747&round_number=2')
-    swiss_round = r.json()['objects'][0]
+    r = requests.get('http://api.localhost:8000/v1/swiss_rounds/?tournament_id=19746')
+    swiss_rounds = r.json()['objects']
+    # update schedule with extra information
+    for swiss_round in swiss_rounds:
+        for round in schedule['open']:
+            print round['start'], swiss_round['start_time'][0:19]
+            if round['start']==swiss_round['start_time'][0:19]:
+                round.update(swiss_round)
 
-    out = []
-    for day in days:
-        for game in swiss_round['games']:
-            for event in events:
-                date = datetime.strptime(event['date'][:-6], "%Y-%m-%dT%H:%M:%S")
-                date = date.replace(tzinfo=de_tz).astimezone(pytz.utc)
-                start_unix = calendar.timegm(date.timetuple())
-                out.append(dict(
-                    start_unix = start_unix,
-                    start_str = event['start'],
-                    name = event['title'],
-                    place = event['room'],
-                ))
-    return out
+    # current games
+    for round in CONFIG['schedule']['open']:
+        round_start = datetime.strptime(round['start'], '%Y-%m-%dT%H:%M:%S')
+        round_end = datetime.strptime(round['end'], '%Y-%m-%dT%H:%M:%S')
+        if round_start < current_datetime and current_datetime <= round_end:
+            curgames = {'start_time': round_start.strftime('%A %-H:%M')}
+            curgames['games'] = []
+            for game in round['games']:
+                curgames['games'].append({'team_1': u'flag:{0} {1}'.format(teams[game['team_1_id']]['country'], game['team_1']['short_name']),
+                                      'team_2': game['team_2']['short_name'],
+                                      'team_1_score': game['team_1_score'],
+                                      'team_2_score': game['team_2_score'],
+                                      'field': game['game_site']['name']
+                                     })
+            # current standings
+            curgames['standings'] = round['standings']
+            for stand in curgames['standings']:
+                stand['team'] = stand['team']['short_name']
+
+            with file("current_games.json.new", "wb") as f:
+                f.write(json.dumps(curgames,
+                    ensure_ascii=False,
+                    indent=2,
+                    separators=(',',':')
+                ).encode('utf8'))
+            os.rename("current_games.json.new", "../current_games.json")
+            print >>sys.stderr, "updated games"
+
 
 def leaguevine_basic_info():
+    global teams
+    tournament_ids = [t['tournament_id'] for name,t in CONFIG['tournaments'].items()]
     # retrieve tournament info  ( = Windmill divisions)
     url = 'http://api.localhost:8000/v1/tournaments/'
-    payload = {'tournament_ids': '{0}'.format(CONFIG['tournament_ids']).replace(' ', '')}
+    payload = {'tournament_ids': '{0}'.format(tournament_ids).replace(' ', '')}
     r = requests.get(url, params=payload)
     tournaments = r.json()['objects']
 
@@ -69,14 +99,19 @@ def leaguevine_basic_info():
 
     # retrieve all team info
     url = 'http://api.localhost:8000/v1/teams/'
-    payload = {'team_ids': '{0}'.format(all_team_ids).replace(' ','')}
+    payload = {'team_ids': '{0}'.format(all_team_ids).replace(' ',''),
+               'limit': 200}
     r = requests.get(url, params=payload)
     result = r.json()
-    teams = result['objects']
+    teams = {team['id']: team for team in result['objects']}
 
     return True
 
 def main():
+    leaguevine_basic_info()
+    update(datetime(2015, 06, 12, 12, 31, 00))
+
+
     # load team info once
     leaguevine_basic_info()
 
