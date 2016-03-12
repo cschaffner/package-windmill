@@ -178,7 +178,7 @@ Scroller = (function()
                     if #texts < idx then
                         table.insert(texts, generator.next())
                     end
-                    local width = utils.flag_write(font, xoff, y-200, texts[idx] .. "   -   ", size, unpack(color))
+                    local width = utils.flag_write(font, xoff, y, texts[idx] .. "   -   ", size, unpack(color))
                     xoff = xoff + width
                     if xoff < 0 then
                         current_left = xoff
