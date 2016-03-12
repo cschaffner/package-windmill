@@ -6,7 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2f58c08-b42c-4591-bd87-c4e37e51760d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.lua" afterPath="$PROJECT_DIR$/utils.lua" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node.lua" afterPath="$PROJECT_DIR$/node.lua" />
     </list>
     <ignored path="package-32c3-screens.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,20 +52,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node.lua" pinned="false" current-in-tab="false">
+      <file leaf-file-name="node.lua" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/node.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.7621247">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.lua" pinned="false" current-in-tab="true">
+      <file leaf-file-name="utils.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62355655">
+            <state vertical-scroll-proportion="0.0">
               <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
               <folding />
             </state>
@@ -159,8 +159,8 @@
         <option value="$PROJECT_DIR$/leaguevine/node.json" />
         <option value="$PROJECT_DIR$/playlist.json" />
         <option value="$PROJECT_DIR$/scroll.txt" />
-        <option value="$PROJECT_DIR$/node.lua" />
         <option value="$PROJECT_DIR$/utils.lua" />
+        <option value="$PROJECT_DIR$/node.lua" />
       </list>
     </option>
   </component>
@@ -1092,18 +1092,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node.lua">
+    <entry file="file://$PROJECT_DIR$/utils.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="2" selection-start-line="27" selection-start-column="2" selection-end-line="27" selection-end-column="2" />
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils.lua">
+    <entry file="file://$PROJECT_DIR$/node.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62355655">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.7621247">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
