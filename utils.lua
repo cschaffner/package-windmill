@@ -1,9 +1,9 @@
 local M = {}
 
-flags = util.auto_loader({}, function(fname)
+local flags = util.auto_loader({}, function(fname)
     return fname:sub(1,4) == "flag_"
 end)
-
+print(flags)
 
 function M.flag_write(font, x, y, text, size, r, g, b, a)
     local index = 0
