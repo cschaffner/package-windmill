@@ -211,6 +211,12 @@ Scroller = (function()
         open_games = json.decode(content)
     end)
 
+    local mixed_games = {}
+    util.file_watch("current_games_mixed.json", function(content)
+        print("reloading mixed games")
+        mixed_games = json.decode(content)
+    end)
+
     local infos = {}
     util.file_watch("scroll.txt", function(content)
         infos = {}
@@ -221,7 +227,7 @@ Scroller = (function()
         end
     end)
 
-    local function feeder()
+    local function open_feeder()
         local out = {}
         for idx = 1, #infos do
             out[#out+1] = infos[idx]
@@ -237,22 +243,39 @@ Scroller = (function()
                 out[#out+1] = game.field .. ": " .. game.team_1 .. " - " .. game.team_2
             end
         end
-
---        for idx = 1, #workshops do
---            local workshop = workshops[idx]
---            if workshop.start_unix > now and workshop.start_unix < now + 3 * 3600 then
---                out[#out+1] = workshop.text
---            end
---        end
         return out
     end
 
-    local text = my_new_running_text{
+    local function mixed_feeder()
+        local out = {}
+        local now = Time.unixtime()
+        out[#out+1] = mixed_games.round_name .. "(" .. mixed_games.start_time .. "): "
+        for idx = 1, #mixed_games.games do
+            local game = mixed_games.games[idx]
+            if game.team_1_score then
+                out[#out+1] = game.field .. ": " .. game.team_1 .. " " .. game.team_1_score .. " - " .. game.team_2_score .. " " .. game.team_2
+            else
+                out[#out+1] = game.field .. ": " .. game.team_1 .. " - " .. game.team_2
+            end
+        end
+        return out
+    end
+
+
+    local open_text = my_new_running_text{
         font = res.font;
         size = 60;
         speed = 180;
         color = {1,1,1,.8};
-        generator = util.generator(feeder)
+        generator = util.generator(open_feeder)
+    }
+
+    local mixed_text = my_new_running_text{
+        font = res.font;
+        size = 60;
+        speed = 140;
+        color = {1,1,1,.8};
+        generator = util.generator(mixed_feeder)
     }
 
     local visibility = 0
@@ -267,7 +290,9 @@ Scroller = (function()
     local function draw()
         if visibility > 0.01 then
             open_col:draw(0, HEIGHT-100, WIDTH, HEIGHT, visibility/1.5)
-            text:draw(HEIGHT-60 - visibility * 42)
+            open_text:draw(HEIGHT-60 - visibility * 42)
+            mixed_col:draw(0, HEIGHT-160, WIDTH, HEIGHT-100, visibility/1.5)
+            mixed_text:draw(HEIGHT-120 - visibility * 42)
         end
     end
 
