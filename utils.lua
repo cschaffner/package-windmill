@@ -20,63 +20,64 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
             end
             country = string.sub(text, flag_end+1, flag_end+2)
 --            print("flag: "..country)
-            if country=="at" then
-                res.flag_at:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="be" then
-                res.flag_be:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="by" then
-                res.flag_by:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="ca" then
-                res.flag_ca:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="cc" then
-                res.flag_cc:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="ch" then
-                res.flag_ch:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="co" then
-                res.flag_co:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="cz" then
-                res.flag_cz:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="de" then
-                res.flag_de:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="dk" then
-                res.flag_dk:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="ee" then
-                res.flag_ee:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="es" then
-                res.flag_es:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="fr" then
-                res.flag_fr:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="gb" then
-                res.flag_gb:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="hu" then
-                res.flag_hu:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="ie" then
-                res.flag_ie:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="il" then
-                res.flag_il:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="it" then
-                res.flag_it:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="no" then
-                res.flag_no:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="nr" then
-                res.flag_nr:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="pl" then
-                res.flag_pl:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="pt" then
-                res.flag_pt:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="ru" then
-                res.flag_ru:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="se" then
-                res.flag_se:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="sk" then
-                res.flag_sk:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="tr" then
-                res.flag_tr:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="ua" then
-                res.flag_ua:draw(x+width, y, x+width+size, y+size, a)
-            elseif country=="us" then
-                res.flag_us:draw(x+width, y, x+width+size, y+size, a)
-            end
+            flag[country]:draw(x+width, y, x+width+size, y+size, a)
+--            if country=="at" then
+--                res.flag_at:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="be" then
+--                res.flag_be:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="by" then
+--                res.flag_by:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="ca" then
+--                res.flag_ca:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="cc" then
+--                res.flag_cc:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="ch" then
+--                res.flag_ch:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="co" then
+--                res.flag_co:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="cz" then
+--                res.flag_cz:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="de" then
+--                res.flag_de:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="dk" then
+--                res.flag_dk:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="ee" then
+--                res.flag_ee:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="es" then
+--                res.flag_es:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="fr" then
+--                res.flag_fr:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="gb" then
+--                res.flag_gb:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="hu" then
+--                res.flag_hu:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="ie" then
+--                res.flag_ie:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="il" then
+--                res.flag_il:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="it" then
+--                res.flag_it:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="no" then
+--                res.flag_no:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="nr" then
+--                res.flag_nr:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="pl" then
+--                res.flag_pl:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="pt" then
+--                res.flag_pt:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="ru" then
+--                res.flag_ru:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="se" then
+--                res.flag_se:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="sk" then
+--                res.flag_sk:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="tr" then
+--                res.flag_tr:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="ua" then
+--                res.flag_ua:draw(x+width, y, x+width+size, y+size, a)
+--            elseif country=="us" then
+--                res.flag_us:draw(x+width, y, x+width+size, y+size, a)
+--            end
             width = width + size
             index = flag_end + 3
         end
