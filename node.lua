@@ -43,6 +43,7 @@ res = util.resource_loader({
     "flag_is.png";
     "flag_it.png";
     "flag_no.png";
+    "flag_nl.png";
     "flag_nr.png";
     "flag_pl.png";
     "flag_pt.png";
