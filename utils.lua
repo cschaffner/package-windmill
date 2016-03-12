@@ -1,10 +1,5 @@
 local M = {}
 
-local flags = util.auto_loader({}, function(fname)
-    return fname:sub(1,4) == "flag_"
-end)
-print(flags)
-
 function M.flag_write(font, x, y, text, size, r, g, b, a)
     local index = 0
     local width = 0
@@ -24,7 +19,7 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
                 width = width + font:write(x + width, y, string.sub(text, index, flag_start-1), size, r, g, b, a)
             end
             country = string.sub(text, flag_end+1, flag_end+2)
-            flags['flag_' .. country]:draw(x+width, y, x+width+size, y+size, a)
+            countries['flag_' .. country]:draw(x+width, y, x+width+size, y+size, a)
 --            if country=="at" then
 --                res.flag_at:draw(x+width, y, x+width+size, y+size, a)
 --            elseif country=="be" then
