@@ -6,7 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2f58c08-b42c-4591-bd87-c4e37e51760d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node.lua" afterPath="$PROJECT_DIR$/node.lua" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.lua" afterPath="$PROJECT_DIR$/utils.lua" />
     </list>
     <ignored path="package-32c3-screens.iws" />
@@ -66,8 +65,8 @@
       <file leaf-file-name="utils.lua" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17321016">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.14778325">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -1104,8 +1103,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17321016">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.14778325">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding />
         </state>
       </provider>
