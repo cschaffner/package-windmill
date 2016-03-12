@@ -266,8 +266,8 @@ Scroller = (function()
 
     local function draw()
         if visibility > 0.01 then
-            open_col:draw(0, HEIGHT-100, WIDTH, HEIGHT, visibility/3)
-            text:draw(HEIGHT-100 - visibility * 42)
+            open_col:draw(0, HEIGHT-100, WIDTH, HEIGHT, visibility/1.5)
+            text:draw(HEIGHT - visibility * 42)
         end
     end
 
