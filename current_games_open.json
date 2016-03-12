@@ -4,143 +4,203 @@
   "games":[
     {
       "field":"Field 1. Stadium",
+      "team_1_country":"de",
       "team_2_score":10,
       "team_1_score":15,
-      "team_1":"flag:de Germany U23 Open ",
-      "team_2":"flag:cz Czech Open"
+      "team_1":"Germany U23 Open ",
+      "team_2":"Czech Open",
+      "team_2_country":"cz",
+      "is_final":true
     },
     {
       "field":"Field 2. Stadium",
+      "team_1_country":"gb",
       "team_2_score":10,
       "team_1_score":15,
-      "team_1":"flag:gb GB Open",
-      "team_2":"flag:gb Chevy"
+      "team_1":"GB Open",
+      "team_2":"Chevy",
+      "team_2_country":"gb",
+      "is_final":true
     },
     {
       "field":"Field 3. Entrance",
+      "team_1_country":"it",
       "team_2_score":9,
       "team_1_score":15,
-      "team_1":"flag:it Italy Open",
-      "team_2":"flag:de Heidees"
+      "team_1":"Italy Open",
+      "team_2":"Heidees",
+      "team_2_country":"de",
+      "is_final":true
     },
     {
       "field":"Field 4. Entrance",
+      "team_1_country":"de",
       "team_2_score":15,
       "team_1_score":10,
-      "team_1":"flag:de Gummis",
-      "team_2":"flag:ch Freespeed"
+      "team_1":"Gummis",
+      "team_2":"Freespeed",
+      "team_2_country":"ch",
+      "is_final":true
     },
     {
       "field":"Field 5.",
+      "team_1_country":"be",
       "team_2_score":15,
       "team_1_score":8,
-      "team_1":"flag:be Mooncatchers",
-      "team_2":"flag:de Frank N"
+      "team_1":"Mooncatchers",
+      "team_2":"Frank N",
+      "team_2_country":"de",
+      "is_final":true
     },
     {
       "field":"Field 6.",
+      "team_1_country":"dk",
       "team_2_score":13,
       "team_1_score":14,
-      "team_1":"flag:dk Denmark Open",
-      "team_2":"flag:gb Fire"
+      "team_1":"Denmark Open",
+      "team_2":"Fire",
+      "team_2_country":"gb",
+      "is_final":true
     },
     {
       "field":"Field 7.",
+      "team_1_country":"nl",
       "team_2_score":15,
       "team_1_score":9,
-      "team_1":"flag:nl Netherlands Open",
-      "team_2":"flag:fi Finland Open"
+      "team_1":"Netherlands Open",
+      "team_2":"Finland Open",
+      "team_2_country":"fi",
+      "is_final":true
     },
     {
       "field":"Field 8.",
+      "team_1_country":"be",
       "team_2_score":11,
       "team_1_score":15,
-      "team_1":"flag:be Belgium",
-      "team_2":"flag:at thebigEZ"
+      "team_1":"Belgium",
+      "team_2":"thebigEZ",
+      "team_2_country":"at",
+      "is_final":true
     },
     {
       "field":"Field 9.",
+      "team_1_country":"ch",
       "team_2_score":11,
       "team_1_score":15,
-      "team_1":"flag:ch Crazy Dogs",
-      "team_2":"flag:de M.U.C."
+      "team_1":"Crazy Dogs",
+      "team_2":"M.U.C.",
+      "team_2_country":"de",
+      "is_final":true
     },
     {
       "field":"Field 10.",
+      "team_1_country":"de",
       "team_2_score":15,
       "team_1_score":7,
-      "team_1":"flag:de Bad Skid",
-      "team_2":"flag:at FWD>>"
+      "team_1":"Bad Skid",
+      "team_2":"FWD>>",
+      "team_2_country":"at",
+      "is_final":true
     },
     {
       "field":"Field 11.",
+      "team_1_country":"at",
       "team_2_score":11,
       "team_1_score":15,
-      "team_1":"flag:at Catchup",
-      "team_2":"flag:pl Poland Open"
+      "team_1":"Catchup",
+      "team_2":"Poland Open",
+      "team_2_country":"pl",
+      "is_final":true
     },
     {
       "field":"Field 12.",
+      "team_1_country":"hu",
       "team_2_score":5,
       "team_1_score":15,
-      "team_1":"flag:hu Lézer Pávák",
-      "team_2":"flag:ie Gravity"
+      "team_1":"Lézer Pávák",
+      "team_2":"Gravity",
+      "team_2_country":"ie",
+      "is_final":true
     },
     {
       "field":"Field 13.",
+      "team_1_country":"fr",
       "team_2_score":12,
       "team_1_score":15,
-      "team_1":"flag:fr France Open",
-      "team_2":"flag:gb GB U23 Open"
+      "team_1":"France Open",
+      "team_2":"GB U23 Open",
+      "team_2_country":"gb",
+      "is_final":true
     },
     {
       "field":"Field 14. Far Right",
+      "team_1_country":"us",
       "team_2_score":14,
       "team_1_score":10,
-      "team_1":"flag:us Tower",
-      "team_2":"flag:ch FAB"
+      "team_1":"Tower",
+      "team_2":"FAB",
+      "team_2_country":"ch",
+      "is_final":true
     },
     {
       "field":"Field 15. Far Right",
+      "team_1_country":"de",
       "team_2_score":13,
       "team_1_score":15,
-      "team_1":"flag:de Frizzly Bears",
-      "team_2":"flag:es Spain Open"
+      "team_1":"Frizzly Bears",
+      "team_2":"Spain Open",
+      "team_2_country":"es",
+      "is_final":true
     },
     {
       "field":"Field 16. Far Middle",
+      "team_1_country":"ru",
       "team_2_score":11,
       "team_1_score":15,
-      "team_1":"flag:ru Russia Open",
-      "team_2":"flag:gb GB Master Open"
+      "team_1":"Russia Open",
+      "team_2":"GB Master Open",
+      "team_2_country":"gb",
+      "is_final":true
     },
     {
       "field":"Field 17. Far Middle",
+      "team_1_country":"it",
       "team_2_score":12,
       "team_1_score":14,
-      "team_1":"flag:it Italy U23 Open",
-      "team_2":"flag:de Wall City"
+      "team_1":"Italy U23 Open",
+      "team_2":"Wall City",
+      "team_2_country":"de",
+      "is_final":true
     },
     {
       "field":"Field 18. Far Middle",
+      "team_1_country":"at",
       "team_2_score":11,
       "team_1_score":15,
-      "team_1":"flag:at INNsiders",
-      "team_2":"flag:gb CUlt"
+      "team_1":"INNsiders",
+      "team_2":"CUlt",
+      "team_2_country":"gb",
+      "is_final":true
     },
     {
       "field":"Field 19. Far Left",
+      "team_1_country":"fr",
       "team_2_score":15,
       "team_1_score":8,
-      "team_1":"flag:fr Friselis",
-      "team_2":"flag:de 7 Schwaben"
+      "team_1":"Friselis",
+      "team_2":"7 Schwaben",
+      "team_2_country":"de",
+      "is_final":true
     },
     {
       "field":"Field 20. Far Left",
+      "team_1_country":"ie",
       "team_2_score":15,
       "team_1_score":7,
-      "team_1":"flag:ie Maynooth Ultimate",
-      "team_2":"flag:ru LuckyGrass"
+      "team_1":"Maynooth Ultimate",
+      "team_2":"LuckyGrass",
+      "team_2_country":"ru",
+      "is_final":true
     }
   ],
   "standings":[

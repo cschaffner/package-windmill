@@ -113,7 +113,7 @@ def current_games(division='open', current_datetime=datetime.now()):
                                       'team_1_country': teams[game['team_1_id']]['country'].lower(),
                                       'team_2_country': teams[game['team_2_id']]['country'].lower(),
                                       'field': game['game_site']['name'],
-                                      'is_final': game['is_final'],
+                                      'is_final': game['winner_id'] is not None,
                                       })
 
     with file("current_games.json.new", "wb") as f:
