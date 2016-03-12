@@ -11,18 +11,18 @@ import traceback
 import calendar
 from datetime import datetime
 
-from hosted import CONFIG
+# from hosted import CONFIG
+#
+# CONFIG.restart_on_update()
 
-CONFIG.restart_on_update()
-
-# with file("config.json") as f:
-#     CONFIG = json.load(f)
+with file("windmill2015.json") as f:
+    WINDMILL = json.load(f)
 
 de_tz = pytz.timezone('Europe/Amsterdam')
 
 tournaments = {}  # = Windmill divisions
 teams = {}
-schedule = CONFIG['schedule']
+schedule = WINDMILL['schedule']
 
 HOST = 'https://api.leaguevine.com/v1'
 LOCALHOST = 'http://api.localhost:8000/v1'
@@ -30,9 +30,9 @@ LOCALHOST = 'http://api.localhost:8000/v1'
 
 def lastround(datetime):
     # which round is currently being played?
-    lastround = CONFIG['schedule']['open'][0]
+    lastround = WINDMILL['schedule']['open'][0]
     lastround_start = datetime.strptime(lastround['start'], '%Y-%m-%dT%H:%M:%S')
-    for round in CONFIG['schedule']['open']:
+    for round in WINDMILL['schedule']['open']:
         round_start = datetime.strptime(round['start'], '%Y-%m-%dT%H:%M:%S')
         round_end = datetime.strptime(round['end'], '%Y-%m-%dT%H:%M:%S')
         if round_start > lastround_start:
@@ -42,7 +42,7 @@ def lastround(datetime):
 
 
 def update(division='open'):
-    tournament_id = CONFIG['tournaments'][division]['tournament_id']
+    tournament_id = WINDMILL['tournaments'][division]['tournament_id']
     # pull data from leaguevine
     r = requests.get('{0}/swiss_rounds/?tournament_id={1}'.format(HOST, tournament_id))
     swiss_rounds = r.json()['objects']
@@ -61,7 +61,7 @@ def update(division='open'):
 def current_games(division='open', current_datetime=datetime.now()):
     print >> sys.stderr, "starting to update {0} division".format(division)
 
-    tournament_id = CONFIG['tournaments'][division]['tournament_id']
+    tournament_id = WINDMILL['tournaments'][division]['tournament_id']
     # Check for games in this tournament that start later than now
     url = '{0}/games/'.format(HOST)
     payload = {'tournament_id': tournament_id,
@@ -81,7 +81,7 @@ def current_games(division='open', current_datetime=datetime.now()):
     games = r.json()['objects']
     games_start = datetime.strptime(games[0]['start_time'], '%Y-%m-%dT%H:%M:%S+02:00')
 
-    for round in CONFIG['schedule'][division]:
+    for round in WINDMILL['schedule'][division]:
         round_start = datetime.strptime(round['start'], '%Y-%m-%dT%H:%M:%S')
 
         if round_start == games_start:
@@ -129,7 +129,7 @@ def current_games(division='open', current_datetime=datetime.now()):
 
 def leaguevine_basic_info():
     global teams
-    tournament_ids = [t['tournament_id'] for name, t in CONFIG['tournaments'].items()]
+    tournament_ids = [t['tournament_id'] for name, t in WINDMILL['tournaments'].items()]
     # retrieve tournament info  ( = Windmill divisions)
     url = '{0}/tournaments/'.format(HOST)
     payload = {'tournament_ids': '{0}'.format(tournament_ids).replace(' ', '')}
