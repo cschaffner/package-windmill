@@ -25,6 +25,8 @@ res = util.resource_loader({
 flags = util.auto_loader({}, function(fname)
     return fname:sub(1,4) == "flag_"
 end)
+pp(flags)
+
 
 local json = require "json"
 local utils = require "utils"

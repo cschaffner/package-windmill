@@ -19,7 +19,6 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
                 width = width + font:write(x + width, y, string.sub(text, index, flag_start-1), size, r, g, b, a)
             end
             country = string.sub(text, flag_end+1, flag_end+2)
-            pp(flags)
             flags[country]:draw(x+width, y, x+width+size, y+size, a)
 --            if country=="at" then
 --                res.flag_at:draw(x+width, y, x+width+size, y+size, a)
