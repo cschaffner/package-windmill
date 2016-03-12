@@ -25,7 +25,7 @@ res = util.resource_loader({
 local countries = util.auto_loader({}, function(fname)
     return fname:sub(1,5) == "flag_"
 end)
-print(flags)
+print(countries)
 
 
 local json = require "json"
