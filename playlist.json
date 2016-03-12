@@ -28,9 +28,9 @@
 }, {
     "module": "text",
     "options": {
-        "text": "Last Game at Game Parlour tonight: Pre New Year's Eve! Join us at 23:59:50 and count the last 10 seconds!"
+        "text": "Welcome to Windmill Tournament 2016 in Amsterdam flag:nl!!"
     },
-    "chance": 0.0
+    "chance": 0.2
 }, {
     "module": "images",
     "chance": 0.0
@@ -46,7 +46,7 @@
 }, {
     "module": "text",
     "options": {
-        "text": "Want to show your your country on this screen? Contact flag:es@info-beamer.com"
+        "text": "Want to show your country on this screen? Contact flag:es@info-beamer.com"
     },
     "chance": 0.2
 }]

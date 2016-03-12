@@ -1,4 +1,1 @@
-flag:gb @infobeamer
-Switzerland flag:ch
-flag:us
-Have a safe trip home. See you next year flag:us at 33C3.
+Welcome to Windmill 2016!

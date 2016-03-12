@@ -32,6 +32,7 @@ res = util.resource_loader({
     "flag_dk.png";
     "flag_ee.png";
     "flag_es.png";
+    "flag_fi.png";
     "flag_fr.png";
     "flag_gb.png";
     "flag_hu.png";
@@ -231,7 +232,7 @@ Scroller = (function()
         for idx = 1, #open_games.games do
             local game = open_games.games[idx]
             if game.team_1_score then
-                out[#out+1] = game.field .. ": " .. game.team_1 .. " " .. game.team_1_score .. " - " .. game.team_2 .. " " .. game.team_2_score
+                out[#out+1] = game.field .. ": " .. game.team_1 .. " " .. game.team_1_score .. " - " .. game.team_2_score .. " " .. game.team_2
             else
                 out[#out+1] = game.field .. ": " .. game.team_1 .. " - " .. game.team_2
             end
@@ -248,7 +249,7 @@ Scroller = (function()
 
     local text = my_new_running_text{
         font = res.font;
-        size = 80;
+        size = 60;
         speed = 180;
         color = {1,1,1,.8};
         generator = util.generator(feeder)
@@ -265,8 +266,8 @@ Scroller = (function()
 
     local function draw()
         if visibility > 0.01 then
-            open_col:draw(0, HEIGHT-45, WIDTH, HEIGHT, visibility/3)
-            text:draw(HEIGHT - visibility * 42)
+            open_col:draw(0, HEIGHT-100, WIDTH, HEIGHT, visibility/3)
+            text:draw(HEIGHT-100 - visibility * 42)
         end
     end
 
