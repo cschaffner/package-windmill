@@ -1,5 +1,10 @@
 local M = {}
 
+local flags = util.auto_loader({}, function(fname)
+    return fname:sub(1,4) == "flag_"
+end)
+
+
 function M.flag_write(font, x, y, text, size, r, g, b, a)
     local index = 0
     local width = 0
