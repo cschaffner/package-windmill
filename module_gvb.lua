@@ -5,12 +5,12 @@ local anims = require "anims"
 local M = {}
 
 local icons = util.auto_loader({}, function(fname)
-    return fname:sub(1,4) == "hvv-"
+    return fname:sub(1,4) == "gvb-"
 end)
 
 local departures = {}
 
-local unwatch = util.file_watch("hvv.json", function(raw)
+local unwatch = util.file_watch("gvb.json", function(raw)
     departures = json.decode(raw)
 end)
 

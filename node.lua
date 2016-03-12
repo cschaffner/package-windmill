@@ -247,7 +247,7 @@ Scroller = (function()
     local open_text = my_new_running_text{
         font = res.font;
         size = 60;
-        speed = 280;
+        speed = 120;
         color = {1,1,1,.8};
         generator = util.generator(open_feeder)
     }

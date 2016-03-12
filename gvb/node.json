@@ -1,5 +1,5 @@
 {
-    "name": "HVV Departures",
+    "name": "GVB Departures",
     "options": [],
     "permissions": {
         "network": "Needs to fetch live data"

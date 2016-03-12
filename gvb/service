@@ -6,6 +6,8 @@ import json
 import pytz
 import datetime
 import httplib
+import requests
+
 from calendar import timegm
 import xml.etree.ElementTree as ET
 from itertools import islice
@@ -98,6 +100,10 @@ def parse(data, stop):
     return departures
 
 def get_schedule():
+    r = requests.get('http://v0.ovapi.nl/stopareacode/03121')
+    departures = r.json()['03121']['30003122']
+
+
     departures = []
     departures.extend(parse(
         efa_fetch("/mobile3/XSLT_DM_REQUEST?outputFormat=XML&useAllStops=1&useRealtime=1&maxAssignedStops=1&itOptionsActive=1&trITMOTvalue100=5&itdLPxx_dest=&sessionID=0&language=de&locationServerActive=1&mode=direct&limit=60&itdLPxx_script=true&name_dm=28511951&type_dm=stopID&placeInfo_dm=Hamburg"),
@@ -150,7 +156,7 @@ def get_schedule():
     return json.dumps(departures,ensure_ascii=False).encode("utf8")
 
 def update():
-    with file("../hvv.json", "wb") as f:
+    with file("../gvb.json", "wb") as f:
         f.write(get_schedule())
 
 def main():
