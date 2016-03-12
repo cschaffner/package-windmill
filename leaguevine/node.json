@@ -1,5 +1,5 @@
 {
     "name": "Leaguevine Data",
     "permissions": {"network": "HTTP requests"},
-    "options": {}
+    "options": []
 }
