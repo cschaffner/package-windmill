@@ -5,14 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="Current File" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2f58c08-b42c-4591-bd87-c4e37e51760d" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bak/module_hvv.lua" afterPath="$PROJECT_DIR$/module_gvb.lua" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hvv/config.json.example" afterPath="$PROJECT_DIR$/gvb/config.json.example" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hvv/node.json" afterPath="$PROJECT_DIR$/gvb/node.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hvv/service" afterPath="$PROJECT_DIR$/gvb/service" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node.lua" afterPath="$PROJECT_DIR$/node.lua" />
-    </list>
+    <list default="true" id="c2f58c08-b42c-4591-bd87-c4e37e51760d" name="Default" comment="" />
     <ignored path="package-32c3-screens.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
