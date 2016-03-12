@@ -106,13 +106,14 @@ def current_games(division='open', current_datetime=datetime.now()):
 
     for game in games:
         if game['team_2_id'] and datetime.strptime(game['start_time'], '%Y-%m-%dT%H:%M:%S+02:00') == games_start:  # not a  BYE  and  same start as first game
-            curgames['games'].append({'team_1': u'flag:{0} {1}'.format(teams[game['team_1_id']]['country'].lower(),
-                                                                       game['team_1']['short_name']),
-                                      'team_2': u'flag:{0} {1}'.format(teams[game['team_2_id']]['country'].lower(),
-                                                                       game['team_2']['short_name']),
+            curgames['games'].append({'team_1': game['team_1']['short_name'],
+                                      'team_2': game['team_2']['short_name'],
                                       'team_1_score': game['team_1_score'],
                                       'team_2_score': game['team_2_score'],
-                                      'field': game['game_site']['name']
+                                      'team_1_country': teams[game['team_1_id']]['country'].lower(),
+                                      'team_2_country': teams[game['team_2_id']]['country'].lower(),
+                                      'field': game['game_site']['name'],
+                                      'is_final': game['is_final'],
                                       })
 
     with file("current_games.json.new", "wb") as f:
