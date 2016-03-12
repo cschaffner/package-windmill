@@ -59,6 +59,9 @@ local raw = sys.get_ext "raw_video"
 
 local white = resource.create_colored_texture(1,1,1,1)
 local black = resource.create_colored_texture(0,0,0,1)
+local open_col = resource.create_colored_texture(0.898,0.529,0,1)  --yelloish
+local women_col = resource.create_colored_texture(0.647,0,0.471,1) --dark pink
+local mixed_col = resource.create_colored_texture(0.843,0.20,0,1)  --reddish
 
 local loop = resource.load_video{
     file = "loop.mp4";
@@ -193,12 +196,18 @@ Scroller = (function()
         }
     end
 
+--
+--
+--    local workshops = {}
+--    util.file_watch("workshops.json", function(content)
+--        print("reloading workshops")
+--        workshops = json.decode(content)
+--    end)
 
-
-    local workshops = {}
-    util.file_watch("workshops.json", function(content)
-        print("reloading workshops")
-        workshops = json.decode(content)
+    local open_games = {}
+    util.file_watch("current_games_open.json", function(content)
+        print("reloading open games")
+        open_games = json.decode(content)
     end)
 
     local infos = {}
@@ -218,18 +227,28 @@ Scroller = (function()
         end
 
         local now = Time.unixtime()
-        for idx = 1, #workshops do
-            local workshop = workshops[idx]
-            if workshop.start_unix > now and workshop.start_unix < now + 3 * 3600 then
-                out[#out+1] = workshop.text
+        out[#out+1] = open_games.round_name .. "(" .. open_games.start_time .. "): "
+        for idx = 1, #open_games.games do
+            local game = open_games.games[idx]
+            if game.team_1_score then
+                out[#out+1] = game.field .. ": " .. game.team_1 .. " " .. game.team_1_score .. " - " .. game.team_2 .. " " .. game.team_2_score
+            else
+                out[#out+1] = game.field .. ": " .. game.team_1 .. " - " .. game.team_2
             end
         end
+
+--        for idx = 1, #workshops do
+--            local workshop = workshops[idx]
+--            if workshop.start_unix > now and workshop.start_unix < now + 3 * 3600 then
+--                out[#out+1] = workshop.text
+--            end
+--        end
         return out
     end
 
     local text = my_new_running_text{
         font = res.font;
-        size = 100;
+        size = 80;
         speed = 180;
         color = {1,1,1,.8};
         generator = util.generator(feeder)
@@ -246,7 +265,7 @@ Scroller = (function()
 
     local function draw()
         if visibility > 0.01 then
-            -- black:draw(0, HEIGHT-45, WIDTH, HEIGHT, visibility/3)
+            open_col:draw(0, HEIGHT-45, WIDTH, HEIGHT, visibility/3)
             text:draw(HEIGHT - visibility * 42)
         end
     end

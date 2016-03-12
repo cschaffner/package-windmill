@@ -10,14 +10,13 @@ import requests
 import traceback
 import calendar
 from datetime import datetime
-from operator import itemgetter
 
-# from hosted import CONFIG
-#
-# CONFIG.restart_on_update()
+from hosted import CONFIG
 
-with file("config.json") as f:
-    CONFIG = json.load(f)
+CONFIG.restart_on_update()
+
+# with file("config.json") as f:
+#     CONFIG = json.load(f)
 
 de_tz = pytz.timezone('Europe/Amsterdam')
 
@@ -25,6 +24,9 @@ tournaments = {}  # = Windmill divisions
 teams = {}
 schedule = CONFIG['schedule']
 
+HOST = 'https://api.leaguevine.com/v1'
+LOCALHOST = 'http://api.localhost:8000/v1'
+# HOST = LOCALHOST
 
 def lastround(datetime):
     # which round is currently being played?
@@ -42,7 +44,7 @@ def lastround(datetime):
 def update(division='open'):
     tournament_id = CONFIG['tournaments'][division]['tournament_id']
     # pull data from leaguevine
-    r = requests.get('http://api.localhost:8000/v1/swiss_rounds/?tournament_id={0}'.format(tournament_id))
+    r = requests.get('{0}/swiss_rounds/?tournament_id={1}'.format(HOST, tournament_id))
     swiss_rounds = r.json()['objects']
     # update schedule with extra information
     for swiss_round in swiss_rounds:
@@ -61,7 +63,7 @@ def current_games(division='open', current_datetime=datetime.now()):
 
     tournament_id = CONFIG['tournaments'][division]['tournament_id']
     # Check for games in this tournament that start later than now
-    url = 'http://api.localhost:8000/v1/games/'
+    url = '{0}/games/'.format(HOST)
     payload = {'tournament_id': tournament_id,
                'starts_after': current_datetime.strftime('%Y-%m-%dT%H:%M:%S+02:00'),
                'limit': 50,
@@ -129,7 +131,7 @@ def leaguevine_basic_info():
     global teams
     tournament_ids = [t['tournament_id'] for name, t in CONFIG['tournaments'].items()]
     # retrieve tournament info  ( = Windmill divisions)
-    url = 'http://api.localhost:8000/v1/tournaments/'
+    url = '{0}/tournaments/'.format(HOST)
     payload = {'tournament_ids': '{0}'.format(tournament_ids).replace(' ', '')}
     r = requests.get(url, params=payload)
     tournaments = r.json()['objects']
@@ -137,7 +139,7 @@ def leaguevine_basic_info():
     # retrieve tournament teams (to figure out which teams are playing in which tournaments
     payload['fields'] = '[team_id,tournament_id]'
     payload['limit'] = 200
-    r = requests.get('http://api.localhost:8000/v1/tournament_teams/', params=payload)
+    r = requests.get('{0}/tournament_teams/'.format(HOST), params=payload)
     result = r.json()
     if result['meta']['next']:
         print >> sys.stderr, "only 200 teams were loaded, but there are more!"
@@ -149,7 +151,7 @@ def leaguevine_basic_info():
     all_team_ids = sorted(set(all_team_ids))
 
     # retrieve all team info
-    url = 'http://api.localhost:8000/v1/teams/'
+    url = '{0}/teams/'.format(HOST)
     payload = {'team_ids': '{0}'.format(all_team_ids).replace(' ', ''),
                'limit': 200}
     r = requests.get(url, params=payload)
@@ -161,39 +163,20 @@ def leaguevine_basic_info():
 
 def main():
     leaguevine_basic_info()
-    # for division in ['open', 'mixed', 'women']:
-    for division in ['women']:
-        update(division)
-        current_games(division, datetime(2015, 06, 12, 12, 31, 00))
-
-    return False
 
     while 1:
-        try:
-            events = update()
-        except:
-            print >> sys.stderr, "fail"
-            traceback.print_exc()
-            time.sleep(120)
-            continue
+        for division in ['open', 'mixed', 'women']:
+        # for division in ['women']:
+            try:
+                update(division)
+                current_games(division, datetime(2015, 06, 12, 12, 31, 00))
+            except:
+                print >> sys.stderr, "failed to update {0} division".format(division)
+                traceback.print_exc()
+                time.sleep(120)
+                continue
 
-        with file("workshops.json.new", "wb") as f:
-            f.write(json.dumps([dict(
-                text="%s: %s @ %s" % (
-                    event['start_str'],
-                    event['name'],
-                    event['place'],
-                ),
-                start_unix=event['start_unix'],
-            ) for event in sorted(events, key=itemgetter('start_unix'))],
-                               ensure_ascii=False,
-                               separators=(',', ':')
-                               ).encode('utf8'))
-        os.rename("workshops.json.new", "../workshops.json")
-
-        print >> sys.stderr, "updated workshops"
-
-        time.sleep(600)
+        time.sleep(3*60)
 
 
 if __name__ == "__main__":
