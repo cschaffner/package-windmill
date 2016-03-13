@@ -6,6 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2f58c08-b42c-4591-bd87-c4e37e51760d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module_open.lua" afterPath="$PROJECT_DIR$/module_open.lua" />
     </list>
     <ignored path="package-32c3-screens.iws" />
@@ -71,7 +72,7 @@
             <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
               <folding>
-                <marker date="1457904020000" expanded="true" signature="4:94" placeholder="{&quot;direction&quot;: &quot;Centraal Station&quot;...}" />
+                <marker date="1457904200000" expanded="true" signature="4:94" placeholder="{&quot;direction&quot;: &quot;Centraal Station&quot;...}" />
               </folding>
             </state>
           </provider>
@@ -87,8 +88,8 @@
       <file leaf-file-name="module_open.lua" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module_open.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5555556">
-              <caret line="57" column="95" selection-start-line="57" selection-start-column="95" selection-end-line="57" selection-end-column="95" />
+            <state vertical-scroll-proportion="0.47916666">
+              <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -107,7 +108,7 @@
       <file leaf-file-name="node.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.4444447">
+            <state vertical-scroll-proportion="27.777779">
               <caret line="220" column="47" selection-start-line="220" selection-start-column="47" selection-end-line="220" selection-end-column="47" />
               <folding />
             </state>
@@ -363,7 +364,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="settings.editor.selected.configurable" value="com.sylvanaar.idea.Lua.options.LuaOptionsPanel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="mod&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/module_open.lua&#10;play&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/playlist.json&#10;mo&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/module_open.lua&#10;node&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/node.lua&#10;ani&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/anims.lua&#10;node.lu&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/node.lua" />
+    <property name="SearchEverywhereHistoryKey" value="mo&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/module_open.lua&#10;mod&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/module_open.lua&#10;play&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/playlist.json&#10;node&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/node.lua&#10;ani&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/anims.lua&#10;node.lu&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/node.lua" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1035,7 +1036,7 @@
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
           <folding>
-            <marker date="1457904020000" expanded="true" signature="4:94" placeholder="{&quot;direction&quot;: &quot;Centraal Station&quot;...}" />
+            <marker date="1457904200000" expanded="true" signature="4:94" placeholder="{&quot;direction&quot;: &quot;Centraal Station&quot;...}" />
           </folding>
         </state>
       </provider>
@@ -1085,14 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4444447">
-          <caret line="220" column="47" selection-start-line="220" selection-start-column="47" selection-end-line="220" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gvb/service">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.555555">
@@ -1111,10 +1104,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="27.777779">
+          <caret line="220" column="47" selection-start-line="220" selection-start-column="47" selection-end-line="220" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/module_open.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5555556">
-          <caret line="57" column="95" selection-start-line="57" selection-start-column="95" selection-end-line="57" selection-end-column="95" />
+        <state vertical-scroll-proportion="0.47916666">
+          <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
           <folding />
         </state>
       </provider>
