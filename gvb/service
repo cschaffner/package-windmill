@@ -108,14 +108,16 @@ def get_schedule():
 
     for id, cur_pass in data.items():
         exp_dep_time = datetime.strptime(cur_pass['ExpectedDepartureTime'], '%Y-%m-%dT%H:%M:%S')
-        exp_dep_time = pytz.utc.localize(exp_dep_time)
+        exp_dep_time = MET.localize(exp_dep_time)
+        exp_dep_time = exp_dep_time.astimezone(pytz.utc)
+        exp_dep_time = exp_dep_time.replace(tzinfo=None)
         dep = {
             'stop': cur_pass['TimingPointName'],
             'direction': cur_pass['DestinationName50'],
             'type': cur_pass['TransportType'],
             'line': cur_pass['LinePublicNumber'],
             'nice_date': exp_dep_time.strftime('%H:%M'),
-            'date': timegm(exp_dep_time.timetuple()),
+            'date': int(timegm(exp_dep_time.timetuple())),
         }
         departures.append(dep)
 
