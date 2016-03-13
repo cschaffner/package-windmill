@@ -9,9 +9,8 @@
       "team_1_score":15,
       "team_1":"Germany U23 Open ",
       "team_2":"Czech Open",
-      "is_final":true,
       "team_2_country":"cz",
-      "field_nr":1
+      "is_final":true
     },
     {
       "field":"Field 2. Stadium",
@@ -20,9 +19,8 @@
       "team_1_score":15,
       "team_1":"GB Open",
       "team_2":"Chevy",
-      "is_final":true,
       "team_2_country":"gb",
-      "field_nr":2
+      "is_final":true
     },
     {
       "field":"Field 3. Entrance",
@@ -31,9 +29,8 @@
       "team_1_score":15,
       "team_1":"Italy Open",
       "team_2":"Heidees",
-      "is_final":true,
       "team_2_country":"de",
-      "field_nr":3
+      "is_final":true
     },
     {
       "field":"Field 4. Entrance",
@@ -42,9 +39,8 @@
       "team_1_score":10,
       "team_1":"Gummis",
       "team_2":"Freespeed",
-      "is_final":true,
       "team_2_country":"ch",
-      "field_nr":4
+      "is_final":true
     },
     {
       "field":"Field 5.",
@@ -53,9 +49,8 @@
       "team_1_score":8,
       "team_1":"Mooncatchers",
       "team_2":"Frank N",
-      "is_final":true,
       "team_2_country":"de",
-      "field_nr":5
+      "is_final":true
     },
     {
       "field":"Field 6.",
@@ -64,9 +59,8 @@
       "team_1_score":14,
       "team_1":"Denmark Open",
       "team_2":"Fire",
-      "is_final":true,
       "team_2_country":"gb",
-      "field_nr":6
+      "is_final":true
     },
     {
       "field":"Field 7.",
@@ -75,9 +69,8 @@
       "team_1_score":9,
       "team_1":"Netherlands Open",
       "team_2":"Finland Open",
-      "is_final":true,
       "team_2_country":"fi",
-      "field_nr":7
+      "is_final":true
     },
     {
       "field":"Field 8.",
@@ -86,9 +79,8 @@
       "team_1_score":15,
       "team_1":"Belgium",
       "team_2":"thebigEZ",
-      "is_final":true,
       "team_2_country":"at",
-      "field_nr":8
+      "is_final":true
     },
     {
       "field":"Field 9.",
@@ -97,9 +89,8 @@
       "team_1_score":15,
       "team_1":"Crazy Dogs",
       "team_2":"M.U.C.",
-      "is_final":true,
       "team_2_country":"de",
-      "field_nr":9
+      "is_final":true
     },
     {
       "field":"Field 10.",
@@ -108,9 +99,8 @@
       "team_1_score":7,
       "team_1":"Bad Skid",
       "team_2":"FWD>>",
-      "is_final":true,
       "team_2_country":"at",
-      "field_nr":10
+      "is_final":true
     },
     {
       "field":"Field 11.",
@@ -119,9 +109,8 @@
       "team_1_score":15,
       "team_1":"Catchup",
       "team_2":"Poland Open",
-      "is_final":true,
       "team_2_country":"pl",
-      "field_nr":11
+      "is_final":true
     },
     {
       "field":"Field 12.",
@@ -130,9 +119,8 @@
       "team_1_score":15,
       "team_1":"Lézer Pávák",
       "team_2":"Gravity",
-      "is_final":true,
       "team_2_country":"ie",
-      "field_nr":12
+      "is_final":true
     },
     {
       "field":"Field 13.",
@@ -141,9 +129,8 @@
       "team_1_score":15,
       "team_1":"France Open",
       "team_2":"GB U23 Open",
-      "is_final":true,
       "team_2_country":"gb",
-      "field_nr":13
+      "is_final":true
     },
     {
       "field":"Field 14. Far Right",
@@ -152,9 +139,8 @@
       "team_1_score":10,
       "team_1":"Tower",
       "team_2":"FAB",
-      "is_final":true,
       "team_2_country":"ch",
-      "field_nr":14
+      "is_final":true
     },
     {
       "field":"Field 15. Far Right",
@@ -163,9 +149,8 @@
       "team_1_score":15,
       "team_1":"Frizzly Bears",
       "team_2":"Spain Open",
-      "is_final":true,
       "team_2_country":"es",
-      "field_nr":15
+      "is_final":true
     },
     {
       "field":"Field 16. Far Middle",
@@ -174,9 +159,8 @@
       "team_1_score":15,
       "team_1":"Russia Open",
       "team_2":"GB Master Open",
-      "is_final":true,
       "team_2_country":"gb",
-      "field_nr":16
+      "is_final":true
     },
     {
       "field":"Field 17. Far Middle",
@@ -185,9 +169,8 @@
       "team_1_score":14,
       "team_1":"Italy U23 Open",
       "team_2":"Wall City",
-      "is_final":true,
       "team_2_country":"de",
-      "field_nr":17
+      "is_final":true
     },
     {
       "field":"Field 18. Far Middle",
@@ -196,9 +179,8 @@
       "team_1_score":15,
       "team_1":"INNsiders",
       "team_2":"CUlt",
-      "is_final":true,
       "team_2_country":"gb",
-      "field_nr":18
+      "is_final":true
     },
     {
       "field":"Field 19. Far Left",
@@ -207,9 +189,8 @@
       "team_1_score":8,
       "team_1":"Friselis",
       "team_2":"7 Schwaben",
-      "is_final":true,
       "team_2_country":"de",
-      "field_nr":19
+      "is_final":true
     },
     {
       "field":"Field 20. Far Left",
@@ -218,9 +199,8 @@
       "team_1_score":7,
       "team_1":"Maynooth Ultimate",
       "team_2":"LuckyGrass",
-      "is_final":true,
       "team_2_country":"ru",
-      "field_nr":20
+      "is_final":true
     }
   ],
   "standings":[

@@ -87,7 +87,7 @@ function M.run(duration, _, fn)
             a.add(anims.moving_image(t, E, icons['gvb-bus'], 10, y, 140, y+60, 0.9))
             a.add(anims.moving_font(t, E, 150, y, time , 45, 1,1,1,1))
             y = y + 45
-            a.add(anims.moving_font(t, E, 150, y, deb.line .. " " .. dep.stop .. " -> " .. dep.direction, 60, 1,1,1,1))
+            a.add(anims.moving_font(t, E, 150, y, dep.line .. " " .. dep.stop .. " -> " .. dep.direction, 60, 1,1,1,1))
             y = y + 75
 --            else
 --                a.add(anims.moving_image(t, E, icons['gvb-bus'], 10, y, 140, y+45, 0.9))
