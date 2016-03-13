@@ -51,8 +51,8 @@ function M.run(duration, _, fn)
         local game = open_data.games[idx]
 
 --        a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
-        a.add(anims.my_moving_font(t, E, 150, y, utils.game_string(game) , 60, 1,1,1,1))
-        y = y + 60
+        a.add(anims.my_moving_font(t, E, 150, y, utils.game_string(game) , 40, 1,1,1,1))
+        y = y + 45
         t = t + 0.03
 
         if y > HEIGHT - 100 then

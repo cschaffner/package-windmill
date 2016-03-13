@@ -158,8 +158,8 @@ def get_schedule():
 
     # departures = [clean(dep) for dep in departures if not 'duplicate' in dep]
 
-    from pprint import pprint
-    pprint(departures, width=300)
+    # from pprint import pprint
+    # pprint(departures, width=300)
     
     return json.dumps(departures,ensure_ascii=False,indent=2).encode("utf8")
 
