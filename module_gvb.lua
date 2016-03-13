@@ -61,7 +61,7 @@ function M.run(duration, _, fn)
                     append = "again " .. math.floor((dep.next_date - dep.date)/60) .. " min later"
                 end
             else
-                time = time " +" .. remaining
+                time = time .. " +" .. remaining
                 if dep.next_nice_date then
                     append = "again " .. dep.next_nice_date
                 end
