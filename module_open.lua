@@ -36,14 +36,12 @@ function M.run(duration, _, fn)
     local now = Time.unixtime()
 
     local t = S
-    local team_width = 300
+    local team_width = 400
     local score_width = 70
 
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, "Open Division", 80, 1,1,1,1))
-    t = t + 0.03
-
-    a.add(anims.moving_font(t, E, 600, y, open_data.round_name .. "  " .. open_data.start_time, 60, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 600, y+10, open_data.round_name .. "  " .. open_data.start_time, 60, 1,1,1,1))
     y = y + 90
     t = t + 0.03
 

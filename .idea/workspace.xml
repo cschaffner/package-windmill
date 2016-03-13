@@ -6,7 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2f58c08-b42c-4591-bd87-c4e37e51760d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module_open.lua" afterPath="$PROJECT_DIR$/module_open.lua" />
     </list>
     <ignored path="package-32c3-screens.iws" />
@@ -69,8 +68,8 @@
       <file leaf-file-name="module_open.lua" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module_open.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7222222">
-              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.375">
+              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -79,7 +78,7 @@
       <file leaf-file-name="current_games_open.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/current_games_open.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="101.25">
+            <state vertical-scroll-proportion="110.625">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -109,8 +108,8 @@
       <file leaf-file-name="node.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="12.777778">
-              <caret line="220" column="47" selection-start-line="220" selection-start-column="47" selection-end-line="220" selection-end-column="47" />
+            <state vertical-scroll-proportion="-6.6666665">
+              <caret line="249" column="26" selection-start-line="249" selection-start-column="26" selection-end-line="249" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -365,7 +364,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="settings.editor.selected.configurable" value="com.sylvanaar.idea.Lua.options.LuaOptionsPanel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="curr&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/current_games_open.json&#10;mo&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/module_open.lua&#10;mod&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/module_open.lua&#10;play&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/playlist.json&#10;node&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/node.lua&#10;ani&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/anims.lua&#10;node.lu&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/node.lua" />
+    <property name="SearchEverywhereHistoryKey" value="nod&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/node.lua&#10;node.&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/node.lua&#10;curr&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/current_games_open.json&#10;mo&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/module_open.lua&#10;mod&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/module_open.lua&#10;play&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/playlist.json&#10;node&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/node.lua&#10;ani&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/anims.lua&#10;node.lu&#9;FILE&#9;file:///Users/chris/Sites/package-windmill/node.lua" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1089,14 +1088,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="12.777778">
-          <caret line="220" column="47" selection-start-line="220" selection-start-column="47" selection-end-line="220" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module_text.lua">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1107,16 +1098,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/current_games_open.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="101.25">
+        <state vertical-scroll-proportion="110.625">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6666665">
+          <caret line="249" column="26" selection-start-line="249" selection-start-column="26" selection-end-line="249" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module_open.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7222222">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.375">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
           <folding />
         </state>
       </provider>
