@@ -40,11 +40,11 @@ function M.run(duration, _, fn)
 
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, "Taking the bus to town?", 100, 1,1,1,1))
-    y = y + 100
-    t = t + 0.03
+    y = y + 110
+--    t = t + 0.03
 
     a.add(anims.moving_font(t, E, 150, y, "Take the 10-minute walk to Bus stop Aalbertsestraat", 45, 1,1,1,1))
-    y = y + 45
+    y = y + 60
     t = t + 0.03
 
 
@@ -98,7 +98,7 @@ function M.run(duration, _, fn)
 --                y = y + 30
 --            end
             t = t + 0.03
-            if y > HEIGHT - 200  or idx >= 3 then
+            if y > HEIGHT - 200  or idx > 3 then
                 break
             end
         end
