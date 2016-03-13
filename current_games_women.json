@@ -1,0 +1,264 @@
+{
+  "round_name":"Round 2",
+  "start_time":"Friday 14:00",
+  "games":[
+    {
+      "field":"Field 1. Stadium",
+      "team_1_country":"ch",
+      "team_2_score":15,
+      "team_1_score":7,
+      "team_1":"Switzerland Women",
+      "team_2":"Germany Women",
+      "team_2_country":"de",
+      "is_final":true
+    },
+    {
+      "field":"Field 5.",
+      "team_1_country":"nl",
+      "team_2_score":15,
+      "team_1_score":8,
+      "team_1":"Dutch Women",
+      "team_2":"GB Women",
+      "team_2_country":"gb",
+      "is_final":true
+    },
+    {
+      "field":"Field 8.",
+      "team_1_country":"fi",
+      "team_2_score":10,
+      "team_1_score":12,
+      "team_1":"Finland Women",
+      "team_2":"Russia Women",
+      "team_2_country":"ru",
+      "is_final":true
+    },
+    {
+      "field":"Field 12.",
+      "team_1_country":"fr",
+      "team_2_score":8,
+      "team_1_score":15,
+      "team_1":"France Women",
+      "team_2":"Belgium Women",
+      "team_2_country":"be",
+      "is_final":true
+    },
+    {
+      "field":"Field 13.",
+      "team_1_country":"at",
+      "team_2_score":15,
+      "team_1_score":12,
+      "team_1":"Eyecatchers",
+      "team_2":"Ireland Women",
+      "team_2_country":"ie",
+      "is_final":true
+    },
+    {
+      "field":"Field 16. Far Middle",
+      "team_1_country":"it",
+      "team_2_score":8,
+      "team_1_score":15,
+      "team_1":"Italy Women",
+      "team_2":"Sweden Women",
+      "team_2_country":"se",
+      "is_final":true
+    },
+    {
+      "field":"Field 17. Far Middle",
+      "team_1_country":"",
+      "team_2_score":7,
+      "team_1_score":15,
+      "team_1":"",
+      "team_2":"Spain Women",
+      "team_2_country":"es",
+      "is_final":true
+    },
+    {
+      "field":"Field 18. Far Middle",
+      "team_1_country":"dk",
+      "team_2_score":5,
+      "team_1_score":15,
+      "team_1":"Denmark Women",
+      "team_2":"Czech Women",
+      "team_2_country":"cz",
+      "is_final":true
+    }
+  ],
+  "standings":[
+    {
+      "ranking":1,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"0.50",
+      "team_id":27721,
+      "swiss_score":"9",
+      "team":"flag:de Germany Women",
+      "ties":0,
+      "avg_goal_difference":"8.50"
+    },
+    {
+      "ranking":2,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"-2",
+      "team_id":27723,
+      "swiss_score":"6",
+      "team":"flag:it Italy Women",
+      "ties":0,
+      "avg_goal_difference":"8.00"
+    },
+    {
+      "ranking":3,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"0.63",
+      "team_id":27719,
+      "swiss_score":"4.63",
+      "team":"flag:fi Finland Women",
+      "ties":0,
+      "avg_goal_difference":"4.00"
+    },
+    {
+      "ranking":4,
+      "wins":2,
+      "losses":0,
+      "swiss_opponent_score_avg":"-0.75",
+      "team_id":27728,
+      "swiss_score":"4.25",
+      "team":"flag:fr France Women",
+      "ties":0,
+      "avg_goal_difference":"5.00"
+    },
+    {
+      "ranking":5,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"2",
+      "team_id":27726,
+      "swiss_score":"2.50",
+      "team":"flag:se Sweden Women",
+      "ties":0,
+      "avg_goal_difference":"0.50"
+    },
+    {
+      "ranking":6,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-0.62",
+      "team_id":27724,
+      "swiss_score":"1.38",
+      "team":"flag:ru Russia Women",
+      "ties":0,
+      "avg_goal_difference":"2.00"
+    },
+    {
+      "ranking":7,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-0.50",
+      "team_id":27727,
+      "swiss_score":"1",
+      "team":"flag:ch Switzerland Women",
+      "ties":0,
+      "avg_goal_difference":"1.50"
+    },
+    {
+      "ranking":8,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"0.75",
+      "team_id":27722,
+      "swiss_score":"0.75",
+      "team":"flag:ie Ireland Women",
+      "ties":0,
+      "avg_goal_difference":"0.00"
+    },
+    {
+      "ranking":9,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-0.50",
+      "team_id":27714,
+      "swiss_score":"0",
+      "team":"flag:dk Denmark Women",
+      "ties":0,
+      "avg_goal_difference":"0.50"
+    },
+    {
+      "ranking":10,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-0.62",
+      "team_id":27720,
+      "swiss_score":"-0.12",
+      "team":"flag:gb GB Women",
+      "ties":0,
+      "avg_goal_difference":"0.50"
+    },
+    {
+      "ranking":11,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"-2",
+      "team_id":27233,
+      "swiss_score":"-2",
+      "team":"flag: ",
+      "ties":0,
+      "avg_goal_difference":"0.00"
+    },
+    {
+      "ranking":12,
+      "wins":1,
+      "losses":1,
+      "swiss_opponent_score_avg":"0.75",
+      "team_id":27712,
+      "swiss_score":"-2.25",
+      "team":"flag:be Belgium Women",
+      "ties":0,
+      "avg_goal_difference":"-3.00"
+    },
+    {
+      "ranking":13,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"-0.75",
+      "team_id":27716,
+      "swiss_score":"-2.75",
+      "team":"flag:at Eyecatchers",
+      "ties":0,
+      "avg_goal_difference":"-2.00"
+    },
+    {
+      "ranking":14,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"0.63",
+      "team_id":27715,
+      "swiss_score":"-5.88",
+      "team":"flag:nl Dutch Women",
+      "ties":0,
+      "avg_goal_difference":"-6.50"
+    },
+    {
+      "ranking":15,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"2",
+      "team_id":27725,
+      "swiss_score":"-6.50",
+      "team":"flag:es Spain Women",
+      "ties":0,
+      "avg_goal_difference":"-8.50"
+    },
+    {
+      "ranking":16,
+      "wins":0,
+      "losses":2,
+      "swiss_opponent_score_avg":"0.50",
+      "team_id":27713,
+      "swiss_score":"-10",
+      "team":"flag:cz Czech Women",
+      "ties":0,
+      "avg_goal_difference":"-10.50"
+    }
+  ]
+}
