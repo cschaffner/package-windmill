@@ -4,14 +4,14 @@ local anims = require "anims"
 
 local M = {}
 
-local icons = util.auto_loader({}, function(fname)
-    return fname:sub(1,4) == "gvb-"
-end)
+--local icons = util.auto_loader({}, function(fname)
+--    return fname:sub(1,4) == "gvb-"
+--end)
 
-local departures = {}
+local open_data = {}
 
-local unwatch = util.file_watch("gvb.json", function(raw)
-    departures = json.decode(raw)
+local unwatch = util.file_watch("current_games_open.json", function(raw)
+    open_data = json.decode(raw)
 end)
 
 function M.unload()
@@ -19,7 +19,7 @@ function M.unload()
 end
 
 function M.can_schedule()
-    return #departures > 0
+    return true
 end
 
 function M.prepare(options)
@@ -34,7 +34,6 @@ function M.run(duration, _, fn)
     local E = duration
 
     local now = Time.unixtime()
-    print('now is '.. now)
 
     local t = S
 
@@ -84,13 +83,13 @@ function M.run(duration, _, fn)
 
 
             if remaining < 3 then
-                a.add(anims.moving_image(t, E, icons['gvb-bus'], 10, y, 140, y+60, 0.9))
+                a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
                 a.add(anims.moving_font(t, E, 150, y, dep.stop .. " -> " .. dep.direction, 60, 1,1,1,1))
                 y = y + 60
                 a.add(anims.moving_font(t, E, 150, y, time .. " / " .. append , 45, 1,1,1,1))
                 y = y + 60
             else
-                a.add(anims.moving_image(t, E, icons['gvb-bus'], 10, y, 140, y+45, 0.9))
+                a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+45, 0.9))
                 a.add(anims.moving_font(t, E, 150, y, time, 45, 1,1,1,1))
                 a.add(anims.moving_font(t, E, 300, y, dep.stop .. " -> " .. dep.direction, 30, 1,1,1,1))
                 y = y + 30
