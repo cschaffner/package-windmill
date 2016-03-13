@@ -109,6 +109,7 @@ def get_schedule():
     for id, cur_pass in data.items():
         exp_dep_time = datetime.strptime(cur_pass['ExpectedDepartureTime'], '%Y-%m-%dT%H:%M:%S')
         exp_dep_time = MET.localize(exp_dep_time)
+        nice_date = exp_dep_time.strftime('%H:%M')
         exp_dep_time = exp_dep_time.astimezone(pytz.utc)
         exp_dep_time = exp_dep_time.replace(tzinfo=None)
         dep = {
@@ -116,7 +117,7 @@ def get_schedule():
             'direction': cur_pass['DestinationName50'],
             'type': cur_pass['TransportType'],
             'line': cur_pass['LinePublicNumber'],
-            'nice_date': exp_dep_time.strftime('%H:%M'),
+            'nice_date': nice_date,
             'date': int(timegm(exp_dep_time.timetuple())),
         }
         departures.append(dep)
