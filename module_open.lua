@@ -44,7 +44,7 @@ function M.run(duration, _, fn)
     y = y + 100
     t = t + 0.03
 
-    a.add(anims.moving_font(t, E, 150, y, open_data.round_name .. open_data.start_time, 80, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 150, y, open_data.round_name .. "  " .. open_data.start_time, 80, 1,1,1,1))
     y = y + 100
     t = t + 0.03
 
@@ -69,7 +69,8 @@ function M.run(duration, _, fn)
 --    a.add(anims.moving_image(S+1, E, icons['gvb-icon'], 1000, 400, 1000+300, 400+300, 1))
 
     fn.wait_t(0)
-
+    Scroller.hide(E-1)
+    
     for now in fn.upto_t(E) do
         a.draw(now)
     end

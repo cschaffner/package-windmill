@@ -65,18 +65,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gvb.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gvb.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-              <folding>
-                <marker date="1457904200000" expanded="true" signature="4:94" placeholder="{&quot;direction&quot;: &quot;Centraal Station&quot;...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="gvb-bus.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gvb-bus.png">
           <provider selected="true" editor-type-id="images">
@@ -87,8 +75,18 @@
       <file leaf-file-name="module_open.lua" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module_open.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8263889">
-              <caret line="57" column="73" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.6527778">
+              <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="module_text.lua" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module_text.lua">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,7 +105,7 @@
       <file leaf-file-name="node.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="27.777779">
+            <state vertical-scroll-proportion="12.777778">
               <caret line="220" column="47" selection-start-line="220" selection-start-column="47" selection-end-line="220" selection-end-column="47" />
               <folding />
             </state>
@@ -911,14 +909,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module_text.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scroll.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1035,7 +1025,7 @@
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
           <folding>
-            <marker date="1457904200000" expanded="true" signature="4:94" placeholder="{&quot;direction&quot;: &quot;Centraal Station&quot;...}" />
+            <marker date="1457904381000" expanded="true" signature="4:94" placeholder="{&quot;direction&quot;: &quot;Centraal Station&quot;...}" />
           </folding>
         </state>
       </provider>
@@ -1105,16 +1095,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="27.777779">
+        <state vertical-scroll-proportion="12.777778">
           <caret line="220" column="47" selection-start-line="220" selection-start-column="47" selection-end-line="220" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_text.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module_open.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8263889">
-          <caret line="57" column="73" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.6527778">
+          <caret line="72" column="4" selection-start-line="72" selection-start-column="4" selection-end-line="72" selection-end-column="4" />
           <folding />
         </state>
       </provider>
