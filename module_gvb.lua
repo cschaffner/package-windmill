@@ -40,7 +40,7 @@ function M.run(duration, _, fn)
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, "Taking the bus to town?", 100, 1,1,1,1))
     y = y + 100
-    
+
 
     for idx = 1, #departures do
         local dep = departures[idx]
