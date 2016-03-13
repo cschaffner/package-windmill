@@ -12,7 +12,7 @@ from calendar import timegm
 import xml.etree.ElementTree as ET
 from itertools import islice
 
-MET = pytz.timezone("Europe/Berlin")
+MET = pytz.timezone("Europe/Amsterdam")
 
 # def efa_fetch(path):
 #     # from hashlib import md5
@@ -106,12 +106,14 @@ def get_schedule():
     departures = []
 
     for cur_pass in data:
+        exp_dep_time = datetime.strptime(cur_pass['ExpectedDepartureTime'], '%Y-%m-%dT%H:%M:%S')
         dep = {
-            'from_stop': cur_pass['TimingPointName'],
-            'destination': cur_pass['DestinationName50'],
+            'stop': cur_pass['TimingPointName'],
+            'direction': cur_pass['DestinationName50'],
             'type': cur_pass['TransportType'],
             'line': cur_pass['LinePublicNumber'],
-            'expected_departure': cur_pass['ExpectedDepartureTime']
+            'nice_date': exp_dep_time.strftime('%H:%M'),
+            'date': timegm(exp_dep_time),
         }
         departures.extend(dep)
 

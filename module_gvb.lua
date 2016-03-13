@@ -50,15 +50,11 @@ function M.run(duration, _, fn)
                     append = string.format("next in %d min", math.floor((dep.next_date - now)/60))
                 end
             elseif remaining < 3 then
-                if frame == 1 then
-                    time = "now"
-                else
-                    time = "now"
-                end
+                time = "now"
                 if dep.next_date then
                     append = string.format("next in %d min", math.floor((dep.next_date - now)/60))
                 end
-            elseif remaining < 2 then
+            elseif remaining < 2 then  -- never gets called???
                 time = string.format("%d min", ((dep.date - now)/60))
                 if dep.next_nice_date then
                     -- time = time .. " and again at " .. dep.next_nice_date
@@ -80,17 +76,16 @@ function M.run(duration, _, fn)
             end
 
 
-            local frame = 1
             if remaining < 3 then
-                a.add(anims.moving_image(t, E, icons[dep.icon], 10, y, 140, y+60, 0.9))
-                a.add(anims.moving_font(t, E, 150, y, dep.stop .. " -> " .. dep.direction .. " " .. dep.more, 60, 1,1,1,1))
+                a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
+                a.add(anims.moving_font(t, E, 150, y, dep.stop .. " -> " .. dep.direction, 60, 1,1,1,1))
                 y = y + 60
                 a.add(anims.moving_font(t, E, 150, y, time .. " / " .. append , 45, 1,1,1,1))
                 y = y + 60
             else
-                a.add(anims.moving_image(t, E, icons[dep.icon], 10, y, 140, y+45, 0.9))
+                a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+45, 0.9))
                 a.add(anims.moving_font(t, E, 150, y, time, 45, 1,1,1,1))
-                a.add(anims.moving_font(t, E, 300, y, dep.stop .. " -> " .. dep.direction .. " " .. dep.more, 30, 1,1,1,1))
+                a.add(anims.moving_font(t, E, 300, y, dep.stop .. " -> " .. dep.direction, 30, 1,1,1,1))
                 y = y + 30
                 a.add(anims.moving_font(t, E, 300, y, append , 25, 1,1,1,1))
                 y = y + 30
@@ -102,7 +97,7 @@ function M.run(duration, _, fn)
         end
     end
 
-    a.add(anims.moving_image(S+1, E, icons['hvv-logo'], 1000, 400, 1000+300, 400+300, 1))
+    a.add(anims.moving_image(S+1, E, icons['gvb-icon'], 1000, 400, 1000+300, 400+300, 1))
 
     fn.wait_t(0)
 
