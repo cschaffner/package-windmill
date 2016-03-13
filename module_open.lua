@@ -27,7 +27,7 @@ function M.prepare(options)
 end
 
 function M.run(duration, _, fn)
-    local y = 50
+    local y = 20
     local a = utils.Animations()
 
     local S = 0.0
@@ -40,12 +40,11 @@ function M.run(duration, _, fn)
     local score_width = 70
 
     -- HEADER
-    a.add(anims.moving_font(t, E, 150, y, "Open Division", 100, 1,1,1,1))
-    y = y + 100
+    a.add(anims.moving_font(t, E, 150, y, "Open Division", 80, 1,1,1,1))
     t = t + 0.03
 
-    a.add(anims.moving_font(t, E, 150, y, open_data.round_name .. "  " .. open_data.start_time, 80, 1,1,1,1))
-    y = y + 100
+    a.add(anims.moving_font(t, E, 600, y, open_data.round_name .. "  " .. open_data.start_time, 60, 1,1,1,1))
+    y = y + 90
     t = t + 0.03
 
 
@@ -69,8 +68,8 @@ function M.run(duration, _, fn)
 --    a.add(anims.moving_image(S+1, E, icons['gvb-icon'], 1000, 400, 1000+300, 400+300, 1))
 
     fn.wait_t(0)
-    Scroller.hide(E-1)
-    
+    Scroller.hide(E)
+
     for now in fn.upto_t(E) do
         a.draw(now)
     end
