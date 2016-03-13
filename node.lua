@@ -46,8 +46,6 @@ local function highlight_a(a)
     return 0.94, 0.57, 0.14, a
 end
 
-pp(CONFIG)
-
 local white_transparent = resource.create_shader[[
     uniform sampler2D Texture;
     varying vec2 TexCoord;

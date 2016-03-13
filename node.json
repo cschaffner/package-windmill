@@ -11,9 +11,8 @@
         "type": "select",
         "hint": "The timezone",
         "options": [
-            ["UTC", "UTC"],
             ["Europe/Amsterdam", "Europe/Amsterdam"]
         ],
-        "default": "UTC"
+        "default": "Europe/Amsterdam"
     }]
 }

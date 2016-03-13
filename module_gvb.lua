@@ -61,7 +61,7 @@ function M.run(duration, _, fn)
                     append = "again " .. math.floor((dep.next_date - dep.date)/60) .. " min later"
                 end
             else
-                time = time -- .. " +" .. remaining
+                time = time " +" .. remaining
                 if dep.next_nice_date then
                     append = "again " .. dep.next_nice_date
                 end
@@ -75,6 +75,8 @@ function M.run(duration, _, fn)
 --                end
 --            end
 
+
+            a.add(anims.moving_font(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
 
             if remaining < 3 then
                 a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
