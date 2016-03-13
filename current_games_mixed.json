@@ -9,8 +9,9 @@
       "team_1_score":15,
       "team_1":"Ireland Mixed",
       "team_2":"DPRG",
+      "is_final":true,
       "team_2_country":"us",
-      "is_final":true
+      "field_nr":2
     },
     {
       "field":"Field 3. Entrance",
@@ -19,8 +20,9 @@
       "team_1_score":15,
       "team_1":"Quijotes+Dulcineas",
       "team_2":"Manifest Destiny",
+      "is_final":true,
       "team_2_country":"us",
-      "is_final":true
+      "field_nr":3
     },
     {
       "field":"Field 4. Entrance",
@@ -29,8 +31,9 @@
       "team_1_score":15,
       "team_1":"Germany Mixed",
       "team_2":"Italy Mixed",
+      "is_final":true,
       "team_2_country":"it",
-      "is_final":true
+      "field_nr":4
     },
     {
       "field":"Field 6.",
@@ -39,8 +42,9 @@
       "team_1_score":15,
       "team_1":"FIN",
       "team_2":"HiAk",
+      "is_final":true,
       "team_2_country":"um",
-      "is_final":true
+      "field_nr":6
     },
     {
       "field":"Field 7.",
@@ -49,8 +53,9 @@
       "team_1_score":5,
       "team_1":"IA ",
       "team_2":"Slovakia Mixed",
+      "is_final":true,
       "team_2_country":"sk",
-      "is_final":true
+      "field_nr":7
     },
     {
       "field":"Field 9.",
@@ -59,8 +64,9 @@
       "team_1_score":15,
       "team_1":"Czech Mixed",
       "team_2":"Disc-o-Fever",
+      "is_final":true,
       "team_2_country":"de",
-      "is_final":true
+      "field_nr":9
     },
     {
       "field":"Field 10.",
@@ -69,8 +75,9 @@
       "team_1_score":2,
       "team_1":"Russia Mixed",
       "team_2":"France Mixed",
+      "is_final":true,
       "team_2_country":"fr",
-      "is_final":true
+      "field_nr":10
     },
     {
       "field":"Field 11.",
@@ -79,8 +86,9 @@
       "team_1_score":8,
       "team_1":"Rebel",
       "team_2":"Belgium Mixed",
+      "is_final":true,
       "team_2_country":"be",
-      "is_final":true
+      "field_nr":11
     },
     {
       "field":"Field 14. Far Right",
@@ -89,8 +97,9 @@
       "team_1_score":14,
       "team_1":"Rusty Bikes",
       "team_2":"Bubbles",
+      "is_final":true,
       "team_2_country":"lt",
-      "is_final":true
+      "field_nr":14
     },
     {
       "field":"Field 15. Far Right",
@@ -99,8 +108,9 @@
       "team_1_score":15,
       "team_1":"Denmark Mixed",
       "team_2":"BOS",
+      "is_final":true,
       "team_2_country":"tr",
-      "is_final":true
+      "field_nr":15
     },
     {
       "field":"Field 19. Far Left",
@@ -109,8 +119,9 @@
       "team_1_score":15,
       "team_1":"Airborn",
       "team_2":"CudPud",
+      "is_final":true,
       "team_2_country":"us",
-      "is_final":true
+      "field_nr":19
     },
     {
       "field":"Field 20. Far Left",
@@ -119,8 +130,9 @@
       "team_1_score":13,
       "team_1":"Sexy Legs",
       "team_2":"Oy Vey! (Israel)",
+      "is_final":true,
       "team_2_country":"il",
-      "is_final":true
+      "field_nr":20
     }
   ],
   "standings":[

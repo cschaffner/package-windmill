@@ -27,7 +27,7 @@ function M.prepare(options)
 end
 
 function M.run(duration, _, fn)
-    local y = 200
+    local y = 50
     local a = utils.Animations()
 
     local S = 0.0
@@ -38,12 +38,19 @@ function M.run(duration, _, fn)
     local t = S
 
     -- HEADER
-    a.add(anims.moving_font(t, E, 150, y, "Taking the bus to town?", 100, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 150, y, "Open Division", 100, 1,1,1,1))
     y = y + 100
+    t = t + 0.03
+
+    a.add(anims.moving_font(t, E, 150, y, open_data.round_name .. open_data.start_time, 80, 1,1,1,1))
+    y = y + 100
+    t = t + 0.03
 
 
-    for idx = 1, #departures do
-        local dep = departures[idx]
+    for idx = 1, #open_data.games do
+        local game = open.data.games[idx]
+
+
         if dep.date > now then
             local time = dep.nice_date
 
