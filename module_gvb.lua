@@ -85,11 +85,11 @@ function M.run(duration, _, fn)
 
 --            if remaining < 3 then
             a.add(anims.moving_image(t, E, icons['gvb-bus'], 10, y, 140, y+60, 0.9))
-            a.add(anims.moving_font(t, E, 140, y, dep.line , 70, 1,1,1,1))
-            a.add(anims.moving_font(t, E, 170, y, time , 45, 1,1,1,1))
+            a.add(anims.moving_font(t, E, 130, y, dep.line , 60, 1,1,1,1))
+            a.add(anims.moving_font(t, E, 200, y, time , 45, 1,1,1,1))
             y = y + 45
-            a.add(anims.moving_font(t, E, 170, y, dep.line .. " " .. dep.stop .. " -> " .. dep.direction, 60, 1,1,1,1))
-            y = y + 75
+            a.add(anims.moving_font(t, E, 200, y, dep.line .. " " .. dep.stop .. " -> " .. dep.direction, 60, 1,1,1,1))
+            y = y + 100
 --            else
 --                a.add(anims.moving_image(t, E, icons['gvb-bus'], 10, y, 140, y+45, 0.9))
 --                a.add(anims.moving_font(t, E, 150, y, time, 45, 1,1,1,1))
@@ -105,7 +105,7 @@ function M.run(duration, _, fn)
         end
     end
 
-    a.add(anims.moving_image(S+1, E, icons['gvb-icon'], 1000, 600, 1000+200, 600+200, 1))
+    a.add(anims.moving_image(S+1, E, icons['gvb-icon'], 1300, 400, 1300+200, 400+200, 1))
 
     fn.wait_t(0)
 
