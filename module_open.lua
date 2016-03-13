@@ -36,6 +36,8 @@ function M.run(duration, _, fn)
     local now = Time.unixtime()
 
     local t = S
+    local team_width = 300
+    local score_width = 70
 
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, "Open Division", 100, 1,1,1,1))
@@ -52,10 +54,10 @@ function M.run(duration, _, fn)
 
 --        a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
         a.add(anims.my_moving_font(t, E, 150, y, "flag:" .. game.team_1_country .. " " .. game.team_1 , 40, 1,1,1,1))
-        a.add(anims.my_moving_font(t, E, 350, y, "" .. game.team_1_score, 40, 1,1,1,1))
-        a.add(anims.my_moving_font(t, E, 380, y, "-", 40, 1,1,1,1))
-        a.add(anims.my_moving_font(t, E, 400, y, "" .. game.team_2_score , 40, 1,1,1,1))
-        a.add(anims.my_moving_font(t, E, 450, y, game.team_2 .. " flag:" .. game.team_1_country, 40, 1,1,1,1))
+        a.add(anims.my_moving_font(t, E, 150+team_width, y, "" .. game.team_1_score, 40, 1,1,1,1))
+        a.add(anims.my_moving_font(t, E, 150+team_width+score_width, y, "-", 40, 1,1,1,1))
+        a.add(anims.my_moving_font(t, E, 150+team_width+score_width+20, y, "" .. game.team_2_score , 40, 1,1,1,1))
+        a.add(anims.my_moving_font(t, E, 150+team_width+2*score_width+20, y, game.team_2 .. " flag:" .. game.team_1_country, 40, 1,1,1,1))
         y = y + 45
         t = t + 0.03
 
