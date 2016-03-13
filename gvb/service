@@ -4,11 +4,12 @@ import os
 import time
 import json
 import pytz
-import datetime
 import httplib
 import requests
 
+from operator import itemgetter
 from calendar import timegm
+from datetime import datetime
 import xml.etree.ElementTree as ET
 from itertools import islice
 
@@ -101,11 +102,11 @@ MET = pytz.timezone("Europe/Amsterdam")
 
 def get_schedule():
     r = requests.get('http://v0.ovapi.nl/stopareacode/03121')
-    data = r.json()['03121']['30003122']
+    data = r.json()['03121']['30003122']['Passes']
 
     departures = []
 
-    for cur_pass in data:
+    for id, cur_pass in data.items():
         exp_dep_time = datetime.strptime(cur_pass['ExpectedDepartureTime'], '%Y-%m-%dT%H:%M:%S')
         dep = {
             'stop': cur_pass['TimingPointName'],
@@ -113,10 +114,12 @@ def get_schedule():
             'type': cur_pass['TransportType'],
             'line': cur_pass['LinePublicNumber'],
             'nice_date': exp_dep_time.strftime('%H:%M'),
-            'date': timegm(exp_dep_time),
+            'date': timegm(exp_dep_time.timetuple()),
         }
-        departures.extend(dep)
+        departures.append(dep)
 
+
+    departures = sorted(departures, key=itemgetter('date'))
 
     # # find next run
     # for n, dep in enumerate(departures):
@@ -152,9 +155,9 @@ def get_schedule():
     # departures = [clean(dep) for dep in departures if not 'duplicate' in dep]
 
     from pprint import pprint
-    # pprint(departures, width=300)
+    pprint(departures, width=300)
     
-    return json.dumps(departures,ensure_ascii=False).encode("utf8")
+    return json.dumps(departures,ensure_ascii=False,indent=2).encode("utf8")
 
 def update():
     with file("../gvb.json", "wb") as f:
