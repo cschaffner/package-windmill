@@ -27,7 +27,7 @@ function M.prepare(options)
 end
 
 function M.run(duration, _, fn)
-    local y = 23
+    local y = 200
     local a = utils.Animations()
 
     local S = 0.0
@@ -76,7 +76,8 @@ function M.run(duration, _, fn)
 --            end
 
 
-            a.add(anims.moving_font(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
+            a.add(anims.moving_font(t, E, 150, y, "Taking the bus to town?", 100, 1,1,1,1))
+            y = y + 100
 
             if remaining < 3 then
                 a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
