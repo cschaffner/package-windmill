@@ -50,67 +50,17 @@ function M.run(duration, _, fn)
     for idx = 1, #open_data.games do
         local game = open.data.games[idx]
 
+--        a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
+        a.add(anims.my_moving_font(t, E, 150, y, utils.game_string(game) , 60, 1,1,1,1))
+        y = y + 60
+        t = t + 0.03
 
-        if dep.date > now then
-            local time = dep.nice_date
-
-            local remaining = math.floor((dep.date - now) / 60)
-            local append = ""
-
-            if remaining < 0 then
-                time = "gone"
-                if dep.next_date then
-                    append = string.format("next in %d min", math.floor((dep.next_date - now)/60))
-                end
-            elseif remaining < 3 then
-                time = "now"
-                if dep.next_date then
-                    append = string.format("next in %d min", math.floor((dep.next_date - now)/60))
-                end
-            elseif remaining < 2 then  -- never gets called???
-                time = string.format("%d min", ((dep.date - now)/60))
-                if dep.next_nice_date then
-                    -- time = time .. " and again at " .. dep.next_nice_date
-                    append = "again " .. math.floor((dep.next_date - dep.date)/60) .. " min later"
-                end
-            else
-                time = time .. " +" .. remaining
-                if dep.next_nice_date then
-                    append = "again " .. dep.next_nice_date
-                end
-            end
-
---            if #dep.platform > 0 then
---                if #append > 0 then
---                    append = append .. " / " .. dep.platform
---                else
---                    append = dep.platform
---                end
---            end
-
-
-            if remaining < 3 then
-                a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
-                a.add(anims.moving_font(t, E, 150, y, dep.stop .. " -> " .. dep.direction, 60, 1,1,1,1))
-                y = y + 60
-                a.add(anims.moving_font(t, E, 150, y, time .. " / " .. append , 45, 1,1,1,1))
-                y = y + 60
-            else
-                a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+45, 0.9))
-                a.add(anims.moving_font(t, E, 150, y, time, 45, 1,1,1,1))
-                a.add(anims.moving_font(t, E, 300, y, dep.stop .. " -> " .. dep.direction, 30, 1,1,1,1))
-                y = y + 30
-                a.add(anims.moving_font(t, E, 300, y, append , 25, 1,1,1,1))
-                y = y + 30
-            end
-            t = t + 0.03
-            if y > HEIGHT - 100 then
-                break
-            end
+        if y > HEIGHT - 100 then
+            break
         end
     end
 
-    a.add(anims.moving_image(S+1, E, icons['gvb-icon'], 1000, 400, 1000+300, 400+300, 1))
+--    a.add(anims.moving_image(S+1, E, icons['gvb-icon'], 1000, 400, 1000+300, 400+300, 1))
 
     fn.wait_t(0)
 

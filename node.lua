@@ -198,23 +198,6 @@ Scroller = (function()
         end
     end)
 
-    local function game_string(game)
-        local out = ''
-        if game.team_1_score then
-            if game.is_final then
-                out = "flag:" .. game.team_1_country .. game.team_1 .. " " .. game.team_1_score .. " - "
-                out = out .. game.team_2_score .. " " .. game.team_2 .. "flag:" .. game.team_2_country
-            else
-                out = "flag:" .. game.team_1_country .. game.team_1 .. " " .. game.team_1_score .. "* - "
-                out = out .. game.team_2_score .. "* " .. game.team_2 .. "flag:" .. game.team_2_country
-            end
-        else
-            out = game.field .. ": " .. "flag:" .. game.team_1_country .. game.team_1 .. " vs "
-            out = out .. game.team_2 .. "flag:" .. game_team_2_country
-        end
-        return out
-    end
-
     local function open_feeder()
         local out = {}
         for idx = 1, #infos do
@@ -225,7 +208,7 @@ Scroller = (function()
         out[#out+1] = open_games.round_name .. "(" .. open_games.start_time .. "): "
         for idx = 1, #open_games.games do
             local game = open_games.games[idx]
-            out[#out+1] = game_string(game)
+            out[#out+1] = utils.game_string(game)
         end
         return out
     end
@@ -236,7 +219,7 @@ Scroller = (function()
         out[#out+1] = mixed_games.round_name .. "(" .. mixed_games.start_time .. "): "
         for idx = 1, #mixed_games.games do
             local game = mixed_games.games[idx]
-            out[#out+1] = game_string(game)
+            out[#out+1] = utils.game_string(game)
         end
         return out
     end

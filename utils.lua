@@ -1,5 +1,23 @@
 local M = {}
 
+function M.game_string(game)
+    local out = ''
+    if game.team_1_score then
+        if game.is_final then
+            out = "flag:" .. game.team_1_country .. game.team_1 .. " " .. game.team_1_score .. " - "
+            out = out .. game.team_2_score .. " " .. game.team_2 .. "flag:" .. game.team_2_country
+        else
+            out = "flag:" .. game.team_1_country .. game.team_1 .. " " .. game.team_1_score .. "* - "
+            out = out .. game.team_2_score .. "* " .. game.team_2 .. "flag:" .. game.team_2_country
+        end
+    else
+        out = game.field .. ": " .. "flag:" .. game.team_1_country .. game.team_1 .. " vs "
+        out = out .. game.team_2 .. "flag:" .. game.team_2_country
+    end
+    return out
+end
+
+
 function M.flag_write(font, x, y, text, size, r, g, b, a)
     local index = 0
     local width = 0
