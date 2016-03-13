@@ -41,6 +41,12 @@ function M.run(duration, _, fn)
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, "Taking the bus to town?", 100, 1,1,1,1))
     y = y + 100
+    t = t + 0.03
+
+    a.add(anims.moving_font(t, E, 150, y, "Take the 10-minute walk to Bus stop Aalbertsestraat", 45, 1,1,1,1))
+    y = y + 45
+    t = t + 0.03
+
 
 
     for idx = 1, #departures do
@@ -56,19 +62,13 @@ function M.run(duration, _, fn)
                 if dep.next_date then
                     append = string.format("next in %d min", math.floor((dep.next_date - now)/60))
                 end
-            elseif remaining < 3 then
+            elseif remaining < 2 then
                 time = "now"
                 if dep.next_date then
                     append = string.format("next in %d min", math.floor((dep.next_date - now)/60))
                 end
-            elseif remaining < 2 then  -- never gets called???
-                time = string.format("%d min", ((dep.date - now)/60))
-                if dep.next_nice_date then
-                    -- time = time .. " and again at " .. dep.next_nice_date
-                    append = "again " .. math.floor((dep.next_date - dep.date)/60) .. " min later"
-                end
             else
-                time = time .. " +" .. remaining
+                time = time .. " (in " .. remaining .. "min)"
                 if dep.next_nice_date then
                     append = "again " .. dep.next_nice_date
                 end
@@ -83,22 +83,22 @@ function M.run(duration, _, fn)
 --            end
 
 
-            if remaining < 3 then
-                a.add(anims.moving_image(t, E, icons['gvb-bus'], 10, y, 140, y+60, 0.9))
-                a.add(anims.moving_font(t, E, 150, y, dep.stop .. " -> " .. dep.direction, 60, 1,1,1,1))
-                y = y + 60
-                a.add(anims.moving_font(t, E, 150, y, time .. " / " .. append , 45, 1,1,1,1))
-                y = y + 60
-            else
-                a.add(anims.moving_image(t, E, icons['gvb-bus'], 10, y, 140, y+45, 0.9))
-                a.add(anims.moving_font(t, E, 150, y, time, 45, 1,1,1,1))
-                a.add(anims.moving_font(t, E, 300, y, dep.stop .. " -> " .. dep.direction, 30, 1,1,1,1))
-                y = y + 30
-                a.add(anims.moving_font(t, E, 300, y, append , 25, 1,1,1,1))
-                y = y + 30
-            end
+--            if remaining < 3 then
+            a.add(anims.moving_image(t, E, icons['gvb-bus'], 10, y, 140, y+60, 0.9))
+            a.add(anims.moving_font(t, E, 150, y, dep.stop .. " -> " .. dep.direction, 60, 1,1,1,1))
+            y = y + 60
+            a.add(anims.moving_font(t, E, 150, y, time , 45, 1,1,1,1))
+            y = y + 60
+--            else
+--                a.add(anims.moving_image(t, E, icons['gvb-bus'], 10, y, 140, y+45, 0.9))
+--                a.add(anims.moving_font(t, E, 150, y, time, 45, 1,1,1,1))
+--                a.add(anims.moving_font(t, E, 300, y, dep.stop .. " -> " .. dep.direction, 30, 1,1,1,1))
+--                y = y + 30
+--                a.add(anims.moving_font(t, E, 300, y, append , 25, 1,1,1,1))
+--                y = y + 30
+--            end
             t = t + 0.03
-            if y > HEIGHT - 100 then
+            if y > HEIGHT - 200  or idx >= 3 then
                 break
             end
         end
