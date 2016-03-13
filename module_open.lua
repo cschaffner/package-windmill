@@ -48,7 +48,7 @@ function M.run(duration, _, fn)
 
 
     for idx = 1, #open_data.games do
-        local game = open.data.games[idx]
+        local game = open_data.games[idx]
 
 --        a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
         a.add(anims.my_moving_font(t, E, 150, y, utils.game_string(game) , 60, 1,1,1,1))
