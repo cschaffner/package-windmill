@@ -67,13 +67,13 @@ function M.run(duration, _, fn)
                 end
             end
 
-            if #dep.platform > 0 then
-                if #append > 0 then
-                    append = append .. " / " .. dep.platform
-                else
-                    append = dep.platform
-                end
-            end
+--            if #dep.platform > 0 then
+--                if #append > 0 then
+--                    append = append .. " / " .. dep.platform
+--                else
+--                    append = dep.platform
+--                end
+--            end
 
 
             if remaining < 3 then
