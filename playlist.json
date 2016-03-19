@@ -14,18 +14,18 @@
     "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
 }, {
     "module": "nav",
-    "chance": 0,
+    "chance": 0.2,
     "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
 },{
     "module": "gvb",
     "hours": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24",
-    "chance": 0
+    "chance": 0.2
 },{
     "module": "open",
     "hours": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24",
-    "chance": 1,
+    "chance": 0.3,
     "options": {
-        "duration": 20
+        "duration": 10
     }
 }, {
     "module": "talks",
@@ -40,9 +40,10 @@
     "chance": 0.2
 }, {
     "module": "images",
-    "chance": 0.0
+    "chance": 0.2
 }, {
-    "module": "twitter"
+    "module": "twitter",
+    "chance": 0.1
 }, {
     "module": "logo",
     "chance": 0.0
@@ -53,7 +54,7 @@
 }, {
     "module": "text",
     "options": {
-        "text": "Want to show your country on this screen? Contact flag:es@info-beamer.com"
+        "text": "Yeah boardmeeting!"
     },
-    "chance": 0
+    "chance": 0.1
 }]
