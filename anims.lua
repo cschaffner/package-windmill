@@ -21,7 +21,9 @@ local function up_down_scroll(S, E, x, y, obj)
 
     local y = utils.make_smooth{
         {t = S,   val = y},
-        {t = S+(E-S)/2, val = y-800, ease='step'},
+        {t = S+(E-S)/4,   val = y},
+        {t = S+(E-S)/2, val = y-1200, ease='step'},
+        {t = E-1,   val = y},
         {t = E,   val = y},
     }
 
@@ -90,9 +92,11 @@ end
 
 function M.my_scrolling_font(S, E, x, y, text, size, r, g, b, a)
     return up_down_scroll(S, E, x, y,
-        rotating_entry_exit(S, E, function(t)
-            return utils.flag_write(res.font, 0, 0, text, size, r, g, b, a)
-        end)
+        move_in_move_out(S, E, x, y,
+            rotating_entry_exit(S, E, function(t)
+                return utils.flag_write(res.font, 0, 0, text, size, r, g, b, a)
+            end)
+        )
     )
 end
 
