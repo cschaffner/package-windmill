@@ -91,13 +91,13 @@ function M.my_moving_font(S, E, x, y, text, size, r, g, b, a)
 end
 
 function M.my_scrolling_font(S, E, x, y, text, size, r, g, b, a)
-    return up_down_scroll(S, E, x, y,
-        move_in_move_out(S, E, x, y,
-            rotating_entry_exit(S, E, function(t)
+    return up_down_scroll(S, E, x, y, function(t)
+--        move_in_move_out(S, E, x, y,
+--            rotating_entry_exit(S, E, function(t)
                 return utils.flag_write(res.font, 0, 0, text, size, r, g, b, a)
             end)
-        )
-    )
+--        )
+--    )
 end
 
 
