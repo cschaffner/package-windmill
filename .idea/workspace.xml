@@ -6,7 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2f58c08-b42c-4591-bd87-c4e37e51760d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module_open.lua" afterPath="$PROJECT_DIR$/module_open.lua" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/playlist.json" afterPath="$PROJECT_DIR$/playlist.json" />
     </list>
     <ignored path="package-32c3-screens.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,10 +53,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="module_open.lua" pinned="false" current-in-tab="true">
+      <file leaf-file-name="module_open.lua" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module_open.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54332554">
+            <state vertical-scroll-proportion="0.0">
               <caret line="77" column="123" selection-start-line="77" selection-start-column="123" selection-end-line="77" selection-end-column="123" />
               <folding />
             </state>
@@ -113,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="playlist.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="playlist.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/playlist.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.375">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.66997516">
+              <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -166,8 +166,8 @@
         <option value="$PROJECT_DIR$/gvb/service" />
         <option value="$PROJECT_DIR$/current_games_open.json" />
         <option value="$PROJECT_DIR$/leaguevine/service" />
-        <option value="$PROJECT_DIR$/playlist.json" />
         <option value="$PROJECT_DIR$/module_open.lua" />
+        <option value="$PROJECT_DIR$/playlist.json" />
       </list>
     </option>
   </component>
@@ -1045,10 +1045,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/playlist.json">
+    <entry file="file://$PROJECT_DIR$/leaguevine/service">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        <state vertical-scroll-proportion="30.555555">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module_open.lua">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="123" selection-start-line="77" selection-start-column="123" selection-end-line="77" selection-end-column="123" />
           <folding />
         </state>
       </provider>
@@ -1061,18 +1069,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leaguevine/service">
+    <entry file="file://$PROJECT_DIR$/playlist.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="30.555555">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module_open.lua">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54332554">
-          <caret line="77" column="123" selection-start-line="77" selection-start-column="123" selection-end-line="77" selection-end-column="123" />
+        <state vertical-scroll-proportion="0.66997516">
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
           <folding />
         </state>
       </provider>
