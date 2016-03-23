@@ -13,9 +13,9 @@ import re
 
 from datetime import datetime
 
-from hosted import CONFIG
-
-CONFIG.restart_on_update()
+# from hosted import CONFIG
+#
+# CONFIG.restart_on_update()
 
 with file("windmill2015.json") as f:
     WINDMILL = json.load(f)
@@ -50,7 +50,7 @@ def update(division='open'):
     swiss_rounds = r.json()['objects']
     # update schedule with extra information
     for swiss_round in swiss_rounds:
-        # find the round in schdule[division] which corresponds to this swissround
+        # find the round in schedule[division] which corresponds to this swissround
         round = next((x for x in schedule[division] if x['start']==swiss_round['games'][0]['start_time'][0:19]), None)
         if round:
             round.update(swiss_round)
@@ -101,7 +101,8 @@ def current_games(division='open', current_datetime=datetime.now()):
             # TODO: figure out the "standings" in the playoff brackets and insert into standings
 
             for stand in curgames['standings']:
-                stand['team'] = u'flag:{0} {1}'.format(teams[stand['team_id']]['country'].lower(), stand['team']['short_name'])
+                stand['team_country'] = teams[stand['team_id']]['country'].lower()
+                stand['team_name'] = u'flag:{0} {1}'.format(teams[stand['team_id']]['country'].lower(), stand['team']['short_name'])
 
             break
 
