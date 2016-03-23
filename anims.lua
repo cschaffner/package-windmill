@@ -17,6 +17,21 @@ local function rotating_entry_exit(S, E, obj)
     end
 end
 
+local function up_down_scroll(S, E, x, y, obj)
+
+    local y = utils.make_smooth{
+        {t = S,   val = y},
+        {t = S+(E-S)/2, val = y-500, ease='step'},
+        {t = E,   val = y},
+    }
+
+    return function(t)
+        gl.translate(x, y(t))
+        return obj(t)
+    end
+
+end
+
 local function move_in_move_out(S, E, x, y, obj)
     local x = utils.make_smooth{
         {t = S,   val = x+2200},
@@ -67,6 +82,14 @@ end
 
 function M.my_moving_font(S, E, x, y, text, size, r, g, b, a)
     return move_in_move_out(S, E, x, y,
+        rotating_entry_exit(S, E, function(t)
+            return utils.flag_write(res.font, 0, 0, text, size, r, g, b, a)
+        end)
+    )
+end
+
+function M.my_scrolling_font(S, E, x, y, text, size, r, g, b, a)
+    return up_down_scroll(S, E, x, y,
         rotating_entry_exit(S, E, function(t)
             return utils.flag_write(res.font, 0, 0, text, size, r, g, b, a)
         end)
