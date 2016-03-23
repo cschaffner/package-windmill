@@ -82,9 +82,9 @@ function M.run(duration, _, fn)
         y = y + font_size + 5
         t = t + 0.03
 
-        if y > HEIGHT - 100 then
-            break
-        end
+--        if y > HEIGHT - 100 then
+--            break
+--        end
     end
 
 

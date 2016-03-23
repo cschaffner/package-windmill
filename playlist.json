@@ -10,11 +10,11 @@
             }
         ]
     },
-    "chance": 0.2,
+    "chance": 0.0,
     "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
 }, {
     "module": "nav",
-    "chance": 0.2,
+    "chance": 0.1,
     "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
 },{
     "module": "gvb",
@@ -37,10 +37,10 @@
     "options": {
         "text": "Welcome to Windmill Tournament 2016 in Amsterdam flag:nl!!"
     },
-    "chance": 0.2
+    "chance": 0.0
 }, {
     "module": "images",
-    "chance": 0.2
+    "chance": 0.0
 }, {
     "module": "twitter",
     "chance": 0.1
@@ -51,10 +51,4 @@
     "module": "ads",
     "chance": 0.0,
     "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
-}, {
-    "module": "text",
-    "options": {
-        "text": "Yeah boardmeeting!"
-    },
-    "chance": 0.1
 }]
