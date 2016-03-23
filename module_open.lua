@@ -45,6 +45,7 @@ function M.run(duration, _, fn)
     a.add(anims.moving_font(t, E, 150, y, "Open Division", 80, 1,1,1,1))
     a.add(anims.moving_font(t, E, 600, y+10, open_data.round_name .. "  " .. open_data.start_time, 60, 1,1,1,1))
     y = y + 90
+    local y_top = y
     t = t + 0.03
 
     for idx = 1, #open_data.games do
@@ -64,7 +65,7 @@ function M.run(duration, _, fn)
         end
     end
 
-    y = y + 90
+    y = y_top
     for idx = 1, #open_data.standings do
         local standing = open_data.standings[idx]
 

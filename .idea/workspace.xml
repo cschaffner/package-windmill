@@ -6,8 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2f58c08-b42c-4591-bd87-c4e37e51760d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/leaguevine/service" afterPath="$PROJECT_DIR$/leaguevine/service" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module_open.lua" afterPath="$PROJECT_DIR$/module_open.lua" />
     </list>
     <ignored path="package-32c3-screens.iws" />
@@ -68,8 +66,8 @@
       <file leaf-file-name="module_open.lua" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module_open.lua">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8594848">
-              <caret line="83" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.75409836">
+              <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -1065,8 +1063,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module_open.lua">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8594848">
-          <caret line="83" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.75409836">
+          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
           <folding />
         </state>
       </provider>
