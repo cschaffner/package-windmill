@@ -47,7 +47,6 @@ function M.run(duration, _, fn)
     y = y + 90
     t = t + 0.03
 
-
     for idx = 1, #open_data.games do
         local game = open_data.games[idx]
 
@@ -65,6 +64,7 @@ function M.run(duration, _, fn)
         end
     end
 
+    y = y + 90
     for idx = 1, #open_data.standings do
         local standing = open_data.standings[idx]
 
@@ -78,9 +78,9 @@ function M.run(duration, _, fn)
         y = y + 45
         t = t + 0.03
 
---        if y > HEIGHT - 100 then
---            break
---        end
+        if y > HEIGHT - 100 then
+            break
+        end
     end
 
 
