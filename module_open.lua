@@ -40,7 +40,7 @@ function M.run(duration, _, fn)
     local team_width = 400
     local score_width = 70
     local x_games = 150
-    local x_standings = 900
+    local x_standings = 1200
     local rank_width = 60
 
 
