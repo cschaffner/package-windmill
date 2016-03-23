@@ -24,7 +24,6 @@ local function up_down_scroll(S, E, x, y, obj)
         {t = S+(E-S)/4,   val = y},
         {t = S+(E-S)/2, val = y-900, ease='step'},
         {t = E-(E-S)/4,   val = y, ease='step'},
-        {t = E,   val = y},
     }
 
     return function(t)
