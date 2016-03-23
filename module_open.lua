@@ -67,7 +67,6 @@ function M.run(duration, _, fn)
 
     for idx = 1, #open_data.standings do
         local standing = open_data.standings[idx]
-        local
 
 --        a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
         a.add(anims.my_moving_font(t, E, x_standings, y, standing.ranking , 40, 1,1,1,1))
