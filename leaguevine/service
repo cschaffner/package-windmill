@@ -13,9 +13,9 @@ import re
 
 from datetime import datetime
 
-# from hosted import CONFIG
-#
-# CONFIG.restart_on_update()
+from hosted import CONFIG
+
+CONFIG.restart_on_update()
 
 with file("windmill2015.json") as f:
     WINDMILL = json.load(f)

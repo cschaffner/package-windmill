@@ -2,7 +2,7 @@
     "module": "open",
     "chance": 1,
     "options": {
-        "duration": 10
+        "duration": 20
     }
 }]
 

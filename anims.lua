@@ -38,6 +38,35 @@ local function move_in_move_out(S, E, x, y, obj)
     end
 end
 
+<<<<<<< HEAD
+local function move_in_scroll_move_out(S, Scroll, E, x, y, obj)
+=======
+local function move_in_scroll_move_out(S, E, x, y, obj)
+>>>>>>> 2c0a441... standings
+    local x = utils.make_smooth{
+        {t = S,   val = x+2200},
+        {t = S+1, val = x, ease='step'},
+        {t = E-1, val = x},
+        {t = E,   val = -2000},
+    }
+
+    local y = utils.make_smooth{
+        {t = S,   val = y*3},
+        {t = S+1, val = y, ease='step'},
+        {t = S+6, val = y},
+        {t = S+7, val = y-800, ease='step'},
+        {t = S+12, val = y-800},
+        {t = S+13, val = y, ease='step'},
+        {t = E-1, val = y},
+        {t = E,   val = 0},
+    }
+
+    return function(t)
+        gl.translate(x(t), y(t))
+        return obj(t)
+    end
+end
+
 function M.voll(S, E, x, y)
     return move_in_move_out(S, E, x, y,
         rotating_entry_exit(S, E, function(t)
@@ -53,6 +82,14 @@ function M.moving_image(S, E, img, x1, y1, x2, y2, alpha)
     return move_in_move_out(S, E, x1, y1,
         rotating_entry_exit(S, E, function(t)
             return util.draw_correct(img, 0, 0, x2-x1, y2-y1, alpha)
+        end)
+    )
+end
+
+function M.moving_bar(S, E, color, x1, y1, x2, y2, alpha)
+    return move_in_move_out(S, E, x1, y1,
+        rotating_entry_exit(S, E, function(t)
+            return color:draw(0, 0, x2-x1, y2-y1, alpha)
         end)
     )
 end
@@ -73,6 +110,32 @@ function M.my_moving_font(S, E, x, y, text, size, r, g, b, a)
     )
 end
 
+
+<<<<<<< HEAD
+function M.my_scrolling_font(S, Scroll, E, x, y, text, size, r, g, b, a)
+    return move_in_scroll_move_out(S, Scroll, E, x, y,
+=======
+function M.my_scrolling_font(S, E, x, y, text, size, r, g, b, a)
+    return move_in_scroll_move_out(S, E, x, y,
+>>>>>>> 2c0a441... standings
+        rotating_entry_exit(S, E, function(t)
+            return utils.flag_write(res.font, 0, 0, text, size, r, g, b, a)
+        end)
+    )
+end
+
+<<<<<<< HEAD
+function M.scrolling_bar(S, Scroll, E, color, x1, y1, x2, y2, alpha)
+    return move_in_scroll_move_out(S, Scroll, E, x1, y1,
+        rotating_entry_exit(S, E, function(t)
+            return color:draw(0, 0, x2-x1, y2-y1, alpha)
+        end)
+    )
+end
+
+
+=======
+>>>>>>> 2c0a441... standings
 
 function M.moving_font_shake(S, E, x, y, shake, text, size, r, g, b, a)
     return move_in_move_out(S, E, x, y, 
