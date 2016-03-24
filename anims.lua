@@ -51,8 +51,8 @@ local function move_in_scroll_move_out(S, Scroll, E, x, y, obj)
         {t = S+1, val = y, ease='step'},
         {t = S+6, val = y},
         {t = S+7, val = y-800, ease='step'},
-        {t = S+12, val = y-800},
-        {t = S+13, val = y, ease='step'},
+        {t = S+Scroll, val = y-900},
+        {t = S+Scroll+3, val = y, ease='step'},
         {t = E-1, val = y},
         {t = E,   val = 0},
     }
