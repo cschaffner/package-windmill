@@ -67,9 +67,9 @@ function M.run(duration, _, fn)
         end
     end
 
---    y = y_top
---    for idx = 1, #open_data.standings do
---        local standing = open_data.standings[idx]
+    y = y_top
+    for idx = 1, #open_data.standings do
+        local standing = open_data.standings[idx]
 --
 ----        a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
 --        a.add(anims.my_moving_font(t, E, x_standings, y, string.format("%2.0f", standing.ranking) , font_size, 1,1,1,1))
@@ -84,12 +84,13 @@ function M.run(duration, _, fn)
 --        if y > HEIGHT - 100 then
 --            break
 --        end
---    end
+    end
 
 --    a.add(anims.moving_image(S+1, E, icons['gvb-icon'], 1000, 400, 1000+300, 400+300, 1))
 
     fn.wait_t(0)
-    Scroller.hide(E-2)
+    Scroller.hide(E)
+    Sidebar.hide(E)
 
     for now in fn.upto_t(E) do
         a.draw(now)
