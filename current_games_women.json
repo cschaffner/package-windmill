@@ -9,8 +9,9 @@
       "team_1_score":7,
       "team_1":"Switzerland Women",
       "team_2":"Germany Women",
+      "is_final":true,
       "team_2_country":"de",
-      "is_final":true
+      "field_nr":1
     },
     {
       "field":"Field 5.",
@@ -19,8 +20,9 @@
       "team_1_score":8,
       "team_1":"Dutch Women",
       "team_2":"GB Women",
+      "is_final":true,
       "team_2_country":"gb",
-      "is_final":true
+      "field_nr":5
     },
     {
       "field":"Field 8.",
@@ -29,8 +31,9 @@
       "team_1_score":12,
       "team_1":"Finland Women",
       "team_2":"Russia Women",
+      "is_final":true,
       "team_2_country":"ru",
-      "is_final":true
+      "field_nr":8
     },
     {
       "field":"Field 12.",
@@ -39,8 +42,9 @@
       "team_1_score":15,
       "team_1":"France Women",
       "team_2":"Belgium Women",
+      "is_final":true,
       "team_2_country":"be",
-      "is_final":true
+      "field_nr":12
     },
     {
       "field":"Field 13.",
@@ -49,8 +53,9 @@
       "team_1_score":12,
       "team_1":"Eyecatchers",
       "team_2":"Ireland Women",
+      "is_final":true,
       "team_2_country":"ie",
-      "is_final":true
+      "field_nr":13
     },
     {
       "field":"Field 16. Far Middle",
@@ -59,8 +64,9 @@
       "team_1_score":15,
       "team_1":"Italy Women",
       "team_2":"Sweden Women",
+      "is_final":true,
       "team_2_country":"se",
-      "is_final":true
+      "field_nr":16
     },
     {
       "field":"Field 17. Far Middle",
@@ -69,8 +75,9 @@
       "team_1_score":15,
       "team_1":"",
       "team_2":"Spain Women",
+      "is_final":true,
       "team_2_country":"es",
-      "is_final":true
+      "field_nr":17
     },
     {
       "field":"Field 18. Far Middle",
@@ -79,8 +86,9 @@
       "team_1_score":15,
       "team_1":"Denmark Women",
       "team_2":"Czech Women",
+      "is_final":true,
       "team_2_country":"cz",
-      "is_final":true
+      "field_nr":18
     }
   ],
   "standings":[
@@ -90,9 +98,17 @@
       "losses":0,
       "swiss_opponent_score_avg":"0.50",
       "team_id":27721,
+      "team_country":"de",
       "swiss_score":"9",
-      "team":"flag:de Germany Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27721/german-women-national-team/",
+        "short_name":"Germany Women",
+        "id":27721,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27721/",
+        "name":"German Women National Team"
+      },
       "ties":0,
+      "team_name":"flag:de Germany Women",
       "avg_goal_difference":"8.50"
     },
     {
@@ -101,9 +117,17 @@
       "losses":0,
       "swiss_opponent_score_avg":"-2",
       "team_id":27723,
+      "team_country":"it",
       "swiss_score":"6",
-      "team":"flag:it Italy Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27723/italian-women-national-women/",
+        "short_name":"Italy Women",
+        "id":27723,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27723/",
+        "name":"Italian Women National Women"
+      },
       "ties":0,
+      "team_name":"flag:it Italy Women",
       "avg_goal_difference":"8.00"
     },
     {
@@ -112,9 +136,17 @@
       "losses":0,
       "swiss_opponent_score_avg":"0.63",
       "team_id":27719,
+      "team_country":"fi",
       "swiss_score":"4.63",
-      "team":"flag:fi Finland Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27719/finland-women-national-team/",
+        "short_name":"Finland Women",
+        "id":27719,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27719/",
+        "name":"Finland Women National Team"
+      },
       "ties":0,
+      "team_name":"flag:fi Finland Women",
       "avg_goal_difference":"4.00"
     },
     {
@@ -123,9 +155,17 @@
       "losses":0,
       "swiss_opponent_score_avg":"-0.75",
       "team_id":27728,
+      "team_country":"fr",
       "swiss_score":"4.25",
-      "team":"flag:fr France Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27728/equipe-de-france-feminine/",
+        "short_name":"France Women",
+        "id":27728,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27728/",
+        "name":"Équipe de France Féminine"
+      },
       "ties":0,
+      "team_name":"flag:fr France Women",
       "avg_goal_difference":"5.00"
     },
     {
@@ -134,9 +174,17 @@
       "losses":1,
       "swiss_opponent_score_avg":"2",
       "team_id":27726,
+      "team_country":"se",
       "swiss_score":"2.50",
-      "team":"flag:se Sweden Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27726/swedish-women-national-team/",
+        "short_name":"Sweden Women",
+        "id":27726,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27726/",
+        "name":"Swedish Women National Team"
+      },
       "ties":0,
+      "team_name":"flag:se Sweden Women",
       "avg_goal_difference":"0.50"
     },
     {
@@ -145,9 +193,17 @@
       "losses":1,
       "swiss_opponent_score_avg":"-0.62",
       "team_id":27724,
+      "team_country":"ru",
       "swiss_score":"1.38",
-      "team":"flag:ru Russia Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27724/russian-women-national-team/",
+        "short_name":"Russia Women",
+        "id":27724,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27724/",
+        "name":"Russian Women National Team"
+      },
       "ties":0,
+      "team_name":"flag:ru Russia Women",
       "avg_goal_difference":"2.00"
     },
     {
@@ -156,9 +212,17 @@
       "losses":1,
       "swiss_opponent_score_avg":"-0.50",
       "team_id":27727,
+      "team_country":"ch",
       "swiss_score":"1",
-      "team":"flag:ch Switzerland Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27727/swiss-women-national-team/",
+        "short_name":"Switzerland Women",
+        "id":27727,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27727/",
+        "name":"Swiss Women National Team"
+      },
       "ties":0,
+      "team_name":"flag:ch Switzerland Women",
       "avg_goal_difference":"1.50"
     },
     {
@@ -167,9 +231,17 @@
       "losses":1,
       "swiss_opponent_score_avg":"0.75",
       "team_id":27722,
+      "team_country":"ie",
       "swiss_score":"0.75",
-      "team":"flag:ie Ireland Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27722/irish-women-national-team/",
+        "short_name":"Ireland Women",
+        "id":27722,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27722/",
+        "name":"Irish Women National Team"
+      },
       "ties":0,
+      "team_name":"flag:ie Ireland Women",
       "avg_goal_difference":"0.00"
     },
     {
@@ -178,9 +250,17 @@
       "losses":1,
       "swiss_opponent_score_avg":"-0.50",
       "team_id":27714,
+      "team_country":"dk",
       "swiss_score":"0",
-      "team":"flag:dk Denmark Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27714/danish-women-national-team/",
+        "short_name":"Denmark Women",
+        "id":27714,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27714/",
+        "name":"Danish Women National Team "
+      },
       "ties":0,
+      "team_name":"flag:dk Denmark Women",
       "avg_goal_difference":"0.50"
     },
     {
@@ -189,9 +269,17 @@
       "losses":1,
       "swiss_opponent_score_avg":"-0.62",
       "team_id":27720,
+      "team_country":"gb",
       "swiss_score":"-0.12",
-      "team":"flag:gb GB Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27720/gb-women-national-team/",
+        "short_name":"GB Women",
+        "id":27720,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27720/",
+        "name":"GB Women National Team"
+      },
       "ties":0,
+      "team_name":"flag:gb GB Women",
       "avg_goal_difference":"0.50"
     },
     {
@@ -200,9 +288,17 @@
       "losses":1,
       "swiss_opponent_score_avg":"-2",
       "team_id":27233,
+      "team_country":"",
       "swiss_score":"-2",
-      "team":"flag: ",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27233/box-wien/",
+        "short_name":"",
+        "id":27233,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27233/",
+        "name":"Box Wien"
+      },
       "ties":0,
+      "team_name":"flag: ",
       "avg_goal_difference":"0.00"
     },
     {
@@ -211,9 +307,17 @@
       "losses":1,
       "swiss_opponent_score_avg":"0.75",
       "team_id":27712,
+      "team_country":"be",
       "swiss_score":"-2.25",
-      "team":"flag:be Belgium Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27712/belgian-women-national-team/",
+        "short_name":"Belgium Women",
+        "id":27712,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27712/",
+        "name":"Belgian Women National Team"
+      },
       "ties":0,
+      "team_name":"flag:be Belgium Women",
       "avg_goal_difference":"-3.00"
     },
     {
@@ -222,9 +326,17 @@
       "losses":2,
       "swiss_opponent_score_avg":"-0.75",
       "team_id":27716,
+      "team_country":"at",
       "swiss_score":"-2.75",
-      "team":"flag:at Eyecatchers",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27716/eyecatchers/",
+        "short_name":"Eyecatchers",
+        "id":27716,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27716/",
+        "name":"Eyecatchers"
+      },
       "ties":0,
+      "team_name":"flag:at Eyecatchers",
       "avg_goal_difference":"-2.00"
     },
     {
@@ -233,9 +345,17 @@
       "losses":2,
       "swiss_opponent_score_avg":"0.63",
       "team_id":27715,
+      "team_country":"nl",
       "swiss_score":"-5.88",
-      "team":"flag:nl Dutch Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27715/dutch-women-national-team/",
+        "short_name":"Dutch Women",
+        "id":27715,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27715/",
+        "name":"Dutch Women National Team"
+      },
       "ties":0,
+      "team_name":"flag:nl Dutch Women",
       "avg_goal_difference":"-6.50"
     },
     {
@@ -244,9 +364,17 @@
       "losses":2,
       "swiss_opponent_score_avg":"2",
       "team_id":27725,
+      "team_country":"es",
       "swiss_score":"-6.50",
-      "team":"flag:es Spain Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27725/spanish-women-national-team/",
+        "short_name":"Spain Women",
+        "id":27725,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27725/",
+        "name":"Spanish Women National Team"
+      },
       "ties":0,
+      "team_name":"flag:es Spain Women",
       "avg_goal_difference":"-8.50"
     },
     {
@@ -255,9 +383,17 @@
       "losses":2,
       "swiss_opponent_score_avg":"0.50",
       "team_id":27713,
+      "team_country":"cz",
       "swiss_score":"-10",
-      "team":"flag:cz Czech Women",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/27713/czech-women-national-team/",
+        "short_name":"Czech Women",
+        "id":27713,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/27713/",
+        "name":"Czech Women National Team"
+      },
       "ties":0,
+      "team_name":"flag:cz Czech Women",
       "avg_goal_difference":"-10.50"
     }
   ]
