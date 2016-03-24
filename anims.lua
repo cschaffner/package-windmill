@@ -38,11 +38,7 @@ local function move_in_move_out(S, E, x, y, obj)
     end
 end
 
-<<<<<<< HEAD
 local function move_in_scroll_move_out(S, Scroll, E, x, y, obj)
-=======
-local function move_in_scroll_move_out(S, E, x, y, obj)
->>>>>>> 2c0a441... standings
     local x = utils.make_smooth{
         {t = S,   val = x+2200},
         {t = S+1, val = x, ease='step'},
@@ -111,20 +107,14 @@ function M.my_moving_font(S, E, x, y, text, size, r, g, b, a)
 end
 
 
-<<<<<<< HEAD
 function M.my_scrolling_font(S, Scroll, E, x, y, text, size, r, g, b, a)
     return move_in_scroll_move_out(S, Scroll, E, x, y,
-=======
-function M.my_scrolling_font(S, E, x, y, text, size, r, g, b, a)
-    return move_in_scroll_move_out(S, E, x, y,
->>>>>>> 2c0a441... standings
         rotating_entry_exit(S, E, function(t)
             return utils.flag_write(res.font, 0, 0, text, size, r, g, b, a)
         end)
     )
 end
 
-<<<<<<< HEAD
 function M.scrolling_bar(S, Scroll, E, color, x1, y1, x2, y2, alpha)
     return move_in_scroll_move_out(S, Scroll, E, x1, y1,
         rotating_entry_exit(S, E, function(t)
@@ -133,9 +123,6 @@ function M.scrolling_bar(S, Scroll, E, color, x1, y1, x2, y2, alpha)
     )
 end
 
-
-=======
->>>>>>> 2c0a441... standings
 
 function M.moving_font_shake(S, E, x, y, shake, text, size, r, g, b, a)
     return move_in_move_out(S, E, x, y, 

@@ -76,7 +76,6 @@ function M.run(duration, _, fn)
     local nr_teams = #open_data.standings
     for idx = 1, #open_data.standings do
         local standing = open_data.standings[idx]
-<<<<<<< HEAD
         local scroll_time = t + 8 + (nr_teams-idx)*0.09
         print("" .. idx .. standing.ranking .. standing.team_name)
 
@@ -87,14 +86,6 @@ function M.run(duration, _, fn)
         a.add(anims.my_scrolling_font(t, scroll_time, E, x_standings, y, string.format("%2.0f", standing.ranking) , font_size, 1,1,1,1))
         a.add(anims.my_scrolling_font(t, scroll_time, E, x_standings+rank_width, y, standing.team_name , font_size, 1,1,1,1))
         a.add(anims.my_scrolling_font(t, scroll_time, E, x_standings+rank_width+team_width, y, string.format("%6.2f", standing.swiss_score), font_size, 1,1,1,1))
-=======
---        print("" .. standing.ranking .. standing.team_name)
---
-----        a.add(anims.moving_image(t, E, icons['gvb-icon'], 10, y, 140, y+60, 0.9))
-        a.add(anims.my_scrolling_font(t, E, x_standings, y, string.format("%2.0f", standing.ranking) , font_size, 1,1,1,1))
-        a.add(anims.my_scrolling_font(t, E, x_standings+rank_width, y, standing.team_name , font_size, 1,1,1,1))
-        a.add(anims.my_scrolling_font(t, E, x_standings+rank_width+team_width, y, string.format("%5.2f", standing.swiss_score), font_size, 1,1,1,1))
->>>>>>> 0f968b4... standings
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width, y, "-", font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width+20, y, "" .. game.team_2_score , font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+2*score_width+20, y, game.team_2 .. " flag:" .. game.team_1_country, font_size, 1,1,1,1))
