@@ -118,7 +118,7 @@ def current_brackets(division='open'):
                 curgames.append(game_dict)
 
     bronze_game = next((x for x in brackets[division] if 'bronze' in x['name']), None)
-    for round in loser_bracket['rounds']:
+    for round in bronze_game['rounds']:
         if round['round_number'] == 0:
             # bronze game
             for i, game in enumerate(round['games']):
@@ -127,7 +127,7 @@ def current_brackets(division='open'):
                 curgames.append(game_dict)
 
     game78 = next((x for x in brackets[division] if x['name'] == 'game for 7-8'), None)
-    for round in loser_bracket['rounds']:
+    for round in game78['rounds']:
         if round['round_number'] == 0:
             # bronze game
             for i, game in enumerate(round['games']):
