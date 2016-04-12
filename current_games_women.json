@@ -10,6 +10,7 @@
       "team_1":"Switzerland Women",
       "team_2":"Germany Women",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"de",
       "field_nr":1
     },
@@ -21,6 +22,7 @@
       "team_1":"Dutch Women",
       "team_2":"GB Women",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"gb",
       "field_nr":5
     },
@@ -32,6 +34,7 @@
       "team_1":"Finland Women",
       "team_2":"Russia Women",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"ru",
       "field_nr":8
     },
@@ -43,6 +46,7 @@
       "team_1":"France Women",
       "team_2":"Belgium Women",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"be",
       "field_nr":12
     },
@@ -54,6 +58,7 @@
       "team_1":"Eyecatchers",
       "team_2":"Ireland Women",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"ie",
       "field_nr":13
     },
@@ -65,6 +70,7 @@
       "team_1":"Italy Women",
       "team_2":"Sweden Women",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"se",
       "field_nr":16
     },
@@ -76,6 +82,7 @@
       "team_1":"",
       "team_2":"Spain Women",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"es",
       "field_nr":17
     },
@@ -87,6 +94,7 @@
       "team_1":"Denmark Women",
       "team_2":"Czech Women",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"cz",
       "field_nr":18
     }

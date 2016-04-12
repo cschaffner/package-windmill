@@ -10,6 +10,7 @@
       "team_1":"Germany U23 Open ",
       "team_2":"Czech Open",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"cz",
       "field_nr":1
     },
@@ -21,6 +22,7 @@
       "team_1":"GB Open",
       "team_2":"Chevy",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"gb",
       "field_nr":2
     },
@@ -32,6 +34,7 @@
       "team_1":"Italy Open",
       "team_2":"Heidees",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"de",
       "field_nr":3
     },
@@ -43,6 +46,7 @@
       "team_1":"Gummis",
       "team_2":"Freespeed",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"ch",
       "field_nr":4
     },
@@ -54,6 +58,7 @@
       "team_1":"Mooncatchers",
       "team_2":"Frank N",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"de",
       "field_nr":5
     },
@@ -65,6 +70,7 @@
       "team_1":"Denmark Open",
       "team_2":"Fire",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"gb",
       "field_nr":6
     },
@@ -76,6 +82,7 @@
       "team_1":"Netherlands Open",
       "team_2":"Finland Open",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"fi",
       "field_nr":7
     },
@@ -87,6 +94,7 @@
       "team_1":"Belgium",
       "team_2":"thebigEZ",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"at",
       "field_nr":8
     },
@@ -98,6 +106,7 @@
       "team_1":"Crazy Dogs",
       "team_2":"M.U.C.",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"de",
       "field_nr":9
     },
@@ -109,6 +118,7 @@
       "team_1":"Bad Skid",
       "team_2":"FWD>>",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"at",
       "field_nr":10
     },
@@ -120,6 +130,7 @@
       "team_1":"Catchup",
       "team_2":"Poland Open",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"pl",
       "field_nr":11
     },
@@ -131,6 +142,7 @@
       "team_1":"Lézer Pávák",
       "team_2":"Gravity",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"ie",
       "field_nr":12
     },
@@ -142,6 +154,7 @@
       "team_1":"France Open",
       "team_2":"GB U23 Open",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"gb",
       "field_nr":13
     },
@@ -153,6 +166,7 @@
       "team_1":"Tower",
       "team_2":"FAB",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"ch",
       "field_nr":14
     },
@@ -164,6 +178,7 @@
       "team_1":"Frizzly Bears",
       "team_2":"Spain Open",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"es",
       "field_nr":15
     },
@@ -175,6 +190,7 @@
       "team_1":"Russia Open",
       "team_2":"GB Master Open",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"gb",
       "field_nr":16
     },
@@ -186,6 +202,7 @@
       "team_1":"Italy U23 Open",
       "team_2":"Wall City",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"de",
       "field_nr":17
     },
@@ -197,6 +214,7 @@
       "team_1":"INNsiders",
       "team_2":"CUlt",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"gb",
       "field_nr":18
     },
@@ -208,6 +226,7 @@
       "team_1":"Friselis",
       "team_2":"7 Schwaben",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"de",
       "field_nr":19
     },
@@ -219,6 +238,7 @@
       "team_1":"Maynooth Ultimate",
       "team_2":"LuckyGrass",
       "is_final":true,
+      "start_time":"Friday 15:30",
       "team_2_country":"ru",
       "field_nr":20
     }

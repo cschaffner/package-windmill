@@ -14,7 +14,6 @@ import re
 from datetime import datetime
 
 from hosted import CONFIG
-
 CONFIG.restart_on_update()
 
 with file("windmill2015.json") as f:
@@ -25,6 +24,7 @@ de_tz = pytz.timezone('Europe/Amsterdam')
 tournaments = {}  # = Windmill divisions
 teams = {}
 schedule = WINDMILL['schedule']
+brackets = {}
 
 HOST = 'https://api.leaguevine.com/v1'
 LOCALHOST = 'http://api.localhost:8000/v1'
@@ -56,8 +56,95 @@ def update(division='open'):
             round.update(swiss_round)
         else:
             print >> sys.stderr, "no matching round found, serious error!"
+
     # also update brackets here
-    # TODO
+    r = requests.get('{0}/brackets/?tournament_id={1}'.format(HOST, tournament_id))
+    division_brackets = r.json()['objects']
+    brackets[division] = division_brackets
+
+def game_to_dict(game):
+    # takes in a leaguevine game, and returns a dictionary with the relevant information
+    start_time = datetime.strptime(game['start_time'], '%Y-%m-%dT%H:%M:%S+02:00')
+    game_dict = {'team_1': game['team_1']['short_name'],
+                  'team_2': game['team_2']['short_name'],
+                  'team_1_score': game['team_1_score'],
+                  'team_2_score': game['team_2_score'],
+                  'team_1_country': teams[game['team_1_id']]['country'].lower(),
+                  'team_2_country': teams[game['team_2_id']]['country'].lower(),
+                  'field': game['game_site']['name'],
+                  'field_nr': int(re.sub("[^0-9]", "", game['game_site']['name'])),
+                  'is_final': game['winner_id'] is not None,
+                  'start_time': start_time.strftime('%A %-H:%M'),
+                  }
+    return game_dict
+
+def current_brackets(division='open'):
+    curgames = []
+
+    main_bracket = next((x for x in brackets[division] if len(x['rounds'])==3), None)
+    for round in main_bracket['rounds']:
+        if round['round_number']==2:
+            # Quarterfinals
+            for i,game in enumerate(round['games']):
+                game_dict = game_to_dict(game)
+                game_dict['name'] = 'QF{0}'.format(i)
+                curgames.append(game_dict)
+        elif round['round_number'] == 1:
+            # Semifinals
+            for i, game in enumerate(round['games']):
+                game_dict = game_to_dict(game)
+                game_dict['name'] = 'SF{0}'.format(i)
+                curgames.append(game_dict)
+        elif round['round_number'] == 0:
+            # Final
+            for i, game in enumerate(round['games']):
+                game_dict = game_to_dict(game)
+                game_dict['name'] = 'Fin12'
+                curgames.append(game_dict)
+
+    loser_bracket = next((x for x in brackets[division] if len(x['rounds'])==2), None)
+    for round in loser_bracket['rounds']:
+        if round['round_number']==1:
+            # loser semis
+            for i,game in enumerate(round['games'],start=2):
+                game_dict = game_to_dict(game)
+                game_dict['name'] = 'SF{0}'.format(i)
+                curgames.append(game_dict)
+        elif round['round_number'] == 0:
+            # 5/6
+            for i, game in enumerate(round['games']):
+                game_dict = game_to_dict(game)
+                game_dict['name'] = 'Fin56'
+                curgames.append(game_dict)
+
+    bronze_game = next((x for x in brackets[division] if 'bronze' in x['name']), None)
+    for round in loser_bracket['rounds']:
+        if round['round_number'] == 0:
+            # bronze game
+            for i, game in enumerate(round['games']):
+                game_dict = game_to_dict(game)
+                game_dict['name'] = 'Fin34'
+                curgames.append(game_dict)
+
+    game78 = next((x for x in brackets[division] if x['name'] == 'game for 7-8'), None)
+    for round in loser_bracket['rounds']:
+        if round['round_number'] == 0:
+            # bronze game
+            for i, game in enumerate(round['games']):
+                game_dict = game_to_dict(game)
+                game_dict['name'] = 'Fin78'
+                curgames.append(game_dict)
+
+
+    with file("current_brackets.json.new", "wb") as f:
+        f.write(json.dumps(curgames,
+                           ensure_ascii=False,
+                           indent=2,
+                           separators=(',', ':')
+                           ).encode('utf8'))
+    os.rename("current_brackets.json.new", "../current_brackets_{0}.json".format(division))
+
+    print >> sys.stderr, "updated current brackets of {0} division".format(division)
 
 
 def current_games(division='open', current_datetime=datetime.now()):
@@ -109,16 +196,7 @@ def current_games(division='open', current_datetime=datetime.now()):
 
     for game in games:
         if game['team_2_id'] and datetime.strptime(game['start_time'], '%Y-%m-%dT%H:%M:%S+02:00') == games_start:  # not a  BYE  and  same start as first game
-            curgames['games'].append({'team_1': game['team_1']['short_name'],
-                                      'team_2': game['team_2']['short_name'],
-                                      'team_1_score': game['team_1_score'],
-                                      'team_2_score': game['team_2_score'],
-                                      'team_1_country': teams[game['team_1_id']]['country'].lower(),
-                                      'team_2_country': teams[game['team_2_id']]['country'].lower(),
-                                      'field': game['game_site']['name'],
-                                      'field_nr': int(re.sub("[^0-9]", "", game['game_site']['name'])),
-                                      'is_final': game['winner_id'] is not None,
-                                      })
+            curgames['games'].append(game_to_dict(game))
 
     with file("current_games.json.new", "wb") as f:
         f.write(json.dumps(curgames,
@@ -129,7 +207,6 @@ def current_games(division='open', current_datetime=datetime.now()):
     os.rename("current_games.json.new", "../current_games_{0}.json".format(division))
 
     print >> sys.stderr, "updated current games and standings of {0} division".format(division)
-
 
 
 def leaguevine_basic_info():
@@ -168,17 +245,22 @@ def leaguevine_basic_info():
 
 def main():
     leaguevine_basic_info()
-
+    # update('mixed')
+    # current_games('mixed', datetime(2015, 06, 12, 12, 31, 00))
+    # current_brackets('mixed')
+    #
+    # return True
     while 1:
         for division in ['open', 'mixed', 'women']:
         # for division in ['women']:
             try:
                 update(division)
                 current_games(division, datetime(2015, 06, 12, 12, 31, 00))
+                current_brackets(division)
             except:
                 print >> sys.stderr, "failed to update {0} division".format(division)
                 traceback.print_exc()
-                time.sleep(120)
+                time.sleep(20)
                 continue
 
         time.sleep(3*60)

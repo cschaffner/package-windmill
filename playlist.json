@@ -1,8 +1,15 @@
 [{
     "module": "open",
-    "chance": 1,
+    "chance": 0.5,
     "options": {
-        "duration": 20
+        "duration": 15
+    }
+},
+{
+    "module": "open_playoff",
+    "chance": 0.5,
+    "options": {
+        "duration": 10
     }
 }]
 

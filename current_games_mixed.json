@@ -10,6 +10,7 @@
       "team_1":"Ireland Mixed",
       "team_2":"DPRG",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"us",
       "field_nr":2
     },
@@ -21,6 +22,7 @@
       "team_1":"Quijotes+Dulcineas",
       "team_2":"Manifest Destiny",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"us",
       "field_nr":3
     },
@@ -32,6 +34,7 @@
       "team_1":"Germany Mixed",
       "team_2":"Italy Mixed",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"it",
       "field_nr":4
     },
@@ -43,6 +46,7 @@
       "team_1":"FIN",
       "team_2":"HiAk",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"um",
       "field_nr":6
     },
@@ -54,6 +58,7 @@
       "team_1":"IA ",
       "team_2":"Slovakia Mixed",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"sk",
       "field_nr":7
     },
@@ -65,6 +70,7 @@
       "team_1":"Czech Mixed",
       "team_2":"Disc-o-Fever",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"de",
       "field_nr":9
     },
@@ -76,6 +82,7 @@
       "team_1":"Russia Mixed",
       "team_2":"France Mixed",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"fr",
       "field_nr":10
     },
@@ -87,6 +94,7 @@
       "team_1":"Rebel",
       "team_2":"Belgium Mixed",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"be",
       "field_nr":11
     },
@@ -98,6 +106,7 @@
       "team_1":"Rusty Bikes",
       "team_2":"Bubbles",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"lt",
       "field_nr":14
     },
@@ -109,6 +118,7 @@
       "team_1":"Denmark Mixed",
       "team_2":"BOS",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"tr",
       "field_nr":15
     },
@@ -120,6 +130,7 @@
       "team_1":"Airborn",
       "team_2":"CudPud",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"us",
       "field_nr":19
     },
@@ -131,6 +142,7 @@
       "team_1":"Sexy Legs",
       "team_2":"Oy Vey! (Israel)",
       "is_final":true,
+      "start_time":"Friday 14:00",
       "team_2_country":"il",
       "field_nr":20
     }
