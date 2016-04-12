@@ -1,13 +1,13 @@
 [{
     "module": "open",
-    "chance": 0.5,
+    "chance": 0.1,
     "options": {
         "duration": 15
     }
 },
 {
     "module": "open_playoff",
-    "chance": 0.5,
+    "chance": 0.9,
     "options": {
         "duration": 10
     }

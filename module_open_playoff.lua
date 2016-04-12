@@ -46,6 +46,7 @@ function M.run(duration, _, fn)
     local x_games = 150
     local x_standings = 1100
     local rank_width = 60
+    local y_split_teams = 100
 
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, "Open Division Bracket", 80, 1,1,1,1))
@@ -53,27 +54,33 @@ function M.run(duration, _, fn)
     local y_top = y
     t = t + 0.03
 
-    a.add(anims.moving_image(t, E, background, 00, y, 1216, y+576, 1))
+    a.add(anims.moving_image(t, E, background, 00, y, 1816, y+1000, 1))
+
+    local pos = {}
+--    name     = team_1  ,  team_2 (relative to team_1),  start_time / field (relative to team_1)
+    pos["QF0"] = {100, 100, 0, 100, 100, 50}
+    pos["QF1"] = {100, 300, 0, 100, 100, 50}
+    pos["QF2"] = {1200, 100, 0, 100, 100, 50}
+    pos["QF3"] = {1200, 300, 0, 100, 100, 50}
+    pos["SF0"] = {600, 150, 0, 300, 100, 150}
+    pos["SF1"] = {900, 150, 0, 300, 100, 150}
+    pos["SF2"] = {600, 100, 0, 100, 100, 50}
+    pos["SF3"] = {900, 100, 0, 100, 100, 50}
+    pos["Fin12"] = {800, 200, 200, 0, -100, 50}
+    pos["Fin34"] = {800, 400, 200, 0, -100, 50}
+    pos["Fin56"] = {800, 600, 200, 0, -100, 50}
+    pos["Fin78"] = {800, 800, 200, 0, -100, 50}
 
 
---    for idx = 1, #open_data.games do
---        local game = open_data.games[idx]
---
---        if (idx % 2 == 1) then
---            a.add(anims.moving_bar(t, E, gray, x_games, y, x_games+2*(team_width+score_width), y+font_size,1))
---        end
---        a.add(anims.my_moving_font(t, E, x_games, y, "flag:" .. game.team_1_country .. " " .. game.team_1 , font_size, 1,1,1,1))
---        a.add(anims.my_moving_font(t, E, x_games+team_width, y, string.format("%2.0f", game.team_1_score), font_size, 1,1,1,1))
---        a.add(anims.my_moving_font(t, E, x_games+team_width+score_width, y, "-", font_size, 1,1,1,1))
---        a.add(anims.my_moving_font(t, E, x_games+team_width+score_width+20, y, string.format("%2.0f", game.team_2_score) , font_size, 1,1,1,1))
---        a.add(anims.my_moving_font(t, E, x_games+team_width+2*score_width+20, y, game.team_2 .. " flag:" .. game.team_1_country, font_size, 1,1,1,1))
---        y = y + font_size + 5
---        t = t + 0.03
---
---        if y > HEIGHT - 100 then
---            break
---        end
---    end
+    for idx = 1, #open_brackets.games do
+        local game = open_brackets.games[idx]
+        co = pos[game.name]
+        a.add(anims.my_moving_font(t, E, co[1], co[2], "flag:" .. game.team_1_country .. " " .. game.team_1 , font_size, 1,1,1,1))
+        a.add(anims.my_moving_font(t, E, co[1]+team_width, co[2], string.format("%2.0f", game.team_1_score), font_size, 1,1,1,1))
+        a.add(anims.my_moving_font(t, E, co[1]+co[3], co[2]+co[4], "flag:" .. game.team_2_country .. " " .. game.team_1 , font_size, 1,1,1,1))
+        a.add(anims.my_moving_font(t, E, co[1]+co[3]+team_width, co[2]+co[4], string.format("%2.0f", game.team_2_score), font_size, 1,1,1,1))
+        a.add(anims.my_moving_font(t, E, co[1]+co[5], co[1]+co[7], game.start_time .. " " .. game.field, font_size, 1,1,1,1))
+    end
 
     fn.wait_t(0)
     Scroller.hide(E)
