@@ -72,8 +72,8 @@ function M.run(duration, _, fn)
     pos["Fin78"] = {800, 800, 200, 0, -100, 50}
 
 
-    for idx = 1, #open_brackets.games do
-        local game = open_brackets.games[idx]
+    for idx = 1, #open_brackets do
+        local game = open_brackets[idx]
         co = pos[game.name]
         a.add(anims.my_moving_font(t, E, co[1], co[2], "flag:" .. game.team_1_country .. " " .. game.team_1 , font_size, 1,1,1,1))
         a.add(anims.my_moving_font(t, E, co[1]+team_width, co[2], string.format("%2.0f", game.team_1_score), font_size, 1,1,1,1))
