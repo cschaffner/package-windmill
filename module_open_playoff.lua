@@ -42,7 +42,7 @@ function M.run(duration, _, fn)
     local t = S
     local font_size = 40
     local font_size_small = 30
-    local team_width = 380
+    local team_width = 240
     local score_width = 70
     local x_games = 150
     local x_standings = 1100
@@ -60,18 +60,18 @@ function M.run(duration, _, fn)
 
     local pos = {}
 --    name     = team_1  ,  team_2 (relative to team_1),  start_time / field (relative to team_1)
-    pos["QF0"] = {39, 43, 0, 85, 40, 40}
-    pos["QF1"] = {39, 218, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
+    pos["QF0"] = {39, 30, 0, 85, 40, 40}
+    pos["QF1"] = {39, 206, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
     pos["QF2"] = {1614, pos["QF0"][2], pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
     pos["QF3"] = {1614, pos["QF1"][2], pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
-    pos["SF0"] = {600, 150, 0, 300, 100, 150}
-    pos["SF1"] = {900, 150, 0, 300, 100, 150}
-    pos["SF2"] = {600, 100, 0, 100, 100, 50}
-    pos["SF3"] = {900, 100, 0, 100, 100, 50}
-    pos["Fin12"] = {800, 200, 200, 0, -100, 50}
-    pos["Fin34"] = {800, 400, 200, 0, -100, 50}
-    pos["Fin56"] = {800, 600, 200, 0, -100, 50}
-    pos["Fin78"] = {800, 800, 200, 0, -100, 50}
+    pos["SF0"] = {340, 66, 0, 173, 20, 108}
+    pos["SF1"] = {1300, pos["SF0"][2], pos["SF0"][3],pos["SF0"][4],pos["SF0"][5],pos["SF0"][6]}
+    pos["SF2"] = {340, 552, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
+    pos["SF3"] = {1300, 552, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
+    pos["Fin12"] = {660, 153, 316, 0, -220, -44}
+    pos["Fin34"] = {pos["Fin12"][1], 347, pos["Fin12"][3],pos["Fin12"][4],pos["Fin12"][5],pos["Fin12"][6]}
+    pos["Fin56"] = {pos["Fin12"][1], 590, pos["Fin12"][3],pos["Fin12"][4],pos["Fin12"][5],pos["Fin12"][6]}
+    pos["Fin78"] = {pos["Fin12"][1], 800, pos["Fin12"][3],pos["Fin12"][4],pos["Fin12"][5],pos["Fin12"][6]}
 
 
 
