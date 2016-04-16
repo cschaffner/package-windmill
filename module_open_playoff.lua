@@ -87,8 +87,8 @@ function M.run(duration, _, fn)
             a.add(anims.my_moving_font(t, E, co[1]+co[3]+team_width, y+co[2]+co[4], string.format("%2.0f", game.team_2_score), font_size, 1,1,1,1))
         end
         a.add(anims.my_moving_font(t, E, co[1]+co[5], y+co[2]+co[6], game.start_time .. " " .. game.field, font_size_small, 1,1,1,1))
-        t = t + 0.03
     end
+    t = t + 0.03
 
     fn.wait_t(0)
     Scroller.hide(E)

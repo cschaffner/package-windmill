@@ -255,7 +255,7 @@ Scroller = (function()
 --            open_col:draw(0, HEIGHT-100, WIDTH, HEIGHT, visibility/1.5)
             open_text:draw(HEIGHT - visibility * 60)
 --            mixed_col:draw(0, HEIGHT-160, WIDTH, HEIGHT-100, visibility/1.5)
-            mixed_text:draw(HEIGHT-60 - visibility * 60)
+            mixed_text:draw(HEIGHT- visibility * 2*60)
         end
     end
 
