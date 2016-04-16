@@ -68,7 +68,7 @@
       "team_2_score":0,
       "team_1_score":0,
       "team_1":"Germany ",
-      "team_2":"Czech Master ",
+      "team_2":"CZ Master ",
       "is_final":false,
       "start_time":"Fri 10:00",
       "team_2_country":"cz",
@@ -357,13 +357,13 @@
       "swiss_score":"0",
       "team":{
         "leaguevine_url":"https://www.leaguevine.com/teams/29572/test-czech-republic-master-womens-national-team/",
-        "short_name":"Test Czech Master Women",
+        "short_name":"Test CZ Master Women",
         "id":29572,
         "resource_uri":"https://api.leaguevine.com/v1/teams/29572/",
         "name":"Test Czech Republic Master Women's National Team"
       },
       "ties":0,
-      "team_name":"flag:cz Czech Master ",
+      "team_name":"flag:cz CZ Master ",
       "avg_goal_difference":"0.00"
     },
     {
