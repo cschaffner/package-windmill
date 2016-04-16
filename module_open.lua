@@ -39,7 +39,7 @@ function M.run(duration, _, fn)
 
     local t = S
     local font_size = 50
-    local field_nr_width = 30
+    local field_nr_width = 80
     local team_width = 300
     local score_width = 70
     local x_games = 150
