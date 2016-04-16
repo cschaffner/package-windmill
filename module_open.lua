@@ -39,7 +39,8 @@ function M.run(duration, _, fn)
 
     local t = S
     local font_size = 50
-    local team_width = 280
+    local field_nr_width = 30
+    local team_width = 300
     local score_width = 70
     local x_games = 150
     local x_standings = 1100
@@ -57,13 +58,20 @@ function M.run(duration, _, fn)
         local game = open_data.games[idx]
 
         if (idx % 2 == 1) then
-            a.add(anims.moving_bar(t, E, gray, x_games, y, x_games+2*(team_width+score_width), y+font_size,1))
+            a.add(anims.moving_bar(t, E, gray, x_games, y, x_games+field_nr_width+2*(team_width+score_width), y+font_size,1))
         end
-        a.add(anims.my_moving_font(t, E, x_games, y, "flag:" .. game.team_1_country .. " " .. game.team_1 , font_size, 1,1,1,1))
-        a.add(anims.my_moving_font(t, E, x_games+team_width, y, string.format("%2.0f", game.team_1_score), font_size, 1,1,1,1))
-        a.add(anims.my_moving_font(t, E, x_games+team_width+score_width, y, "-", font_size, 1,1,1,1))
-        a.add(anims.my_moving_font(t, E, x_games+team_width+score_width+20, y, string.format("%2.0f", game.team_2_score) , font_size, 1,1,1,1))
-        a.add(anims.my_moving_font(t, E, x_games+team_width+2*score_width+20, y, game.team_2 .. " flag:" .. game.team_1_country, font_size, 1,1,1,1))
+        curx = x_games
+        a.add(anims.my_moving_font(t, E, x_games, y, string.format("%2.0f", game.field_nr) , font_size, 1,1,1,1))
+        curx = curx + field_nr_width
+        a.add(anims.my_moving_font(t, E, curx, y, "flag:" .. game.team_1_country .. " " .. game.team_1 , font_size, 1,1,1,1))
+        curx = curx + team_width
+        a.add(anims.my_moving_font(t, E, curx, y, string.format("%2.0f", game.team_1_score), font_size, 1,1,1,1))
+        curx = curx + score_width
+        a.add(anims.my_moving_font(t, E, curx, y, "-", font_size, 1,1,1,1))
+        curx = curx + 20
+        a.add(anims.my_moving_font(t, E, curx, y, string.format("%2.0f", game.team_2_score) , font_size, 1,1,1,1))
+        curx = curx + score_width
+        a.add(anims.my_moving_font(t, E, curx, y, game.team_2 .. " flag:" .. game.team_1_country, font_size, 1,1,1,1))
         y = y + font_size + math.floor(font_size/8)
         t = t + 0.03
 
