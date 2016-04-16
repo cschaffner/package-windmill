@@ -10,10 +10,10 @@ local gray = resource.create_colored_texture(0.28,0.28,0.28,1) -- gray
 --    return fname:sub(1,4) == "gvb-"
 --end)
 
-local open_data = {}
+local game_data = {}
 
 local unwatch = util.file_watch("current_games_open.json", function(raw)
-    open_data = json.decode(raw)
+    game_data = json.decode(raw)
 end)
 
 function M.unload()
@@ -41,7 +41,7 @@ function M.run(duration, _, fn)
     local font_size = 50
     local field_nr_width = 80
     local team_width = 300
-    local score_width = 70
+    local score_width = 60
     local x_games = 150
     local x_standings = 1100
     local rank_width = 60
@@ -49,14 +49,14 @@ function M.run(duration, _, fn)
 
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, "Open Div", 80, 1,1,1,1))
-    a.add(anims.moving_font(t, E, 500, y+10, open_data.round_name .. "  " .. open_data.start_time, 60, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 500, y+10, game_data.round_name .. "  " .. game_data.start_time, 60, 1,1,1,1))
     y = y + 130
     local y_top = y
     t = t + 0.03
 
 
-    for idx = 1, #open_data.games do
-        local game = open_data.games[idx]
+    for idx = 1, #game_data.games do
+        local game = game_data.games[idx]
 
         if (idx % 2 == 1) then
             a.add(anims.moving_bar(t, E, gray, x_games, y, x_games+field_nr_width+2*(team_width+score_width)+20, y+font_size,1))
@@ -71,7 +71,7 @@ function M.run(duration, _, fn)
         if game.is_final then
             a.add(anims.my_moving_font(t, E, curx, y, "-", font_size, 1,1,1,1))
         else
-            a.add(anims.my_moving_font(t, E, curx, y, "*-", font_size, 1,1,1,1))
+            a.add(anims.my_moving_font(t, E, curx-10, y, "*-", font_size, 1,1,1,1))
         end
         curx = curx + 20
         a.add(anims.my_moving_font(t, E, curx, y, string.format("%2.0f", game.team_2_score) , font_size, 1,1,1,1))
@@ -86,9 +86,9 @@ function M.run(duration, _, fn)
     end
 
     y = y_top - 150
-    local nr_teams = #open_data.standings
-    for idx = 1, #open_data.standings do
-        local standing = open_data.standings[idx]
+    local nr_teams = #game_data.standings
+    for idx = 1, #game_data.standings do
+        local standing = game_data.standings[idx]
         local scroll_time = t + 8 + (nr_teams-idx)*0.09
         print("" .. idx .. standing.ranking .. standing.team_name)
 
