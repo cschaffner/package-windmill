@@ -59,7 +59,7 @@ function M.run(duration, _, fn)
         local game = open_data.games[idx]
 
         if (idx % 2 == 1) then
-            a.add(anims.moving_bar(t, E, gray, x_games, y, x_games+field_nr_width+2*(team_width+score_width), y+font_size,1))
+            a.add(anims.moving_bar(t, E, gray, x_games, y, x_games+field_nr_width+2*(team_width+score_width)+20, y+font_size,1))
         end
         curx = x_games
         a.add(anims.my_moving_font(t, E, x_games, y, string.format("%2.0f", game.field_nr) , font_size, 1,1,1,1))
@@ -72,7 +72,7 @@ function M.run(duration, _, fn)
         curx = curx + 20
         a.add(anims.my_moving_font(t, E, curx, y, string.format("%2.0f", game.team_2_score) , font_size, 1,1,1,1))
         curx = curx + score_width
-        a.add(anims.my_moving_font(t, E, curx, y, game.team_2 .. " flag:" .. game.team_1_country, font_size, 1,1,1,1))
+        a.add(anims.my_moving_font(t, E, curx, y, game.team_2 .. " flag:" .. game.team_2_country, font_size, 1,1,1,1))
         y = y + font_size + math.floor(font_size/2)
         t = t + 0.03
 
@@ -98,7 +98,7 @@ function M.run(duration, _, fn)
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width, y, "-", font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width+20, y, "" .. game.team_2_score , font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+2*score_width+20, y, game.team_2 .. " flag:" .. game.team_1_country, font_size, 1,1,1,1))
-        y = y + font_size + 5
+        y = y + math.floor(font_size/4)
         t = t + 0.03
 --
 --        if y > HEIGHT - 100 then
@@ -109,7 +109,7 @@ function M.run(duration, _, fn)
 --    a.add(anims.moving_image(S+1, E, icons['gvb-icon'], 1000, 400, 1000+300, 400+300, 1))
 
     fn.wait_t(0)
-    Scroller.hide(E)
+--    Scroller.hide(E)
     Sidebar.hide(E)
 
     for now in fn.upto_t(E) do
