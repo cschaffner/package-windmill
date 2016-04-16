@@ -228,7 +228,7 @@ Scroller = (function()
     local open_text = my_new_running_text{
         font = res.font;
         size = 60;
-        speed = 120;
+        speed = 180;
         color = {1,1,1,.8};
         generator = util.generator(open_feeder)
     }
@@ -236,7 +236,7 @@ Scroller = (function()
     local mixed_text = my_new_running_text{
         font = res.font;
         size = 60;
-        speed = 140;
+        speed = 190;
         color = {1,1,1,.8};
         generator = util.generator(mixed_feeder)
     }
@@ -252,10 +252,10 @@ Scroller = (function()
 
     local function draw()
         if visibility > 0.01 then
-            open_col:draw(0, HEIGHT-100, WIDTH, HEIGHT, visibility/1.5)
-            open_text:draw(HEIGHT-60 - visibility * 42)
-            mixed_col:draw(0, HEIGHT-160, WIDTH, HEIGHT-100, visibility/1.5)
-            mixed_text:draw(HEIGHT-120 - visibility * 42)
+--            open_col:draw(0, HEIGHT-100, WIDTH, HEIGHT, visibility/1.5)
+            open_text:draw(HEIGHT - visibility * 60)
+--            mixed_col:draw(0, HEIGHT-160, WIDTH, HEIGHT-100, visibility/1.5)
+            mixed_text:draw(HEIGHT-60 - visibility * 60)
         end
     end
 
