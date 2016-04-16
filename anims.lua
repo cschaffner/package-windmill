@@ -38,7 +38,7 @@ local function move_in_move_out(S, E, x, y, obj)
     end
 end
 
-local function move_in_scroll_move_out(S, Scroll, E, x, y, obj)
+local function move_in_scroll_move_out(S, Scroll, E, x, y, y_lift, obj)
     local x = utils.make_smooth{
         {t = S,   val = x+2200},
         {t = S+1, val = x, ease='step'},
@@ -50,8 +50,8 @@ local function move_in_scroll_move_out(S, Scroll, E, x, y, obj)
         {t = S,   val = y*3},
         {t = S+1, val = y, ease='step'},
         {t = S+4, val = y},
-        {t = S+7, val = y-900, ease='step'},
-        {t = S+Scroll, val = y-900},
+        {t = S+7, val = y-y_lift, ease='step'},
+        {t = S+Scroll, val = y-y_lift},
         {t = S+Scroll+3, val = y, ease='step'},
         {t = E-1, val = y},
         {t = E,   val = 0},
@@ -107,16 +107,16 @@ function M.my_moving_font(S, E, x, y, text, size, r, g, b, a)
 end
 
 
-function M.my_scrolling_font(S, Scroll, E, x, y, text, size, r, g, b, a)
-    return move_in_scroll_move_out(S, Scroll, E, x, y,
+function M.my_scrolling_font(S, Scroll, E, x, y, y_lift, text, size, r, g, b, a)
+    return move_in_scroll_move_out(S, Scroll, E, x, y, y_lift,
         rotating_entry_exit(S, E, function(t)
             return utils.flag_write(res.font, 0, 0, text, size, r, g, b, a)
         end)
     )
 end
 
-function M.scrolling_bar(S, Scroll, E, color, x1, y1, x2, y2, alpha)
-    return move_in_scroll_move_out(S, Scroll, E, x1, y1,
+function M.scrolling_bar(S, Scroll, E, color, x1, y1, x2, y2, y_lift, alpha)
+    return move_in_scroll_move_out(S, Scroll, E, x1, y1, y_lift,
         rotating_entry_exit(S, E, function(t)
             return color:draw(0, 0, x2-x1, y2-y1, alpha)
         end)
