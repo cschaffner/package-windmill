@@ -81,7 +81,7 @@ function M.run(duration, _, fn)
         end
     end
 
-    y = y_top
+    y = y_top - 150
     local nr_teams = #open_data.standings
     for idx = 1, #open_data.standings do
         local standing = open_data.standings[idx]
