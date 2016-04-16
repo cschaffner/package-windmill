@@ -68,7 +68,11 @@ function M.run(duration, _, fn)
         curx = curx + team_width
         a.add(anims.my_moving_font(t, E, curx, y, string.format("%2.0f", game.team_1_score), font_size, 1,1,1,1))
         curx = curx + score_width
-        a.add(anims.my_moving_font(t, E, curx, y, "-", font_size, 1,1,1,1))
+        if game.is_final then
+            a.add(anims.my_moving_font(t, E, curx, y, "-", font_size, 1,1,1,1))
+        else
+            a.add(anims.my_moving_font(t, E, curx, y, "*-", font_size, 1,1,1,1))
+        end
         curx = curx + 20
         a.add(anims.my_moving_font(t, E, curx, y, string.format("%2.0f", game.team_2_score) , font_size, 1,1,1,1))
         curx = curx + score_width
