@@ -19,7 +19,7 @@
       "team_1_country":"ch",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"Switzerland Master ",
+      "team_1":"SUI Master ",
       "team_2":"France ",
       "is_final":false,
       "start_time":"Fri 10:00",
@@ -79,7 +79,7 @@
       "team_1_country":"de",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"Germany Master ",
+      "team_1":"GER Master ",
       "team_2":"Belgium ",
       "is_final":false,
       "start_time":"Fri 10:00",
@@ -129,13 +129,13 @@
       "swiss_score":"0",
       "team":{
         "leaguevine_url":"https://www.leaguevine.com/teams/29587/test-switzerland-master-womens-national-team/",
-        "short_name":"Test Switzerland Master Women",
+        "short_name":"Test SUI Master Women",
         "id":29587,
         "resource_uri":"https://api.leaguevine.com/v1/teams/29587/",
         "name":"Test Switzerland Master Women's National Team"
       },
       "ties":0,
-      "team_name":"flag:ch Switzerland Master ",
+      "team_name":"flag:ch SUI Master ",
       "avg_goal_difference":"0.00"
     },
     {
@@ -224,13 +224,13 @@
       "swiss_score":"0",
       "team":{
         "leaguevine_url":"https://www.leaguevine.com/teams/29582/test-germany-master-womens-national-team/",
-        "short_name":"Test Germany Master Women",
+        "short_name":"Test GER Master Women",
         "id":29582,
         "resource_uri":"https://api.leaguevine.com/v1/teams/29582/",
         "name":"Test Germany Master Women's National Team"
       },
       "ties":0,
-      "team_name":"flag:de Germany Master ",
+      "team_name":"flag:de GER Master ",
       "avg_goal_difference":"0.00"
     },
     {

@@ -48,7 +48,7 @@ function M.run(duration, _, fn)
     local y_lift = 0 -- for scrolling the standings
 
     -- HEADER
-    a.add(anims.moving_font(t, E, 150, y, "Women Div", 80, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 150, y, "Women", 80, 1,1,1,1))
     a.add(anims.moving_font(t, E, 500, y+10, open_data.round_name .. "  " .. open_data.start_time, 60, 1,1,1,1))
     y = y + 130
     local y_top = y
@@ -109,7 +109,7 @@ function M.run(duration, _, fn)
 --    a.add(anims.moving_image(S+1, E, icons['gvb-icon'], 1000, 400, 1000+300, 400+300, 1))
 
     fn.wait_t(0)
---    Scroller.hide(E)
+    Scroller.hide(E)
     Sidebar.hide(E)
 
     for now in fn.upto_t(E) do

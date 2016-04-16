@@ -109,7 +109,7 @@ function M.run(duration, _, fn)
 --    a.add(anims.moving_image(S+1, E, icons['gvb-icon'], 1000, 400, 1000+300, 400+300, 1))
 
     fn.wait_t(0)
---    Scroller.hide(E)
+    Scroller.hide(E)
     Sidebar.hide(E)
 
     for now in fn.upto_t(E) do

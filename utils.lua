@@ -4,7 +4,7 @@ function M.game_string(game)
     local out = ''
     if game.team_1_score then
         if game.is_final then
-            out = "flag:" .. game.team_1_country .. game.team_1 .. " " .. game.team_1_score .. " - "
+            out = game.field .. ": " .. "flag:" .. game.team_1_country .. game.team_1 .. " " .. game.team_1_score .. " - "
             out = out .. game.team_2_score .. " " .. game.team_2 .. "flag:" .. game.team_2_country
         else
             out = "flag:" .. game.team_1_country .. game.team_1 .. " " .. game.team_1_score .. "* - "
