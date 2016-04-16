@@ -38,7 +38,7 @@ function M.run(duration, _, fn)
     local now = Time.unixtime()
 
     local t = S
-    local font_size = 40
+    local font_size = 60
     local team_width = 240
     local score_width = 70
     local x_games = 150
