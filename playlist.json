@@ -1,8 +1,15 @@
 [{
     "module": "open",
-    "chance": 0.9,
+    "chance": 0.4,
     "options": {
-        "duration": 15
+        "duration": 20
+    }
+},
+{
+    "module": "women",
+    "chance": 0.4,
+    "options": {
+        "duration": 20
     }
 },
 {
