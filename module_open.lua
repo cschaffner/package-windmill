@@ -98,7 +98,7 @@ function M.run(duration, _, fn)
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width, y, "-", font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width+20, y, "" .. game.team_2_score , font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+2*score_width+20, y, game.team_2 .. " flag:" .. game.team_1_country, font_size, 1,1,1,1))
-        y = y + math.floor(font_size/4)
+        y = y + font_size + math.floor(font_size/4)
         t = t + 0.03
 --
 --        if y > HEIGHT - 100 then
