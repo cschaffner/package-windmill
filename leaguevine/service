@@ -16,7 +16,7 @@ from datetime import datetime
 from hosted import CONFIG
 CONFIG.restart_on_update()
 
-with file("windmill2015.json") as f:
+with file("windmill2016_test.json") as f:
     WINDMILL = json.load(f)
 
 de_tz = pytz.timezone('Europe/Amsterdam')
@@ -62,20 +62,39 @@ def update(division='open'):
     division_brackets = r.json()['objects']
     brackets[division] = division_brackets
 
-def game_to_dict(game):
+def drop_division(division, name_string):
+    if name_string[:5] == 'Test ':
+        name_string = name_string[5:]
+    name_string = name_string.replace(division + ' ', '')
+    name_string = name_string.replace(division.capitalize() + ' ', '')
+    name_string = name_string.replace(division, '')
+    name_string = name_string.replace(division.capitalize(), '')
+    return name_string
+
+def game_to_dict(division, game):
     # takes in a leaguevine game, and returns a dictionary with the relevant information
     start_time = datetime.strptime(game['start_time'], '%Y-%m-%dT%H:%M:%S+02:00')
-    game_dict = {'team_1': game['team_1']['short_name'],
-                  'team_2': game['team_2']['short_name'],
+    game_dict = { 'team_1': '',
+                  'team_2': '',
+                  'team_1_country': '',
+                  'team_2_country': '',
+                  'field': '',
+                  'field_nr': 0,
                   'team_1_score': game['team_1_score'],
                   'team_2_score': game['team_2_score'],
-                  'team_1_country': teams[game['team_1_id']]['country'].lower(),
-                  'team_2_country': teams[game['team_2_id']]['country'].lower(),
-                  'field': game['game_site']['name'],
-                  'field_nr': int(re.sub("[^0-9]", "", game['game_site']['name'])),
                   'is_final': game['winner_id'] is not None,
-                  'start_time': start_time.strftime('%A %-H:%M'),
+                  'start_time': start_time.strftime('%a %-H:%M'),
                   }
+    if game['team_1']:
+        game_dict['team_1'] = drop_division(division, game['team_1']['short_name'])
+        game_dict['team_1_country'] = teams[game['team_1_id']]['country'].lower()
+    if game['team_2']:
+        game_dict['team_2'] = drop_division(division, game['team_2']['short_name'])
+        game_dict['team_2_country'] = teams[game['team_2_id']]['country'].lower()
+    if game['game_site']:
+        game_dict['field'] = game['game_site']['name']
+        game_dict['field_nr'] = int(re.sub("[^0-9]", "", game['game_site']['name']))
+
     return game_dict
 
 def current_brackets(division='open'):
@@ -86,19 +105,19 @@ def current_brackets(division='open'):
         if round['round_number']==2:
             # Quarterfinals
             for i,game in enumerate(round['games']):
-                game_dict = game_to_dict(game)
+                game_dict = game_to_dict(division, game)
                 game_dict['name'] = 'QF{0}'.format(i)
                 curgames.append(game_dict)
         elif round['round_number'] == 1:
             # Semifinals
             for i, game in enumerate(round['games']):
-                game_dict = game_to_dict(game)
+                game_dict = game_to_dict(division, game)
                 game_dict['name'] = 'SF{0}'.format(i)
                 curgames.append(game_dict)
         elif round['round_number'] == 0:
             # Final
             for i, game in enumerate(round['games']):
-                game_dict = game_to_dict(game)
+                game_dict = game_to_dict(division, game)
                 game_dict['name'] = 'Fin12'
                 curgames.append(game_dict)
 
@@ -107,34 +126,33 @@ def current_brackets(division='open'):
         if round['round_number']==1:
             # loser semis
             for i,game in enumerate(round['games'],start=2):
-                game_dict = game_to_dict(game)
+                game_dict = game_to_dict(division, game)
                 game_dict['name'] = 'SF{0}'.format(i)
                 curgames.append(game_dict)
         elif round['round_number'] == 0:
             # 5/6
             for i, game in enumerate(round['games']):
-                game_dict = game_to_dict(game)
+                game_dict = game_to_dict(division, game)
                 game_dict['name'] = 'Fin56'
                 curgames.append(game_dict)
 
     bronze_game = next((x for x in brackets[division] if 'bronze' in x['name']), None)
-    for round in bronze_game['rounds']:
-        if round['round_number'] == 0:
-            # bronze game
-            for i, game in enumerate(round['games']):
-                game_dict = game_to_dict(game)
-                game_dict['name'] = 'Fin34'
-                curgames.append(game_dict)
+    if len(bronze_game['rounds']) > 1 or len(bronze_game['rounds'][0]['games']) > 1:
+        print >> sys.stderr, "error: problem with updating bracket bronze game"
+    else:
+        game = bronze_game['rounds'][0]['games'][0]
+        game_dict = game_to_dict(division, game)
+        game_dict['name'] = 'Fin34'
+        curgames.append(game_dict)
 
     game78 = next((x for x in brackets[division] if x['name'] == 'game for 7-8'), None)
-    for round in game78['rounds']:
-        if round['round_number'] == 0:
-            # bronze game
-            for i, game in enumerate(round['games']):
-                game_dict = game_to_dict(game)
-                game_dict['name'] = 'Fin78'
-                curgames.append(game_dict)
-
+    if len(game78['rounds']) > 1 or len(game78['rounds'][0]['games']) > 1:
+        print >> sys.stderr, "error: problem with updating bracket game for place 7-8"
+    else:
+        game = game78['rounds'][0]['games'][0]
+        game_dict = game_to_dict(division, game)
+        game_dict['name'] = 'Fin78'
+        curgames.append(game_dict)
 
     with file("current_brackets.json.new", "wb") as f:
         f.write(json.dumps(curgames,
@@ -164,7 +182,7 @@ def current_games(division='open', current_datetime=datetime.now()):
         r = requests.get(url, params=payload)
         if r.json()['meta']['total_count'] == 0:
             print >> sys.stderr, "error: no games found"
-    if r.json()['meta']['total_count'] > 22:
+    if r.json()['meta']['total_count'] > 20+12: # the 12 playoff games are also loaded here...
         print >> sys.stderr, "error: loaded two rounds instead of a single one"
 
     games = r.json()['objects']
@@ -174,7 +192,7 @@ def current_games(division='open', current_datetime=datetime.now()):
         round_start = datetime.strptime(round['start'], '%Y-%m-%dT%H:%M:%S')
 
         if round_start == games_start:
-            curgames = {'start_time': round_start.strftime('%A %-H:%M'),
+            curgames = {'start_time': round_start.strftime('%a %-H:%M'),
                         'round_name': round['name'],
                         'games': [],
                         'standings': round['standings']}
@@ -189,14 +207,14 @@ def current_games(division='open', current_datetime=datetime.now()):
 
             for stand in curgames['standings']:
                 stand['team_country'] = teams[stand['team_id']]['country'].lower()
-                stand['team_name'] = u'flag:{0} {1}'.format(teams[stand['team_id']]['country'].lower(), stand['team']['short_name'])
+                stand['team_name'] = u'flag:{0} {1}'.format(teams[stand['team_id']]['country'].lower(), drop_division(division, stand['team']['short_name']))
 
             break
 
 
     for game in games:
         if game['team_2_id'] and datetime.strptime(game['start_time'], '%Y-%m-%dT%H:%M:%S+02:00') == games_start:  # not a  BYE  and  same start as first game
-            curgames['games'].append(game_to_dict(game))
+            curgames['games'].append(game_to_dict(division, game))
 
     with file("current_games.json.new", "wb") as f:
         f.write(json.dumps(curgames,
@@ -246,7 +264,7 @@ def leaguevine_basic_info():
 def main():
     leaguevine_basic_info()
     # update('mixed')
-    # current_games('mixed', datetime(2015, 06, 12, 12, 31, 00))
+    # current_games('mixed', datetime(2016, 04, 16, 22, 31, 00))
     # current_brackets('mixed')
     #
     # return True
@@ -255,12 +273,12 @@ def main():
         # for division in ['women']:
             try:
                 update(division)
-                current_games(division, datetime(2015, 06, 12, 12, 31, 00))
+                current_games(division, datetime(2016, 04, 16, 22, 31, 00))
                 current_brackets(division)
             except:
                 print >> sys.stderr, "failed to update {0} division".format(division)
                 traceback.print_exc()
-                time.sleep(20)
+                # time.sleep(20)
                 continue
 
         time.sleep(3*60)
