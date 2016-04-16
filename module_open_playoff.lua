@@ -78,10 +78,14 @@ function M.run(duration, _, fn)
     for idx = 1, #open_brackets do
         local game = open_brackets[idx]
         co = pos[game.name]
-        a.add(anims.my_moving_font(t, E, co[1], y+co[2], "flag:" .. game.team_1_country .. " " .. game.team_1 , font_size, 1,1,1,1))
-        a.add(anims.my_moving_font(t, E, co[1]+team_width, y+co[2], string.format("%2.0f", game.team_1_score), font_size, 1,1,1,1))
-        a.add(anims.my_moving_font(t, E, co[1]+co[3], y+co[2]+co[4], "flag:" .. game.team_2_country .. " " .. game.team_2 , font_size, 1,1,1,1))
-        a.add(anims.my_moving_font(t, E, co[1]+co[3]+team_width, y+co[2]+co[4], string.format("%2.0f", game.team_2_score), font_size, 1,1,1,1))
+        if string.len(game.team_1)>0 then
+            a.add(anims.my_moving_font(t, E, co[1], y+co[2], "flag:" .. game.team_1_country .. " " .. game.team_1 , font_size, 1,1,1,1))
+            a.add(anims.my_moving_font(t, E, co[1]+team_width, y+co[2], string.format("%2.0f", game.team_1_score), font_size, 1,1,1,1))
+        end
+        if string.len(game.team_2)>0 then
+            a.add(anims.my_moving_font(t, E, co[1]+co[3], y+co[2]+co[4], "flag:" .. game.team_2_country .. " " .. game.team_2 , font_size, 1,1,1,1))
+            a.add(anims.my_moving_font(t, E, co[1]+co[3]+team_width, y+co[2]+co[4], string.format("%2.0f", game.team_2_score), font_size, 1,1,1,1))
+        end
         a.add(anims.my_moving_font(t, E, co[1]+co[5], y+co[2]+co[6], game.start_time .. " " .. game.field, font_size_small, 1,1,1,1))
         t = t + 0.03
     end
