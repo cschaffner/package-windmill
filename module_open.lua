@@ -72,7 +72,7 @@ function M.run(duration, _, fn)
         a.add(anims.my_moving_font(t, E, curx, y, string.format("%2.0f", game.team_2_score) , font_size, 1,1,1,1))
         curx = curx + score_width
         a.add(anims.my_moving_font(t, E, curx, y, game.team_2 .. " flag:" .. game.team_1_country, font_size, 1,1,1,1))
-        y = y + font_size + math.floor(font_size/8)
+        y = y + font_size + math.floor(font_size/2)
         t = t + 0.03
 
         if y > HEIGHT - 100 then
