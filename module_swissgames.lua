@@ -12,7 +12,8 @@ local gray = resource.create_colored_texture(0.28,0.28,0.28,1) -- gray
 
 local game_data = {}
 
-local unwatch = util.file_watch("current_games_" .. options.division .. ".json", function(raw)
+--local unwatch = util.file_watch("current_games_" .. options.division .. ".json", function(raw)
+local unwatch = util.file_watch("current_games_open.json", function(raw)
     game_data = json.decode(raw)
 end)
 
