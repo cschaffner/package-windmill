@@ -113,11 +113,11 @@
     {
       "field":"Field 10",
       "team_1_country":"de",
-      "team_2_score":0,
-      "team_1_score":0,
+      "team_2_score":12,
+      "team_1_score":11,
       "team_1":"Heidees",
       "team_2":"Catchup",
-      "is_final":false,
+      "is_final":true,
       "start_time":"Fri 10:00",
       "team_2_country":"at",
       "field_nr":10
@@ -125,8 +125,8 @@
     {
       "field":"Field 11",
       "team_1_country":"be",
-      "team_2_score":0,
-      "team_1_score":0,
+      "team_2_score":15,
+      "team_1_score":13,
       "team_1":"Gentle",
       "team_2":"Bern",
       "is_final":false,
@@ -169,6 +169,25 @@
     },
     {
       "ranking":2,
+      "wins":1,
+      "losses":0,
+      "swiss_opponent_score_avg":"-0.50",
+      "team_id":29647,
+      "team_country":"at",
+      "swiss_score":"0.50",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/29647/test-catchup-graz/",
+        "short_name":"Test Catchup",
+        "id":29647,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/29647/",
+        "name":"Test Catchup Graz"
+      },
+      "ties":0,
+      "team_name":"flag:at Catchup",
+      "avg_goal_difference":"1.00"
+    },
+    {
+      "ranking":3,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -187,7 +206,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":3,
+      "ranking":4,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -206,7 +225,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":4,
+      "ranking":5,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -225,7 +244,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":5,
+      "ranking":6,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -244,7 +263,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":6,
+      "ranking":7,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -263,7 +282,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":7,
+      "ranking":8,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -282,7 +301,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":8,
+      "ranking":9,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -301,7 +320,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":9,
+      "ranking":10,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -320,7 +339,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":10,
+      "ranking":11,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -336,25 +355,6 @@
       },
       "ties":0,
       "team_name":"flag:at INNsiders",
-      "avg_goal_difference":"0.00"
-    },
-    {
-      "ranking":11,
-      "wins":0,
-      "losses":0,
-      "swiss_opponent_score_avg":"0",
-      "team_id":29674,
-      "team_country":"de",
-      "swiss_score":"0",
-      "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29674/test-heidees/",
-        "short_name":"Test Heidees",
-        "id":29674,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29674/",
-        "name":"Test Heidees"
-      },
-      "ties":0,
-      "team_name":"flag:de Heidees",
       "avg_goal_difference":"0.00"
     },
     {
@@ -374,7 +374,7 @@
       },
       "ties":0,
       "team_name":"flag:be Gentle",
-      "avg_goal_difference":"0.00"
+      "avg_goal_difference":"-2.00"
     },
     {
       "ranking":13,
@@ -552,25 +552,6 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29647,
-      "team_country":"at",
-      "swiss_score":"0",
-      "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29647/test-catchup-graz/",
-        "short_name":"Test Catchup",
-        "id":29647,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29647/",
-        "name":"Test Catchup Graz"
-      },
-      "ties":0,
-      "team_name":"flag:at Catchup",
-      "avg_goal_difference":"0.00"
-    },
-    {
-      "ranking":23,
-      "wins":0,
-      "losses":0,
-      "swiss_opponent_score_avg":"0",
       "team_id":29646,
       "team_country":"ch",
       "swiss_score":"0",
@@ -583,7 +564,26 @@
       },
       "ties":0,
       "team_name":"flag:ch Bern",
-      "avg_goal_difference":"0.00"
+      "avg_goal_difference":"2.00"
+    },
+    {
+      "ranking":23,
+      "wins":0,
+      "losses":1,
+      "swiss_opponent_score_avg":"0.50",
+      "team_id":29674,
+      "team_country":"de",
+      "swiss_score":"-0.50",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/29674/test-heidees/",
+        "short_name":"Test Heidees",
+        "id":29674,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/29674/",
+        "name":"Test Heidees"
+      },
+      "ties":0,
+      "team_name":"flag:de Heidees",
+      "avg_goal_difference":"-1.00"
     },
     {
       "ranking":24,
