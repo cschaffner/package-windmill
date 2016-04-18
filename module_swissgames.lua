@@ -107,9 +107,9 @@ function M.run(duration, args, fn)
         y = y + font_size + math.floor(font_size/args.line_break_fraction_games)
         t = t + 0.03
 
-        if y > HEIGHT - 100 then
-            break
-        end
+--        if y > HEIGHT - 100 then
+--            break
+--        end
     end
 
     y = y_top - 150
