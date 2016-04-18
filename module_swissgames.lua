@@ -76,7 +76,7 @@ function M.run(duration, args, fn)
 
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, args.top_title, 80, 1,1,1,1))
-    a.add(anims.moving_font(t, E, 500, y+10, game_data.round_name .. "  " .. game_data.start_time, 60, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 400, y, game_data.round_name .. "  " .. game_data.start_time, 80, 1,1,1,1))
     y = y + 130
     local y_top = y
     t = t + 0.03
