@@ -8,7 +8,7 @@
         "top_title": "Open",
         "line_break_fraction_games": 2,
         "line_break_fraction_standings": 6,
-        "duration": 20
+        "duration": 25
     }
 },
 {
@@ -16,12 +16,12 @@
     "chance": 0.3,
     "options": {
         "division": "women",
-        "font_size": 50,
+        "font_size": 60,
         "y_lift": 0,
         "top_title": "Women",
         "line_break_fraction_games": 2,
         "line_break_fraction_standings": 4,
-        "duration": 20
+        "duration": 25
     }
 },
 {
@@ -29,12 +29,12 @@
     "chance": 0.3,
     "options": {
         "division": "mixed",
-        "font_size": 50,
+        "font_size": 40,
         "y_lift": 800,
         "top_title": "Mixed",
         "line_break_fraction_games": 2,
         "line_break_fraction_standings": 8,
-        "duration": 20
+        "duration": 25
     }
 },
 {
