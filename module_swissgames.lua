@@ -68,7 +68,7 @@ function M.run(duration, args, fn)
     local font_size = args.font_size
     local field_nr_width = 80
     local team_width = 300
-    local score_width = 60
+    local score_width = 70
     local x_games = 150
     local x_standings = 1100
     local rank_width = 60
@@ -117,7 +117,7 @@ function M.run(duration, args, fn)
     for idx = 1, #game_data.standings do
         local standing = game_data.standings[idx]
         local scroll_time = t + 8 + (nr_teams-idx)*0.09
-        print("" .. idx .. standing.ranking .. standing.team_name)
+--        print("" .. idx .. standing.ranking .. standing.team_name)
 
         if (idx % 2 == 1) then
             a.add(anims.scrolling_bar(t, scroll_time, E, gray, x_standings, y, x_standings+rank_width+team_width+font_size*3, y+font_size, y_lift, 1))
