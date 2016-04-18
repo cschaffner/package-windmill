@@ -68,7 +68,8 @@ function M.run(duration, args, fn)
     local font_size = args.font_size
     local field_nr_width = 80
     local team_width = 300
-    local score_width = 70
+    local score_width = 65
+    local divider_width = 25
     local x_games = 150
     local x_standings = 1100
     local rank_width = 60
@@ -98,9 +99,9 @@ function M.run(duration, args, fn)
         if game.is_final then
             a.add(anims.my_moving_font(t, E, curx, y, "-", font_size, 1,1,1,1))
         else
-            a.add(anims.my_moving_font(t, E, curx-10, y, "*-", font_size, 1,1,1,1))
+            a.add(anims.my_moving_font(t, E, curx-divider_width/2, y, "*-", font_size, 1,1,1,1))
         end
-        curx = curx + 20
+        curx = curx + divider_width
         a.add(anims.my_moving_font(t, E, curx, y, string.format("%2.0f", game.team_2_score) , font_size, 1,1,1,1))
         curx = curx + score_width
         a.add(anims.my_moving_font(t, E, curx, y, game.team_2 .. " flag:" .. game.team_2_country, font_size, 1,1,1,1))
