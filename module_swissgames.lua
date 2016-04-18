@@ -10,15 +10,24 @@ local gray = resource.create_colored_texture(0.28,0.28,0.28,1) -- gray
 --    return fname:sub(1,4) == "gvb-"
 --end)
 
-local game_data = {}
+local open_data = {}
+local mixed_data = {}
+local women_data = {}
 
---local unwatch = util.file_watch("current_games_" .. options.division .. ".json", function(raw)
-local unwatch = util.file_watch("current_games_open.json", function(raw)
-    game_data = json.decode(raw)
+local open_unwatch = util.file_watch("current_games_open.json", function(raw)
+    open_data = json.decode(raw)
+end)
+local mixed_unwatch = util.file_watch("current_games_mixed.json", function(raw)
+    mixed_data = json.decode(raw)
+end)
+local women_unwatch = util.file_watch("current_games_women.json", function(raw)
+    women_data = json.decode(raw)
 end)
 
 function M.unload()
-    unwatch()
+    open_unwatch()
+    mixed_unwatch()
+    women_unwatch()
 end
 
 function M.can_schedule()
@@ -26,10 +35,25 @@ function M.can_schedule()
 end
 
 function M.prepare(options)
-    return options.duration or 10
+    local game_data
+    if options.division == 'open' then
+        game_data = open_data
+    elseif options.division == 'mixed' then
+        game_data = mixed_data
+    elseif options.division == 'women' then
+        game_data = women_data
+    end
+    return options.duration or 10, {
+        game_data = game_data,
+        font_size = options.font_size,
+        y_lift = options.y_lift,
+        top_title = options.top_title,
+        line_break_fraction_games = options.line_break_fraction_games,
+        line_break_fraction_standings = options.line_break_fraction_standings,
+    }
 end
 
-function M.run(duration, _, fn)
+function M.run(duration, args, fn)
     local y = 20
     local a = utils.Animations()
 
@@ -39,25 +63,25 @@ function M.run(duration, _, fn)
     local now = Time.unixtime()
 
     local t = S
-    local font_size = options.font_size
+    local font_size = args.font_size
     local field_nr_width = 80
     local team_width = 300
     local score_width = 60
     local x_games = 150
     local x_standings = 1100
     local rank_width = 60
-    local y_lift = options.y_lift -- for scrolling the standings
+    local y_lift = args.y_lift -- for scrolling the standings
 
     -- HEADER
-    a.add(anims.moving_font(t, E, 150, y, options.top_title, 80, 1,1,1,1))
-    a.add(anims.moving_font(t, E, 500, y+10, game_data.round_name .. "  " .. game_data.start_time, 60, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 150, y, args.top_title, 80, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 500, y+10, args.game_data.round_name .. "  " .. args.game_data.start_time, 60, 1,1,1,1))
     y = y + 130
     local y_top = y
     t = t + 0.03
 
 
-    for idx = 1, #game_data.games do
-        local game = game_data.games[idx]
+    for idx = 1, #args.game_data.games do
+        local game = args.game_data.games[idx]
 
         if (idx % 2 == 1) then
             a.add(anims.moving_bar(t, E, gray, x_games, y, x_games+field_nr_width+2*(team_width+score_width)+20, y+font_size,1))
@@ -78,7 +102,7 @@ function M.run(duration, _, fn)
         a.add(anims.my_moving_font(t, E, curx, y, string.format("%2.0f", game.team_2_score) , font_size, 1,1,1,1))
         curx = curx + score_width
         a.add(anims.my_moving_font(t, E, curx, y, game.team_2 .. " flag:" .. game.team_2_country, font_size, 1,1,1,1))
-        y = y + font_size + math.floor(font_size/options.line_break_fraction_games)
+        y = y + font_size + math.floor(font_size/args.line_break_fraction_games)
         t = t + 0.03
 
         if y > HEIGHT - 100 then
@@ -87,9 +111,9 @@ function M.run(duration, _, fn)
     end
 
     y = y_top - 150
-    local nr_teams = #game_data.standings
-    for idx = 1, #game_data.standings do
-        local standing = game_data.standings[idx]
+    local nr_teams = #args.game_data.standings
+    for idx = 1, #args.game_data.standings do
+        local standing = args.game_data.standings[idx]
         local scroll_time = t + 8 + (nr_teams-idx)*0.09
         print("" .. idx .. standing.ranking .. standing.team_name)
 
@@ -103,7 +127,7 @@ function M.run(duration, _, fn)
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width, y, "-", font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width+20, y, "" .. game.team_2_score , font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+2*score_width+20, y, game.team_2 .. " flag:" .. game.team_1_country, font_size, 1,1,1,1))
-        y = y + font_size + math.floor(font_size/options.line_break_fraction_standings)
+        y = y + font_size + math.floor(font_size/args.line_break_fraction_standings)
         t = t + 0.03
 --
 --        if y > HEIGHT - 100 then
