@@ -4,7 +4,7 @@
     "options": {
         "division": "open",
         "font_size": 50,
-        "y_lift": 400,
+        "y_lift": 300,
         "top_title": "Open",
         "line_break_fraction_games": 2,
         "line_break_fraction_standings": 6,
@@ -32,14 +32,14 @@
         "font_size": 40,
         "y_lift": 800,
         "top_title": "Mixed",
-        "line_break_fraction_games": 2,
+        "line_break_fraction_games": 20,
         "line_break_fraction_standings": 8,
         "duration": 25
     }
 },
 {
     "module": "open_playoff",
-    "chance": 0.1,
+    "chance": 0.03,
     "options": {
         "duration": 10
     }
