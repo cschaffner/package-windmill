@@ -29,7 +29,7 @@
     "chance": 0.7,
     "options": {
         "division": "mixed",
-        "font_size": 44,
+        "font_size": 42,
         "y_lift": 800,
         "top_title": "Mixed",
         "line_break_fraction_games": 20,
