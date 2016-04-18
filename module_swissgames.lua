@@ -35,25 +35,27 @@ function M.can_schedule()
 end
 
 function M.prepare(options)
-    local game_data
-    if options.division == 'open' then
-        game_data = open_data
-    elseif options.division == 'mixed' then
-        game_data = mixed_data
-    elseif options.division == 'women' then
-        game_data = women_data
-    end
-    return options.duration or 10, {
-        game_data = game_data,
-        font_size = options.font_size,
-        y_lift = options.y_lift,
-        top_title = options.top_title,
-        line_break_fraction_games = options.line_break_fraction_games,
-        line_break_fraction_standings = options.line_break_fraction_standings,
-    }
+    return options.duration or 10, options
+--        {
+--        division = options.division,
+--        font_size = options.font_size,
+--        y_lift = options.y_lift,
+--        top_title = options.top_title,
+--        line_break_fraction_games = options.line_break_fraction_games,
+--        line_break_fraction_standings = options.line_break_fraction_standings,
+--    }
 end
 
 function M.run(duration, args, fn)
+    local game_data
+    if args.division == 'open' then
+        game_data = open_data
+    elseif args.division == 'mixed' then
+        game_data = mixed_data
+    elseif args.division == 'women' then
+        game_data = women_data
+    end
+
     local y = 20
     local a = utils.Animations()
 
@@ -74,14 +76,14 @@ function M.run(duration, args, fn)
 
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, args.top_title, 80, 1,1,1,1))
-    a.add(anims.moving_font(t, E, 500, y+10, args.game_data.round_name .. "  " .. args.game_data.start_time, 60, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 500, y+10, game_data.round_name .. "  " .. game_data.start_time, 60, 1,1,1,1))
     y = y + 130
     local y_top = y
     t = t + 0.03
 
 
-    for idx = 1, #args.game_data.games do
-        local game = args.game_data.games[idx]
+    for idx = 1, #game_data.games do
+        local game = game_data.games[idx]
 
         if (idx % 2 == 1) then
             a.add(anims.moving_bar(t, E, gray, x_games, y, x_games+field_nr_width+2*(team_width+score_width)+20, y+font_size,1))
@@ -111,9 +113,9 @@ function M.run(duration, args, fn)
     end
 
     y = y_top - 150
-    local nr_teams = #args.game_data.standings
-    for idx = 1, #args.game_data.standings do
-        local standing = args.game_data.standings[idx]
+    local nr_teams = #game_data.standings
+    for idx = 1, #game_data.standings do
+        local standing = game_data.standings[idx]
         local scroll_time = t + 8 + (nr_teams-idx)*0.09
         print("" .. idx .. standing.ranking .. standing.team_name)
 

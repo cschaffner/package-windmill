@@ -16,7 +16,7 @@
     "chance": 0.1,
     "options": {
         "division": "women",
-        "font_size": 60,
+        "font_size": 50,
         "y_lift": 0,
         "top_title": "Women",
         "line_break_fraction_games": 2,
@@ -29,7 +29,7 @@
     "chance": 0.7,
     "options": {
         "division": "mixed",
-        "font_size": 40,
+        "font_size": 44,
         "y_lift": 800,
         "top_title": "Mixed",
         "line_break_fraction_games": 20,
