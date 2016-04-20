@@ -10,12 +10,12 @@ from hosted import CONFIG, NODE
 
 CONFIG.restart_on_update()
 
-diff = datetime(2015,12,27,10,29,00) - datetime.utcnow() 
+diff = datetime(2016,6,3,9,55,00) - datetime.utcnow()
 
 lol = itertools.count()
 
 def current_time():
-    now = datetime.utcnow() # + diff
+    now = datetime.utcnow() + diff
     timestamp = timegm(now.timetuple()) + now.microsecond / 1000000.
     # timestamp += lol.next() * 120
 
