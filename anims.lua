@@ -54,14 +54,14 @@ local function move_in_scroll_move_out(S, Scroll, E, x, y, y_lift, obj)
         {t = S+Scroll, val = y-y_lift},
         {t = S+Scroll+3, val = y, ease='step'},
     }
-    local end_scroll = S+15
-    while end_scroll + 15 < E-4 do   -- keep scrolling up and down as long as time is not over
-        y_timeline[#y_timeline+1] = {t = end_scroll+4, val = y}
-        y_timeline[#y_timeline+1] = {t = end_scroll+7, val = y-y_lift, ease='step'}
-        y_timeline[#y_timeline+1] = {t = end_scroll+Scroll, val = y-y_lift}
-        y_timeline[#y_timeline+1] = {t = end_scroll+Scroll+3, val = y, ease='step'}
-        end_scroll = end_scroll+15
-    end
+--    local end_scroll = S+15
+--    while end_scroll + 15 < E-4 do   -- keep scrolling up and down as long as time is not over
+--        y_timeline[#y_timeline+1] = {t = end_scroll+4, val = y}
+--        y_timeline[#y_timeline+1] = {t = end_scroll+7, val = y-y_lift, ease='step'}
+--        y_timeline[#y_timeline+1] = {t = end_scroll+Scroll, val = y-y_lift}
+--        y_timeline[#y_timeline+1] = {t = end_scroll+Scroll+3, val = y, ease='step'}
+--        end_scroll = end_scroll+15
+--    end
     y_timeline[#y_timeline+1] = {t = E-1, val = y}
     y_timeline[#y_timeline+1] = {t = E,   val = 0}
 
