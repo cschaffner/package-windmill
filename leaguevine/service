@@ -20,7 +20,7 @@ CONFIG.restart_on_update()
 with file("windmill2016_test.json") as f:
     WINDMILL = json.load(f)
 
-de_tz = pytz.timezone('Europe/Amsterdam')
+MET = pytz.timezone('Europe/Amsterdam')
 
 tournaments = {}  # = Windmill divisions
 teams = {}
@@ -191,10 +191,14 @@ def current_games(division='open', current_datetime=datetime.now()):
 
     for round in WINDMILL['schedule'][division]:
         round_start = datetime.strptime(round['start'], '%Y-%m-%dT%H:%M:%S')
+        round_start_unix = MET.localize(round_start)
+        round_start_unix = round_start_unix.astimezone(pytz.utc)
+        round_start_unix = round_start_unix.replace(tzinfo=None)
+        round_start_unix = int(timegm(round_start_unix.timetuple()))
 
         if round_start == games_start:
             curgames = {'start_time': round_start.strftime('%a %-H:%M'),
-                        'start_time_unix': int(timegm(round_start.timetuple())),
+                        'start_time_unix': round_start_unix,
                         'round_name': round['name'],
                         'games': [],
                         'standings': round['standings']}
