@@ -142,7 +142,7 @@ function M.run(duration, args, fn)
 
     fn.wait_t(0)
     Scroller.hide(E)
-    Sidebar.hide(E)
+--    Sidebar.hide(E)
 
     for now in fn.upto_t(E) do
         a.draw(now)
