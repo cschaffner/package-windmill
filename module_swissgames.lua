@@ -71,7 +71,7 @@ function M.run(duration, args, fn)
     local score_width = 65
     local divider_width = 25
     local x_games = 150
-    local x_standings = 1080
+    local x_standings = 1040
     local rank_width = 60
     local y_lift = args.y_lift -- for scrolling the standings
 
