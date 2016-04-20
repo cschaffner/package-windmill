@@ -65,14 +65,14 @@ function M.run(duration, args, fn)
     local now = Time.unixtime()
     print('now is '.. now)
 
-    local remaining_min = math.floor((game_data.start_time_unix - now) / 60)
+    local remaining_min = (game_data.start_time_unix - now) / 60
     local remaining_text = ""
-    if 0 < remaining_min and remaining_min < 60 then
-        remaining_text = "(in " .. remaining_min .. " min)"
-    elseif -60 < remaining_min and remaining_min < -1 then
-        remaining_text = "(" .. -remaining_min .. " min ago)"
+    if 0 < remaining_min and remaining_min < 99 then
+        remaining_text = " (in " .. math.ceil(remaining_min) .. " min)"
+    elseif -99 < remaining_min and remaining_min < -1 then
+        remaining_text = " (" .. math.floor(-remaining_min) .. " min ago)"
     elseif -1 <= remaining_min and remaining_min <= 1 then
-        remaining_text = "(now)"
+        remaining_text = " (now)"
     end
 
     local t = S
