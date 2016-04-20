@@ -70,14 +70,14 @@ function M.run(duration, args, fn)
     local team_width = 300
     local score_width = 65
     local divider_width = 25
-    local x_games = 150
+    local x_games = 140
     local x_standings = 1100
     local rank_width = 60
     local y_lift = args.y_lift -- for scrolling the standings
 
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, args.top_title, 80, 1,1,1,1))
-    a.add(anims.moving_font(t, E, 400, y+10, game_data.round_name .. "  " .. game_data.start_time, 60, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 420, y+10, game_data.round_name .. "  " .. game_data.start_time, 60, 1,1,1,1))
     y = y + 130
     local y_top = y
     t = t + 0.03

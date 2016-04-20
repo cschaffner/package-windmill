@@ -1,6 +1,6 @@
 [{
     "module": "swissgames",
-    "chance": 0.1,
+    "chance": 1,
     "options": {
         "division": "open",
         "font_size": 50,
@@ -8,12 +8,12 @@
         "top_title": "Open",
         "line_break_fraction_games": 2,
         "line_break_fraction_standings": 6,
-        "duration": 25
+        "duration": 50
     }
 },
 {
     "module": "swissgames",
-    "chance": 0.1,
+    "chance": 1,
     "options": {
         "division": "women",
         "font_size": 50,
@@ -26,7 +26,7 @@
 },
 {
     "module": "swissgames",
-    "chance": 0.7,
+    "chance": 0.4,
     "options": {
         "division": "mixed",
         "font_size": 42,
