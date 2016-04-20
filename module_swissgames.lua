@@ -63,6 +63,17 @@ function M.run(duration, args, fn)
     local E = duration
 
     local now = Time.unixtime()
+    print('now is '.. now)
+
+    local remaining_min = math.floor((game_data.start_time_unix - now) / 60)
+    local remaining_text = ""
+    if 0 < remaining_min < 60 then
+        remaining_text = "(in " .. remaining_min .. " min)"
+    elseif -60 < remaining_min < -1 then
+        remaining_text = "(" .. remaining_min .. " min ago)"
+    elseif -1 <= remaining_min <= 1 then
+        remaining_text = "(now)"
+    end
 
     local t = S
     local font_size = args.font_size
@@ -77,7 +88,7 @@ function M.run(duration, args, fn)
 
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, args.top_title, 80, 1,1,1,1))
-    a.add(anims.moving_font(t, E, 420, y+10, game_data.round_name .. "  " .. game_data.start_time, 60, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 420, y+10, game_data.round_name .. "  " .. game_data.start_time .. remaining_text, 50, 1,1,1,1))
     y = y + 130
     local y_top = y
     t = t + 0.03

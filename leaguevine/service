@@ -12,6 +12,7 @@ import calendar
 import re
 
 from datetime import datetime
+from calendar import timegm
 
 from hosted import CONFIG
 CONFIG.restart_on_update()
@@ -193,6 +194,7 @@ def current_games(division='open', current_datetime=datetime.now()):
 
         if round_start == games_start:
             curgames = {'start_time': round_start.strftime('%a %-H:%M'),
+                        'start_time_unix': int(timegm(round_start.timetuple())),
                         'round_name': round['name'],
                         'games': [],
                         'standings': round['standings']}
@@ -281,7 +283,7 @@ def main():
                 # time.sleep(20)
                 continue
 
-        time.sleep(3*60)
+        time.sleep(60)
 
 
 if __name__ == "__main__":
