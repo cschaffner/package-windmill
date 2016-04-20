@@ -64,6 +64,7 @@ local function move_in_scroll_move_out(S, Scroll, E, x, y, y_lift, obj)
 --    end
     y_timeline[#y_timeline+1] = {t = E-1, val = y}
     y_timeline[#y_timeline+1] = {t = E,   val = 0}
+    print(y_timeline)
 
     local y = utils.make_smooth{y_timeline}
 
