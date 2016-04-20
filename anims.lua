@@ -62,10 +62,10 @@ local function move_in_scroll_move_out(S, Scroll, E, x, y, y_lift, obj)
 --        y_timeline[#y_timeline+1] = {t = end_scroll+Scroll+3, val = y, ease='step'}
 --        end_scroll = end_scroll+15
 --    end
-    y_timeline[#y_timeline+1] = {t = E-1, val = y}
-    y_timeline[#y_timeline+1] = {t = E,   val = 0}
-    print(y_timeline)
-
+--    y_timeline[#y_timeline+1] = {t = E-1, val = y}
+--    y_timeline[#y_timeline+1] = {t = E,   val = 0}
+--    print(y_timeline)
+--
     local y = utils.make_smooth{y_timeline}
 
     return function(t)
