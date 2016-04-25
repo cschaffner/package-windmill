@@ -50,5 +50,20 @@
     "options": {
         "duration": 10
     }
-}]
+},
+{
+    "module": "videos",
+    "options": {
+        "videos": [
+            {
+                "file": "rotating_elephant.mp4",
+                "duration": 10,
+                "raw": false,
+                "text": "Welcome to Windmill 2016!"
+            }
+        ]
+    },
+    "chance": 0.3,
+    "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
+},]
 
