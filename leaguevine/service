@@ -11,6 +11,7 @@ import traceback
 import calendar
 import re
 
+from dateutil import parser
 from datetime import datetime
 from calendar import timegm
 
@@ -27,9 +28,17 @@ teams = {}
 schedule = WINDMILL['schedule']
 brackets = {}
 
+
 HOST = 'https://api.leaguevine.com/v1'
 LOCALHOST = 'http://api.localhost:8000/v1'
 # HOST = LOCALHOST
+
+def MET_to_unix(dt):
+    dt = MET.localize(dt)
+    dt = dt.astimezone(pytz.utc)
+    dt = dt.replace(tzinfo=None)
+    return int(timegm(dt.timetuple()))
+
 
 def lastround(datetime):
     # which round is currently being played?
@@ -61,7 +70,7 @@ def update(division='open'):
     # also update brackets here
     r = requests.get('{0}/brackets/?tournament_id={1}'.format(HOST, tournament_id))
     division_brackets = r.json()['objects']
-    brackets[division] = division_brackets
+    brackets[division] = {'lv': division_brackets}
 
 def drop_division(division, name_string):
     if name_string[:5] == 'Test ':
@@ -101,59 +110,73 @@ def game_to_dict(division, game):
 def current_brackets(division='open'):
     curgames = []
 
-    main_bracket = next((x for x in brackets[division] if len(x['rounds'])==3), None)
+    main_bracket = next((x for x in brackets[division]['lv'] if len(x['rounds'])==3), None)
     for round in main_bracket['rounds']:
         if round['round_number']==2:
             # Quarterfinals
             for i,game in enumerate(round['games']):
                 game_dict = game_to_dict(division, game)
-                game_dict['name'] = 'QF{0}'.format(i)
+                game_name = 'QF{0}'.format(i)
+                game_dict['name'] = game_name
                 curgames.append(game_dict)
+                brackets[division][game_name] = game
         elif round['round_number'] == 1:
             # Semifinals
             for i, game in enumerate(round['games']):
                 game_dict = game_to_dict(division, game)
-                game_dict['name'] = 'SF{0}'.format(i)
+                game_name = 'SF{0}'.format(i)
+                game_dict['name'] = game_name
                 curgames.append(game_dict)
+                brackets[division][game_name] = game
         elif round['round_number'] == 0:
             # Final
             for i, game in enumerate(round['games']):
                 game_dict = game_to_dict(division, game)
-                game_dict['name'] = 'Fin12'
+                game_name = 'Fin12'
+                game_dict['name'] = game_name
                 curgames.append(game_dict)
+                brackets[division][game_name] = game
 
-    loser_bracket = next((x for x in brackets[division] if len(x['rounds'])==2), None)
+    loser_bracket = next((x for x in brackets[division]['lv'] if len(x['rounds'])==2), None)
     for round in loser_bracket['rounds']:
         if round['round_number']==1:
             # loser semis
             for i,game in enumerate(round['games'],start=2):
                 game_dict = game_to_dict(division, game)
-                game_dict['name'] = 'SF{0}'.format(i)
+                game_name = 'SF{0}'.format(i)
+                game_dict['name'] = game_name
                 curgames.append(game_dict)
+                brackets[division][game_name] = game
         elif round['round_number'] == 0:
             # 5/6
             for i, game in enumerate(round['games']):
                 game_dict = game_to_dict(division, game)
-                game_dict['name'] = 'Fin56'
+                game_name = 'Fin56'
+                game_dict['name'] = game_name
                 curgames.append(game_dict)
+                brackets[division][game_name] = game
 
-    bronze_game = next((x for x in brackets[division] if 'bronze' in x['name']), None)
+    bronze_game = next((x for x in brackets[division]['lv'] if 'bronze' in x['name']), None)
     if len(bronze_game['rounds']) > 1 or len(bronze_game['rounds'][0]['games']) > 1:
         print >> sys.stderr, "error: problem with updating bracket bronze game"
     else:
         game = bronze_game['rounds'][0]['games'][0]
         game_dict = game_to_dict(division, game)
-        game_dict['name'] = 'Fin34'
+        game_name = 'Fin34'
+        game_dict['name'] = game_name
         curgames.append(game_dict)
+        brackets[division][game_name] = game
 
-    game78 = next((x for x in brackets[division] if x['name'] == 'game for 7-8'), None)
+    game78 = next((x for x in brackets[division]['lv'] if x['name'] == 'game for 7-8'), None)
     if len(game78['rounds']) > 1 or len(game78['rounds'][0]['games']) > 1:
         print >> sys.stderr, "error: problem with updating bracket game for place 7-8"
     else:
         game = game78['rounds'][0]['games'][0]
         game_dict = game_to_dict(division, game)
-        game_dict['name'] = 'Fin78'
+        game_name = 'Fin78'
+        game_dict['name'] = game_name
         curgames.append(game_dict)
+        brackets[division][game_name] = game
 
     with file("current_brackets.json.new", "wb") as f:
         f.write(json.dumps(curgames,
@@ -191,15 +214,14 @@ def current_games(division='open', current_datetime=datetime.now()):
 
     for round in WINDMILL['schedule'][division]:
         round_start = datetime.strptime(round['start'], '%Y-%m-%dT%H:%M:%S')
-        round_start_unix = MET.localize(round_start)
-        round_start_unix = round_start_unix.astimezone(pytz.utc)
-        round_start_unix = round_start_unix.replace(tzinfo=None)
-        round_start_unix = int(timegm(round_start_unix.timetuple()))
+        # round_last_updated = datetime.strptime(round['time_last_updated'], '%Y-%m-%dT%H:%M:%S+00:00')
+        round_last_updated = parser.parse(round['time_last_updated'])
 
         if round_start == games_start:
             curgames = {'start_time': round_start.strftime('%a %-H:%M'),
-                        'start_time_unix': round_start_unix,
+                        'start_time_unix': MET_to_unix(round_start),
                         'round_name': round['name'],
+                        'time_last_updated_unix': int(timegm(round_last_updated.timetuple())),
                         'games': [],
                         'standings': round['standings']}
 
@@ -208,6 +230,21 @@ def current_games(division='open', current_datetime=datetime.now()):
             if round['round_number'] > 5:
                 for stand in curgames['standings']:
                     stand['ranking'] += 8
+                if round['round_number'] == 6: # quarter-finals
+                    stand = {
+                        "ranking": 1,
+                        "team_id": brackets[division]['QF1']['team_1']['id'],
+                        "team": brackets[division]['QF1']['team_1'],
+                        "swiss_score": "QF1",
+                    }
+                    curgames['standings'].append(stand)
+                    stand = {
+                        "ranking": 8,
+                        "team_id": brackets[division]['QF1']['team_2']['id'],
+                        "team": brackets[division]['QF1']['team_2'],
+                        "swiss_score": "QF8",
+                    }
+                    curgames['standings'].append(stand)
 
             # TODO: figure out the "standings" in the playoff brackets and insert into standings
 
@@ -279,7 +316,7 @@ def main():
         # for division in ['women']:
             try:
                 update(division)
-                current_games(division, datetime(2016, 04, 16, 22, 31, 00))
+                current_games(division)
                 current_brackets(division)
             except:
                 print >> sys.stderr, "failed to update {0} division".format(division)
