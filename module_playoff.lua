@@ -12,14 +12,26 @@ local gray = resource.create_colored_texture(0.28,0.28,0.28,1) -- gray
 
 local background = resource.load_image("brackets_scaled.png")
 
-local open_data = {}
+local open_brackets = {}
+local mixed_brackets = {}
+local women_brackets = {}
 
-local unwatch = util.file_watch("current_brackets_open.json", function(raw)
+local open_unwatch = util.file_watch("current_brackets_open.json", function(raw)
     open_brackets = json.decode(raw)
 end)
+local mixed_unwatch = util.file_watch("current_brackets_mixed.json", function(raw)
+    mixed_brackets = json.decode(raw)
+end)
+
+local women_unwatch = util.file_watch("current_brackets_women.json", function(raw)
+    women_brackets = json.decode(raw)
+end)
+
 
 function M.unload()
-    unwatch()
+    open_unwatch()
+    mixed_unwatch()
+    women_unwatch()
 end
 
 function M.can_schedule()
@@ -27,10 +39,19 @@ function M.can_schedule()
 end
 
 function M.prepare(options)
-    return options.duration or 10
+    return options.duration or 10, options
 end
 
-function M.run(duration, _, fn)
+function M.run(duration, args, fn)
+    local brackets
+    if args.division == 'open' then
+        brackets = open_brackets
+    elseif args.division == 'mixed' then
+        brackets = mixed_brackets
+    elseif args.division == 'women' then
+        brackets = women_brackets
+    end
+
     local y = 20
     local a = utils.Animations()
 
@@ -50,7 +71,7 @@ function M.run(duration, _, fn)
     local y_split_teams = 100
 
     -- HEADER
-    a.add(anims.moving_font(t, E, 150, y, "Open Division Bracket", 80, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 150, y, args.top_title .. " Division Bracket", 80, 1,1,1,1))
     y = y + 90
     local y_top = y
     t = t + 0.03
@@ -75,8 +96,8 @@ function M.run(duration, _, fn)
 
 
 
-    for idx = 1, #open_brackets do
-        local game = open_brackets[idx]
+    for idx = 1, #brackets do
+        local game = brackets[idx]
         co = pos[game.name]
         if string.len(game.team_1)>0 then
             a.add(anims.my_moving_font(t, E, co[1], y+co[2], "flag:" .. game.team_1_country .. " " .. game.team_1 , font_size, 1,1,1,1))

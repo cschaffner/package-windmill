@@ -45,9 +45,11 @@
     }
 },
 {
-    "module": "open_playoff",
-    "chance": 0.1,
+    "module": "playoff",
+    "chance": 0.2,
     "options": {
+        "division": "women",
+        "top_title": "Women",
         "duration": 10
     }
 },

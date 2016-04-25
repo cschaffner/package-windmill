@@ -36,14 +36,6 @@ end
 
 function M.prepare(options)
     return options.duration or 10, options
---        {
---        division = options.division,
---        font_size = options.font_size,
---        y_lift = options.y_lift,
---        top_title = options.top_title,
---        line_break_fraction_games = options.line_break_fraction_games,
---        line_break_fraction_standings = options.line_break_fraction_standings,
---    }
 end
 
 function M.run(duration, args, fn)
