@@ -245,6 +245,20 @@ def current_games(division='open', current_datetime=datetime.now()):
                         "swiss_score": "QF8",
                     }
                     curgames['standings'].append(stand)
+                    stand = {
+                        "ranking": 4,
+                        "team_id": brackets[division]['QF2']['team_1']['id'],
+                        "team": brackets[division]['QF2']['team_1'],
+                        "swiss_score": "QF4",
+                    }
+                    curgames['standings'].append(stand)
+                    stand = {
+                        "ranking": 5,
+                        "team_id": brackets[division]['QF2']['team_2']['id'],
+                        "team": brackets[division]['QF2']['team_2'],
+                        "swiss_score": "QF5",
+                    }
+                    curgames['standings'].append(stand)
 
             # TODO: figure out the "standings" in the playoff brackets and insert into standings
 
@@ -316,7 +330,7 @@ def main():
         # for division in ['women']:
             try:
                 update(division)
-                current_games(division)
+                current_games(division, datetime(2016,6,3,12,15))
                 current_brackets(division)
             except:
                 print >> sys.stderr, "failed to update {0} division".format(division)
