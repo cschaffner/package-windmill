@@ -15,12 +15,12 @@
         "top_title": "Open",
         "line_break_fraction_games": 2,
         "line_break_fraction_standings": 6,
-        "duration": 25
+        "duration": 10
     }
 },
 {
     "module": "swissgames",
-    "chance": 0.2,
+    "chance": 0.6,
     "options": {
         "division": "women",
         "font_size": 50,
@@ -41,7 +41,7 @@
         "top_title": "Mixed",
         "line_break_fraction_games": 20,
         "line_break_fraction_standings": 8,
-        "duration": 25
+        "duration": 10
     }
 },
 {
