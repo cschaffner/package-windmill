@@ -1,5 +1,4 @@
 local utils = require "utils"
-local raw = sys.get_ext "raw_video"
 
 local M = {}
 
