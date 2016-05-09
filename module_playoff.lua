@@ -80,15 +80,15 @@ function M.run(duration, args, fn)
 
 
     local pos = {}
---    name     = team_1  ,  team_2 (relative to team_1),  start_time / field (relative to team_1)
-    pos["QF0"] = {39, 27, 0, 82, 40, 40}
-    pos["QF1"] = {39, 206, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
+--    name     = team_1_x, team_1_y ,  team_2_x, teams_2_y (relative to team_1),  start_time / field (relative to team_1)
+    pos["QF0"] = {39, 25, 0, 82, 40, 40}
+    pos["QF1"] = {pos["QF0"][1], 206, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
     pos["QF2"] = {1614, pos["QF0"][2], pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
-    pos["QF3"] = {1614, pos["QF1"][2], pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
+    pos["QF3"] = {pos["QF2"][1], pos["QF1"][2], pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
     pos["SF0"] = {340, 66, 0, 173, 20, 108}
     pos["SF1"] = {1300, pos["SF0"][2], pos["SF0"][3],pos["SF0"][4],pos["SF0"][5],pos["SF0"][6]}
-    pos["SF2"] = {340, 552, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
-    pos["SF3"] = {1300, 552, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
+    pos["SF2"] = {pos["SF0"][1], 552, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
+    pos["SF3"] = {pos["SF1"][1], pos["SF2"][2], pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
     pos["Fin12"] = {660, 153, 316, 0, 220, -44}
     pos["Fin34"] = {pos["Fin12"][1], 370, pos["Fin12"][3],pos["Fin12"][4],pos["Fin12"][5],pos["Fin12"][6]}
     pos["Fin56"] = {pos["Fin12"][1], 590, pos["Fin12"][3],pos["Fin12"][4],pos["Fin12"][5],pos["Fin12"][6]}

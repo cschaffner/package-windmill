@@ -30,6 +30,9 @@ end
 function M.run(duration, args, fn)
     local text_size = 70
     local text_big = 100
+    local S = 0.0
+    local E = duration
+
 --    local text_w = res.font:width(args.text, text_size)
     local a = utils.Animations()
 
