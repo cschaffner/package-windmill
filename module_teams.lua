@@ -28,7 +28,7 @@ function M.prepare(options)
 end
 
 function M.run(duration, args, fn)
-    local text_size = 70
+    local text_size = 40
     local text_big = 100
     local S = 0.0
     local E = duration
@@ -40,7 +40,7 @@ function M.run(duration, args, fn)
     a.add(anims.my_moving_font(S,E, 200, y, args.team.name, text_size, 1,1,1,1))
     y = y + text_size + 20
 
-    y = 600
+    y = 200
     a.add(anims.my_moving_font(S,E, 200, y, "Games:", text_big, 1,1,1,1))
     y = y + text_big + 20
     for round, game in pairs(args.team.games) do
