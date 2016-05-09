@@ -6,6 +6,14 @@
     "chance": 0.2
 },
 {
+    "module": "teams",
+    "chance": 1,
+    "options": {
+        "duration": 10
+    }
+
+},
+{
     "module": "swissgames",
     "chance": 0.2,
     "options": {
