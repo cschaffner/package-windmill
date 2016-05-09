@@ -18,7 +18,7 @@ function M.unload()
 end
 
 function M.can_schedule(options)
-    return #teams > 0
+    return table.getn(teams) > 0
 end
 
 function M.prepare(options)
