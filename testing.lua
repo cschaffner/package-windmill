@@ -105,8 +105,5 @@ local function testing(timeline)
     print(#timeline)
 end
 
-anim = move_in_scroll_move_out(0, 10, 20, 100, 200, 500, '')
-for t=0,20,0.1 do
-    print(t,anim(t))
-end
+local teams = json.decode(raw)
 

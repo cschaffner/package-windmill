@@ -18,7 +18,7 @@ function M.unload()
 end
 
 function M.can_schedule(options)
-    print("number of teams: " .. table.getn(teams))
+    print("number of teams: " .. #teams)
     return table.getn(teams) > 0
 end
 
