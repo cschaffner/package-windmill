@@ -1,0 +1,81 @@
+#!/usr/bin/python
+import os
+import time
+import json
+import pytz
+import requests
+
+from xml.etree import ElementTree
+
+MET = pytz.timezone("Europe/Amsterdam")
+
+
+def get_rain():
+    r = requests.get('http://gps.buienradar.nl/getrr.php?lat=52.3796198&lon=4.7898874')
+    rain_string = r.text
+    rain_data = []
+    for data in rain_string.split('\r\n'):
+        if data:
+            rain_amount = 10**((int(data[:3])-109)/32)
+            rain_data.append({'mm per h': '{0:4.2f}'.format(rain_amount),
+                              'mmh_num': rain_amount,
+                              'time': data[4:]})
+
+    return json.dumps(rain_data, ensure_ascii=False, indent=2).encode("utf8")
+
+
+def get_weather():
+    weather_dict = {}
+    r = requests.get('http://xml.buienradar.nl/')
+    tree = ElementTree.fromstring(r.content)
+
+    # prediction
+    for day1 in tree.iter('dag-plus1'):
+        weather_dict['day1'] = {}
+        for data in day1:
+            weather_dict['day1'][data.tag] = data.text
+    for day2 in tree.iter('dag-plus2'):
+        weather_dict['day2'] = {}
+        for data in day2:
+            weather_dict['day2'][data.tag] = data.text
+    for day3 in tree.iter('dag-plus3'):
+        weather_dict['day3'] = {}
+        for data in day3:
+            weather_dict['day3'][data.tag] = data.text
+
+    # current weather
+    for station in tree.iter('weerstation'):
+        if station.attrib['id'] == '6240':
+            weather_dict['today'] = {}
+            for data in station:
+                weather_dict['today'][data.tag] = data.text
+            break
+            
+    return json.dumps(weather_dict, ensure_ascii=False, indent=2).encode("utf8")
+
+
+def update():
+    # weather data
+    with file("weather_data.json.new", "wb") as f:
+        f.write(get_weather())
+    os.rename("weather_data.json.new", "../weather_data.json")
+
+    # radar
+    r = requests.get('http://api.buienradar.nl/image/1.0/RadarMapNL?w=200&h=200')
+    with file("weather_radar.gif.new", "wb") as f:
+        f.write(r.content)
+    os.rename("weather_radar.gif.new", "../weather_radar.gif")
+
+    # rain data
+    with file("weather_rain.json.new", "wb") as f:
+        f.write(get_rain())
+    os.rename("weather_rain.json.new", "../weather_rain.json")
+
+
+def main():
+    while 1:
+        update()
+        time.sleep(180)
+
+if __name__ == "__main__":
+    main()

@@ -2,6 +2,13 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 current_*
+*.pyc
+weather.json
+weather/radar.gif
+weather_radar.gif
+weather_rain.json
+weather_data.json
+
 
 # User-specific stuff:
 .idea/workspace.xml

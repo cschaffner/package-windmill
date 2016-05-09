@@ -38,7 +38,7 @@ local women_col = resource.create_colored_texture(0.647,0,0.471,1) --dark pink
 local mixed_col = resource.create_colored_texture(0.843,0.20,0,1)  --reddish
 
 local loop = resource.load_video{
-    file = "loop.mp4";
+    file = "rotating_elephant.mpeg";
     looped = true;
 }
 
