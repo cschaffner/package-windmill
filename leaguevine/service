@@ -270,8 +270,10 @@ def current_teams():
     writes all team data into current_teams.json
     :return:
     """
+    team_list = [team for (team_id, team) in TEAMS.iteritems()]
+
     with file("current_teams.json.new", "wb") as f:
-        f.write(json.dumps(TEAMS,
+        f.write(json.dumps(team_list,
                            ensure_ascii=False,
                            indent=2,
                            separators=(',', ':')
@@ -424,17 +426,17 @@ def main():
     while 1:
         for division in ['open', 'mixed', 'women']:
         # for division in ['women']:
-        #     try:
+            try:
                 update(division)
                 current_brackets(division)
                 # current_games(division, datetime(2016,6,3,12,15))
                 current_games(division, datetime(2015,6,3,12,15))
 
-            # except:
-            #     print >> sys.stderr, "failed to update {0} division".format(division)
-            #     traceback.print_exc()
-            #     # time.sleep(20)
-            #     continue
+            except:
+                print >> sys.stderr, "failed to update {0} division".format(division)
+                traceback.print_exc()
+                # time.sleep(20)
+                continue
 
         current_teams()
         time.sleep(60)

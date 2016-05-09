@@ -19,7 +19,7 @@ end
 
 function M.can_schedule(options)
     print("number of teams: " .. #teams)
-    return table.getn(teams) > 0
+    return #teams > 0
 end
 
 function M.prepare(options)
