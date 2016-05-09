@@ -90,7 +90,7 @@ function M.run(duration, args, fn)
     pos["SF2"] = {340, 552, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
     pos["SF3"] = {1300, 552, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
     pos["Fin12"] = {660, 153, 316, 0, 220, -44}
-    pos["Fin34"] = {pos["Fin12"][1], 352, pos["Fin12"][3],pos["Fin12"][4],pos["Fin12"][5],pos["Fin12"][6]}
+    pos["Fin34"] = {pos["Fin12"][1], 355, pos["Fin12"][3],pos["Fin12"][4],pos["Fin12"][5],pos["Fin12"][6]}
     pos["Fin56"] = {pos["Fin12"][1], 590, pos["Fin12"][3],pos["Fin12"][4],pos["Fin12"][5],pos["Fin12"][6]}
     pos["Fin78"] = {pos["Fin12"][1], 800, pos["Fin12"][3],pos["Fin12"][4],pos["Fin12"][5],pos["Fin12"][6]}
 
