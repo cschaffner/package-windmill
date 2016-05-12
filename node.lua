@@ -188,6 +188,12 @@ Scroller = (function()
         mixed_games = json.decode(content)
     end)
 
+    local women_games = {}
+    util.file_watch("current_games_women.json", function(content)
+        print("reloading women games")
+        women_games = json.decode(content)
+    end)
+
     local infos = {}
     util.file_watch("scroll.txt", function(content)
         infos = {}
@@ -198,7 +204,7 @@ Scroller = (function()
         end
     end)
 
-    local function open_feeder()
+    local function feeder()
         local out = {}
         for idx = 1, #infos do
             out[#out+1] = infos[idx]
@@ -210,35 +216,25 @@ Scroller = (function()
             local game = open_games.games[idx]
             out[#out+1] = utils.game_string(game)
         end
-        return out
-    end
-
-    local function mixed_feeder()
-        local out = {}
-        local now = Time.unixtime()
         out[#out+1] = mixed_games.round_name .. "(" .. mixed_games.start_time .. "): "
         for idx = 1, #mixed_games.games do
             local game = mixed_games.games[idx]
             out[#out+1] = utils.game_string(game)
         end
+        out[#out+1] = women_games.round_name .. "(" .. women_games.start_time .. "): "
+        for idx = 1, #women_games.games do
+            local game = women_games.games[idx]
+            out[#out+1] = utils.game_string(game)
+        end
         return out
     end
 
-
-    local open_text = my_new_running_text{
+    local running_text = my_new_running_text{
         font = res.font;
-        size = 60;
-        speed = 180;
+        size = 50;
+        speed = 200;
         color = {1,1,1,.8};
-        generator = util.generator(open_feeder)
-    }
-
-    local mixed_text = my_new_running_text{
-        font = res.font;
-        size = 60;
-        speed = 190;
-        color = {1,1,1,.8};
-        generator = util.generator(mixed_feeder)
+        generator = util.generator(feeder)
     }
 
     local visibility = 0
@@ -253,9 +249,9 @@ Scroller = (function()
     local function draw()
         if visibility > 0.01 then
 --            open_col:draw(0, HEIGHT-100, WIDTH, HEIGHT, visibility/1.5)
-            open_text:draw(HEIGHT - visibility * 60)
+            running_text:draw(HEIGHT - visibility * 60)
 --            mixed_col:draw(0, HEIGHT-160, WIDTH, HEIGHT-100, visibility/1.5)
-            mixed_text:draw(HEIGHT- visibility * 2*60)
+--            mixed_text:draw(HEIGHT- visibility * 2*60)
         end
     end
 
