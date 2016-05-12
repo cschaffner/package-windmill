@@ -37,9 +37,9 @@ function M.run(duration, args, fn)
     local a = utils.Animations()
 
     local y = 100
-    a.add(anims.my_moving_font(S,E, 200, y, "flag:".. args.team.country .. args.team.name, text_big, 1,1,1,1))
-    y = y + text_big + 20
-    if args.team.city then
+    a.add(anims.my_moving_font(S,E, 200, y, "flag:".. args.team.country .. " " .. args.team.name, 80, 1,1,1,1))
+    y = y + 80 + 20
+    if args.team.city ~= "" then
         a.add(anims.my_moving_font(S,E, 200, y, "City:".. args.team.city, text_size, 1,1,1,1))
         y = y + text_size + 10
     end
@@ -47,9 +47,10 @@ function M.run(duration, args, fn)
     y = y + 50
     a.add(anims.my_moving_font(S,E, 200, y, "Games:", text_big, 1,1,1,1))
     y = y + text_big + 20
-    for round, game in pairs(args.team.games) do
+    for game in args.team.games do
 --        print(game)
-        a.add(anims.my_moving_font(S, E, 200, y, round .. ": " .. game.own_score .. " - " .. game.opponent_score .. "flag:" .. game.opponent_country .. game.opponent, text_size, 1,1,1,1));
+        a.add(anims.my_moving_font(S, E, 200, y, "Round " .. game.round_number .. ": " .. string.format("%2.0f", game.own_score) .. " - " .. string.format("%2.0f", game.opponent_score), text_size, 1,1,1,1))
+        a.add(anims.my_moving_font(S, E, 500, y, "flag:" .. game.opponent_country .. game.opponent, text_size, 1,1,1,1));
         S = S + 0.1
         y = y + text_size + 20
     end
