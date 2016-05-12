@@ -433,12 +433,12 @@ def leaguevine_basic_info():
     payload['fields'] = '[team_id,tournament_id]'
     payload['limit'] = 200
     r = requests.get('{0}/tournament_teams/'.format(HOST), params=payload)
-    result = r.json()
-    if result['meta']['next']:
+    tournament_teams = r.json()
+    if tournament_teams['meta']['next']:
         print >> sys.stderr, "only 200 TEAMS were loaded, but there are more!"
     all_team_ids = []
     for tournament in TOURNAMENTS:
-        tournament['team_ids'] = [x['team_id'] for x in result['objects'] if x['tournament_id'] == tournament['id']]
+        tournament['team_ids'] = [x['team_id'] for x in tournament_teams['objects'] if x['tournament_id'] == tournament['id']]
         all_team_ids.extend(tournament['team_ids'])
     # make all_team_ids unique and sorted
     all_team_ids = sorted(set(all_team_ids))
@@ -452,6 +452,8 @@ def leaguevine_basic_info():
     TEAMS = {team['id']: team for team in result['objects']}
     for team_id, team in TEAMS.iteritems(): # initialize empty list of games
         team['games'] = {}
+        tournament_id = next((x['tournament_id'] for x in tournament_teams['objects'] if x['team_id']==team['id']), None)
+        team['division'] = next(division_name for division_name, tournament in WINDMILL['tournaments'].iteritems() if tournament['tournament_id']==tournament_id)
 
     return True
 
