@@ -238,7 +238,7 @@ def update(division='open'):
                         'round_number': round['round_number'],
                         'round_start_time': round['start_time']
                         }
-                    stand = [stand for stand in round['standings'] if stand['team_id']==game['team_1_id']][0]
+                    stand = [stand for stand in round['standings'] if stand['team_id']==game['team_2_id']][0]
                     opponent_name, opponent_country = team_info(division, game['team_1'])
                     TEAMS[game['team_2_id']]['games'][round['name']] = {
                         'opponent': opponent_name,

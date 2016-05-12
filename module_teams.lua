@@ -39,10 +39,15 @@ function M.run(duration, args, fn)
     local y = 100
     a.add(anims.my_moving_font(S,E, 200, y, "flag:".. args.team.country .. " " .. args.team.name, 80, 1,1,1,1))
     y = y + 80 + 20
+    a.add(anims.my_moving_font(S,E, 200, y, "Division:".. args.team.division, text_size, 1,1,1,1))
     if args.team.city ~= "" then
-        a.add(anims.my_moving_font(S,E, 200, y, "City:".. args.team.city, text_size, 1,1,1,1))
-        y = y + text_size + 10
+        a.add(anims.my_moving_font(S,E, 1000, y, "City:".. args.team.city, text_size, 1,1,1,1))
     end
+    y = y + text_size + 10
+
+    a.add(anims.my_moving_font(S,E, 200, y, "Current rank:".. args.team.games[1].own_standing.ranking, text_size, 1,1,1,1))
+    a.add(anims.my_moving_font(S,E, 1000, y, "Current Swiss Score:".. args.team.games[1].own_standing.swiss_score, text_size, 1,1,1,1))
+    y = y + text_size + 10
 
     y = y + 50
     a.add(anims.my_moving_font(S,E, 200, y, "Games:", text_big, 1,1,1,1))
