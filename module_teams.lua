@@ -29,7 +29,7 @@ end
 
 function M.run(duration, args, fn)
     local text_size = 40
-    local text_big = 100
+    local text_big = 50
     local S = 0.0
     local E = duration
 
@@ -37,15 +37,19 @@ function M.run(duration, args, fn)
     local a = utils.Animations()
 
     local y = 100
-    a.add(anims.my_moving_font(S,E, 200, y, args.team.name, text_size, 1,1,1,1))
-    y = y + text_size + 20
+    a.add(anims.my_moving_font(S,E, 200, y, "flag:".. args.team.country .. args.team.name, text_big, 1,1,1,1))
+    y = y + text_big + 20
+    if args.team.city then
+        a.add(anims.my_moving_font(S,E, 200, y, "City:".. args.team.city, text_size, 1,1,1,1))
+        y = y + text_size + 10
+    end
 
-    y = 200
+    y = y + 50
     a.add(anims.my_moving_font(S,E, 200, y, "Games:", text_big, 1,1,1,1))
     y = y + text_big + 20
     for round, game in pairs(args.team.games) do
 --        print(game)
-        a.add(anims.my_moving_font(S, E, 200, y, round .. ": " .. game.opponent.name, text_size, 1,1,1,1));
+        a.add(anims.my_moving_font(S, E, 200, y, round .. ": " .. game.own_score .. " - " .. game.opponent_score .. "flag:" .. game.opponent_country .. game.opponent, text_size, 1,1,1,1));
         S = S + 0.1
         y = y + text_size + 20
     end
