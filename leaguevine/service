@@ -373,7 +373,7 @@ def current_games(division='open', current_datetime=datetime.now()):
     :return:
     """
     # global TEAMS   # required because those will be changed here!
-    print >> sys.stderr, "{0} division: starting to write new current games (time: {2})".format(division, current_datetime)
+    print >> sys.stderr, "{0} division: starting to write new current games (time: {1})".format(division, current_datetime)
 
     tournament_id = WINDMILL['tournaments'][division]['tournament_id']
 
