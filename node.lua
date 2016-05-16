@@ -18,7 +18,7 @@ res = util.resource_loader({
     "font.ttf";
     "bottle.png";
     "house1.png";
-    "house2.png";
+    "clockboarder.png";
     "tower.png";
     "podium.png"
 })
@@ -324,7 +324,7 @@ Sidebar = (function()
 --
         local clock_x = utils.easeInOut(visibility, WIDTH-260, WIDTH-320)
         local clock_y = utils.easeInOut(visibility, HEIGHT-105, 850)
-        res.house1:draw(clock_x, clock_y-100, clock_x + 300, clock_y + 155)
+        res.clockboarder:draw(clock_x, clock_y-100, clock_x + 300, clock_y + 155)
         res.font:write(clock_x + 150 - w/2, clock_y+5, time, 100, highlight_a(1))
     end
 
