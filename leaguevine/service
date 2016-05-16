@@ -22,7 +22,11 @@ CONFIG.restart_on_update()
 
 with file("windmill2016_test.json") as f:
 # with file("windmill2015.json") as f:
-        WINDMILL = json.load(f)
+    WINDMILL = json.load(f)
+for division in ['open', 'mixed', 'women']:
+    for round in WINDMILL['schedule'][division]:
+        if round['name'][:6] == 'Round ':
+            round['round_number'] = int(round['name'][-1])
 
 MET = pytz.timezone('Europe/Amsterdam')
 
@@ -31,6 +35,7 @@ TEAMS = {}
 SCHEDULE = WINDMILL['schedule']
 BRACKETS = {}
 
+TIMEDIFF = datetime(2016, 6, 3, 7, 58, 00) - datetime.now()
 
 HOST = 'https://api.leaguevine.com/v1'
 LOCALHOST = 'http://api.localhost:8000/v1'
@@ -58,6 +63,7 @@ def lastround(datetime):
 
 def update(division='open'):
     global TEAMS, SCHEDULE, BRACKETS   # required as those will be changed here
+    print >> sys.stderr, "{0} division: starting to update data from leaguevine".format(division)
 
     tournament_id = WINDMILL['tournaments'][division]['tournament_id']
     # pull data from leaguevine
@@ -121,139 +127,146 @@ def update(division='open'):
     # update schedule with extra information
     for swiss_round in swiss_rounds:
         # find the round in SCHEDULE[division] which corresponds to this swissround
-        round = next((x for x in SCHEDULE[division] if x['start'] == swiss_round['games'][0]['start_time'][0:19]), None)
-        if round:
-            round.update(swiss_round)
-            # update rankings if we are in playoff phase
-            if round['round_number'] > 5:
-                for stand in round['standings']:
-                    stand['ranking'] += 8
+        round = next((round for round in SCHEDULE[division] if round['start'] == swiss_round['games'][0]['start_time'][0:19]), None)
+        if not round:
+            print >> sys.stderr, "{0} division: no matching round found, serious error! trying to fix by comparing round numbers..".format(division)
+            round = next((x for x in SCHEDULE[division] if x['round_number'] == swiss_round['round_number']), None)
+            if not round:
+                print >> sys.stderr, "{0} division: comparing round number did not work either. Cannot update division!".format(
+                    division)
+                return False
 
-            if round['round_number'] == 6:  # quarter-finals
-                qf_looping = [('QF0', 1, 8), ('QF1', 5, 4), ('QF2', 3, 6), ('QF3', 7, 2)]
-                for qf_name, rank_1, rank_2 in qf_looping:
-                    qf = BRACKETS[division][qf_name]
-                    if qf['winner_id']:
-                        winner_id = qf['winner_id']
-                        loser_id = [id for id in [qf['team_1_id'], qf['team_2_id']] if id != winner_id][0]
-                        win_stand = {"ranking": 1,
-                                     "team_id": winner_id,
-                                     "swiss_score": 'top 4'}
-                        loose_stand = {"ranking": 5,
-                                       "team_id": loser_id,
-                                       "swiss_score": 'rk 5-8'}
-                    else:  # no winner yet
-                        winner_id = qf['team_1_id']
-                        loser_id = qf['team_2_id']
-                        win_stand = {"ranking": rank_1,
-                                     "team_id": winner_id,
-                                     "swiss_score": 'QF'}
-                        loose_stand = {"ranking": rank_2,
-                                       "team_id": loser_id,
-                                       "swiss_score": 'QF'}
-                    round['standings'].append(win_stand)
-                    round['standings'].append(loose_stand)
-                    game = next((game for game in round['games'] if game['id']==qf['id']), None)
-                    if game:
-                        game = qf
-                    else:
-                        round['games'].append(qf)
+        round.update(swiss_round)
+        # update rankings if we are in playoff phase
+        if round['round_number'] > 5:
+            for stand in round['standings']:
+                stand['ranking'] += 8
 
-            elif round['round_number'] == 7:  # semi-finals
-                sf_looping = [('SF0', 1, 'top 2', 3, 'rk 3-4'), ('SF1', 1, 'top 2', 3, 'rk 3-4'), ('SF2', 5, 'rk 5-6', 7, 'rk 7-8'), ('SF3', 5, 'rk 5-6', 7, 'rk 7-8')]
-                for sf_name, rank_1, rank_1_score, rank_2, rank_2_score in sf_looping:
-                    sf = BRACKETS[division][sf_name]
-                    if sf['winner_id']:
-                        winner_id = sf['winner_id']
-                        loser_id = [id for id in [sf['team_1_id'], sf['team_2_id']] if id != winner_id][0]
-                        win_stand = {"ranking": rank_1,
-                                     "team_id": winner_id,
-                                     "swiss_score": rank_1_score}
-                        loose_stand = {"ranking": rank_2,
-                                       "team_id": loser_id,
-                                       "swiss_score": rank_2_score}
-                    else:  # no winner yet
-                        winner_id = sf['team_1_id']
-                        loser_id = sf['team_2_id']
-                        win_stand = {"ranking": rank_1,
-                                     "team_id": winner_id,
-                                     "swiss_score": 'sf'}
-                        loose_stand = {"ranking": rank_1,
-                                       "team_id": loser_id,
-                                       "swiss_score": 'sf'}
-                    round['standings'].append(win_stand)
-                    round['standings'].append(loose_stand)
-                    game = next((game for game in round['games'] if game['id']==sf['id']), None)
-                    if game:
-                        game = sf
-                    else:
-                        round['games'].append(sf)
+        if round['round_number'] == 6:  # quarter-finals
+            qf_looping = [('QF0', 1, 8), ('QF1', 5, 4), ('QF2', 3, 6), ('QF3', 7, 2)]
+            for qf_name, rank_1, rank_2 in qf_looping:
+                qf = BRACKETS[division][qf_name]
+                if qf['winner_id']:
+                    winner_id = qf['winner_id']
+                    loser_id = [id for id in [qf['team_1_id'], qf['team_2_id']] if id != winner_id][0]
+                    win_stand = {"ranking": 1,
+                                 "team_id": winner_id,
+                                 "swiss_score": 'top 4'}
+                    loose_stand = {"ranking": 5,
+                                   "team_id": loser_id,
+                                   "swiss_score": 'rk 5-8'}
+                else:  # no winner yet
+                    winner_id = qf['team_1_id']
+                    loser_id = qf['team_2_id']
+                    win_stand = {"ranking": rank_1,
+                                 "team_id": winner_id,
+                                 "swiss_score": 'QF'}
+                    loose_stand = {"ranking": rank_2,
+                                   "team_id": loser_id,
+                                   "swiss_score": 'QF'}
+                round['standings'].append(win_stand)
+                round['standings'].append(loose_stand)
+                game = next((game for game in round['games'] if game['id']==qf['id']), None)
+                if game:
+                    game = qf
+                else:
+                    round['games'].append(qf)
 
-            elif round['round_number'] == 8:  # finals
-                fin_looping = [('Fin12', 1, 'gold', 2, 'silver'), ('Fin34', 3, 'bronze', 4, ''),
-                               ('Fin56', 5, '', 6, ''), ('Fin78', 7, '', 8, '') ]
-                for fin_name, rank_1, rank_1_score, rank_2, rank_2_score in fin_looping:
-                    fin = BRACKETS[division][fin_name]
-                    if fin['winner_id']:
-                        winner_id = fin['winner_id']
-                        loser_id = [id for id in [fin['team_1_id'], fin['team_2_id']] if id != winner_id][0]
-                        win_stand = {"ranking": rank_1,
-                                     "team_id": winner_id,
-                                     "swiss_score": rank_1_score}
-                        loose_stand = {"ranking": rank_2,
-                                       "team_id": loser_id,
-                                       "swiss_score": rank_2_score}
-                    else:  # no winner yet
-                        winner_id = fin['team_1_id']
-                        loser_id = fin['team_2_id']
-                        win_stand = {"ranking": rank_1,
-                                     "team_id": winner_id,
-                                     "swiss_score": fin_name}
-                        loose_stand = {"ranking": rank_1,
-                                       "team_id": loser_id,
-                                       "swiss_score": fin_name}
-                    round['standings'].append(win_stand)
-                    round['standings'].append(loose_stand)
-                    game = next((game for game in round['games'] if game['id']==fin['id']), None)
-                    if game:
-                        game = fin
-                    else:
-                        round['games'].append(fin)
+        elif round['round_number'] == 7:  # semi-finals
+            sf_looping = [('SF0', 1, 'top 2', 3, 'rk 3-4'), ('SF1', 1, 'top 2', 3, 'rk 3-4'), ('SF2', 5, 'rk 5-6', 7, 'rk 7-8'), ('SF3', 5, 'rk 5-6', 7, 'rk 7-8')]
+            for sf_name, rank_1, rank_1_score, rank_2, rank_2_score in sf_looping:
+                sf = BRACKETS[division][sf_name]
+                if sf['winner_id']:
+                    winner_id = sf['winner_id']
+                    loser_id = [id for id in [sf['team_1_id'], sf['team_2_id']] if id != winner_id][0]
+                    win_stand = {"ranking": rank_1,
+                                 "team_id": winner_id,
+                                 "swiss_score": rank_1_score}
+                    loose_stand = {"ranking": rank_2,
+                                   "team_id": loser_id,
+                                   "swiss_score": rank_2_score}
+                else:  # no winner yet
+                    winner_id = sf['team_1_id']
+                    loser_id = sf['team_2_id']
+                    win_stand = {"ranking": rank_1,
+                                 "team_id": winner_id,
+                                 "swiss_score": 'sf'}
+                    loose_stand = {"ranking": rank_1,
+                                   "team_id": loser_id,
+                                   "swiss_score": 'sf'}
+                round['standings'].append(win_stand)
+                round['standings'].append(loose_stand)
+                game = next((game for game in round['games'] if game['id']==sf['id']), None)
+                if game:
+                    game = sf
+                else:
+                    round['games'].append(sf)
+
+        elif round['round_number'] == 8:  # finals
+            fin_looping = [('Fin12', 1, 'gold', 2, 'silver'), ('Fin34', 3, 'bronze', 4, ''),
+                           ('Fin56', 5, '', 6, ''), ('Fin78', 7, '', 8, '') ]
+            for fin_name, rank_1, rank_1_score, rank_2, rank_2_score in fin_looping:
+                fin = BRACKETS[division][fin_name]
+                if fin['winner_id']:
+                    winner_id = fin['winner_id']
+                    loser_id = [id for id in [fin['team_1_id'], fin['team_2_id']] if id != winner_id][0]
+                    win_stand = {"ranking": rank_1,
+                                 "team_id": winner_id,
+                                 "swiss_score": rank_1_score}
+                    loose_stand = {"ranking": rank_2,
+                                   "team_id": loser_id,
+                                   "swiss_score": rank_2_score}
+                else:  # no winner yet
+                    winner_id = fin['team_1_id']
+                    loser_id = fin['team_2_id']
+                    win_stand = {"ranking": rank_1,
+                                 "team_id": winner_id,
+                                 "swiss_score": fin_name}
+                    loose_stand = {"ranking": rank_1,
+                                   "team_id": loser_id,
+                                   "swiss_score": fin_name}
+                round['standings'].append(win_stand)
+                round['standings'].append(loose_stand)
+                game = next((game for game in round['games'] if game['id']==fin['id']), None)
+                if game:
+                    game = fin
+                else:
+                    round['games'].append(fin)
 
 
-            round['standings'] = sorted(round['standings'], key=itemgetter('ranking'))
+        round['standings'] = sorted(round['standings'], key=itemgetter('ranking'))
 
-            for game in round['games']:
-                if game['team_1_id'] and game['team_2_id']:
-                    stand = [stand for stand in round['standings'] if stand['team_id']==game['team_1_id']][0]
-                    opponent_name, opponent_country = team_info(division, game['team_2'])
-                    TEAMS[game['team_1_id']]['games'][round['name']] = {
-                        'opponent': opponent_name,
-                        'opponent_country': opponent_country,
-                        'own_score': game['team_1_score'],
-                        'opponent_score': game['team_2_score'],
-                        'is_final': game['winner_id'] is not None,
-                        'own_standing': stand,
-                        'round_name': round['name'],
-                        'round_number': round['round_number'],
-                        'round_start_time': round['start_time']
-                        }
-                    stand = [stand for stand in round['standings'] if stand['team_id']==game['team_2_id']][0]
-                    opponent_name, opponent_country = team_info(division, game['team_1'])
-                    TEAMS[game['team_2_id']]['games'][round['name']] = {
-                        'opponent': opponent_name,
-                        'opponent_country': opponent_country,
-                        'own_score': game['team_2_score'],
-                        'opponent_score': game['team_1_score'],
-                        'is_final': game['winner_id'] is not None,
-                        'own_standing': stand,
-                        'round_name': round['name'],
-                        'round_number': round['round_number'],
-                        'round_start_time': round['start_time']
+        for game in round['games']:
+            if game['team_1_id'] and game['team_2_id']:
+                stand = [stand for stand in round['standings'] if stand['team_id']==game['team_1_id']][0]
+                opponent_name, opponent_country = team_info(division, game['team_2'])
+                TEAMS[game['team_1_id']]['games'][round['name']] = {
+                    'opponent': opponent_name,
+                    'opponent_country': opponent_country,
+                    'own_score': game['team_1_score'],
+                    'opponent_score': game['team_2_score'],
+                    'is_final': game['winner_id'] is not None,
+                    'own_standing': stand,
+                    'round_name': round['name'],
+                    'round_number': round['round_number'],
+                    'round_start_time': round['start_time']
                     }
-        else:
-            print >> sys.stderr, "{0} division: no matching round found, serious error!".format(division)
+                stand = [stand for stand in round['standings'] if stand['team_id']==game['team_2_id']][0]
+                opponent_name, opponent_country = team_info(division, game['team_1'])
+                TEAMS[game['team_2_id']]['games'][round['name']] = {
+                    'opponent': opponent_name,
+                    'opponent_country': opponent_country,
+                    'own_score': game['team_2_score'],
+                    'opponent_score': game['team_1_score'],
+                    'is_final': game['winner_id'] is not None,
+                    'own_standing': stand,
+                    'round_name': round['name'],
+                    'round_number': round['round_number'],
+                    'round_start_time': round['start_time']
+                }
 
+
+    print >> sys.stderr, "{0} division: finished to update data from leaguevine".format(division)
 
 
 def drop_division(division, name_string):
@@ -329,6 +342,8 @@ def current_brackets(division='open'):
     :param division:
     :return:
     """
+    print >> sys.stderr, "{0} division: starting to write new brackets ".format(division)
+
     curgames = []
     for game_name in ['QF0', 'QF1', 'QF2', 'QF3', 'SF0', 'SF1', 'SF2', 'SF3', 'Fin12', 'Fin34', 'Fin56', 'Fin78']:
         game_dict = game_to_dict(division, BRACKETS[division][game_name])
@@ -355,10 +370,11 @@ def current_games(division='open', current_datetime=datetime.now()):
     :param current_datetime:
     :return:
     """
-    global TEAMS   # required because those will be changed here!
-    print >> sys.stderr, "{0} division: starting to update ".format(division)
+    # global TEAMS   # required because those will be changed here!
+    print >> sys.stderr, "{0} division: starting to write new current games ".format(division)
 
     tournament_id = WINDMILL['tournaments'][division]['tournament_id']
+
     # Check for games in this tournament that start later than now
     url = '{0}/games/'.format(HOST)
     payload = {'tournament_id': tournament_id,
@@ -379,30 +395,40 @@ def current_games(division='open', current_datetime=datetime.now()):
     games = r.json()['objects']
     games_start = datetime.strptime(games[0]['start_time'], '%Y-%m-%dT%H:%M:%S+02:00')
 
-    for round in WINDMILL['schedule'][division]:
+    curgames = {'games': []}
+    for game in games:
+        if game['team_2_id'] and datetime.strptime(game['start_time'], '%Y-%m-%dT%H:%M:%S+02:00') == games_start:
+            # not a  BYE  and  same start as first game
+            curgames['games'].append(game_to_dict(division, game))
+
+    # fill in more round data
+    round = next((round for round in WINDMILL['schedule'][division] if datetime.strptime(round['start'], '%Y-%m-%dT%H:%M:%S') == games_start), None)
+    if not round:
+        print >> sys.stderr, "division {0}: no suitable round data found! trying to fix by comparing round numbers..".format(division)
+        round = next((round for round in WINDMILL['schedule'][division] if round['round_number'] == games[0]['swiss_round']['round_number']), None)
+        if not round:
+            print >> sys.stderr, "{0} division: comparing round number did not work either. no suitable round data found!".format(
+                division)
+    if round:
         round_start = datetime.strptime(round['start'], '%Y-%m-%dT%H:%M:%S')
-        # round_last_updated = datetime.strptime(round['time_last_updated'], '%Y-%m-%dT%H:%M:%S+00:00')
-        round_last_updated = parser.parse(round['time_last_updated'])
-
-        if round_start == games_start:
-            curgames = {'start_time': round_start.strftime('%a %-H:%M'),
-                        'start_time_unix': MET_to_unix(round_start),
-                        'round_name': round['name'],
-                        'time_last_updated_unix': int(timegm(round_last_updated.timetuple())),
-                        'games': [],
-                        'standings': round['standings']}
-
-
+        curgames['start_time'] = round_start.strftime('%a %-H:%M')
+        curgames['start_time_unix'] = MET_to_unix(round_start)
+        curgames['round_name'] = round['name']
+        if 'standings' in round.keys():
+            curgames['standings'] = round['standings']
             for stand in curgames['standings']:
                 stand['team_country'] = TEAMS[stand['team_id']]['country'].lower()
                 stand['team_name'] = u'flag:{0} {1}'.format(TEAMS[stand['team_id']]['country'].lower(), drop_division(division, stand['team']['short_name']))
+        else:
+            print >> sys.stderr, "division {0}, {1}: no standings found!".format(division, round['name'])
 
-            break
+        if 'time_last_updated' not in round.keys():
+            print >> sys.stderr, "division {0}: round {1} has not been updated yet...".format(division, round['name'])
+        else:
+            round_last_updated = parser.parse(round['time_last_updated'])
+            curgames['time_last_updated_unix'] = int(timegm(round_last_updated.timetuple()))
 
 
-    for game in games:
-        if game['team_2_id'] and datetime.strptime(game['start_time'], '%Y-%m-%dT%H:%M:%S+02:00') == games_start:  # not a  BYE  and  same start as first game
-            curgames['games'].append(game_to_dict(division, game))
 
     with file("current_games.json.new", "wb") as f:
         f.write(json.dumps(curgames,
@@ -459,6 +485,7 @@ def leaguevine_basic_info():
 
 
 def main():
+
     leaguevine_basic_info()
     # update('mixed')
     # current_games('mixed', datetime(2016, 04, 16, 22, 31, 00))
@@ -471,7 +498,7 @@ def main():
             try:
                 update(division)
                 current_brackets(division)
-                current_games(division)
+                current_games(division, datetime.now() + TIMEDIFF)
                 # current_games(division, datetime(2016,6,3,12,15))
                 # current_games(division, datetime(2015,6,3,12,15))
 

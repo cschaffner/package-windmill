@@ -1,9 +1,10 @@
 [{
     "module": "text",
     "options": {
-        "text": "This is just a test message for now!"
+        "text": "This is just a test message for now!",
+        "duration": 5
     },
-    "chance": 0.2
+    "chance": 0.1
 },
   {
     "module": "swissgames",
@@ -20,7 +21,7 @@
 },
 {
     "module": "swissgames",
-    "chance": 0.6,
+    "chance": 0.2,
     "options": {
         "division": "women",
         "font_size": 50,
@@ -33,7 +34,7 @@
 },
 {
     "module": "swissgames",
-    "chance": 0.4,
+    "chance": 0.2,
     "options": {
         "division": "mixed",
         "font_size": 42,
