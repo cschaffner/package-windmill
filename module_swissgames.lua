@@ -85,6 +85,13 @@ function M.run(duration, args, fn)
     local y_top = y
     t = t + 0.03
 
+    curx = x_games
+    a.add(anims.my_moving_font(t, E, x_games, y, "Field   Team", font_size, 1,1,1,1))
+    curx = curx + field_nr_width
+    curx = curx + team_width
+    a.add(anims.my_moving_font(t, E, curx, y, "Score    Team", font_size, 1,1,1,1))
+    y = y + font_size + math.floor(font_size/args.line_break_fraction_games)
+    t = t + 0.03
 
     for idx = 1, #game_data.games do
         local game = game_data.games[idx]
