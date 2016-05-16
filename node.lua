@@ -274,7 +274,7 @@ Scroller = (function()
 end)()
 
 Sidebar = (function()
-    local sidebar_width = 200
+    local sidebar_width = 300
     local visibility = 0
     local target = 0
     local restore = sys.now() + 1
@@ -315,7 +315,7 @@ Sidebar = (function()
         local sidebar_x = WIDTH - sidebar_width + (sidebar_width-w)/2
 
         local tower_x = WIDTH-200
-        local tower_y = utils.easeInOut(visibility, 900, 160)
+        local tower_y = utils.easeInOut(visibility, HEIGHT, 300)
         res.podium:draw(tower_x, tower_y-200, tower_x + 200, tower_y + 145, visibility*2)
 
 --        local house_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-320)
