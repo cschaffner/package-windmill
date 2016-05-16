@@ -16,7 +16,7 @@
     "options": {
         "division": "open",
         "top_title": "Open",
-        "duration": 10
+        "duration": 30
     }
 },
 {
@@ -38,7 +38,7 @@
     "options": {
         "division": "women",
         "top_title": "Women",
-        "duration": 10
+        "duration": 20
     }
 },{
     "module": "swissgames",
@@ -59,14 +59,14 @@
     "options": {
         "division": "mixed",
         "top_title": "Mixed",
-        "duration": 10
+        "duration": 20
     }
 },
 {
     "module": "teams",
     "chance": 1,
     "options": {
-        "duration": 15
+        "duration": 10
     }
 
 }]
