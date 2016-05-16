@@ -90,11 +90,11 @@ function M.run(duration, args, fn)
     curx = x_games
     a.add(anims.my_moving_font(t, E, x_games, y, "Field   Team", font_size, 1,1,1,1))
     curx = curx + field_nr_width
-    curx = curx + team_width + score_width/2
+    curx = curx + team_width + score_width/4
     a.add(anims.my_moving_font(t, E, curx, y, "Score     Team", font_size, 1,1,1,1))
     y = y + font_size + math.floor(font_size/args.line_break_fraction_games)
-    a.add(anims.moving_bar(t, E, white, x_games, y, x_games+field_nr_width+2*(team_width+score_width)+20, y+3,1))
-    y = y + 6
+----    a.add(anims.moving_bar(t, E, white, x_games, y, x_games+field_nr_width+2*(team_width+score_width)+20, y+3,1))
+--    y = y + 6
     t = t + 0.03
 
     for idx = 1, #game_data.games do
@@ -127,7 +127,7 @@ function M.run(duration, args, fn)
 --        end
     end
 
-    y = y_top - 150
+    y = y_top - 120
     local nr_teams = #game_data.standings
     for idx = 1, #game_data.standings do
         local standing = game_data.standings[idx]
