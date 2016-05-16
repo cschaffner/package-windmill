@@ -141,7 +141,7 @@ function M.run(duration, args, fn)
 
         a.add(anims.my_scrolling_font(t, scroll_time, E, x_standings, y, y_lift, string.format("%2.0f", standing.ranking) , font_size, 1,1,1,1))
         a.add(anims.my_scrolling_font(t, scroll_time, E, x_standings+rank_width, y, y_lift, standing.team_name , font_size, 1,1,1,1))
-        a.add(anims.my_scrolling_font(t, scroll_time, E, x_standings+rank_width+team_width, y, y_lift, string.format("%6.2f", standing.swiss_score), font_size, 1,1,1,1))
+        a.add(anims.my_scrolling_font(t, scroll_time, E, x_standings+rank_width+team_width, y, y_lift, standing.swiss_score, font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width, y, "-", font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width+20, y, "" .. game.team_2_score , font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+2*score_width+20, y, game.team_2 .. " flag:" .. game.team_1_country, font_size, 1,1,1,1))

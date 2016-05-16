@@ -17,8 +17,8 @@ from dateutil import parser
 from datetime import datetime, timedelta
 from calendar import timegm
 
-from hosted import CONFIG
-CONFIG.restart_on_update()
+# from hosted import CONFIG
+# CONFIG.restart_on_update()
 
 with file("windmill2016_test.json") as f:
 # with file("windmill2015.json") as f:
@@ -432,6 +432,8 @@ def current_games(division='open', current_datetime=datetime.now()):
             for stand in curgames['standings']:
                 stand['team_country'] = TEAMS[stand['team_id']]['country'].lower()
                 stand['team_name'] = u'flag:{0} {1}'.format(TEAMS[stand['team_id']]['country'].lower(), drop_division(division, TEAMS[stand['team_id']]['short_name']))
+                if isinstance(stand['swiss_score'], int):
+                    stand['swiss_score'] = u'{0:%6.2f}'.format(stand['swiss_score'])
         else:
             print >> sys.stderr, "division {0}, {1}: no standings found!".format(division, round['name'])
 
