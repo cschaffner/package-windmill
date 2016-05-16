@@ -35,7 +35,7 @@ TEAMS = {}
 SCHEDULE = WINDMILL['schedule']
 BRACKETS = {}
 
-TIMEDIFF = datetime(2016, 6, 3, 13, 20, 00) - datetime.now()
+TIMEDIFF = datetime(2016, 6, 3, 19, 20, 00) - datetime.now()
 
 HOST = 'https://api.leaguevine.com/v1'
 LOCALHOST = 'http://api.localhost:8000/v1'
