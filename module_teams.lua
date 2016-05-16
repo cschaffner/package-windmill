@@ -57,6 +57,7 @@ function M.run(duration, args, fn)
 --        print(game)
         a.add(anims.my_moving_font(S, E, 200, y, "Round " .. game.round_number .. ": " .. string.format("%2.0f", game.own_score) .. " - " .. string.format("%2.0f", game.opponent_score), text_size, 1,1,1,1))
         a.add(anims.my_moving_font(S, E, 500, y, "flag:" .. game.opponent_country .. game.opponent, text_size, 1,1,1,1));
+        a.add(anims.my_moving_font(S, E, 800, y, string.format("%2.0f", game.own_score-game.opponent_score), text_size, 1,1,1,1));
         S = S + 0.1
         y = y + text_size + 20
     end
