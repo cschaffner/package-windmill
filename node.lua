@@ -20,6 +20,7 @@ res = util.resource_loader({
     "house1.png";
     "house2.png";
     "tower.png";
+    "podium.png"
 })
 
 countries = util.auto_loader({}, function(fname)
@@ -297,7 +298,7 @@ Sidebar = (function()
             gl.translate(WIDTH-sidebar_width, 0)
             gl.rotate(max_rotate - visibility * max_rotate, 0, 1, 0) 
             gl.translate(0.5*sidebar_width*(1-visibility), 0, (1-visibility)*400)
-            res.bottle:draw(0, 0, sidebar_width, HEIGHT, 1)
+--            res.bottle:draw(0, 0, sidebar_width, HEIGHT, 1)
 
             loop:draw(10, 350, 10+268, 350+200)
 
@@ -315,12 +316,12 @@ Sidebar = (function()
 
         local tower_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-150)
         local tower_y = utils.easeInOut(visibility, 900, 660)
-        res.tower:draw(tower_x, tower_y-200, tower_x + 100, tower_y + 145, visibility*2)
+        res.podium:draw(tower_x, tower_y-200, tower_x + 100, tower_y + 145, visibility*2)
 
-        local house_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-320)
-        local house_y = utils.easeInOut(visibility, 900, 650)
-        res.house2:draw(house_x, house_y, house_x + 280, house_y + 180, visibility*2)
-
+--        local house_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-320)
+--        local house_y = utils.easeInOut(visibility, 900, 650)
+--        res.house2:draw(house_x, house_y, house_x + 280, house_y + 180, visibility*2)
+--
         local clock_x = utils.easeInOut(visibility, WIDTH-260, WIDTH-320)
         local clock_y = utils.easeInOut(visibility, HEIGHT-105, 850)
         res.house1:draw(clock_x, clock_y-100, clock_x + 300, clock_y + 155)
