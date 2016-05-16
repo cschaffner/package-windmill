@@ -8,7 +8,7 @@
         "top_title": "Open",
         "line_break_fraction_games": 2,
         "line_break_fraction_standings": 7,
-        "duration": 30
+        "duration": 20
     }
 },
 {
@@ -21,7 +21,7 @@
         "top_title": "Women",
         "line_break_fraction_games": 2,
         "line_break_fraction_standings": 4,
-        "duration": 30
+        "duration": 20
     }
 },
 {
@@ -34,7 +34,15 @@
         "top_title": "Mixed",
         "line_break_fraction_games": 20,
         "line_break_fraction_standings": 8,
-        "duration": 30
+        "duration": 20
     }
+},
+{
+    "module": "teams",
+    "chance": 1,
+    "options": {
+        "duration": 15
+    }
+
 }]
 
