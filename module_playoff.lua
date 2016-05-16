@@ -22,7 +22,6 @@ end)
 local mixed_unwatch = util.file_watch("current_brackets_mixed.json", function(raw)
     mixed_brackets = json.decode(raw)
 end)
-
 local women_unwatch = util.file_watch("current_brackets_women.json", function(raw)
     women_brackets = json.decode(raw)
 end)
@@ -34,8 +33,16 @@ function M.unload()
     women_unwatch()
 end
 
-function M.can_schedule()
-    return true
+function M.can_schedule(options)
+    local brackets
+    if args.division == 'open' then
+        brackets = open_brackets
+    elseif args.division == 'mixed' then
+        brackets = mixed_brackets
+    elseif args.division == 'women' then
+        brackets = women_brackets
+    end
+    return string.len(brackets[1].team_1)>0
 end
 
 function M.prepare(options)
