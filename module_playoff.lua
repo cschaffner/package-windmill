@@ -114,7 +114,7 @@ function M.run(duration, args, fn)
             a.add(anims.my_moving_font(t, E, co[1]+co[3], y+co[2]+co[4], "flag:" .. game.team_2_country .. " " .. game.team_2 , font_size, 1,1,1,1))
             a.add(anims.my_moving_font(t, E, co[1]+co[3]+team_width, y+co[2]+co[4], string.format("%2.0f", game.team_2_score), font_size, 1,1,1,1))
         end
-        a.add(anims.my_moving_font(t, E, co[1]+co[5], y+co[2]+co[6], game.start_time .. " " .. string.sub(game.field,1,9), font_size_small, 1,1,1,1))
+        a.add(anims.my_moving_font(t, E, co[1]+co[5], y+co[2]+co[6], game.start_time .. " " .. string.sub(game.field,1,8), font_size_small, 1,1,1,1))
     end
     t = t + 0.03
 
