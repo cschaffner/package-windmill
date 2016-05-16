@@ -300,7 +300,7 @@ Sidebar = (function()
             gl.translate(0.5*sidebar_width*(1-visibility), 0, (1-visibility)*400)
 --            res.bottle:draw(0, 0, sidebar_width, HEIGHT, 1)
 
-            loop:draw(10, 150, 10+268, 150+200)
+            loop:draw(10, 200, 10+268, 200+200)
 
             -- res.font:write(125, HEIGHT-45, "info-beamer.com", 40, 0,0,0, visibility)
             gl.popMatrix()
@@ -315,7 +315,7 @@ Sidebar = (function()
         local sidebar_x = WIDTH - sidebar_width + (sidebar_width-w)/2
 
         local tower_x = WIDTH-250
-        local tower_y = utils.easeInOut(visibility, HEIGHT, 450)
+        local tower_y = utils.easeInOut(visibility, HEIGHT, 470)
         res.podium:draw(tower_x, tower_y, tower_x + 200, tower_y + 345, visibility*2)
 
 --        local house_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-320)
@@ -324,7 +324,7 @@ Sidebar = (function()
 --
         local clock_x = utils.easeInOut(visibility, WIDTH-260, WIDTH-320)
         local clock_y = utils.easeInOut(visibility, HEIGHT-105, 850)
-        res.clockboarder:draw(clock_x, clock_y-100, clock_x + 300, clock_y + 155)
+        res.clockboarder:draw(clock_x, clock_y-100, clock_x + 221, clock_y + 36)
         res.font:write(clock_x + 150 - w/2, clock_y+5, time, 100, highlight_a(1))
     end
 
