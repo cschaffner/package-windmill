@@ -81,8 +81,9 @@ function M.run(duration, args, fn)
     local y_lift = args.y_lift -- for scrolling the standings
 
     -- HEADER
+    local top_title_width = res.font:width(args.top_title, 80)
     a.add(anims.moving_font(t, E, 150, y, args.top_title, 80, 1,1,1,1))
-    a.add(anims.moving_font(t, E, 400, y+15, game_data.round_name .. "  " .. game_data.start_time .. remaining_text, 50, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 150+top_title_width+30, y+15, game_data.round_name .. "  " .. game_data.start_time .. remaining_text, 50, 1,1,1,1))
     y = y + 100
     local y_top = y
     t = t + 0.03
