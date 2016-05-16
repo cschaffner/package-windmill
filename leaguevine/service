@@ -471,8 +471,9 @@ def main():
             try:
                 update(division)
                 current_brackets(division)
+                current_games(division)
                 # current_games(division, datetime(2016,6,3,12,15))
-                current_games(division, datetime(2015,6,3,12,15))
+                # current_games(division, datetime(2015,6,3,12,15))
 
             except:
                 print >> sys.stderr, "failed to update {0} division".format(division)
