@@ -3,7 +3,9 @@ local utils = require "utils"
 local anims = require "anims"
 
 local M = {}
-local gray = resource.create_colored_texture(0.28,0.28,0.28,1) -- gray
+local gray = resource.create_colored_texture(0.28,0.28,0.28,1)
+local white = resource.create_colored_texture(1,1,1,1)
+
 --local gray = resource.create_colored_texture(0.898,0.529,0,1) -- gray
 
 --local icons = util.auto_loader({}, function(fname)
@@ -81,16 +83,18 @@ function M.run(duration, args, fn)
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, args.top_title, 80, 1,1,1,1))
     a.add(anims.moving_font(t, E, 400, y+15, game_data.round_name .. "  " .. game_data.start_time .. remaining_text, 50, 1,1,1,1))
-    y = y + 130
+    y = y + 100
     local y_top = y
     t = t + 0.03
 
     curx = x_games
     a.add(anims.my_moving_font(t, E, x_games, y, "Field   Team", font_size, 1,1,1,1))
     curx = curx + field_nr_width
-    curx = curx + team_width
-    a.add(anims.my_moving_font(t, E, curx, y, "Score    Team", font_size, 1,1,1,1))
+    curx = curx + team_width + score_width/2
+    a.add(anims.my_moving_font(t, E, curx, y, "Score     Team", font_size, 1,1,1,1))
     y = y + font_size + math.floor(font_size/args.line_break_fraction_games)
+    a.add(anims.moving_bar(t, E, white, x_games, y, x_games+field_nr_width+2*(team_width+score_width)+20, y+3,1))
+    y = y + 6
     t = t + 0.03
 
     for idx = 1, #game_data.games do
