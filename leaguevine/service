@@ -35,7 +35,7 @@ TEAMS = {}
 SCHEDULE = WINDMILL['schedule']
 BRACKETS = {}
 
-TIMEDIFF = datetime(2016, 6, 3, 11, 25, 00) - datetime.now()
+TIMEDIFF = datetime(2016, 6, 3, 13, 20, 00) - datetime.now()
 
 HOST = 'https://api.leaguevine.com/v1'
 LOCALHOST = 'http://api.localhost:8000/v1'
@@ -381,18 +381,26 @@ def current_games(division='open', current_datetime=datetime.now()):
     url = '{0}/games/'.format(HOST)
     payload = {'tournament_id': tournament_id,
                'starts_after': current_datetime.strftime('%Y-%m-%dT%H:%M:%S+02:00'),
-               'limit': 50,
+               'limit': 22,
                'order_by': "['start_time','game_site_id']"}
     r = requests.get(url, params=payload)
-    if r.json()['meta']['total_count'] == 0:
-        # try 2 hours earlier (to catch the last round)
-        payload['starts_after'] = (current_datetime-timedelta(hours=2)).strftime('%Y-%m-%dT%H:%M:%S+02:00')
+    # if r.json()['meta']['total_count'] > 20+12: # the 12 playoff games are also loaded here...
+    #     print >> sys.stderr, "warning: loaded {0} games instead of a single round".format(r.json()['meta']['total_count'])
+
+    allbrackets = True
+    for game in r.json()['objects']:
+        if not game['bracket_id']:
+            allbrackets = False
+            break
+    if allbrackets or r.json()['meta']['total_count'] == 0:
+        print >> sys.stderr, "{0} division: not found any (non-bracket) upcoming games, searching for passed games instead".format(division)
+        payload['starts_before'] = current_datetime.strftime('%Y-%m-%dT%H:%M:%S+02:00')
+        payload.pop('starts_after')
+        payload['order_by'] = "['-start_time','game_site_id']"
         r = requests.get(url, params=payload)
         if r.json()['meta']['total_count'] == 0:
             print >> sys.stderr, "error: no games found"
             return False
-    if r.json()['meta']['total_count'] > 20+12: # the 12 playoff games are also loaded here...
-        print >> sys.stderr, "warning: loaded {0} games instead of a single round".format(r.json()['meta']['total_count'])
 
     games = r.json()['objects']
     games_start = datetime.strptime(games[0]['start_time'], '%Y-%m-%dT%H:%M:%S+02:00')
