@@ -35,11 +35,11 @@ end
 
 function M.can_schedule(options)
     local brackets
-    if args.division == 'open' then
+    if options.division == 'open' then
         brackets = open_brackets
-    elseif args.division == 'mixed' then
+    elseif options.division == 'mixed' then
         brackets = mixed_brackets
-    elseif args.division == 'women' then
+    elseif options.division == 'women' then
         brackets = women_brackets
     end
     return string.len(brackets[1].team_1)>0
