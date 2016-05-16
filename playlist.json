@@ -6,23 +6,8 @@
     "chance": 0.2
 },
 {
-    "module": "videos",
-    "options": {
-        "videos": [
-            {
-                "file": "3d-druck.mp4",
-                "duration": 9.2,
-                "raw": false,
-                "text": "Need a 3D printed part?"
-            }
-        ]
-    },
-    "chance": 0.15,
-    "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
-},
-{
     "module": "teams",
-    "chance": 0.5,
+    "chance": 1,
     "options": {
         "duration": 20
     }
@@ -40,18 +25,6 @@
         "duration": 10
     }
 }, {
-    "module": "playoff",
-    "chance": 0.2,
-    "options": {
-        "division": "women",
-        "top_title": "Women",
-        "duration": 20
-    }
-}, {
-    "module": "images",
-    "chance": 0.5,
-    "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
-},{
     "module": "gvb"
 }, {
     "module": "twitter"
