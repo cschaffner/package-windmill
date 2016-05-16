@@ -274,7 +274,7 @@ Scroller = (function()
 end)()
 
 Sidebar = (function()
-    local sidebar_width = 339
+    local sidebar_width = 200
     local visibility = 0
     local target = 0
     local restore = sys.now() + 1
@@ -300,7 +300,7 @@ Sidebar = (function()
             gl.translate(0.5*sidebar_width*(1-visibility), 0, (1-visibility)*400)
 --            res.bottle:draw(0, 0, sidebar_width, HEIGHT, 1)
 
-            loop:draw(10, 350, 10+268, 350+200)
+            loop:draw(10, 150, 10+268, 150+200)
 
             -- res.font:write(125, HEIGHT-45, "info-beamer.com", 40, 0,0,0, visibility)
             gl.popMatrix()
@@ -314,9 +314,9 @@ Sidebar = (function()
         local w = res.font:width(time, size)
         local sidebar_x = WIDTH - sidebar_width + (sidebar_width-w)/2
 
-        local tower_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-150)
-        local tower_y = utils.easeInOut(visibility, 900, 660)
-        res.podium:draw(tower_x, tower_y-200, tower_x + 100, tower_y + 145, visibility*2)
+        local tower_x = WIDTH-200
+        local tower_y = utils.easeInOut(visibility, 900, 160)
+        res.podium:draw(tower_x, tower_y-200, tower_x + 200, tower_y + 145, visibility*2)
 
 --        local house_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-320)
 --        local house_y = utils.easeInOut(visibility, 900, 650)
