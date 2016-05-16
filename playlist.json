@@ -1,14 +1,6 @@
 [{
-    "module": "text",
-    "options": {
-        "text": "This is just a test message for now!",
-        "duration": 5
-    },
-    "chance": 0.1
-},
-  {
     "module": "swissgames",
-    "chance": 0.2,
+    "chance": 1,
     "options": {
         "division": "open",
         "font_size": 50,
@@ -21,7 +13,7 @@
 },
 {
     "module": "swissgames",
-    "chance": 0.2,
+    "chance": 1,
     "options": {
         "division": "women",
         "font_size": 50,
@@ -34,7 +26,7 @@
 },
 {
     "module": "swissgames",
-    "chance": 0.2,
+    "chance": 1,
     "options": {
         "division": "mixed",
         "font_size": 42,
@@ -44,9 +36,5 @@
         "line_break_fraction_standings": 8,
         "duration": 30
     }
-},
- {
-    "module": "twitter"
-}
-]
+}]
 

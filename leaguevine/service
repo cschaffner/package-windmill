@@ -35,7 +35,7 @@ TEAMS = {}
 SCHEDULE = WINDMILL['schedule']
 BRACKETS = {}
 
-TIMEDIFF = datetime(2016, 6, 3, 7, 58, 00) - datetime.now()
+TIMEDIFF = datetime(2016, 6, 3, 11, 25, 00) - datetime.now()
 
 HOST = 'https://api.leaguevine.com/v1'
 LOCALHOST = 'http://api.localhost:8000/v1'
@@ -135,6 +135,8 @@ def update(division='open'):
                 print >> sys.stderr, "{0} division: comparing round number did not work either. Cannot update division!".format(
                     division)
                 return False
+            else:
+                print >> sys.stderr, "{0} division: That worked! :-)".format(division)
 
         round.update(swiss_round)
         # update rankings if we are in playoff phase
@@ -371,7 +373,7 @@ def current_games(division='open', current_datetime=datetime.now()):
     :return:
     """
     # global TEAMS   # required because those will be changed here!
-    print >> sys.stderr, "{0} division: starting to write new current games ".format(division)
+    print >> sys.stderr, "{0} division: starting to write new current games (time: {2})".format(division, current_datetime)
 
     tournament_id = WINDMILL['tournaments'][division]['tournament_id']
 
@@ -409,6 +411,9 @@ def current_games(division='open', current_datetime=datetime.now()):
         if not round:
             print >> sys.stderr, "{0} division: comparing round number did not work either. no suitable round data found!".format(
                 division)
+        else:
+            print >> sys.stderr, "{0} division: that worked! ;-)".format(division)
+
     if round:
         round_start = datetime.strptime(round['start'], '%Y-%m-%dT%H:%M:%S')
         curgames['start_time'] = round_start.strftime('%a %-H:%M')
