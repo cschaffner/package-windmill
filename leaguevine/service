@@ -17,8 +17,8 @@ from dateutil import parser
 from datetime import datetime, timedelta
 from calendar import timegm
 
-# from hosted import CONFIG
-# CONFIG.restart_on_update()
+from hosted import CONFIG
+CONFIG.restart_on_update()
 
 with file("windmill2016_test.json") as f:
 # with file("windmill2015.json") as f:
@@ -243,6 +243,7 @@ def update(division='open'):
                 stand = [stand for stand in round['standings'] if stand['team_id']==game['team_1_id']][0]
                 opponent_name, opponent_country = team_info(division, game['team_2'])
                 TEAMS[game['team_1_id']]['games'][round['name']] = {
+                    'opponent_id': game['team_2_id'],
                     'opponent': opponent_name,
                     'opponent_country': opponent_country,
                     'own_score': game['team_1_score'],
@@ -256,6 +257,7 @@ def update(division='open'):
                 stand = [stand for stand in round['standings'] if stand['team_id']==game['team_2_id']][0]
                 opponent_name, opponent_country = team_info(division, game['team_1'])
                 TEAMS[game['team_2_id']]['games'][round['name']] = {
+                    'opponent_id': game['team_1_id'],
                     'opponent': opponent_name,
                     'opponent_country': opponent_country,
                     'own_score': game['team_2_score'],
@@ -341,7 +343,9 @@ def current_teams():
         team['country'] = team['country'].lower()
         team['games'] = [game for (round_name, game) in team['games'].iteritems()]
         sorted(team['games'], key=itemgetter('round_start_time'))
-        team['current_stand'] = get_team_stand(team['id'])
+        for game in team['games']:
+            game['opponent_standing'] = get_team_stand(game['opponent_id'])
+        team['current_standing'] = get_team_stand(team['id'])
 
     with file("current_teams.json.new", "wb") as f:
         f.write(json.dumps(team_list_copy,
