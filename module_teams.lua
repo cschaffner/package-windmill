@@ -47,7 +47,9 @@ function M.run(duration, args, fn)
         a.add(anims.my_moving_font(S,E, 200, y, "City: ".. args.team.city, text_size, 1,1,1,1))
     end
     a.add(anims.my_moving_font(S,E, 1000, y, "Current Swiss Score: ".. args.team.current_standing.swiss_score, text_size, 1,1,1,1))
-    a.add(anims.my_moving_font(S,E, 1600, y, "Avg Opponent Swiss Score: ".. args.team.current_standing.swiss_opponent_score_avg, text_size, 1,1,1,1))
+    if args.team.current_standing.swiss_opponent_score_avg then
+        a.add(anims.my_moving_font(S,E, 1600, y, "Avg Opponent Swiss Score: ".. args.team.current_standing.swiss_opponent_score_avg, text_size, 1,1,1,1))
+    end
     y = y + text_size + 10
 
     y = y + 50
