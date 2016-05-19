@@ -88,7 +88,7 @@ function M.run(duration, args, fn)
 
     local pos = {}
 --    name     = team_1_x, team_1_y ,  team_2_x, teams_2_y (relative to team_1),  start_time / field (relative to team_1)
-    pos["QF0"] = {39, 23, 0, 80, 39, 40}
+    pos["QF0"] = {39, 23, 0, 78, 39, 40}
     pos["QF1"] = {pos["QF0"][1], 201, pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
     pos["QF2"] = {1614, pos["QF0"][2], pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
     pos["QF3"] = {pos["QF2"][1], pos["QF1"][2], pos["QF0"][3], pos["QF0"][4], pos["QF0"][5], pos["QF0"][6]}
