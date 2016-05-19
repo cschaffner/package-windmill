@@ -17,8 +17,8 @@ from dateutil import parser
 from datetime import datetime, timedelta
 from calendar import timegm
 
-from hosted import CONFIG
-CONFIG.restart_on_update()
+# from hosted import CONFIG
+# CONFIG.restart_on_update()
 
 with file("windmill2016_test.json") as f:
 # with file("windmill2015.json") as f:
@@ -315,6 +315,21 @@ def game_to_dict(division, game):
     return game_dict
 
 
+def get_team_stand(team_id):
+    """
+    :param team_id:
+    :return: returns the latest standing of team with team_id
+    """
+    team = TEAMS[team_id]
+    last_round_nr = 0
+    stand = {}
+    for round_name, game in team['games'].iteritems():
+        if game['round_number'] > last_round_nr:
+            stand = game['own_standing']
+            last_round_nr = game['round_number']
+
+    return stand
+
 def current_teams():
     """
     writes all team data into current_teams.json
@@ -326,6 +341,7 @@ def current_teams():
         team['country'] = team['country'].lower()
         team['games'] = [game for (round_name, game) in team['games'].iteritems()]
         sorted(team['games'], key=itemgetter('round_start_time'))
+        team['current_stand'] = get_team_stand(team['id'])
 
     with file("current_teams.json.new", "wb") as f:
         f.write(json.dumps(team_list_copy,
