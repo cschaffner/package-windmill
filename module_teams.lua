@@ -69,7 +69,7 @@ function M.run(duration, args, fn)
         local game = args.team.games[idx]
 --        print(game)
         if (idx % 2 == 1) then
-            a.add(anims.moving_bar(S, E, gray, 200, y, 1400, y+text_size,1))
+            a.add(anims.moving_bar(S, E, gray, 200, y, 1500, y+text_size,1))
         end
 
         a.add(anims.my_moving_font(S, E, 200, y, "R " .. game.round_number .. ":   " .. string.format("%2.0f", game.own_score) .. " - " .. string.format("%2.0f", game.opponent_score), text_size, 1,1,1,1))
