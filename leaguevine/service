@@ -328,6 +328,18 @@ def get_team_stand(team_id):
     :return: returns the latest standing of team with team_id
     """
     team = TEAMS[team_id]
+    # determine the latest available numerical swiss_score
+    last_round_nr = 0
+    num_swiss_score = 0
+    for round_name, game in team['games'].iteritems():
+        try:
+            round_swiss_score = float(game['own_standing']['swiss_score'])
+        except ValueError:
+            round_swiss_score = None
+        if round_swiss_score and game['round_number'] > last_round_nr:
+            num_swiss_score = round_swiss_score
+            last_round_nr = game['round_number']
+
     last_round_nr = 0
     stand = {}
     for round_name, game in team['games'].iteritems():
@@ -335,6 +347,7 @@ def get_team_stand(team_id):
             stand = game['own_standing']
             last_round_nr = game['round_number']
 
+    stand['num_swiss_score'] = '{}'.format(num_swiss_score)
     return stand
 
 def current_teams():
@@ -352,7 +365,7 @@ def current_teams():
         for game in team['games']:
             game['opponent_standing'] = get_team_stand(game['opponent_id'])
             try:
-                game['swiss_score_diff'] = u'{0:+6.2f}'.format(float(team['current_standing']['swiss_score'])-float(game['opponent_standing']['swiss_score']))
+                game['swiss_score_diff'] = u'{0:+6.2f}'.format(float(team['current_standing']['num_swiss_score'])-float(game['opponent_standing']['num_swiss_score']))
             except ValueError:
                 pass
             if game['is_final']:
