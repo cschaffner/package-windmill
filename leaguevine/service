@@ -17,8 +17,8 @@ from dateutil import parser
 from datetime import datetime, timedelta
 from calendar import timegm
 
-# from hosted import CONFIG
-# CONFIG.restart_on_update()
+from hosted import CONFIG
+CONFIG.restart_on_update()
 
 with file("windmill2016_test.json") as f:
 # with file("windmill2015.json") as f:
@@ -127,7 +127,12 @@ def update(division='open'):
     # update schedule with extra information
     for swiss_round in swiss_rounds:
         # find the round in SCHEDULE[division] which corresponds to this swissround
-        round = next((round for round in SCHEDULE[division] if round['start'] == swiss_round['games'][0]['start_time'][0:19]), None)
+        if len(swiss_round['games']) > 0:
+            swiss_round_start_time = swiss_round['games'][0]['start_time'][0:19]
+        else:
+            swiss_round_start_time = swiss_round['start_time'][0:19]
+
+        round = next((round for round in SCHEDULE[division] if round['start'] == swiss_round_start_time), None)
         if not round:
             print >> sys.stderr, "{0} division: no matching round found, serious error! trying to fix by comparing round numbers..".format(division)
             round = next((x for x in SCHEDULE[division] if x['round_number'] == swiss_round['round_number']), None)
