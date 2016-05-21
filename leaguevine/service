@@ -352,7 +352,7 @@ def current_teams():
         for game in team['games']:
             game['opponent_standing'] = get_team_stand(game['opponent_id'])
             try:
-                game['swiss_score_diff'] = u'{0:+6.2f}'.format(float(team['current_standing']['swiss_score'])-float(team['opponent_standing']['swiss_score']))
+                game['swiss_score_diff'] = u'{0:+6.2f}'.format(float(team['current_standing']['swiss_score'])-float(game['opponent_standing']['swiss_score']))
             except ValueError:
                 pass
             if game['is_final']:
