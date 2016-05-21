@@ -348,9 +348,15 @@ def current_teams():
         team['country'] = team['country'].lower()
         team['games'] = [game for (round_name, game) in team['games'].iteritems()]
         sorted(team['games'], key=itemgetter('round_start_time'))
+        team['current_standing'] = get_team_stand(team['id'])
         for game in team['games']:
             game['opponent_standing'] = get_team_stand(game['opponent_id'])
-        team['current_standing'] = get_team_stand(team['id'])
+            try:
+                game['swiss_score_diff'] = u'{0:+6.2f}'.format(float(team['current_standing']['swiss_score'])-float(team['opponent_standing']['swiss_score']))
+            except ValueError:
+                pass
+            if game['is_final']:
+                game['score_diff'] = u'{0:+2.0f}'.format(game['own_score']-game['opponent_score'])
 
     with file("current_teams.json.new", "wb") as f:
         f.write(json.dumps(team_list_copy,
@@ -545,8 +551,12 @@ def main():
                 traceback.print_exc()
                 # time.sleep(20)
                 continue
+        try:
+            current_teams()
+        except:
+            print >> sys.stderr, "failed to update current teams"
+            traceback.print_exc()
 
-        current_teams()
         time.sleep(60)
 
 
