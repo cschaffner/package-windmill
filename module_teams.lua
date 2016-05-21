@@ -68,12 +68,12 @@ function M.run(duration, args, fn)
         a.add(anims.my_moving_font(S, E, 200, y, "R " .. game.round_number .. ": " .. string.format("%2.0f", game.own_score) .. " - " .. string.format("%2.0f", game.opponent_score), text_size, 1,1,1,1))
         a.add(anims.my_moving_font(S, E, 500, y, "flag:" .. game.opponent_country .. game.opponent, text_size, 1,1,1,1));
         a.add(anims.my_moving_font(S, E, 800, y, game.opponent_standing.ranking, text_size, 1,1,1,1));
-        if game.score_diff then
-            a.add(anims.my_moving_font(S, E, 1000, y, game.score_diff, text_size, 1,1,1,1));
-        end
-        if game.swiss_score_diff then
-            a.add(anims.my_moving_font(S, E, 1200, y, game.swiss_score_diff, text_size, 1,1,1,1));
-        end
+--        if game.score_diff then
+--            a.add(anims.my_moving_font(S, E, 1000, y, game.score_diff, text_size, 1,1,1,1));
+--        end
+--        if game.swiss_score_diff then
+--            a.add(anims.my_moving_font(S, E, 1200, y, game.swiss_score_diff, text_size, 1,1,1,1));
+--        end
         S = S + 0.1
         y = y + text_size + 20
     end
