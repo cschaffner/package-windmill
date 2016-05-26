@@ -10,7 +10,7 @@ end)
 
 local weather = {}
 local rain = {}
-local radar
+--local radar
 
 local data_unwatch = util.file_watch("weather_data.json", function(raw)
     weather = json.decode(raw)
@@ -18,14 +18,14 @@ end)
 local rain_unwatch = util.file_watch("weather_rain.json", function(raw)
     rain = json.decode(raw)
 end)
-local radar_unwatch = util.file_watch("weather_radar.gif", function(raw)
-    radar = raw
-end)
+--local radar_unwatch = util.file_watch("weather_radar.gif", function(raw)
+--    radar = raw
+--end)
 
 function M.unload()
     data_unwatch()
     rain_unwatch()
-    radar_unwatch()
+--    radar_unwatch()
 end
 
 function M.can_schedule()
@@ -54,7 +54,7 @@ function M.run(duration, _, fn)
     t = t + 0.03
     local font_size = 40
 
-    a.add(anims.moving_image(t, E, radar, 1200, 500, 1200+200, 500+200, 1))
+--    a.add(anims.moving_image(t, E, radar, 1200, 500, 1200+200, 500+200, 1))
 
     for idx = 1, #rain do
         local rain_point = rain[idx]
