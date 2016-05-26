@@ -79,12 +79,12 @@ def get_radar():
         with file("weather_radar.png.new", "wb") as f:
             f.write(r.content)
         if minutes > 0:
-            filename = "weather_radar_plus{}".format(minutes)
+            filename = "weather_radar_plus{}.png".format(minutes)
         elif minutes == 0:
-            filename = "weather_radar_now"
+            filename = "weather_radar_now.png"
         elif minutes < 0:
-            filename = "weather_radar_min{}".format(-minutes)
-        os.rename("weather_radar.png.new", "../{}.png".format(filename))
+            filename = "weather_radar_min{}.png".format(-minutes)
+        os.rename("weather_radar.png.new", "../{}".format(filename))
         radar_data.append({'time': actual_time.strftime('%a %-H:%M'),
                            'filename': filename})
 
