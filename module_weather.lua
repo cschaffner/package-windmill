@@ -4,9 +4,6 @@ local anims = require "anims"
 
 local M = {}
 
-local icons = util.auto_loader({}, function(fname)
-    return fname:sub(1,4) == "gvb-"
-end)
 
 local blue = resource.create_colored_texture(0.12,0.56,1,1)
 local weather = {}
@@ -19,7 +16,8 @@ end)
 local rain_unwatch = util.file_watch("weather_rain.json", function(raw)
     rain = json.decode(raw)
 end)
-local radar_unwatch = util.file_watch("weather_radar.gif", function(raw)
+--local radar_unwatch = util.file_watch("weather_radar.gif", function(raw)
+local radar_unwatch = util.file_watch("img_welcome_heart.jpg", function(raw)
     radar = raw
 end)
 
