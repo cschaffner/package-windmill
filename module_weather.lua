@@ -8,7 +8,7 @@ local M = {}
 local blue = resource.create_colored_texture(0.12,0.56,1,1)
 local weather = {}
 local rain = {}
-local radar
+local radar = resource.load_image("img_welcome_heart.jpg")
 
 local data_unwatch = util.file_watch("weather_data.json", function(raw)
     weather = json.decode(raw)
@@ -17,9 +17,9 @@ local rain_unwatch = util.file_watch("weather_rain.json", function(raw)
     rain = json.decode(raw)
 end)
 --local radar_unwatch = util.file_watch("weather_radar.gif", function(raw)
-local radar_unwatch = util.file_watch("img_welcome_heart.jpg", function(raw)
-    radar = resource.load_image(raw)
-end)
+--local radar_unwatch = util.file_watch("img_welcome_heart.jpg", function(raw)
+--    radar = resource.load_image(raw)
+--end)
 
 function M.unload()
     data_unwatch()
