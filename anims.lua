@@ -98,6 +98,14 @@ function M.voll(S, E, x, y)
     )
 end
 
+function M.image(S, E, img, x1, y1, x2, y2, alpha)
+    return move_in_move_out(S, E, x1, y1,
+        rotating_entry_exit(S, E, function(t)
+            return util.draw_correct(img, 0, 0, x2-x1, y2-y1, alpha)
+        end)
+    )
+end
+
 function M.moving_image(S, E, img, x1, y1, x2, y2, alpha)
     return move_in_move_out(S, E, x1, y1,
         rotating_entry_exit(S, E, function(t)

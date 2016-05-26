@@ -56,8 +56,11 @@ function M.run(duration, _, fn)
     t = t + 0.03
     local font_size = 40
 
-    a.add(anims.moving_image(t, E, radar_pics['weather_radar-60'], 200, y, 1060+200, y+915, 1))
---    for idx = 1, #radar_data do
+--    a.add(anims.moving_image(t, E, radar_pics['weather_radar-60'], 200, y, 500+200, y+400, 1))
+    a.add(function(t)
+        return radar_pics['weather_radar-60']:draw(200, y, 500+200, y+400, 1)
+    end)
+    --    for idx = 1, #radar_data do
 --        local radar = radar_data[idx]
 --        print(radar.filename)
 --        a.add(radar_pics[radar.filename]:draw(200, y, 1060+200, y+915, 1))
@@ -73,12 +76,13 @@ function M.run(duration, _, fn)
         if (idx % 4 == 1) then
             a.add(anims.rotated_moving_font(t, E, x, y_rain, rain_point.time , font_size, 1,1,1,1))
         end
-        a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.mmh_num*600, x+30, y_rain,1))
+        a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.mmh_num*300, x+30, y_rain,1))
     end
 
     a.add(anims.moving_font(t, E, 150, y, "now: ", 100, 1,1,1,1))
-    a.add(anims.moving_font(t, E, 300, y, "temp: " .. weather.today.temperatuurGC, 100, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 300, y, "temp: " .. weather.today.temperatuurGC, font_size, 1,1,1,1))
 
+    Sidebar.hide(E)
     fn.wait_t(0)
 
     for now in fn.upto_t(E) do
