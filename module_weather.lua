@@ -8,6 +8,7 @@ local icons = util.auto_loader({}, function(fname)
     return fname:sub(1,4) == "gvb-"
 end)
 
+local blue = resource.create_colored_texture(0.12,0.56,1,1)
 local weather = {}
 local rain = {}
 --local radar
@@ -53,14 +54,17 @@ function M.run(duration, _, fn)
     y = y + 110
     t = t + 0.03
     local font_size = 40
+    local y_rain = HEIGHT-200
+    local x_rain = 50
 
 --    a.add(anims.moving_image(t, E, radar, 1200, 500, 1200+200, 500+200, 1))
 
     for idx = 1, #rain do
+        local x = x_rain + idx*40
         local rain_point = rain[idx]
-        a.add(anims.moving_font(t, E, 100, y, rain_point.mm_per_h , font_size, 1,1,1,1))
-        a.add(anims.moving_font(t, E, 200, y, rain_point.time , font_size, 1,1,1,1))
-        y = y + font_size
+        a.add(anims.moving_font(t, E, 50, y_rain, rain_point.mm_per_h , font_size, 1,1,1,1))
+        a.add(anims.moving_font(t, E, x, y_rain, rain_point.time , font_size, 1,1,1,1))
+        a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.mmh_num*400, x+30, y_rain,1))
     end
 
     a.add(anims.moving_font(t, E, 150, y, "now: ", 100, 1,1,1,1))

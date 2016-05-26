@@ -11,7 +11,8 @@ MET = pytz.timezone("Europe/Amsterdam")
 
 
 def get_rain():
-    r = requests.get('http://gps.buienradar.nl/getrr.php?lat=52.3796198&lon=4.7898874')
+    # r = requests.get('http://gps.buienradar.nl/getrr.php?lat=52.3796198&lon=4.7898874')
+    r = requests.get('http://gps.buienradar.nl/getrr.php?lat=50.10&lon=6.93')
     rain_string = r.text
     rain_data = []
     for data in rain_string.split('\r\n'):
