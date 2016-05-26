@@ -1,11 +1,4 @@
 [{
-    "module": "text",
-    "options": {
-        "text": "Want to know how the Swissdraw works?"
-    },
-    "chance": 0.2
-},
-{
     "module": "teams",
     "chance": 1,
     "options": {
