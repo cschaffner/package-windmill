@@ -62,8 +62,8 @@ function M.run(duration, _, fn)
     for idx = 1, #rain do
         local x = x_rain + idx*40
         local rain_point = rain[idx]
-        a.add(anims.moving_font(t, E, 50, y_rain, rain_point.mm_per_h , font_size, 1,1,1,1))
-        if (idx % 5 == 1) then
+--        a.add(anims.moving_font(t, E, 50, y_rain, rain_point.mm_per_h , font_size, 1,1,1,1))
+        if (idx % 4 == 1) then
             a.add(anims.rotated_moving_font(t, E, x, y_rain, rain_point.time , font_size, 1,1,1,1))
         end
         a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.mmh_num*400, x+30, y_rain,1))
