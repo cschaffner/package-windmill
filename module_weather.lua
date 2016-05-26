@@ -8,7 +8,10 @@ local M = {}
 local blue = resource.create_colored_texture(0.12,0.56,1,1)
 local weather = {}
 local rain = {}
-local radar = resource.load_image("weather-testradar.gif")
+local radar_data = {}
+local radar_pics = util.auto_loader({}, function(fname)
+    return fname:sub(1,14) == "weather_radar-"
+end)
 
 local data_unwatch = util.file_watch("weather_data.json", function(raw)
     weather = json.decode(raw)
@@ -16,15 +19,15 @@ end)
 local rain_unwatch = util.file_watch("weather_rain.json", function(raw)
     rain = json.decode(raw)
 end)
---local radar_unwatch = util.file_watch("weather_radar.gif", function(raw)
---local radar_unwatch = util.file_watch("img_welcome_heart.jpg", function(raw)
---    radar = resource.load_image(raw)
---end)
+local radar_data_unwatch = util.file_watch("weather_radar.json", function(raw)
+    radar_data = json.decode(raw)
+end)
+
 
 function M.unload()
     data_unwatch()
     rain_unwatch()
---    radar_unwatch()
+    radar_data_unwatch()
 end
 
 function M.can_schedule()
@@ -52,11 +55,16 @@ function M.run(duration, _, fn)
     y = y + 110
     t = t + 0.03
     local font_size = 40
+
+    a.add(anims.moving_image(t, E, radar_pics['weather_radar-60'], 200, y, 1060+200, y+915, 1))
+    for idx = 1, #radar_data do
+        local radar = radar_data[idx]
+        a.add(radar_pics[radar.filename]:draw(200, y, 1060+200, y+915, 1))
+        a.add(res.font:write(200, y, radar.time, 60, 1,0,0,0.8))
+    end
+
     local y_rain = HEIGHT-200
     local x_rain = 50
-
-    a.add(anims.moving_image(t, E, radar, 1200, 500, 1200+200, 500+200, 1))
-
     for idx = 1, #rain do
         local x = x_rain + idx*40
         local rain_point = rain[idx]

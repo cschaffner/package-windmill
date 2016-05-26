@@ -5,6 +5,9 @@ import json
 import pytz
 import requests
 
+from math import floor
+from datetime import datetime, timedelta
+
 from xml.etree import ElementTree
 
 MET = pytz.timezone("Europe/Amsterdam")
@@ -55,6 +58,35 @@ def get_weather():
     return json.dumps(weather_dict, ensure_ascii=False, indent=2).encode("utf8")
 
 
+def round_down(tm):
+    # from http://stackoverflow.com/questions/6933023/how-to-round-up-always-time-to-nearest-ten
+    upmins = floor(float(tm.minute)/10)*10
+    diffmins = upmins - tm.minute
+    newtime = tm + timedelta(minutes=diffmins)
+    newtime = newtime.replace(second=0, microsecond=0)
+    return newtime
+
+def get_radar():
+    radar_data = []
+    now = round_down(datetime.now())  # correcting for UTC?
+    for minutes in xrange(-60,60,10):
+        retrieve_time = now - timedelta(hours=2)+timedelta(minutes=minutes)
+        actual_time = now + timedelta(minutes=minutes)
+        datetimestring = retrieve_time.strftime('%Y%m%d%H%M')
+        # url = 'http://buienradar.nl/image/?time={0}&type=forecastzozw&extension=png'.format(datetimestring)
+        url = 'http://api.buienradar.nl/image/1.0/WebMercatorRadarNL/?t={}&ext=png'.format(datetimestring)
+        r = requests.get(url)
+        with file("weather_radar.png.new", "wb") as f:
+            f.write(r.content)
+        os.rename("weather_radar.png.new", "../weather_radar{0:+d}.png".format(minutes))
+        radar_data.append({'time': actual_time.strftime('%a %-H:%M'),
+                           'filename': 'weather_radar{0:+d}'.format(minutes)})
+
+    with file("weather_radar.json.new", "wb") as f:
+        f.write(json.dumps(radar_data, ensure_ascii=False, indent=2).encode("utf8"))
+    os.rename("weather_radar.json.new", "../weather_radar.json")
+
+
 def update():
     # weather data
     with file("weather_data.json.new", "wb") as f:
@@ -62,10 +94,8 @@ def update():
     os.rename("weather_data.json.new", "../weather_data.json")
 
     # radar
-    r = requests.get('http://api.buienradar.nl/image/1.0/RadarMapNL?w=200&h=200')
-    with file("weather_radar.gif.new", "wb") as f:
-        f.write(r.content)
-    os.rename("weather_radar.gif.new", "../weather_radar.gif")
+    # r = requests.get('http://api.buienradar.nl/image/1.0/RadarMapNL?w=200&h=200')
+    get_radar()
 
     # rain data
     with file("weather_rain.json.new", "wb") as f:
