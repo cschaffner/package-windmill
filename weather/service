@@ -17,7 +17,7 @@ def get_rain():
     for data in rain_string.split('\r\n'):
         if data:
             rain_amount = 10**((int(data[:3])-109)/32)
-            rain_data.append({'mm per h': '{0:4.2f}'.format(rain_amount),
+            rain_data.append({'mm_per_h': '{0:4.2f}'.format(rain_amount),
                               'mmh_num': rain_amount,
                               'time': data[4:]})
 

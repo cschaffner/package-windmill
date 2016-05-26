@@ -1,6 +1,13 @@
 [{
-    "module": "teams",
+    "module": "weather",
     "chance": 1,
+    "options": {
+        "duration": 15
+    }
+
+},{
+    "module": "teams",
+    "chance": 0,
     "options": {
         "duration": 15
     }
