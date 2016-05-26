@@ -58,11 +58,11 @@ function M.run(duration, args, fn)
     y = y + 50
     a.add(anims.my_moving_font(S,E, 200, y, "Games:", text_big, 1,1,1,1))
     y = y + text_big + 20
-    a.add(anims.my_moving_font(S, E, 200, y, "Round: Score", text_small, 1,1,1,1))
+    a.add(anims.my_moving_font(S, E, 200, y, "Round:  Score", text_small, 1,1,1,1))
     a.add(anims.my_moving_font(S, E, 450, y, "Opponent", text_small, 1,1,1,1));
-    a.add(anims.my_moving_font(S, E, 780, y, "Opp Rank", text_small, 1,1,1,1));
-    a.add(anims.my_moving_font(S, E, 950, y, "GameScoreDiff", text_small, 1,1,1,1));
-    a.add(anims.my_moving_font(S, E, 1150, y, "SwissScoreDiff", text_small, 1,1,1,1));
+    a.add(anims.my_moving_font(S, E, 760, y, "Opp Rank", text_small, 1,1,1,1));
+    a.add(anims.my_moving_font(S, E, 930, y, "GameScoreDiff", text_small, 1,1,1,1));
+    a.add(anims.my_moving_font(S, E, 1140, y, "SwissScoreDiff", text_small, 1,1,1,1));
     S = S + 0.1
     y = y + text_size + 20
     for idx = 1, #args.team.games do
