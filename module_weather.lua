@@ -57,7 +57,7 @@ function M.run(duration, _, fn)
     local y_rain = HEIGHT-200
     local x_rain = 50
 
---    a.add(anims.moving_image(t, E, radar, 1200, 500, 1200+200, 500+200, 1))
+    a.add(anims.moving_image(t, E, radar, 1200, 500, 1200+200, 500+200, 1))
 
     for idx = 1, #rain do
         local x = x_rain + idx*40
