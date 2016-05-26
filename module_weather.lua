@@ -8,7 +8,7 @@ local M = {}
 local blue = resource.create_colored_texture(0.12,0.56,1,1)
 local weather = {}
 local rain = {}
-local radar = resource.load_image("img_welcome_heart.jpg")
+local radar = resource.load_image("package.png")
 
 local data_unwatch = util.file_watch("weather_data.json", function(raw)
     weather = json.decode(raw)
@@ -55,7 +55,7 @@ function M.run(duration, _, fn)
     local y_rain = HEIGHT-200
     local x_rain = 50
 
---    a.add(anims.moving_image(t, E, radar, 1200, 500, 1200+200, 500+200, 1))
+    a.add(anims.moving_image(t, E, radar, 1200, 500, 1200+200, 500+200, 1))
 
     for idx = 1, #rain do
         local x = x_rain + idx*40
