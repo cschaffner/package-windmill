@@ -69,7 +69,7 @@ function M.run(duration, args, fn)
         local game = args.team.games[idx]
 --        print(game)
         if (idx % 2 == 1) then
-            a.add(anims.moving_bar(S, E, gray, 200, y, 1500, y+text_size,1))
+            a.add(anims.moving_bar(S, E, gray, 200, y, 1300, y+text_size,1))
         end
 
         if game.is_final then
