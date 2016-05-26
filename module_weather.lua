@@ -8,7 +8,9 @@ local icons = util.auto_loader({}, function(fname)
     return fname:sub(1,4) == "gvb-"
 end)
 
-local departures = {}
+local weather = {}
+local rain = {}
+local radar
 
 local data_unwatch = util.file_watch("weather_data.json", function(raw)
     weather = json.decode(raw)
