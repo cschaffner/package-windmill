@@ -79,9 +79,9 @@ def get_radar():
         with file("weather_radar.png.new", "wb") as f:
             f.write(r.content)
         if minutes > 0:
-            filename = "weather_radar_plus{}.png".format(minutes)
+            filename = "weather_radar_plus{}".format(minutes)
         elif minutes == 0:
-            filename = "weather_radar_now.png"
+            filename = "weather_radar_now"
         elif minutes < 0:
             filename = "weather_radar_min{}".format(-minutes)
         os.rename("weather_radar.png.new", "../{}.png".format(filename))
