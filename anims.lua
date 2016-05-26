@@ -5,10 +5,10 @@ local M = {}
 
 local function rotated_rotating_entry_exit(S, E, obj)
     local rotate = utils.make_smooth{
-        {t = S ,  val = -60},
-        {t = S+1 ,val =  90, ease='step'},
-        {t = E-1, val =  90},
-        {t = E,   val = -90},
+        {t = S ,  val =  -90},
+        {t = S+1 ,val =  -90, ease='step'},
+        {t = E-1, val =  -90},
+        {t = E,   val =  -90},
     }
 
     return function(t)
