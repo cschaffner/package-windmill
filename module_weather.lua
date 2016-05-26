@@ -56,9 +56,15 @@ function M.run(duration, _, fn)
     t = t + 0.03
     local font_size = 40
 
+    local function minutes_from_t(t)
+        minutes = 120*t/E
+        minutes = 10 * floor(minutes/10)
+        minutes = minutes - 60
+        return minutes
+    end
 --    a.add(anims.moving_image(t, E, radar_pics['weather_radar-60'], 200, y, 500+200, y+400, 1))
     a.add(function(t)
-        return radar_pics['weather_radar-60']:draw(200, y, 500+200, y+400, 1)
+        return radar_pics['weather_radar'..string.format("%+2.0f", minutes_from_t(t))]:draw(200, y, 500+200, y+400, 1)
     end)
     --    for idx = 1, #radar_data do
 --        local radar = radar_data[idx]

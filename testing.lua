@@ -105,5 +105,13 @@ local function testing(timeline)
     print(#timeline)
 end
 
-local teams = json.decode(raw)
+local E=20
 
+local function minutes_from_t(t)
+    minutes = 120*t/E
+    minutes = 10 * math.floor(minutes/10)
+    minutes = minutes - 60
+    return minutes
+end
+
+print(string.format("%+2.0f", minutes_from_t(12)))
