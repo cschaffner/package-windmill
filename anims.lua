@@ -3,6 +3,20 @@ local vollbg = resource.create_colored_texture(0,0,0,1)
 
 local M = {}
 
+local function rotated_rotating_entry_exit(S, E, obj)
+    local rotate = utils.make_smooth{
+        {t = S ,  val = -60},
+        {t = S+1 ,val =  90, ease='step'},
+        {t = E-1, val =  90},
+        {t = E,   val = -90},
+    }
+
+    return function(t)
+        gl.rotate(rotate(t), 0, 1, 0)
+        return obj(t)
+    end
+end
+
 local function rotating_entry_exit(S, E, obj)
     local rotate = utils.make_smooth{
         {t = S ,  val = -60},
@@ -103,6 +117,14 @@ end
 function M.moving_font(S, E, x, y, text, size, r, g, b, a)
     return move_in_move_out(S, E, x, y,
         rotating_entry_exit(S, E, function(t)
+            return res.font:write(0, 0, text, size, r, g, b, a)
+        end)
+    )
+end
+
+function M.rotated_moving_font(S, E, x, y, text, size, r, g, b, a)
+    return move_in_move_out(S, E, x, y,
+        rotated_rotating_entry_exit(S, E, function(t)
             return res.font:write(0, 0, text, size, r, g, b, a)
         end)
     )
