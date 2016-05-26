@@ -322,7 +322,7 @@ Sidebar = (function()
 --        local house_y = utils.easeInOut(visibility, 900, 650)
 --        res.house2:draw(house_x, house_y, house_x + 280, house_y + 180, visibility*2)
 --
-        local clock_x = utils.easeInOut(visibility, WIDTH-260, WIDTH-280)
+        local clock_x = utils.easeInOut(visibility, WIDTH-260, WIDTH-300)
         local clock_y = utils.easeInOut(visibility, HEIGHT-105, 800)
         res.clockboarder:draw(clock_x, clock_y-60, clock_x + 300, clock_y + 155)
         res.font:write(clock_x + 150 - w/2, clock_y+5, time, 100, highlight_a(1))
