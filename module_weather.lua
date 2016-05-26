@@ -18,7 +18,7 @@ local rain_unwatch = util.file_watch("weather_rain.json", function(raw)
 end)
 --local radar_unwatch = util.file_watch("weather_radar.gif", function(raw)
 local radar_unwatch = util.file_watch("img_welcome_heart.jpg", function(raw)
-    radar = raw
+    radar = resource.load_image(raw)
 end)
 
 function M.unload()
