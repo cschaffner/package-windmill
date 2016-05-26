@@ -65,7 +65,7 @@ function M.run(duration, _, fn)
 --    a.add(anims.moving_image(t, E, radar_pics['weather_radar-60'], 200, y, 500+200, y+400, 1))
     a.add(function(t)
         print('weather_radar'..string.format("%+2.0f", minutes_from_t(t)))
-        return radar_pics['weather_radar'..string.format("%+2.0f", minutes_from_t(t))]:draw(200, y, 500+200, y+400, 1)
+        return radar_pics['weather_radar'..string.format("%+2.0f", minutes_from_t(t))..'.png']:draw(200, y, 500+200, y+400, 1)
     end)
     --    for idx = 1, #radar_data do
 --        local radar = radar_data[idx]
