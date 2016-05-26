@@ -8,7 +8,7 @@ local M = {}
 local blue = resource.create_colored_texture(0.12,0.56,1,1)
 local weather = {}
 local rain = {}
-local radar = resource.load_image("package.png")
+local radar = resource.load_image("weather-restradar.gif")
 
 local data_unwatch = util.file_watch("weather_data.json", function(raw)
     weather = json.decode(raw)
