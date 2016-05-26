@@ -10,7 +10,7 @@ local weather = {}
 local rain = {}
 local radar_data = {}
 local radar_pics = util.auto_loader({}, function(fname)
-    return fname:sub(1,14) == "weather_radar-"
+    return fname:sub(1,14) == "weather_radar_"
 end)
 
 local data_unwatch = util.file_watch("weather_data.json", function(raw)
