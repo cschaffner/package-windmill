@@ -98,15 +98,19 @@ def update():
     with file("weather_data.json.new", "wb") as f:
         f.write(get_weather())
     os.rename("weather_data.json.new", "../weather_data.json")
+    print('updated current weather data')
 
     # radar
     # r = requests.get('http://api.buienradar.nl/image/1.0/RadarMapNL?w=200&h=200')
     get_radar()
+    print('updated current radar data')
 
     # rain data
     with file("weather_rain.json.new", "wb") as f:
         f.write(get_rain())
     os.rename("weather_rain.json.new", "../weather_rain.json")
+    print('updated current rain data')
+
 
 
 def main():

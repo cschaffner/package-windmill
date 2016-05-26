@@ -58,7 +58,7 @@ function M.run(duration, _, fn)
 
 --    a.add(anims.moving_image(t, E, radar_pics['weather_radar-60'], 200, y, 500+200, y+400, 1))
     a.add(function(t)
-        idx = math.floor(t/E*#radar_data)
+        idx = math.ceil(t/E*#radar_data)
         print(idx, radar_data[idx].filename)
         return radar_pics[radar_data[idx].filename]:draw(200, y, 500+200, y+400, 1)
     end)
