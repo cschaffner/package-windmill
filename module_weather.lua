@@ -57,11 +57,12 @@ function M.run(duration, _, fn)
     local font_size = 40
 
     a.add(anims.moving_image(t, E, radar_pics['weather_radar-60'], 200, y, 1060+200, y+915, 1))
-    for idx = 1, #radar_data do
-        local radar = radar_data[idx]
-        a.add(radar_pics[radar.filename]:draw(200, y, 1060+200, y+915, 1))
-        a.add(res.font:write(200, y, radar.time, 60, 1,0,0,0.8))
-    end
+--    for idx = 1, #radar_data do
+--        local radar = radar_data[idx]
+--        print(radar.filename)
+--        a.add(radar_pics[radar.filename]:draw(200, y, 1060+200, y+915, 1))
+--        a.add(res.font:write(200, y, radar.time, 60, 1,0,0,0.8))
+--    end
 
     local y_rain = HEIGHT-200
     local x_rain = 50
