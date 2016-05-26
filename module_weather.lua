@@ -58,7 +58,7 @@ function M.run(duration, _, fn)
 
     local function minutes_from_t(t)
         minutes = 120*t/E
-        minutes = 10 * floor(minutes/10)
+        minutes = 10 * math.floor(minutes/10)
         minutes = minutes - 60
         return minutes
     end
