@@ -7,7 +7,6 @@ local M = {}
 
 local red = resource.create_colored_texture(0.9,0.32,0,1)
 local blue = resource.create_colored_texture(0.12,0.56,1,1)
---local shader = util.resource_load('shader.frag')
 local weather = {}
 local rain = {}
 local radar_data = {}
@@ -132,15 +131,15 @@ function M.run(duration, _, fn)
     Sidebar.hide(E)
     fn.wait_t(0)
 
-
-    xx = 100
-    yy = 700
-    shader:use {
-    margin_h=0.03;
-    margin_v=0.2;
-    }
-    red:draw(xx-20,yy-20,xx+700,yy+70)
-    shader:deactivate()
+--
+--    xx = 100
+--    yy = 700
+--    shader:use {
+--    margin_h=0.03;
+--    margin_v=0.2;
+--    }
+--    red:draw(xx-20,yy-20,xx+700,yy+70)
+--    shader:deactivate()
 
     for now in fn.upto_t(E) do
         a.draw(now)
