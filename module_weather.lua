@@ -102,17 +102,17 @@ function M.run(duration, _, fn)
     a.add(anims.moving_font(t, E, tom_x, dayname_y, weather.Halfweg.day_names[2], 70, 1,1,1,1))
     a.add(anims.moving_font(t, E, tom_x, rainday_y, weather.Halfweg.days[2].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, tom_x, windday_y, weather.Halfweg.days[2].winddirection .. weather.Halfweg.days[2].beaufort, 40, 1,1,1,1))
-    a.add(anims.moving_bar(S, E, blue, today_x, rainbar_y-weather.Halfweg.days[2].precipitationmm*150/40, today_x+80, rainbar_y,1))
+    a.add(anims.moving_bar(S, E, blue, tom_x, rainbar_y-weather.Halfweg.days[2].precipitationmm*150/40, tom_x+80, rainbar_y,1))
 
     a.add(anims.moving_font(t, E, aftertom_x, dayname_y, weather.Halfweg.day_names[3], 70, 1,1,1,1))
     a.add(anims.moving_font(t, E, aftertom_x, rainday_y, weather.Halfweg.days[3].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, aftertom_x, windday_y, weather.Halfweg.days[3].winddirection .. weather.Halfweg.days[3].beaufort, 40, 1,1,1,1))
-    a.add(anims.moving_bar(S, E, blue, today_x, rainbar_y-weather.Halfweg.days[3].precipitationmm*150/40, today_x+100, rainbar_y,1))
+    a.add(anims.moving_bar(S, E, blue, aftertom_x, rainbar_y-weather.Halfweg.days[3].precipitationmm*150/40, aftertom_x+100, rainbar_y,1))
 
     a.add(anims.moving_font(t, E, afteraftertom_x, dayname_y, weather.Halfweg.day_names[4], 70, 1,1,1,1))
     a.add(anims.moving_font(t, E, afteraftertom_x, rainday_y, weather.Halfweg.days[4].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, afteraftertom_x, windday_y, weather.Halfweg.days[4].winddirection .. weather.Halfweg.days[3].beaufort, 40, 1,1,1,1))
-    a.add(anims.moving_bar(S, E, blue, today_x, rainbar_y-weather.Halfweg.days[4].precipitationmm*150/40, today_x+100, rainbar_y,1))
+    a.add(anims.moving_bar(S, E, blue, afteraftertom_x, rainbar_y-weather.Halfweg.days[4].precipitationmm*150/40, afteraftertom_x+100, rainbar_y,1))
 
 
     Sidebar.hide(E)
