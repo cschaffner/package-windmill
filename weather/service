@@ -18,7 +18,7 @@ def get_rain():
     # r = requests.get('http://gps.buienradar.nl/getrr.php?lat=52.3796198&lon=4.7898874')
     # r = requests.get('http://gps.buienradar.nl/getrr.php?lat=50.10&lon=6.93')
     r = requests.get('https://graphdata.buienradar.nl/forecast/json/?lat=52.38&lon=4.787')
-    rain_data = r.json
+    rain_data = r.json()
 
     return json.dumps(rain_data, ensure_ascii=False, indent=2).encode("utf8")
 
