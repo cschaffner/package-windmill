@@ -56,11 +56,11 @@ function M.run(duration, _, fn)
     t = t + 0.03
     local font_size = 40
 
-    a.add(anims.moving_image(t, E, radar_pics['weather_radar'], 200, y, 500+200, y+400, 1))
+    a.add(anims.moving_image(t, E, radar_pics['weather_radar_background'], 200, y, 599+200, y+420, 1))
     a.add(function(t)
         idx = math.ceil(t/E*#radar_data)
 --        print(idx, radar_data[idx].filename)
-        return radar_pics[radar_data[idx].filename]:draw(200, y, 500+200, y+400, 1)
+        return radar_pics[radar_data[idx].filename]:draw(200, y, 599+200, y+420, 1)
     end)
     --    for idx = 1, #radar_data do
 --        local radar = radar_data[idx]
@@ -81,8 +81,7 @@ function M.run(duration, _, fn)
         a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.mmh_num*300, x+30, y_rain,1))
     end
 
-    a.add(anims.moving_font(t, E, 150, y, "now: ", 100, 1,1,1,1))
-    a.add(anims.moving_font(t, E, 300, y, "temp: " .. weather.today.temperatuurGC, font_size, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 900, 130, weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, font_size, 1,1,1,1))
 
     Sidebar.hide(E)
     fn.wait_t(0)
