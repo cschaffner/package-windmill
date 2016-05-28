@@ -41,10 +41,10 @@ function M.run(duration, options, fn)
 
     local a = utils.Animations()
 
-    a.add(anims.moving_font(S, E+1.5, 400-4, 100-4, "Lost? Try c3nav.de", 150, 0,0,0,0.5))
-    a.add(anims.moving_font(S, E+1.5, 400+4, 100-4, "Lost? Try c3nav.de", 150, 0,0,0,0.5))
-    a.add(anims.moving_font(S, E+1.5, 400-4, 100+4, "Lost? Try c3nav.de", 150, 0,0,0,0.5))
-    a.add(anims.moving_font(S, E+1.5, 400+4, 100+4, "Lost? Try c3nav.de", 150, 0,0,0,0.5))
+--    a.add(anims.moving_font(S, E+1.5, 400-4, 100-4, "Lost? Try c3nav.de", 150, 0,0,0,0.5))
+--    a.add(anims.moving_font(S, E+1.5, 400+4, 100-4, "Lost? Try c3nav.de", 150, 0,0,0,0.5))
+--    a.add(anims.moving_font(S, E+1.5, 400-4, 100+4, "Lost? Try c3nav.de", 150, 0,0,0,0.5))
+--    a.add(anims.moving_font(S, E+1.5, 400+4, 100+4, "Lost? Try c3nav.de", 150, 0,0,0,0.5))
     a.add(anims.moving_font(S, E+1.5, 400,   100, "Lost? Try c3nav.de", 150, 1,1,1,1))
 
     local layer =  utils.make_smooth{
