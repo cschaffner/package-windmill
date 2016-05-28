@@ -171,10 +171,10 @@ function M.run(duration, _, fn)
         }
         red:draw(200, 800, 220, 820)
         circle:deactivate()
-        fill:use{
-            r = 1, g = 1, b = 1,
-        }
-        red:draw(200, 800, 220, 820)
+--        fill:use{
+--            r = 1, g = 1, b = 1,
+--        }
+--        red:draw(200, 800, 220, 820)
 
         a.draw(now)
     end
