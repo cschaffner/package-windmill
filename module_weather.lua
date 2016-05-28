@@ -83,7 +83,7 @@ function M.run(duration, _, fn)
     a.add(function(t)
         idx = math.ceil(t/E*#radar_data)
 --        print(idx, radar_data[idx].filename)
-        return radar_pics[radar_data[idx].filename]:draw_correct(200, y, 599+200, y+420, 1)
+        return util.draw_correct(radar_pics[radar_data[idx].filename], 200, y, 599+200, y+420, 1)
     end)
 
 --    local y_rain = HEIGHT-200
