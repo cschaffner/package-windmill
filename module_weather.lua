@@ -82,11 +82,13 @@ function M.run(duration, _, fn)
 
     a.add(anims.moving_image(t, E, radar_pics['weather_radar_background'], 200, y, 599+200, y+420, 1))
     a.add(function(t)
-        idx = math.ceil(t/E*#radar_data.times)
---        print(idx, radar_data[idx].filename)
---        gl.scale(10,10)
---        gl.translate(-200,-200)
-        return util.draw_correct(radar_pics[radar_data.times[idx].filename], 200, y, 599+200, y+420, 1)
+        if t > 1 and t < E-1 then
+            idx = math.ceil(t/E*#radar_data.times)
+    --        print(idx, radar_data[idx].filename)
+    --        gl.scale(10,10)
+    --        gl.translate(-200,-200)
+            return util.draw_correct(radar_pics[radar_data.times[idx].filename], 200, y, 599+200, y+420, 1)
+        end
     end)
 
 --    local y_rain = HEIGHT-200
