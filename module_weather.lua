@@ -7,6 +7,22 @@ local M = {}
 
 local red = resource.create_colored_texture(0.9,0.32,0,1)
 local blue = resource.create_colored_texture(0.12,0.56,1,1)
+local circle = resource.create_shader[[
+    varying vec2 TexCoord;
+    uniform float r, g, b;
+    uniform float width;
+    uniform float progress;
+    void main() {
+        float e = 0.003;
+        float angle = atan(TexCoord.x - 0.5, TexCoord.y - 0.5);
+        float dist = distance(vec2(0.5, 0.5), TexCoord.xy);
+        float inner = (1.0 - width) / 2.0;
+        float alpha = (smoothstep(0.5, 0.5-e, dist) - smoothstep(inner+e, inner, dist)) * smoothstep(progress-0.01, progress, angle);
+        gl_FragColor = vec4(r, g, b, alpha);
+    }
+]]
+
+
 local weather = {}
 local rain = {}
 local radar_data = {}
@@ -23,7 +39,6 @@ end)
 local radar_data_unwatch = util.file_watch("weather_radar.json", function(raw)
     radar_data = json.decode(raw)
 end)
-
 
 function M.unload()
     data_unwatch()
@@ -124,12 +139,20 @@ function M.run(duration, _, fn)
     for idx = 1, #weather.Halfweg.hours do
         local hour = weather.Halfweg.hours[idx]
         local cur_x = today_x + idx*12
-        a.add(anims.moving_bar(S, E, red, cur_x, temp_to_y(hour.temperature), cur_x+5, temp_to_y(hour.temperature)+5,1))
+        a.add(anims.moving_bar(S, E, red, cur_x, temp_to_y(hour.temperature), cur_x+10, temp_to_y(hour.temperature)+10,1))
 --        current_temp = hour.temperature
     end
 
     Sidebar.hide(E)
     fn.wait_t(0)
+
+    circle:use{
+            r = 1, g = 0, b = 0,
+            width = 20.0 ,
+            progress = 2 * math.pi,
+        }
+    red:draw(200, 800, 220, 820)
+    circle:deactivate()
 
 --
 --    xx = 100
