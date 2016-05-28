@@ -125,7 +125,7 @@ function M.run(duration, _, fn)
     for idx = 1, #weather.Halfweg.hours do
         local hour = weather.Halfweg.hours[idx]
         local cur_x = today_x + idx*10
-        a.add(anims.moving_bar(S, E, red, cur_x, temp_to_y(hour.temperature), cur_x+5, temp_to_y(hour.temperature)+5,1))
+        a.add(anims.moving_bar(S, E, red, cur_x, temp_to_y(hour.temperature), cur_x+2, temp_to_y(hour.temperature)+2,1))
 --        current_temp = hour.temperature
     end
 
