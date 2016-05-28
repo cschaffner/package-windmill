@@ -68,7 +68,6 @@ function M.run(duration, options, fn)
         gl.pushMatrix()
         blue:draw(200, 200, 400, 400, 1)
         gl.popMatrix()
-        end
         transparent.deactivate()
         gl.ortho()
         a.draw(now)
