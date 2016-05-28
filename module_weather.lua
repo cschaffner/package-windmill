@@ -87,7 +87,7 @@ function M.run(duration, _, fn)
     --        print(idx, radar_data[idx].filename)
     --        gl.scale(10,10)
     --        gl.translate(-200,-200)
-            return util.draw_correct(radar_pics[radar_data.times[idx].filename], 200, y, 599+200, y+420, 1)
+            return util.draw_correct(radar_pics[radar_data.times[idx].filename], 200, y, 200+76, y+67, 1)
         end
     end)
 
