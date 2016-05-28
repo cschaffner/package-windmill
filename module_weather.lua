@@ -7,7 +7,7 @@ local M = {}
 
 local red = resource.create_colored_texture(0.9,0.32,0,1)
 local blue = resource.create_colored_texture(0.12,0.56,1,1)
-local shader = util.resource_load('shader.frag')
+--local shader = util.resource_load('shader.frag')
 local weather = {}
 local rain = {}
 local radar_data = {}
