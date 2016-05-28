@@ -63,6 +63,13 @@ def get_weather():
     r = requests.get('http://api.buienradar.nl/data/forecast/1.1/all/2754943')
     weather_dict['Halfweg'] = r.json()
 
+    # if this day is almost over, remove it and focus on the next one only
+    if weather_dict['Halfweg']['days'][0]['hours'][0]['hour'] >= 22:
+        weather_dict['Halfweg']['days'].pop()
+
+    if not weather_dict['Halfweg']['days'][0].has_key('precipitationmm'):
+        print "trouble ahead: this day {0} does not have a precipitation summary".format(weather_dict['Halfweg']['days'][0]['datetime'])
+
     today_dict = weather_dict['Halfweg']['days'][0]
     today_date = datetime.strptime(today_dict['date'], '%Y-%m-%dT%H:%M:%S')
     tomorrow_date = today_date + timedelta(days=1)
