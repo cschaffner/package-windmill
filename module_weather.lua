@@ -7,27 +7,27 @@ local M = {}
 
 local red = resource.create_colored_texture(0.9,0.32,0,1)
 local blue = resource.create_colored_texture(0.12,0.56,1,1)
-local circle = resource.create_shader[[
-    varying vec2 TexCoord;
-    uniform float r, g, b;
-    uniform float width;
-    uniform float progress;
-    void main() {
-        float e = 0.003;
-        float angle = atan(TexCoord.x - 0.5, TexCoord.y - 0.5);
-        float dist = distance(vec2(0.5, 0.5), TexCoord.xy);
-        float inner = (1.0 - width) / 2.0;
-        float alpha = (smoothstep(0.5, 0.5-e, dist) - smoothstep(inner+e, inner, dist)) * smoothstep(progress-0.01, progress, angle);
-        gl_FragColor = vec4(r, g, b, alpha);
-    }
-]]
-local fill = resource.create_shader[[
-    uniform float r, g, b;
-    varying vec2 TexCoord;
-    void main() {
-        gl_FragColor = vec4(r, g, b, TexCoord.x);
-    }
-]]
+--local circle = resource.create_shader[[
+--    varying vec2 TexCoord;
+--    uniform float r, g, b;
+--    uniform float width;
+--    uniform float progress;
+--    void main() {
+--        float e = 0.003;
+--        float angle = atan(TexCoord.x - 0.5, TexCoord.y - 0.5);
+--        float dist = distance(vec2(0.5, 0.5), TexCoord.xy);
+--        float inner = (1.0 - width) / 2.0;
+--        float alpha = (smoothstep(0.5, 0.5-e, dist) - smoothstep(inner+e, inner, dist)) * smoothstep(progress-0.01, progress, angle);
+--        gl_FragColor = vec4(r, g, b, alpha);
+--    }
+--]]
+--local fill = resource.create_shader[[
+--    uniform float r, g, b;
+--    varying vec2 TexCoord;
+--    void main() {
+--        gl_FragColor = vec4(r, g, b, TexCoord.x);
+--    }
+--]]
 
 
 local weather = {}
@@ -84,7 +84,8 @@ function M.run(duration, _, fn)
     a.add(function(t)
         idx = math.ceil(t/E*#radar_data)
 --        print(idx, radar_data[idx].filename)
-        gl.translate(300,300)
+        gl.scale(5,5)
+        gl.translate(-500,-500)
         return util.draw_correct(radar_pics[radar_data[idx].filename], 200, y, 599+200, y+420, 1)
     end)
 
