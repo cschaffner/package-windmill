@@ -21,6 +21,13 @@ local circle = resource.create_shader[[
         gl_FragColor = vec4(r, g, b, alpha);
     }
 ]]
+local fill = resource.create_shader[[
+    uniform float r, g, b;
+    varying vec2 TexCoord;
+    void main() {
+        gl_FragColor = vec4(r, g, b, TexCoord.x);
+    }
+]]
 
 
 local weather = {}
@@ -158,12 +165,16 @@ function M.run(duration, _, fn)
 
     for now in fn.upto_t(E) do
         circle:use{
-            r = 1, g = 0, b = 0,
-            width = 20.0 ,
+            r = 1, g = 1, b = 1,
+            width = 20.0,
             progress = 2 * math.pi,
         }
         red:draw(200, 800, 220, 820)
         circle:deactivate()
+        fill:use{
+            r = 1, g = 1, b = 1,
+        }
+        red:draw(200, 800, 220, 820)
 
         a.draw(now)
     end
