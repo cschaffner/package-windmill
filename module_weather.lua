@@ -161,13 +161,13 @@ function M.run(duration, _, fn)
 --    shader:deactivate()
 
     for now in fn.upto_t(E) do
-        circle:use{
-            r = 1, g = 1, b = 1,
-            width = 20.0,
-            progress = 2 * math.pi,
-        }
-        red:draw(200, 800, 220, 820)
-        circle:deactivate()
+--        circle:use{
+--            r = 1, g = 1, b = 1,
+--            width = 20.0,
+--            progress = 2 * math.pi,
+--        }
+--        red:draw(200, 800, 220, 820)
+--        circle:deactivate()
 --        fill:use{
 --            r = 1, g = 1, b = 1,
 --        }
