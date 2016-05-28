@@ -121,12 +121,12 @@ function M.run(duration, _, fn)
     local function temp_to_y(temp)
         return temp_min_y - (temp-weather.Halfweg.min_temp) * (temp_min_y-temp_max_y) / (weather.Halfweg.max_temp-weather.Halfweg.min_temp)
     end
-    local current_temp = weather.Schiphol.temperature
+--    local current_temp = weather.Schiphol.temperature
     for idx = 1, #weather.Halfweg.hours do
         local hour = weather.Halfweg.hours[idx]
         local cur_x = today_x + idx*10
-        a.add(anims.moving_bar(S, E, red, cur_x, temp_to_y(current_temp), cur_x+10, temp_to_y(hour.temperature),1))
-        current_temp = hour.temperature
+        a.add(anims.moving_bar(S, E, red, cur_x, temp_to_y(hour.temperature), cur_x+5, temp_to_y(hour.temperature)+5,1))
+--        current_temp = hour.temperature
     end
 
     Sidebar.hide(E)
