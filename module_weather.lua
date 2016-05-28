@@ -56,7 +56,7 @@ function M.run(duration, _, fn)
     t = t + 0.03
     local font_size = 40
 
---    a.add(anims.moving_image(t, E, radar_pics['weather_radar-60'], 200, y, 500+200, y+400, 1))
+    a.add(anims.moving_image(t, E, radar_pics['weather_radar'], 200, y, 500+200, y+400, 1))
     a.add(function(t)
         idx = math.ceil(t/E*#radar_data)
 --        print(idx, radar_data[idx].filename)
