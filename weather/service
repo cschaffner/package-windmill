@@ -70,6 +70,18 @@ def get_weather():
     afteraftertom_date = today_date + timedelta(days=3)
     weather_dict['Halfweg']['day_names'] = [today_date.strftime('%a'), tomorrow_date.strftime('%a'), aftertom_date.strftime('%a'), afteraftertom_date.strftime('%a')]
 
+    weather_dict['Halfweg']['hours'] = []
+    for day in weather_dict['Halfweg']['days'][:3]:
+        for hour in day['hours']:
+            weather_dict['Halfweg']['hours'].append(hour)
+
+    max_hour = max(weather_dict['Halfweg']['hours'], key=lambda i: i['temperature'])
+    max_hour['max'] = True
+    weather_dict['Halfweg']['max_temp'] = max_hour['temperature']
+    min_hour = min(weather_dict['Halfweg']['hours'], key=lambda i: i['temperature'])
+    min_hour['min'] = True
+    weather_dict['Halfweg']['min_temp'] = min_hour['temperature']
+
 
     return json.dumps(weather_dict, ensure_ascii=False, indent=2).encode("utf8")
 
