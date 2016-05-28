@@ -113,7 +113,7 @@ function M.run(duration, _, fn)
 
 --    today's data'
     a.add(anims.moving_font(t, E, today_x, dayname_y, weather.Halfweg.day_names[1], 70, 1,1,1,1))
-    a.add(anims.moving_font(t, E, today_x, rainday_y, weather.Halfweg.days[1].precipitationmm .. "mm", 40, 1,1,1,1))
+    a.add(anims.moving_font(t, E, today_x, rainday_y, string.format("%3.1f", weather.Halfweg.days[1].precipitationmm) .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, today_x, windday_y, weather.Halfweg.days[1].winddirection .. weather.Halfweg.days[1].beaufort, 40, 1,1,1,1))
     a.add(anims.moving_bar(S, E, blue, today_x, rainbar_y-weather.Halfweg.days[1].precipitationmm*150/30, today_x+100, rainbar_y,1))
 
