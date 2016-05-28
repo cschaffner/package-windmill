@@ -89,6 +89,7 @@ function M.run(duration, _, fn)
     local aftertom_x = tom_x + dayspace
     local afteraftertom_x = aftertom_x + dayspace
     local dayname_y = 280
+    local rainbar_y = 850
     local rainday_y = 880
     local windday_y = 930
 
@@ -96,18 +97,22 @@ function M.run(duration, _, fn)
     a.add(anims.moving_font(t, E, today_x, dayname_y, weather.Halfweg.day_names[1], 70, 1,1,1,1))
     a.add(anims.moving_font(t, E, today_x, rainday_y, weather.Halfweg.days[1].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, today_x, windday_y, weather.Halfweg.days[1].winddirection .. weather.Halfweg.days[1].beaufort, 40, 1,1,1,1))
+    a.add(anims.moving_bar(S, E, blue, today_x, rainbar_y-weather.Halfweg.days[1].precipitationmm*150/40, today_x+50, rainbar_y,1))
 
     a.add(anims.moving_font(t, E, tom_x, dayname_y, weather.Halfweg.day_names[2], 70, 1,1,1,1))
     a.add(anims.moving_font(t, E, tom_x, rainday_y, weather.Halfweg.days[2].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, tom_x, windday_y, weather.Halfweg.days[2].winddirection .. weather.Halfweg.days[2].beaufort, 40, 1,1,1,1))
+    a.add(anims.moving_bar(S, E, blue, today_x, rainbar_y-weather.Halfweg.days[2].precipitationmm*150/40, today_x+80, rainbar_y,1))
 
     a.add(anims.moving_font(t, E, aftertom_x, dayname_y, weather.Halfweg.day_names[3], 70, 1,1,1,1))
     a.add(anims.moving_font(t, E, aftertom_x, rainday_y, weather.Halfweg.days[3].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, aftertom_x, windday_y, weather.Halfweg.days[3].winddirection .. weather.Halfweg.days[3].beaufort, 40, 1,1,1,1))
+    a.add(anims.moving_bar(S, E, blue, today_x, rainbar_y-weather.Halfweg.days[3].precipitationmm*150/40, today_x+100, rainbar_y,1))
 
     a.add(anims.moving_font(t, E, afteraftertom_x, dayname_y, weather.Halfweg.day_names[4], 70, 1,1,1,1))
     a.add(anims.moving_font(t, E, afteraftertom_x, rainday_y, weather.Halfweg.days[4].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, afteraftertom_x, windday_y, weather.Halfweg.days[4].winddirection .. weather.Halfweg.days[3].beaufort, 40, 1,1,1,1))
+    a.add(anims.moving_bar(S, E, blue, today_x, rainbar_y-weather.Halfweg.days[4].precipitationmm*150/40, today_x+100, rainbar_y,1))
 
 
     Sidebar.hide(E)
