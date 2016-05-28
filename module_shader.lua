@@ -61,14 +61,14 @@ function M.run(duration, options, fn)
 
     for now in fn.upto_t(duration) do
         -- a.draw(now)
-        transparent:use()
+--        transparent:use()
         gl.perspective(70, math.sin(sys.now()/2)*600, -500, math.cos(sys.now()/2)*600,
                            0, -100, 0)
 --        gl.rotate(90, -1, 0, 0)
         gl.pushMatrix()
         blue:draw(200, 200, 400, 400, 1)
         gl.popMatrix()
-        transparent.deactivate()
+--        transparent.deactivate()
         gl.ortho()
         a.draw(now)
     end
