@@ -12,6 +12,13 @@
         "duration": 15
     }
 
-}
-]
+},
+{
+    "module": "shader",
+    "chance": 1,
+    "options": {
+        "duration": 15
+    }
+
+}]
 
