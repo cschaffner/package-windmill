@@ -79,19 +79,14 @@ function M.run(duration, _, fn)
     t = t + 0.03
     local font_size = 40
 
-    local function radar_zoom(obj)
-        gl.PushMatrix()
-        gl.translate(300,300)
-        return obj(t)
-        gl.PopMatrix()
-    end
 
     a.add(anims.moving_image(t, E, radar_pics['weather_radar_background'], 200, y, 599+200, y+420, 1))
-    a.add(radar_zoom(function(t)
+    a.add(function(t)
         idx = math.ceil(t/E*#radar_data)
 --        print(idx, radar_data[idx].filename)
+        gl.translate(300,300)
         return util.draw_correct(radar_pics[radar_data[idx].filename], 200, y, 599+200, y+420, 1)
-    end))
+    end)
 
 --    local y_rain = HEIGHT-200
 --    local x_rain = 50
