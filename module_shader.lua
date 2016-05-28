@@ -59,17 +59,17 @@ function M.run(duration, options, fn)
 
     for now in fn.upto_t(duration) do
         -- a.draw(now)
-        transparent:use()
+--        transparent:use()
         gl.perspective(70, math.sin(sys.now()/2)*600, -500, math.cos(sys.now()/2)*600,
                            0, -100, 0)
-        gl.rotate(90, -1, 0, 0)
+        gl.rotate(90, 1, 0, 0)
         for l = 0, 4 do
             gl.pushMatrix()
             gl.translate(0, 0, -30*l + layer(now-l*0.4))
             util.draw_correct(layers['nav-level' .. l], -1120/2, -720/2, 1120/2, 720/2, 0.8)
             gl.popMatrix()
         end
-        transparent.deactivate()
+--        transparent.deactivate()
         gl.ortho()
         a.draw(now)
     end
