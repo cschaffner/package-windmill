@@ -146,14 +146,6 @@ function M.run(duration, _, fn)
     Sidebar.hide(E)
     fn.wait_t(0)
 
-    circle:use{
-            r = 1, g = 0, b = 0,
-            width = 20.0 ,
-            progress = 2 * math.pi,
-        }
-    red:draw(200, 800, 220, 820)
-    circle:deactivate()
-
 --
 --    xx = 100
 --    yy = 700
@@ -165,6 +157,14 @@ function M.run(duration, _, fn)
 --    shader:deactivate()
 
     for now in fn.upto_t(E) do
+        circle:use{
+            r = 1, g = 0, b = 0,
+            width = 20.0 ,
+            progress = 2 * math.pi,
+        }
+        red:draw(200, 800, 220, 820)
+        circle:deactivate()
+
         a.draw(now)
     end
 
