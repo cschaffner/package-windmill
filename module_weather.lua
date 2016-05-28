@@ -81,7 +81,21 @@ function M.run(duration, _, fn)
         a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.mmh_num*300, x+30, y_rain,1))
     end
 
-    a.add(anims.moving_font(t, E, 900, 130, weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, font_size, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 900, 130, "now: " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 80, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 900, 280, weather.Halfweg.day_names, 80, 1,1,1,1))
+
+--    today's data'
+    a.add(anims.moving_font(t, E, 900, 880, weather.Halfweg.days[1].precipitationmm .. "mm", 40, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 900, 930, weather.Halfweg.days[1].winddirection .. weather.Halfweg.days[1].beaufort, 40, 1,1,1,1))
+
+    a.add(anims.moving_font(t, E, 900, 880, weather.Halfweg.days[1].precipitationmm .. "mm", 40, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 900, 930, weather.Halfweg.days[1].winddirection .. weather.Halfweg.days[1].beaufort, 40, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 1150, 880, weather.Halfweg.days[2].precipitationmm .. "mm", 40, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 1150, 930, weather.Halfweg.days[2].winddirection .. weather.Halfweg.days[1].beaufort, 40, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 1400, 880, weather.Halfweg.days[3].precipitationmm .. "mm", 40, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 1400, 930, weather.Halfweg.days[3].winddirection .. weather.Halfweg.days[1].beaufort, 40, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 1650, 880, weather.Halfweg.days[4].precipitationmm .. "mm", 40, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 1650, 930, weather.Halfweg.days[4].winddirection .. weather.Halfweg.days[1].beaufort, 40, 1,1,1,1))
 
     Sidebar.hide(E)
     fn.wait_t(0)
