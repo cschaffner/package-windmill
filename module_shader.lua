@@ -3,6 +3,8 @@ local anims = require "anims"
 
 local M = {}
 
+local blue = resource.create_colored_texture(0.12,0.56,1,1)
+
 local layers = util.auto_loader({}, function(fname)
     return fname:sub(1,4) == "nav-"
 end)
@@ -63,11 +65,9 @@ function M.run(duration, options, fn)
         gl.perspective(70, math.sin(sys.now()/2)*600, -500, math.cos(sys.now()/2)*600,
                            0, -100, 0)
         gl.rotate(90, -1, 0, 0)
-        for l = 0, 4 do
-            gl.pushMatrix()
-            gl.translate(0, 0, -30*l + layer(now-l*0.4))
-            util.draw_correct(layers['nav-level' .. l], -1120/2, -720/2, 1120/2, 720/2, 0.8)
-            gl.popMatrix()
+        gl.pushMatrix()
+        blue:draw(200, 200, 400, 400, 1)
+        gl.popMatrix()
         end
         transparent.deactivate()
         gl.ortho()
