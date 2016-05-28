@@ -104,12 +104,12 @@ def get_radar():
     idx = 0
     for pic in radar_pics['times']:
         r = requests.get(pic['url'])
-        with file("weather_radar.new.png", "wb") as f:
+        with file("weather_radar.cropped.png", "wb") as f:
             f.write(r.content)
-        with file("weather_radar.new.png", "r") as f:
-            im = Image.open(f)
-            # im = im.crop((492, 414, 568, 481)).save("weather_radar.cropped.png", "png")
-            im = im.crop((292, 214, 568, 481)).save("weather_radar.cropped.png", "png")
+        # with file("weather_radar.new.png", "r") as f:
+        #     im = Image.open(f)
+        #     # im = im.crop((492, 414, 568, 481)).save("weather_radar.cropped.png", "png")
+        #     im = im.crop((292, 214, 568, 481)).save("weather_radar.cropped.png", "png")
 
         filename = 'weather_radar_{}'.format(idx)
         os.rename("weather_radar.cropped.png", "../{}.png".format(filename))
