@@ -68,7 +68,7 @@ def get_weather():
     tomorrow_date = today_date + timedelta(days=1)
     aftertom_date = today_date + timedelta(days=2)
     afteraftertom_date = today_date + timedelta(days=3)
-    weather_dict['Halfweg']['day_names'] = '{}  {}  {}  {}'.format(today_date.strftime('%a'), tomorrow_date.strftime('%a'), aftertom_date.strftime('%a'), afteraftertom_date('%a'))
+    weather_dict['Halfweg']['day_names'] = '{}  {}  {}  {}'.format(today_date.strftime('%a'), tomorrow_date.strftime('%a'), aftertom_date.strftime('%a'), afteraftertom_date.strftime('%a'))
 
 
     return json.dumps(weather_dict, ensure_ascii=False, indent=2).encode("utf8")
