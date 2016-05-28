@@ -5,6 +5,7 @@ import json
 import pytz
 import requests
 
+from PIL import Image
 from math import floor
 from datetime import datetime, timedelta
 
@@ -103,28 +104,59 @@ def round_down(tm):
 
 def get_radar():
     radar_data = []
-    now = round_down(datetime.now())  # correcting for UTC?
-    for minutes in xrange(-60,60,10):
-        retrieve_time = now - timedelta(hours=2)+timedelta(minutes=minutes)
-        actual_time = now + timedelta(minutes=minutes)
-        datetimestring = retrieve_time.strftime('%Y%m%d%H%M')
-        # url = 'http://buienradar.nl/image/?time={0}&type=forecastzozw&extension=png'.format(datetimestring)
-        url = 'http://api.buienradar.nl/image/1.0/WebMercatorRadarNL/?t={}&ext=png'.format(datetimestring)
-        r = requests.get(url)
-        with file("weather_radar.png.new", "wb") as f:
+    r = requests.get('http://api.buienradar.nl/image/1.0/webmercatorradarnl/json/?ext=png&l=2&nt=1&forc=50&hist=0&step=1')
+    radar_pics = r.json()
+
+    idx = 0
+    for pic in radar_pics['times']:
+        r = requests.get(pic['url'])
+        with file("weather_radar.new.png", "wb") as f:
             f.write(r.content)
-        if minutes > 0:
-            filename = "weather_radar_plus{}".format(minutes)
-        elif minutes == 0:
-            filename = "weather_radar_now"
-        elif minutes < 0:
-            filename = "weather_radar_min{}".format(-minutes)
-        os.rename("weather_radar.png.new", "../{}.png".format(filename))
-        radar_data.append({'time': actual_time.strftime('%a %-H:%M'),
-                           'filename': filename})
+        with file("weather_radar.new.png", "r") as f:
+            im = Image.open(f)
+            im = im.crop((492, 414, 568, 481)).save("weather_radar.cropped.png", "png")
+
+        filename = 'weather_radar_{}'.format(idx)
+        os.rename("weather_radar.cropped.png", "../{}.png".format(filename))
+        idx += 1
+        pic['filename'] = filename
+        actual_time = datetime.strptime(pic['timestamp'], '%Y-%m-%dT%H:%M:%S') + timedelta(hours=radar_pics['timeOffset'])
+        pic['actual_time'] = actual_time.strftime('%a %-H:%M')
+
+    files = sorted(fname for fname in os.listdir(".") if fname.startswith('32'))
+
+    for f in files:
+        print f
+        im = Image.open(f)
+        im = im.crop((320, 320, 1670, 760))
+        out = Image.new("RGB", im.size, "black")
+        out.paste(im, im)
+        out.thumbnail((320, 320), Image.BILINEAR)
+        out.save("out-%s" % f)
+
+
+    # now = round_down(datetime.now())  # correcting for UTC?
+    # for minutes in xrange(-60,60,10):
+    #     retrieve_time = now - timedelta(hours=2)+timedelta(minutes=minutes)
+    #     actual_time = now + timedelta(minutes=minutes)
+    #     datetimestring = retrieve_time.strftime('%Y%m%d%H%M')
+    #     # url = 'http://buienradar.nl/image/?time={0}&type=forecastzozw&extension=png'.format(datetimestring)
+    #     url = 'http://api.buienradar.nl/image/1.0/WebMercatorRadarNL/?t={}&ext=png'.format(datetimestring)
+    #     r = requests.get(url)
+    #     with file("weather_radar.png.new", "wb") as f:
+    #         f.write(r.content)
+    #     if minutes > 0:
+    #         filename = "weather_radar_plus{}".format(minutes)
+    #     elif minutes == 0:
+    #         filename = "weather_radar_now"
+    #     elif minutes < 0:
+    #         filename = "weather_radar_min{}".format(-minutes)
+    #     os.rename("weather_radar.png.new", "../{}.png".format(filename))
+    #     radar_data.append({'time': actual_time.strftime('%a %-H:%M'),
+    #                        'filename': filename})
 
     with file("weather_radar.json.new", "wb") as f:
-        f.write(json.dumps(radar_data, ensure_ascii=False, indent=2).encode("utf8"))
+        f.write(json.dumps(radar_pics, ensure_ascii=False, indent=2).encode("utf8"))
     os.rename("weather_radar.json.new", "../weather_radar.json")
 
 
