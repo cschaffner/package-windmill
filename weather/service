@@ -16,15 +16,9 @@ MET = pytz.timezone("Europe/Amsterdam")
 
 def get_rain():
     # r = requests.get('http://gps.buienradar.nl/getrr.php?lat=52.3796198&lon=4.7898874')
-    r = requests.get('http://gps.buienradar.nl/getrr.php?lat=50.10&lon=6.93')
-    rain_string = r.text
-    rain_data = []
-    for data in rain_string.split('\r\n'):
-        if data:
-            rain_amount = 10**((int(data[:3])-109)/32)
-            rain_data.append({'mm_per_h': '{0:4.2f}'.format(rain_amount),
-                              'mmh_num': rain_amount,
-                              'time': data[4:]})
+    # r = requests.get('http://gps.buienradar.nl/getrr.php?lat=50.10&lon=6.93')
+    r = requests.get('https://graphdata.buienradar.nl/forecast/json/?lat=52.38&lon=4.787')
+    rain_data = r.json
 
     return json.dumps(rain_data, ensure_ascii=False, indent=2).encode("utf8")
 
