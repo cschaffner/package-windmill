@@ -118,17 +118,6 @@ def get_radar():
         actual_time = datetime.strptime(pic['timestamp'], '%Y-%m-%dT%H:%M:%S') + timedelta(hours=radar_pics['timeOffset'])
         pic['actual_time'] = actual_time.strftime('%a %-H:%M')
 
-    files = sorted(fname for fname in os.listdir(".") if fname.startswith('32'))
-
-    for f in files:
-        print f
-        im = Image.open(f)
-        im = im.crop((320, 320, 1670, 760))
-        out = Image.new("RGB", im.size, "black")
-        out.paste(im, im)
-        out.thumbnail((320, 320), Image.BILINEAR)
-        out.save("out-%s" % f)
-
 
     # now = round_down(datetime.now())  # correcting for UTC?
     # for minutes in xrange(-60,60,10):
