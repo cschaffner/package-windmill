@@ -125,7 +125,7 @@ function M.run(duration, _, fn)
     local windicon_y = 830
     local windday_y = 930
 
-    today's data'
+--    today's data'
     a.add(anims.moving_font(t, E, today_x, dayname_y, weather.Halfweg.day_names[1], 70, 1,1,1,1))
 --    a.add(anims.moving_image(t, E, weather_pics['weather_'..weather.Halfweg.days[1].iconcode], today_x, icon_y, today_x+30, icon_y+30, 1))
     a.add(anims.moving_font(t, E, today_x, temp_max_y, weather.Halfweg.days[1].maxtemperature .. "°", 60, 0.9,0.32,0,1))
