@@ -80,7 +80,7 @@ function M.run(duration, _, fn)
     local font_size = 40
 
 
-    a.add(anims.moving_image(t, E, weather_pics['weather_radar_background'], 200, y, 599+200, y+420, 1))
+--    a.add(anims.moving_image(t, E, weather_pics['weather_radar_background'], 200, y, 599+200, y+420, 1))
 --    a.add(function(t)
 --        if t > 1 and t < E-1 then
 --            return util.draw_correct(radar_pics['weather_radar_00'], 200, y, 200+600, y+420, 1)
