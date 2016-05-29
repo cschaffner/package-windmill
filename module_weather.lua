@@ -99,20 +99,20 @@ function M.run(duration, _, fn)
 --
     local y_rain = HEIGHT-200
     local x_rain = 100
-    if rain.no_rain then
-        a.add(anims.moving_font(t, E, x_rain+100, y_rain-150, "no rain expected", 60, 0.12,0.56,1,1))
-        a.add(anims.moving_font(t, E, x_rain+100, y_rain-90, "during next two hours", 60, 0.12,0.56,1,1))
-    else
-        for idx = 1, #rain.forecasts do
-            local x = x_rain + idx*20
-            local rain_point = rain.forecasts[idx]
-    --        a.add(anims.moving_font(t, E, 50, y_rain, rain_point.mm_per_h , font_size, 1,1,1,1))
---            if (idx % 8 == 1) then
---                a.add(anims.rotated_moving_font(t, E, x, y_rain, rain_point.time , font_size, 1,1,1,1))
---            end
-            a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.value*3, x+15, y_rain,1))
-        end
-    end
+--    if rain.no_rain then
+--        a.add(anims.moving_font(t, E, x_rain+100, y_rain-150, "no rain expected", 60, 0.12,0.56,1,1))
+--        a.add(anims.moving_font(t, E, x_rain+100, y_rain-90, "during next two hours", 60, 0.12,0.56,1,1))
+--    else
+--        for idx = 1, #rain.forecasts do
+--            local x = x_rain + idx*20
+--            local rain_point = rain.forecasts[idx]
+--    --        a.add(anims.moving_font(t, E, 50, y_rain, rain_point.mm_per_h , font_size, 1,1,1,1))
+----            if (idx % 8 == 1) then
+----                a.add(anims.rotated_moving_font(t, E, x, y_rain, rain_point.time , font_size, 1,1,1,1))
+----            end
+--            a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.value*3, x+15, y_rain,1))
+--        end
+--    end
 
     a.add(anims.moving_font(t, E, 900, 150, "now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70, 1,1,1,1))
     title_width = font:width("now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70)
