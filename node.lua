@@ -152,7 +152,7 @@ Scroller = (function()
                     if #texts < idx then
                         table.insert(texts, generator.next())
                     end
-                    local width = utils.flag_write(font, xoff, y, texts[idx] .. "   ,   ", size, unpack(color))
+                    local width = utils.flag_write(font, xoff, y, texts[idx] .. "   ;   ", size, unpack(color))
                     xoff = xoff + width
                     if xoff < 0 then
                         current_left = xoff
@@ -214,20 +214,26 @@ Scroller = (function()
         end
 
         local now = Time.unixtime()
-        out[#out+1] = open_games.round_name .. "(" .. open_games.start_time .. "): "
-        for idx = 1, #open_games.games do
-            local game = open_games.games[idx]
-            out[#out+1] = utils.game_string(game)
+        if #open_games.games > 0 then
+            out[#out+1] = open_games.round_name .. "(" .. open_games.start_time .. "): " .. utils.game_string(open_games.games[1])
+            for idx = 2, #open_games.games do
+                local game = open_games.games[idx]
+                out[#out+1] = utils.game_string(game)
+            end
         end
-        out[#out+1] = mixed_games.round_name .. "(" .. mixed_games.start_time .. "): "
-        for idx = 1, #mixed_games.games do
-            local game = mixed_games.games[idx]
-            out[#out+1] = utils.game_string(game)
+        if #mixed_games.games > 0 then
+            out[#out+1] = mixed_games.round_name .. "(" .. mixed_games.start_time .. "): " .. utils.game_string(mixed_games.games[1])
+            for idx = 2, #mixed_games.games do
+                local game = mixed_games.games[idx]
+                out[#out+1] = utils.game_string(game)
+            end
         end
-        out[#out+1] = women_games.round_name .. "(" .. women_games.start_time .. "): "
-        for idx = 1, #women_games.games do
-            local game = women_games.games[idx]
-            out[#out+1] = utils.game_string(game)
+        if #women_games.games > 0 then
+            out[#out+1] = women_games.round_name .. "(" .. women_games.start_time .. "): " .. utils.game_string(women_games.games[1])
+            for idx = 2, #women_games.games do
+                local game = women_games.games[idx]
+                out[#out+1] = utils.game_string(game)
+            end
         end
         return out
     end
