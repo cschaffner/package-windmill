@@ -25,6 +25,9 @@ def get_rain():
     total_value = sum(item['value'] for item in rain_data['forecasts'])
     rain_data['no_rain'] = total_value == 0
 
+    for data in rain_data['forecasts']:
+        data['time'] = data['datetime'][11:16]
+
     return json.dumps(rain_data, ensure_ascii=False, indent=2).encode("utf8")
 
 
