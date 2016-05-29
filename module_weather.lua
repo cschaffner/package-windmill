@@ -97,17 +97,21 @@ function M.run(duration, _, fn)
         end
     end)
 --
---    local y_rain = HEIGHT-200
---    local x_rain = 50
---    for idx = 1, #rain do
---        local x = x_rain + idx*40
---        local rain_point = rain[idx]
-----        a.add(anims.moving_font(t, E, 50, y_rain, rain_point.mm_per_h , font_size, 1,1,1,1))
---        if (idx % 4 == 1) then
---            a.add(anims.rotated_moving_font(t, E, x, y_rain, rain_point.time , font_size, 1,1,1,1))
---        end
---        a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.mmh_num*300, x+30, y_rain,1))
---    end
+    local y_rain = HEIGHT-200
+    local x_rain = 50
+    if rain.emptytext then
+        a.add(anims.moving_font(t, E, x_rain, y_rain, "no rain expected", 70, 0.12,0.56,1,1))
+    else
+        for idx = 1, #rain.forecasts do
+            local x = x_rain + idx*20
+            local rain_point = rain.forecasts[idx]
+    --        a.add(anims.moving_font(t, E, 50, y_rain, rain_point.mm_per_h , font_size, 1,1,1,1))
+--            if (idx % 4 == 1) then
+--                a.add(anims.rotated_moving_font(t, E, x, y_rain, rain_point.time , font_size, 1,1,1,1))
+--            end
+            a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.value*3, x+15, y_rain,1))
+        end
+    end
 
     a.add(anims.moving_font(t, E, 900, 150, "now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70, 1,1,1,1))
     title_width = font:width("now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70)
@@ -165,7 +169,6 @@ function M.run(duration, _, fn)
     a.add(anims.moving_font(t, E, afteraftertom_x, windday_y, weather.Halfweg.days[4].winddirection .. weather.Halfweg.days[3].beaufort, 40, 1,1,1,1))
     a.add(anims.moving_image(t, E, weather_pics['weather_wind_'..weather.Halfweg.days[2].winddirection], afteraftertom_x, windicon_y, afteraftertom_x+80, windicon_y+80, 1))
     a.add(anims.moving_bar(S, E, blue, afteraftertom_x, rainbar_y-weather.Halfweg.days[4].precipitationmm*150/30, afteraftertom_x+100, rainbar_y,1))
-
 
 
 
