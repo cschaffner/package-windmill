@@ -86,17 +86,17 @@ function M.run(duration, _, fn)
 --            return util.draw_correct(radar_pics['weather_radar_00'], 200, y, 200+600, y+420, 1)
 --        end
 --    end)
-    a.add(function(t)
-        if t > 1 and t < E-1 then
-            idx = math.ceil(t/E*#radar_data.times)
-    --        print(idx, radar_data[idx].filename)
-    --        gl.scale(10,10)
-    --        gl.translate(-200,-200)
-            return util.draw_correct(weather_pics[radar_data.times[idx].filename], 200, y, 200+600, y+420, 1)
---            return radar_pics[radar_data.times[idx].filename]:draw(200, y, 200+600, y+420, 1)
-        end
-    end)
-
+--    a.add(function(t)
+--        if t > 1 and t < E-1 then
+--            idx = math.ceil(t/E*#radar_data.times)
+--    --        print(idx, radar_data[idx].filename)
+--    --        gl.scale(10,10)
+--    --        gl.translate(-200,-200)
+--            return util.draw_correct(weather_pics[radar_data.times[idx].filename], 200, y, 200+600, y+420, 1)
+----            return radar_pics[radar_data.times[idx].filename]:draw(200, y, 200+600, y+420, 1)
+--        end
+--    end)
+--
 --    local y_rain = HEIGHT-200
 --    local x_rain = 50
 --    for idx = 1, #rain do
