@@ -21,6 +21,10 @@ def get_rain():
     r = requests.get('https://graphdata.buienradar.nl/forecast/json/?lat=51.869&lon=4.211')
     rain_data = r.json()
 
+
+    total_value = sum(item['value'] for item in rain_data['forecasts'])
+    rain_data['no_rain'] = total_value == 0
+
     return json.dumps(rain_data, ensure_ascii=False, indent=2).encode("utf8")
 
 

@@ -99,8 +99,9 @@ function M.run(duration, _, fn)
 --
     local y_rain = HEIGHT-200
     local x_rain = 50
-    if rain.emptytext then
-        a.add(anims.moving_font(t, E, x_rain+100, y_rain-150, "no rain expected during next 2 hours", 60, 0.12,0.56,1,1))
+    if rain.no_rain then
+        a.add(anims.moving_font(t, E, x_rain+100, y_rain-150, "no rain expected", 60, 0.12,0.56,1,1))
+        a.add(anims.moving_font(t, E, x_rain+100, y_rain-90, "during next two hours", 60, 0.12,0.56,1,1))
     else
         for idx = 1, #rain.forecasts do
             local x = x_rain + idx*20
