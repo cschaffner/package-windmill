@@ -87,17 +87,17 @@ function M.run(duration, _, fn)
 --        end
 --    end)
 
---    a.add(function(t)
---        if t > 1 and t < E-1 then
---            idx = math.ceil(t/E*#radar_data.times)
---    --        print(idx, radar_data[idx].filename)
---    --        gl.scale(10,10)
---    --        gl.translate(-200,-200)
---            return util.draw_correct(weather_pics[radar_data.times[idx].filename], 200, y, 200+600, y+420, 1)
-----            return radar_pics[radar_data.times[idx].filename]:draw(200, y, 200+600, y+420, 1)
---        end
---    end)
---
+    a.add(function(t)
+        if t > 1 and t < E-1 then
+            idx = math.ceil(t/E*#radar_data.times)
+    --        print(idx, radar_data[idx].filename)
+    --        gl.scale(10,10)
+    --        gl.translate(-200,-200)
+            return util.draw_correct(weather_pics[radar_data.times[idx].filename], 200, y, 200+600, y+420, 1)
+--            return radar_pics[radar_data.times[idx].filename]:draw(200, y, 200+600, y+420, 1)
+        end
+    end)
+
 
     local y_rain = HEIGHT-200
     local x_rain = 100
@@ -109,9 +109,9 @@ function M.run(duration, _, fn)
             local x = x_rain + idx*20
             local rain_point = rain.forecasts[idx]
     --        a.add(anims.moving_font(t, E, 50, y_rain, rain_point.mm_per_h , font_size, 1,1,1,1))
---            if (idx % 8 == 1) then
---                a.add(anims.rotated_moving_font(t, E, x, y_rain, rain_point.time , font_size, 1,1,1,1))
---            end
+            if (idx % 8 == 1) then
+                a.add(anims.rotated_moving_font(t, E, x, y_rain, rain_point.time , font_size, 1,1,1,1))
+            end
             a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.value*3, x+15, y_rain,1))
         end
     end
