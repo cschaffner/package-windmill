@@ -117,7 +117,7 @@ function M.run(duration, _, fn)
     end
 
     a.add(anims.moving_font(t, E, 900, 150, "now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70, 1,1,1,1))
-    title_width = font:width("now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70)
+    local title_width = font:width("now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70)
     a.add(anims.moving_image(t, E, weather_pics['weather_wind_'..weather.Schiphol.winddirection], 900+title_width, 150, 900+title_width+80, 150+80, 1))
 
     local today_x = 900
