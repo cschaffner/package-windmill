@@ -107,9 +107,9 @@ function M.run(duration, _, fn)
             local x = x_rain + idx*20
             local rain_point = rain.forecasts[idx]
     --        a.add(anims.moving_font(t, E, 50, y_rain, rain_point.mm_per_h , font_size, 1,1,1,1))
-            if (idx % 8 == 1) then
-                a.add(anims.rotated_moving_font(t, E, x, y_rain, rain_point.time , font_size, 1,1,1,1))
-            end
+--            if (idx % 8 == 1) then
+--                a.add(anims.rotated_moving_font(t, E, x, y_rain, rain_point.time , font_size, 1,1,1,1))
+--            end
             a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.value*3, x+15, y_rain,1))
         end
     end
