@@ -56,7 +56,7 @@ local function move_in_shift_move_out(S, E, x, y, xshift, obj)
     local x = utils.make_smooth{
         {t = S,   val = x+2200},
         {t = S+1, val = x, ease='step'},
-        {t = E-1, val = x+xshift, ease='step'},
+        {t = E-1, val = x+xshift},
         {t = E,   val = -2000},
     }
 
