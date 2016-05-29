@@ -115,6 +115,7 @@ function M.run(duration, _, fn)
             a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.value*3, x+15, y_rain,1))
         end
     end
+    a.add(anims.my_moving_bar(S, E, red, x_rain, y_rain-300, x_rain+5, y_rain, #rain.forecasts * 20, 1))
 
     a.add(anims.moving_font(t, E, 900, 150, "now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70, 1,1,1,1))
     local title_width = font:width("now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70)
