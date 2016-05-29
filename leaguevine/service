@@ -305,7 +305,7 @@ def game_to_dict(division, game):
                   'team_1_country': '',
                   'team_2_country': '',
                   'field': '',
-                  'field_nr': 0,
+                  'field_nr': '',
                   'team_1_score': game['team_1_score'],
                   'team_2_score': game['team_2_score'],
                   'is_final': game['winner_id'] is not None,
@@ -317,7 +317,8 @@ def game_to_dict(division, game):
         game_dict['team_2'], game_dict['team_2_country'] = team_info(division, game['team_2'])
     if game['game_site']:
         game_dict['field'] = game['game_site']['name']
-        game_dict['field_nr'] = int(re.sub("[^0-9]", "", game['game_site']['name']))
+        game_dict['field_nr'] = game['game_site']['name'].split(' ')[1]
+        # game_dict['field_nr'] = int(re.sub("[^0-9]", "", game['game_site']['name']))
 
     return game_dict
 

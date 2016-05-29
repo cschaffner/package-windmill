@@ -105,7 +105,11 @@ function M.run(duration, args, fn)
             a.add(anims.moving_bar(t, E, gray, x_games, y, x_games+field_nr_width+2*(team_width+score_width)+20, y+font_size,1))
         end
         curx = x_games
-        a.add(anims.my_moving_font(t, E, x_games, y, string.format("%2.0f", game.field_nr) , font_size, 1,1,1,1))
+        if int(game.field_nr) > 0 then
+            a.add(anims.my_moving_font(t, E, x_games, y, "field:" .. game.field_nr, font_size, 1,1,1,1))
+        else
+            a.add(anims.my_moving_font(t, E, x_games, y, game.field_nr, font_size, 1,1,1,1))
+        end
         curx = curx + field_nr_width
         a.add(anims.my_moving_font(t, E, curx, y, "flag:" .. game.team_1_country .. " " .. game.team_1 , font_size, 1,1,1,1))
         curx = curx + team_width

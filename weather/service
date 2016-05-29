@@ -59,7 +59,7 @@ def get_weather():
     weather_dict['Halfweg'] = r.json()
 
     # if this day is almost over, remove it and focus on the next one only
-    if weather_dict['Halfweg']['days'][0]['hours'][0]['hour'] >= 22:
+    if len(weather_dict['Halfweg']['days'][0]['hours'])==0 or weather_dict['Halfweg']['days'][0]['hours'][0]['hour'] >= 22:
         weather_dict['Halfweg']['days'].pop(0)
 
     if not weather_dict['Halfweg']['days'][0].has_key('precipitationmm'):

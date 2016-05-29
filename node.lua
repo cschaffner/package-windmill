@@ -26,7 +26,9 @@ res = util.resource_loader({
 countries = util.auto_loader({}, function(fname)
     return fname:sub(1,5) == "flag_"
 end)
-
+field_numbers = util.auto_loader({}, function(fname)
+    return fname:sub(1,6) == "field_"
+end)
 
 local json = require "json"
 local utils = require "utils"
