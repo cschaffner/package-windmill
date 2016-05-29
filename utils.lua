@@ -11,7 +11,7 @@ function M.game_string(game)
         if game.is_final then
             out = out .. " - " .. game.team_2_score .. " " .. game.team_2 .. "flag:" .. game.team_2_country
         else
-            out = out .. "*- " .. game.team_2_score .. game.team_2 .. "flag:" .. game.team_2_country
+            out = out .. "*- " .. game.team_2_score .. " " .. game.team_2 .. "flag:" .. game.team_2_country
         end
     else
         out = game.field .. ": " .. "flag:" .. game.team_1_country .. game.team_1 .. " vs "
