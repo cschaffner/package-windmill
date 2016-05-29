@@ -52,6 +52,29 @@ local function move_in_move_out(S, E, x, y, obj)
     end
 end
 
+local function move_in_shift_move_out(S, E, x, y, xshift, obj)
+    local x = utils.make_smooth{
+        {t = S,   val = x+2200},
+        {t = S+1, val = x, ease='step'},
+        {t = E-1, val = x+xshift, ease='step'},
+        {t = E,   val = -2000},
+    }
+
+    local y = utils.make_smooth{
+        {t = S,   val = y*3},
+        {t = S+1, val = y, ease='step'},
+        {t = E-1, val = y},
+        {t = E,   val = 0},
+    }
+
+    return function(t)
+        gl.translate(x(t), y(t))
+        return obj(t)
+    end
+end
+
+
+
 local function move_in_scroll_move_out(S, Scroll, E, x, y, y_lift, obj)
     local x = utils.make_smooth{
         {t = S,   val = x+2200},
@@ -123,15 +146,9 @@ function M.moving_bar(S, E, color, x1, y1, x2, y2, alpha)
 end
 
 function M.my_moving_bar(S, E, color, x1, y1, x2, y2, xmove, alpha)
-    return move_in_move_out(S, E, x1, y1,
+    return move_in_shift_move_out(S, E, x1, y1, xmove,
         rotating_entry_exit(S, E, function(t)
-                local x = utils.make_smooth{
-                    {t = S,   val = 0},
-                    {t = S+1, val = 0, ease='step'},
-                    {t = E-1, val = xmove},
-                    {t = E,   val = xmove},
-                }
-            return color:draw(0, 0, x(t)+x2-x1, y2-y1, alpha)
+            return color:draw(0, 0, x2-x1, y2-y1, alpha)
         end)
     )
 end
