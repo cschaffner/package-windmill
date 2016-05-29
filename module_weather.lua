@@ -109,7 +109,7 @@ function M.run(duration, _, fn)
 --        a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.mmh_num*300, x+30, y_rain,1))
 --    end
 
-    a.add(anims.moving_font(t, E, 900, 130, "now: " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70, 1,1,1,1))
+    a.add(anims.moving_font(t, E, 900, 150, "now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70, 1,1,1,1))
 
     local today_x = 900
     local dayspace = 200
@@ -118,27 +118,29 @@ function M.run(duration, _, fn)
     local afteraftertom_x = aftertom_x + dayspace
     local dayname_y = 280
     local temp_max_y = 400
-    local temp_min_y = 700
-    local rainbar_y = 850
-    local rainday_y = 880
-    local windday_y = 930
+    local temp_min_y = 550
+    local rainbar_y = 750
+    local rainday_y = 780
+    local windday_y = 830
 
 --    today's data'
     a.add(anims.moving_font(t, E, today_x, dayname_y, weather.Halfweg.day_names[1], 70, 1,1,1,1))
-    a.add(anims.moving_font(t, E, today_x, temp_max_y, weather.Halfweg.days[1].maxtemp, 50, 0.9,0.32,0,1))
-    a.add(anims.moving_font(t, E, today_x, temp_min_y, weather.Halfweg.days[1].mintemp, 50, 0.12,0.56,1,1))
+    a.add(anims.moving_font(t, E, today_x, temp_max_y, weather.Halfweg.days[1].maxtemp .. "°", 60, 0.9,0.32,0,1))
+    a.add(anims.moving_font(t, E, today_x+dayspace/2, temp_min_y, weather.Halfweg.days[1].mintemp .. "°", 60, 0.12,0.56,1,1))
     a.add(anims.moving_font(t, E, today_x, rainday_y, string.format("%3.1f", weather.Halfweg.days[1].precipitationmm) .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, today_x, windday_y, weather.Halfweg.days[1].winddirection .. weather.Halfweg.days[1].beaufort, 40, 1,1,1,1))
     a.add(anims.moving_bar(S, E, blue, today_x, rainbar_y-weather.Halfweg.days[1].precipitationmm*150/30, today_x+100, rainbar_y,1))
 
     a.add(anims.moving_font(t, E, tom_x, dayname_y, weather.Halfweg.day_names[2], 70, 1,1,1,1))
-    a.add(anims.moving_font(t, E, tom_x, temp_max_y, weather.Halfweg.days[2].maxtemp, 50, 0.9,0.32,0,1))
-    a.add(anims.moving_font(t, E, tom_x, temp_min_y, weather.Halfweg.days[2].mintemp, 50, 0.12,0.56,1,1))
+    a.add(anims.moving_font(t, E, tom_x, temp_max_y, weather.Halfweg.days[2].maxtemp .. "°", 60, 0.9,0.32,0,1))
+    a.add(anims.moving_font(t, E, tom_x+dayspace/2, temp_min_y, weather.Halfweg.days[2].mintemp .. "°", 60, 0.12,0.56,1,1))
     a.add(anims.moving_font(t, E, tom_x, rainday_y, weather.Halfweg.days[2].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, tom_x, windday_y, weather.Halfweg.days[2].winddirection .. weather.Halfweg.days[2].beaufort, 40, 1,1,1,1))
     a.add(anims.moving_bar(S, E, blue, tom_x, rainbar_y-weather.Halfweg.days[2].precipitationmm*150/30, tom_x+100, rainbar_y,1))
 
     a.add(anims.moving_font(t, E, aftertom_x, dayname_y, weather.Halfweg.day_names[3], 70, 1,1,1,1))
+    a.add(anims.moving_font(t, E, aftertom_x, temp_max_y, weather.Halfweg.days[3].maxtemp .. "°", 60, 0.9,0.32,0,1))
+    a.add(anims.moving_font(t, E, aftertom_x+dayspace/2, temp_min_y, weather.Halfweg.days[3].mintemp .. "°", 60, 0.12,0.56,1,1))
     a.add(anims.moving_font(t, E, aftertom_x, rainday_y, weather.Halfweg.days[3].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, aftertom_x, windday_y, weather.Halfweg.days[3].winddirection .. weather.Halfweg.days[3].beaufort, 40, 1,1,1,1))
     a.add(anims.moving_bar(S, E, blue, aftertom_x, rainbar_y-weather.Halfweg.days[3].precipitationmm*150/30, aftertom_x+100, rainbar_y,1))
