@@ -127,7 +127,7 @@ function M.run(duration, _, fn)
 
 --    today's data'
     a.add(anims.moving_font(t, E, today_x, dayname_y, weather.Halfweg.day_names[1], 70, 1,1,1,1))
-    a.add(anims.moving_image(t, E, weather_pics['weather_'..weather.Halfweg.days[1].iconcode], today_x+dayspace/4, icon_y, today_x+dayspace/4+60, icon_y+60, 1))
+    a.add(anims.moving_image(t, E, weather_pics['weather_'..weather.Halfweg.days[1].iconcode], today_x+dayspace/8, icon_y, today_x+dayspace/8+60, icon_y+60, 1))
     a.add(anims.moving_font(t, E, today_x, temp_max_y, weather.Halfweg.days[1].maxtemperature .. "°", 60, 0.9,0.32,0,1))
     a.add(anims.moving_font(t, E, today_x+dayspace/2, temp_min_y, weather.Halfweg.days[1].mintemperature .. "°", 60, 0.12,0.56,1,1))
     a.add(anims.moving_font(t, E, today_x, rainday_y, string.format("%3.1f", weather.Halfweg.days[1].precipitationmm) .. "mm", 40, 1,1,1,1))
@@ -137,24 +137,30 @@ function M.run(duration, _, fn)
     t = t + 0.03
 
     a.add(anims.moving_font(t, E, tom_x, dayname_y, weather.Halfweg.day_names[2], 70, 1,1,1,1))
-    a.add(anims.moving_image(t, E, weather_pics['weather_'..weather.Halfweg.days[2].iconcode], tom_x+dayspace/4, icon_y, tom_x+dayspace/4+60, icon_y+60, 1))
+    a.add(anims.moving_image(t, E, weather_pics['weather_'..weather.Halfweg.days[2].iconcode], tom_x+dayspace/8, icon_y, tom_x+dayspace/8+60, icon_y+60, 1))
     a.add(anims.moving_font(t, E, tom_x, temp_max_y, weather.Halfweg.days[2].maxtemperature .. "°", 60, 0.9,0.32,0,1))
     a.add(anims.moving_font(t, E, tom_x+dayspace/2, temp_min_y, weather.Halfweg.days[2].mintemperature .. "°", 60, 0.12,0.56,1,1))
     a.add(anims.moving_font(t, E, tom_x, rainday_y, weather.Halfweg.days[2].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, tom_x, windday_y, weather.Halfweg.days[2].winddirection .. weather.Halfweg.days[2].beaufort, 40, 1,1,1,1))
-    a.add(anims.moving_image(t, E, weather_pics['weather_wind_'..weather.Halfweg.days[2].winddirection], today_x, windicon_y, today_x+80, windicon_y+80, 1))
+    a.add(anims.moving_image(t, E, weather_pics['weather_wind_'..weather.Halfweg.days[2].winddirection], tom_x, windicon_y, tom_x+80, windicon_y+80, 1))
     a.add(anims.moving_bar(S, E, blue, tom_x, rainbar_y-weather.Halfweg.days[2].precipitationmm*150/30, tom_x+100, rainbar_y,1))
+    t = t + 0.03
 
     a.add(anims.moving_font(t, E, aftertom_x, dayname_y, weather.Halfweg.day_names[3], 70, 1,1,1,1))
+    a.add(anims.moving_image(t, E, weather_pics['weather_'..weather.Halfweg.days[3].iconcode], aftertom_x+dayspace/8, icon_y, aftertom_x+dayspace/8+60, icon_y+60, 1))
     a.add(anims.moving_font(t, E, aftertom_x, temp_max_y, weather.Halfweg.days[3].maxtemperature .. "°", 60, 0.9,0.32,0,1))
     a.add(anims.moving_font(t, E, aftertom_x+dayspace/2, temp_min_y, weather.Halfweg.days[3].mintemperature .. "°", 60, 0.12,0.56,1,1))
     a.add(anims.moving_font(t, E, aftertom_x, rainday_y, weather.Halfweg.days[3].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, aftertom_x, windday_y, weather.Halfweg.days[3].winddirection .. weather.Halfweg.days[3].beaufort, 40, 1,1,1,1))
+    a.add(anims.moving_image(t, E, weather_pics['weather_wind_'..weather.Halfweg.days[2].winddirection], tom_x, windicon_y, tom_x+80, windicon_y+80, 1))
     a.add(anims.moving_bar(S, E, blue, aftertom_x, rainbar_y-weather.Halfweg.days[3].precipitationmm*150/30, aftertom_x+100, rainbar_y,1))
+    t = t + 0.03
 
     a.add(anims.moving_font(t, E, afteraftertom_x, dayname_y, weather.Halfweg.day_names[4], 70, 1,1,1,1))
+    a.add(anims.moving_image(t, E, weather_pics['weather_'..weather.Halfweg.days[4].iconcode], afteraftertom_x+dayspace/8, icon_y, afteraftertom_x+dayspace/8+60, icon_y+60, 1))
     a.add(anims.moving_font(t, E, afteraftertom_x, rainday_y, weather.Halfweg.days[4].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, afteraftertom_x, windday_y, weather.Halfweg.days[4].winddirection .. weather.Halfweg.days[3].beaufort, 40, 1,1,1,1))
+    a.add(anims.moving_image(t, E, weather_pics['weather_wind_'..weather.Halfweg.days[2].winddirection], afteraftertom_x, windicon_y, afteraftertom_x+80, windicon_y+80, 1))
     a.add(anims.moving_bar(S, E, blue, afteraftertom_x, rainbar_y-weather.Halfweg.days[4].precipitationmm*150/30, afteraftertom_x+100, rainbar_y,1))
 
 
