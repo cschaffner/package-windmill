@@ -33,8 +33,8 @@ local blue = resource.create_colored_texture(0.12,0.56,1,1)
 local weather = {}
 local rain = {}
 local radar_data = {}
-local radar_pics = util.auto_loader({}, function(fname)
-    return fname:sub(1,14) == "weather_radar_"
+local weather_pics = util.auto_loader({}, function(fname)
+    return fname:sub(1,14) == "weather_"
 end)
 
 local data_unwatch = util.file_watch("weather_data.json", function(raw)
@@ -80,22 +80,22 @@ function M.run(duration, _, fn)
     local font_size = 40
 
 
-    a.add(anims.moving_image(t, E, radar_pics['weather_radar_background'], 200, y, 599+200, y+420, 1))
+    a.add(anims.moving_image(t, E, weather_pics['weather_radar_background'], 200, y, 599+200, y+420, 1))
     a.add(function(t)
         if t > 1 and t < E-1 then
             return util.draw_correct(radar_pics['weather_radar_00'], 200, y, 200+600, y+420, 1)
         end
     end)
---    a.add(function(t)
---        if t > 1 and t < E-1 then
---            idx = math.ceil(t/E*#radar_data.times)
---    --        print(idx, radar_data[idx].filename)
---    --        gl.scale(10,10)
---    --        gl.translate(-200,-200)
---            return util.draw_correct(radar_pics[radar_data.times[idx].filename], 200, y, 200+600, y+420, 1)
-----            return radar_pics[radar_data.times[idx].filename]:draw(200, y, 200+600, y+420, 1)
---        end
---    end)
+    a.add(function(t)
+        if t > 1 and t < E-1 then
+            idx = math.ceil(t/E*#radar_data.times)
+    --        print(idx, radar_data[idx].filename)
+    --        gl.scale(10,10)
+    --        gl.translate(-200,-200)
+            return util.draw_correct(weather_pics[radar_data.times[idx].filename], 200, y, 200+600, y+420, 1)
+--            return radar_pics[radar_data.times[idx].filename]:draw(200, y, 200+600, y+420, 1)
+        end
+    end)
 
 --    local y_rain = HEIGHT-200
 --    local x_rain = 50
@@ -117,30 +117,34 @@ function M.run(duration, _, fn)
     local aftertom_x = tom_x + dayspace
     local afteraftertom_x = aftertom_x + dayspace
     local dayname_y = 280
+    local icon_y = 350
     local temp_max_y = 400
     local temp_min_y = 550
     local rainbar_y = 750
     local rainday_y = 780
-    local windday_y = 830
+    local windicon_y = 830
+    local windday_y = 930
 
 --    today's data'
     a.add(anims.moving_font(t, E, today_x, dayname_y, weather.Halfweg.day_names[1], 70, 1,1,1,1))
-    a.add(anims.moving_font(t, E, today_x, temp_max_y, weather.Halfweg.days[1].maxtemp .. "°", 60, 0.9,0.32,0,1))
-    a.add(anims.moving_font(t, E, today_x+dayspace/2, temp_min_y, weather.Halfweg.days[1].mintemp .. "°", 60, 0.12,0.56,1,1))
+    a.add(anims.moving_image(t, E, weather_pics['weather_'..weather.Halfweg.days[1].iconcode], today_x, icon_y, today_x+30, icon_y+30, 1))
+    a.add(anims.moving_font(t, E, today_x, temp_max_y, weather.Halfweg.days[1].maxtemperature .. "°", 60, 0.9,0.32,0,1))
+    a.add(anims.moving_font(t, E, today_x+dayspace/2, temp_min_y, weather.Halfweg.days[1].mintemperature .. "°", 60, 0.12,0.56,1,1))
     a.add(anims.moving_font(t, E, today_x, rainday_y, string.format("%3.1f", weather.Halfweg.days[1].precipitationmm) .. "mm", 40, 1,1,1,1))
-    a.add(anims.moving_font(t, E, today_x, windday_y, weather.Halfweg.days[1].winddirection .. weather.Halfweg.days[1].beaufort, 40, 1,1,1,1))
     a.add(anims.moving_bar(S, E, blue, today_x, rainbar_y-weather.Halfweg.days[1].precipitationmm*150/30, today_x+100, rainbar_y,1))
+    a.add(anims.moving_image(t, E, weather_pics['weather_wind_'..weather.Halfweg.days[1].winddirection], today_x, windicon_y, today_x+30, windicon_y+30, 1))
+    a.add(anims.moving_font(t, E, today_x, windday_y, weather.Halfweg.days[1].winddirection .. weather.Halfweg.days[1].beaufort, 40, 1,1,1,1))
 
     a.add(anims.moving_font(t, E, tom_x, dayname_y, weather.Halfweg.day_names[2], 70, 1,1,1,1))
-    a.add(anims.moving_font(t, E, tom_x, temp_max_y, weather.Halfweg.days[2].maxtemp .. "°", 60, 0.9,0.32,0,1))
-    a.add(anims.moving_font(t, E, tom_x+dayspace/2, temp_min_y, weather.Halfweg.days[2].mintemp .. "°", 60, 0.12,0.56,1,1))
+    a.add(anims.moving_font(t, E, tom_x, temp_max_y, weather.Halfweg.days[2].maxtemperature .. "°", 60, 0.9,0.32,0,1))
+    a.add(anims.moving_font(t, E, tom_x+dayspace/2, temp_min_y, weather.Halfweg.days[2].mintemperature .. "°", 60, 0.12,0.56,1,1))
     a.add(anims.moving_font(t, E, tom_x, rainday_y, weather.Halfweg.days[2].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, tom_x, windday_y, weather.Halfweg.days[2].winddirection .. weather.Halfweg.days[2].beaufort, 40, 1,1,1,1))
     a.add(anims.moving_bar(S, E, blue, tom_x, rainbar_y-weather.Halfweg.days[2].precipitationmm*150/30, tom_x+100, rainbar_y,1))
 
     a.add(anims.moving_font(t, E, aftertom_x, dayname_y, weather.Halfweg.day_names[3], 70, 1,1,1,1))
-    a.add(anims.moving_font(t, E, aftertom_x, temp_max_y, weather.Halfweg.days[3].maxtemp .. "°", 60, 0.9,0.32,0,1))
-    a.add(anims.moving_font(t, E, aftertom_x+dayspace/2, temp_min_y, weather.Halfweg.days[3].mintemp .. "°", 60, 0.12,0.56,1,1))
+    a.add(anims.moving_font(t, E, aftertom_x, temp_max_y, weather.Halfweg.days[3].maxtemperature .. "°", 60, 0.9,0.32,0,1))
+    a.add(anims.moving_font(t, E, aftertom_x+dayspace/2, temp_min_y, weather.Halfweg.days[3].mintemperature .. "°", 60, 0.12,0.56,1,1))
     a.add(anims.moving_font(t, E, aftertom_x, rainday_y, weather.Halfweg.days[3].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, aftertom_x, windday_y, weather.Halfweg.days[3].winddirection .. weather.Halfweg.days[3].beaufort, 40, 1,1,1,1))
     a.add(anims.moving_bar(S, E, blue, aftertom_x, rainbar_y-weather.Halfweg.days[3].precipitationmm*150/30, aftertom_x+100, rainbar_y,1))
