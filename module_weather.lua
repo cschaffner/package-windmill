@@ -125,11 +125,15 @@ function M.run(duration, _, fn)
 
 --    today's data'
     a.add(anims.moving_font(t, E, today_x, dayname_y, weather.Halfweg.day_names[1], 70, 1,1,1,1))
+    a.add(anims.moving_font(t, E, today_x, temp_max_y, weather.Halfweg.days[1].maxtemp, 50, 0.9,0.32,0,1))
+    a.add(anims.moving_font(t, E, today_x, temp_min_y, weather.Halfweg.days[1].mintemp, 50, 0.12,0.56,1,1))
     a.add(anims.moving_font(t, E, today_x, rainday_y, string.format("%3.1f", weather.Halfweg.days[1].precipitationmm) .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, today_x, windday_y, weather.Halfweg.days[1].winddirection .. weather.Halfweg.days[1].beaufort, 40, 1,1,1,1))
     a.add(anims.moving_bar(S, E, blue, today_x, rainbar_y-weather.Halfweg.days[1].precipitationmm*150/30, today_x+100, rainbar_y,1))
 
     a.add(anims.moving_font(t, E, tom_x, dayname_y, weather.Halfweg.day_names[2], 70, 1,1,1,1))
+    a.add(anims.moving_font(t, E, tom_x, temp_max_y, weather.Halfweg.days[2].maxtemp, 50, 0.9,0.32,0,1))
+    a.add(anims.moving_font(t, E, tom_x, temp_min_y, weather.Halfweg.days[2].mintemp, 50, 0.12,0.56,1,1))
     a.add(anims.moving_font(t, E, tom_x, rainday_y, weather.Halfweg.days[2].precipitationmm .. "mm", 40, 1,1,1,1))
     a.add(anims.moving_font(t, E, tom_x, windday_y, weather.Halfweg.days[2].winddirection .. weather.Halfweg.days[2].beaufort, 40, 1,1,1,1))
     a.add(anims.moving_bar(S, E, blue, tom_x, rainbar_y-weather.Halfweg.days[2].precipitationmm*150/30, tom_x+100, rainbar_y,1))
@@ -144,16 +148,20 @@ function M.run(duration, _, fn)
     a.add(anims.moving_font(t, E, afteraftertom_x, windday_y, weather.Halfweg.days[4].winddirection .. weather.Halfweg.days[3].beaufort, 40, 1,1,1,1))
     a.add(anims.moving_bar(S, E, blue, afteraftertom_x, rainbar_y-weather.Halfweg.days[4].precipitationmm*150/30, afteraftertom_x+100, rainbar_y,1))
 
-    local function temp_to_y(temp)
-        return temp_min_y - (temp-weather.Halfweg.min_temp) * (temp_min_y-temp_max_y) / (weather.Halfweg.max_temp-weather.Halfweg.min_temp)
-    end
---    local current_temp = weather.Schiphol.temperature
-    for idx = 1, #weather.Halfweg.hours do
-        local hour = weather.Halfweg.hours[idx]
-        local cur_x = today_x + idx*12
-        a.add(anims.moving_bar(S, E, red, cur_x, temp_to_y(hour.temperature), cur_x+10, temp_to_y(hour.temperature)+10,1))
---        current_temp = hour.temperature
-    end
+
+
+
+--    -- temperature curves
+--    local function temp_to_y(temp)
+--        return temp_min_y - (temp-weather.Halfweg.min_temp) * (temp_min_y-temp_max_y) / (weather.Halfweg.max_temp-weather.Halfweg.min_temp)
+--    end
+----    local current_temp = weather.Schiphol.temperature
+--    for idx = 1, #weather.Halfweg.hours do
+--        local hour = weather.Halfweg.hours[idx]
+--        local cur_x = today_x + idx*12
+--        a.add(anims.moving_bar(S, E, red, cur_x, temp_to_y(hour.temperature), cur_x+10, temp_to_y(hour.temperature)+10,1))
+----        current_temp = hour.temperature
+--    end
 
     Sidebar.hide(E)
     fn.wait_t(0)
