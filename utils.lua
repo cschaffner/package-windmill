@@ -5,7 +5,7 @@ function M.game_string(game)
     if game.team_1_score then
         out = ""
         if game.field then
-            if int(game.field_nr) > 0 then
+            if tonumber(game.field_nr) > 0 then
                 out = "Field " .. "field:" .. game.field_nr .. ": "
             else
                 out = game.field .. ": "
