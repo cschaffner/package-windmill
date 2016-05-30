@@ -5,11 +5,11 @@ function M.game_string(game)
     if game.team_1_score then
         out = ""
         if game.field then
-            if tonumber(game.field_nr) > 0 then
-                out = "Field " .. "field:" .. game.field_nr .. ": "
-            else
+--            if tonumber(game.field_nr) > 0 then
+--                out = "Field " .. "field:" .. game.field_nr .. ": "
+--            else
                 out = game.field .. ": "
-            end
+--            end
         end
         out = out .. "flag:" .. game.team_1_country .. game.team_1 .. " " .. game.team_1_score
         if game.is_final then
