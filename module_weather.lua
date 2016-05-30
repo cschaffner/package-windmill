@@ -30,8 +30,8 @@ local blue = resource.create_colored_texture(0.12,0.56,1,1)
 --]]
 
 
-local weather = {}
-local rain = {}
+local weather = json.decode(resource.load_file "weather_data.initial.json")
+local rain = json.decode(resource.load_file "weather_rain.initial.json")
 local radar_data = {}
 local weather_pics = util.auto_loader({}, function(fname)
     return fname:sub(1,8) == "weather_"
