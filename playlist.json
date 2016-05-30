@@ -12,13 +12,18 @@
         "duration": 15
     }
 
-},
-{
-    "module": "shader",
-    "chance": 0,
+},{
+    "module": "swissgames",
+    "chance": 1,
     "options": {
-        "duration": 15
+        "division": "women",
+        "font_size": 50,
+        "y_lift": 0,
+        "top_title": "Women",
+        "line_break_fraction_games": 2,
+        "line_break_fraction_standings": 4,
+        "duration": 20
     }
-
-}]
+},
+]
 
