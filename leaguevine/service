@@ -242,6 +242,10 @@ def update(division='open'):
 
 
         round['standings'] = sorted(round['standings'], key=itemgetter('ranking'))
+        if round['round_number'] == 8: # finals
+            # add standings also to final
+            final_round = next((round for round in SCHEDULE[division] if round['name'] == "Final"), None)
+            final_round['standings'] = round['standings']
 
         for game in round['games']:
             if game['team_1_id'] and game['team_2_id']:
