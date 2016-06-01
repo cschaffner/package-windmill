@@ -192,31 +192,11 @@ function M.run(duration, _, fn)
 ----        current_temp = hour.temperature
 --    end
 
-    Sidebar.hide(E)
     fn.wait_t(0)
+    Sidebar.hide(E-1)
 
---
---    xx = 100
---    yy = 700
---    shader:use {
---    margin_h=0.03;
---    margin_v=0.2;
---    }
---    red:draw(xx-20,yy-20,xx+700,yy+70)
---    shader:deactivate()
 
     for now in fn.upto_t(E) do
---        circle:use{
---            r = 1, g = 1, b = 1,
---            width = 20.0,
---            progress = 2 * math.pi,
---        }
---        red:draw(200, 800, 220, 820)
---        circle:deactivate()
---        fill:use{
---            r = 1, g = 1, b = 1,
---        }
---        red:draw(200, 800, 220, 820)
 
         a.draw(now)
     end
