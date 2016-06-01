@@ -12,9 +12,9 @@ local gray = resource.create_colored_texture(0.28,0.28,0.28,1) -- gray
 
 local background = resource.load_image("brackets_scaled.png")
 
-local open_brackets = {}
-local mixed_brackets = {}
-local women_brackets = {}
+local open_brackets = json.decode(resource.load_file "current_brackets_open.initial.json")
+local mixed_brackets = json.decode(resource.load_file "current_brackets_mixed.initial.json")
+local women_brackets = json.decode(resource.load_file "current_brackets_women.initial.json")
 
 local open_unwatch = util.file_watch("current_brackets_open.json", function(raw)
     open_brackets = json.decode(raw)

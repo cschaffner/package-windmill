@@ -12,9 +12,9 @@ local white = resource.create_colored_texture(1,1,1,1)
 --    return fname:sub(1,4) == "gvb-"
 --end)
 
-local open_data = {}
-local mixed_data = {}
-local women_data = {}
+local open_data = json.decode(resource.load_file "current_games_open.initial.json")
+local mixed_data = json.decode(resource.load_file "current_games_mixed.initial.json")
+local women_data = json.decode(resource.load_file "current_games_women.initial.json")
 
 local open_unwatch = util.file_watch("current_games_open.json", function(raw)
     open_data = json.decode(raw)

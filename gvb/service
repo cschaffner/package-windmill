@@ -1,19 +1,16 @@
 #!/usr/bin/python
-import re
-import os
+import sys
 import time
 import json
 import pytz
-import httplib
 import requests
 
 from operator import itemgetter
 from calendar import timegm
 from datetime import datetime
-import xml.etree.ElementTree as ET
-from itertools import islice
 
 MET = pytz.timezone("Europe/Amsterdam")
+
 
 def get_schedule():
     r = requests.get('http://v0.ovapi.nl/stopareacode/03121')
@@ -45,6 +42,8 @@ def get_schedule():
 def update():
     with file("../gvb.json", "wb") as f:
         f.write(get_schedule())
+    print >> sys.stderr, "updated GVB bus schedule"
+
 
 def main():
     while 1:

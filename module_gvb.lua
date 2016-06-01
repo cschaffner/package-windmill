@@ -8,7 +8,7 @@ local icons = util.auto_loader({}, function(fname)
     return fname:sub(1,4) == "gvb-"
 end)
 
-local departures = {}
+local departures = json.decode(resource.load_file "gvb.initial.json")
 
 local unwatch = util.file_watch("gvb.json", function(raw)
     departures = json.decode(raw)
