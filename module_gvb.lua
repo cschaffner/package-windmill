@@ -46,8 +46,9 @@ function M.run(duration, _, fn)
 
     a.add(anims.moving_font(t, E, 150, y, "Take the 10-minute walk to Bus stop Aalbertsestraat", 45, 1,1,1,1))
     t = t + 0.03
-    a.add(anims.moving_font(t, E, 200, y, "or call a cab at +31 20 6777777", 45, 1,1,1,1))
-    y = y + 100
+    y = y + 50
+    a.add(anims.moving_font(t, E, 150, y, "or call a cab at +31 20 6777777", 45, 1,1,1,1))
+    y = y + 60
     t = t + 0.03
     a.add(anims.moving_image(t, E, icons['gvb-walk'], 200, y, 795+200, y+360, 1))
     y=y+400
