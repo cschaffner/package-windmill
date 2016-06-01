@@ -11,12 +11,12 @@ weather_data.json
 gvb.json
 weather_radar*
 
-# User-specific stuff:
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
+.idea/*
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
@@ -32,8 +32,6 @@ weather_radar*
 
 # Mongo Explorer plugin:
 .idea/mongoSettings.xml
-
-.idea*
 
 ## File-based project format:
 *.iws
