@@ -10,7 +10,7 @@ from hosted import CONFIG, NODE
 CONFIG.restart_on_update()
 # CONFIG = {"timezone": "Europe/Berlin"}
 
-diff = datetime(2016, 6, 4, 19, 30, 00) - datetime.utcnow()
+diff = datetime(2016, 6, 5, 9, 30, 00) - datetime.utcnow()
 
 lol = itertools.count()
 

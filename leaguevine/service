@@ -17,8 +17,8 @@ from dateutil import parser
 from datetime import datetime, timedelta
 from calendar import timegm
 
-# from hosted import CONFIG
-# CONFIG.restart_on_update()
+from hosted import CONFIG
+CONFIG.restart_on_update()
 
 with file("windmill2016_test.json") as f:
 # with file("windmill2015.json") as f:
@@ -35,7 +35,7 @@ TEAMS = {}
 SCHEDULE = WINDMILL['schedule']
 BRACKETS = {}
 
-TIMEDIFF = datetime(2016, 6, 4, 19, 30, 00) - datetime.now()
+TIMEDIFF = datetime(2016, 6, 5, 7, 30, 00) - datetime.now()
 
 HOST = 'https://api.leaguevine.com/v1'
 LOCALHOST = 'http://api.localhost:8000/v1'
