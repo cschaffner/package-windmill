@@ -4,4 +4,16 @@
         "text": "Welcome to Windmill 2016!"
     },
     "chance": 1
+},{
+    "module": "twitter"
+}, {
+    "module": "weather",
+    "chance": 1,
+    "options": {
+        "duration": 15
+    }
+
+},{
+    "module": "images",
+    "chance": 0.5,
 }]
