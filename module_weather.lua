@@ -54,7 +54,7 @@ function M.unload()
 end
 
 function M.can_schedule()
-    return true
+    return radar_data ~= {}
 end
 
 function M.prepare(options)
