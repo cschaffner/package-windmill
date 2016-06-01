@@ -10,12 +10,12 @@ from hosted import CONFIG, NODE
 CONFIG.restart_on_update()
 # CONFIG = {"timezone": "Europe/Berlin"}
 
-diff = datetime(2016, 6, 5, 9, 30, 00) - datetime.utcnow()
+# diff = datetime(2016, 6, 5, 9, 30, 00) - datetime.utcnow()
 
 lol = itertools.count()
 
 def current_time():
-    now = datetime.utcnow() + diff
+    now = datetime.utcnow() # + diff
     timestamp = timegm(now.timetuple()) + now.microsecond / 1000000.
     # timestamp += lol.next() * 120
 
