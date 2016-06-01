@@ -18,14 +18,17 @@ res = util.resource_loader({
     "font.ttf";
     "bottle.png";
     "house1.png";
-    "house2.png";
+    "clockboarder.png";
     "tower.png";
+    "podium.png"
 })
 
 countries = util.auto_loader({}, function(fname)
     return fname:sub(1,5) == "flag_"
 end)
-
+field_numbers = util.auto_loader({}, function(fname)
+    return fname:sub(1,6) == "field_"
+end)
 
 local json = require "json"
 local utils = require "utils"
@@ -38,7 +41,7 @@ local women_col = resource.create_colored_texture(0.647,0,0.471,1) --dark pink
 local mixed_col = resource.create_colored_texture(0.843,0.20,0,1)  --reddish
 
 local loop = resource.load_video{
-    file = "loop.mp4";
+    file = "rotating_elephant.mp4";
     looped = true;
 }
 
@@ -149,7 +152,7 @@ Scroller = (function()
                     if #texts < idx then
                         table.insert(texts, generator.next())
                     end
-                    local width = utils.flag_write(font, xoff, y, texts[idx] .. "   -   ", size, unpack(color))
+                    local width = utils.flag_write(font, xoff, y, texts[idx] .. "   ;   ", size, unpack(color))
                     xoff = xoff + width
                     if xoff < 0 then
                         current_left = xoff
@@ -188,6 +191,12 @@ Scroller = (function()
         mixed_games = json.decode(content)
     end)
 
+    local women_games = {}
+    util.file_watch("current_games_women.json", function(content)
+        print("reloading women games")
+        women_games = json.decode(content)
+    end)
+
     local infos = {}
     util.file_watch("scroll.txt", function(content)
         infos = {}
@@ -198,47 +207,43 @@ Scroller = (function()
         end
     end)
 
-    local function open_feeder()
+    local function feeder()
         local out = {}
         for idx = 1, #infos do
             out[#out+1] = infos[idx]
         end
 
         local now = Time.unixtime()
-        out[#out+1] = open_games.round_name .. "(" .. open_games.start_time .. "): "
-        for idx = 1, #open_games.games do
-            local game = open_games.games[idx]
-            out[#out+1] = utils.game_string(game)
+        if #open_games.games > 0 then
+            out[#out+1] = open_games.round_name .. "(" .. open_games.start_time .. "): " .. utils.game_string(open_games.games[1])
+            for idx = 2, #open_games.games do
+                local game = open_games.games[idx]
+                out[#out+1] = utils.game_string(game)
+            end
+        end
+        if #mixed_games.games > 0 then
+            out[#out+1] = mixed_games.round_name .. "(" .. mixed_games.start_time .. "): " .. utils.game_string(mixed_games.games[1])
+            for idx = 2, #mixed_games.games do
+                local game = mixed_games.games[idx]
+                out[#out+1] = utils.game_string(game)
+            end
+        end
+        if #women_games.games > 0 then
+            out[#out+1] = women_games.round_name .. "(" .. women_games.start_time .. "): " .. utils.game_string(women_games.games[1])
+            for idx = 2, #women_games.games do
+                local game = women_games.games[idx]
+                out[#out+1] = utils.game_string(game)
+            end
         end
         return out
     end
 
-    local function mixed_feeder()
-        local out = {}
-        local now = Time.unixtime()
-        out[#out+1] = mixed_games.round_name .. "(" .. mixed_games.start_time .. "): "
-        for idx = 1, #mixed_games.games do
-            local game = mixed_games.games[idx]
-            out[#out+1] = utils.game_string(game)
-        end
-        return out
-    end
-
-
-    local open_text = my_new_running_text{
+    local running_text = my_new_running_text{
         font = res.font;
-        size = 60;
-        speed = 120;
+        size = 50;
+        speed = 200;
         color = {1,1,1,.8};
-        generator = util.generator(open_feeder)
-    }
-
-    local mixed_text = my_new_running_text{
-        font = res.font;
-        size = 60;
-        speed = 140;
-        color = {1,1,1,.8};
-        generator = util.generator(mixed_feeder)
+        generator = util.generator(feeder)
     }
 
     local visibility = 0
@@ -252,10 +257,10 @@ Scroller = (function()
 
     local function draw()
         if visibility > 0.01 then
-            open_col:draw(0, HEIGHT-100, WIDTH, HEIGHT, visibility/1.5)
-            open_text:draw(HEIGHT-60 - visibility * 42)
-            mixed_col:draw(0, HEIGHT-160, WIDTH, HEIGHT-100, visibility/1.5)
-            mixed_text:draw(HEIGHT-120 - visibility * 42)
+--            open_col:draw(0, HEIGHT-100, WIDTH, HEIGHT, visibility/1.5)
+            running_text:draw(HEIGHT - visibility * 60)
+--            mixed_col:draw(0, HEIGHT-160, WIDTH, HEIGHT-100, visibility/1.5)
+--            mixed_text:draw(HEIGHT- visibility * 2*60)
         end
     end
 
@@ -277,7 +282,7 @@ Scroller = (function()
 end)()
 
 Sidebar = (function()
-    local sidebar_width = 339
+    local sidebar_width = 300
     local visibility = 0
     local target = 0
     local restore = sys.now() + 1
@@ -301,9 +306,9 @@ Sidebar = (function()
             gl.translate(WIDTH-sidebar_width, 0)
             gl.rotate(max_rotate - visibility * max_rotate, 0, 1, 0) 
             gl.translate(0.5*sidebar_width*(1-visibility), 0, (1-visibility)*400)
-            res.bottle:draw(0, 0, sidebar_width, HEIGHT, 1)
+--            res.bottle:draw(0, 0, sidebar_width, HEIGHT, 1)
 
-            loop:draw(10, 350, 320, 350+80)
+            loop:draw(10, 200, 10+268, 200+200)
 
             -- res.font:write(125, HEIGHT-45, "info-beamer.com", 40, 0,0,0, visibility)
             gl.popMatrix()
@@ -317,17 +322,17 @@ Sidebar = (function()
         local w = res.font:width(time, size)
         local sidebar_x = WIDTH - sidebar_width + (sidebar_width-w)/2
 
-        local tower_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-150)
-        local tower_y = utils.easeInOut(visibility, 900, 660)
-        res.tower:draw(tower_x, tower_y-200, tower_x + 100, tower_y + 145, visibility*2)
+        local tower_x = WIDTH-250
+        local tower_y = utils.easeInOut(visibility, HEIGHT, 390)
+        res.podium:draw(tower_x-30, tower_y, tower_x + 230, tower_y + 445, visibility*2)
 
-        local house_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-320)
-        local house_y = utils.easeInOut(visibility, 900, 650)
-        res.house2:draw(house_x, house_y, house_x + 280, house_y + 180, visibility*2)
-
-        local clock_x = utils.easeInOut(visibility, WIDTH-260, WIDTH-320)
+--        local house_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-320)
+--        local house_y = utils.easeInOut(visibility, 900, 650)
+--        res.house2:draw(house_x, house_y, house_x + 280, house_y + 180, visibility*2)
+--
+        local clock_x = utils.easeInOut(visibility, WIDTH-260, WIDTH-300)
         local clock_y = utils.easeInOut(visibility, HEIGHT-105, 850)
-        res.house1:draw(clock_x, clock_y-100, clock_x + 300, clock_y + 155)
+        res.clockboarder:draw(clock_x, clock_y-60, clock_x + 300, clock_y + 155)
         res.font:write(clock_x + 150 - w/2, clock_y+5, time, 100, highlight_a(1))
     end
 

@@ -1,17 +1,16 @@
 [{
-    "module": "videos",
+    "module": "weather",
+    "chance": 1,
     "options": {
-        "videos": [
-            {
-                "file": "3d-druck.mp4",
-                "duration": 9.2,
-                "raw": false,
-                "text": "Need a 3D printed part?"
-            }
-        ]
-    },
-    "chance": 0.0,
-    "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
+        "duration": 15
+    }
+
+},{
+    "module": "teams",
+    "chance": 0,
+    "options": {
+        "duration": 15
+    }
 }, {
     "module": "nav",
     "chance": 0.1,
@@ -27,28 +26,17 @@
     "options": {
         "duration": 10
     }
-}, {
-    "module": "talks",
+},{
+    "module": "swissgames",
+    "chance": 1,
     "options": {
-        "duration": 14
+        "division": "women",
+        "font_size": 50,
+        "y_lift": 0,
+        "top_title": "Women",
+        "line_break_fraction_games": 2,
+        "line_break_fraction_standings": 4,
+        "duration": 20
     }
-}, {
-    "module": "text",
-    "options": {
-        "text": "Welcome to Windmill Tournament 2016 in Amsterdam flag:nl!!"
-    },
-    "chance": 0.0
-}, {
-    "module": "images",
-    "chance": 0.0
-}, {
-    "module": "twitter",
-    "chance": 0.1
-}, {
-    "module": "logo",
-    "chance": 0.0
-}, {
-    "module": "ads",
-    "chance": 0.0,
-    "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
-}]
+}
+]

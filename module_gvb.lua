@@ -35,6 +35,7 @@ function M.run(duration, _, fn)
 
     local now = Time.unixtime()
     print('now is '.. now)
+    print('number of departures ' .. #departures)
 
     local t = S
 

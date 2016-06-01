@@ -3,18 +3,57 @@ local M = {}
 function M.game_string(game)
     local out = ''
     if game.team_1_score then
+        out = ""
+        if game.field then
+--            if tonumber(game.field_nr) > 0 then
+--                out = "Field " .. "field:" .. game.field_nr .. ": "
+--            else
+                out = game.field .. ": "
+--            end
+        end
+        out = out .. "flag:" .. game.team_1_country .. game.team_1 .. " " .. game.team_1_score
         if game.is_final then
-            out = "flag:" .. game.team_1_country .. game.team_1 .. " " .. game.team_1_score .. " - "
-            out = out .. game.team_2_score .. " " .. game.team_2 .. "flag:" .. game.team_2_country
+            out = out .. " - " .. game.team_2_score .. " " .. game.team_2 .. "flag:" .. game.team_2_country
         else
-            out = "flag:" .. game.team_1_country .. game.team_1 .. " " .. game.team_1_score .. "* - "
-            out = out .. game.team_2_score .. "* " .. game.team_2 .. "flag:" .. game.team_2_country
+            out = out .. "*- " .. game.team_2_score .. " " .. game.team_2 .. "flag:" .. game.team_2_country
         end
     else
         out = game.field .. ": " .. "flag:" .. game.team_1_country .. game.team_1 .. " vs "
         out = out .. game.team_2 .. "flag:" .. game.team_2_country
     end
     return out
+end
+
+
+local function field_write(font, x, y, text, size, r, g, b, a)
+    local index = 0
+    local width = 0
+    local field_start
+    local field_end
+    local country
+--    return size+font:write(x, y, text, size, r, g, b, a)
+    while true do
+        field_start, field_end = string.find(text, "field:", index)
+        if field_start == nil then
+--            print(string.sub(text, index))
+            width = width + font:write(x + width, y, string.sub(text, index), size, r, g, b, a)
+            return width
+        else
+            if field_start > 1 then
+--                print(string.sub(text, index, flag_start-1))
+                width = width + font:write(x + width, y, string.sub(text, index, field_start-1), size, r, g, b, a)
+            end
+            if string.sub(text, field_end+2, field_end+2) == " " then -- only 1 digit field number
+                field_nr = string.sub(text, field_end+1, field_end+1)
+                index = field_end + 2
+            else
+                field_nr = string.sub(text, field_end+1, field_end+2)
+                index = field_end + 3
+            end
+            field_numbers['field_' .. field_nr]:draw(x+width, y, x+width+size, y+size, a)
+            width = width + size
+        end
+    end
 end
 
 
@@ -29,12 +68,12 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
         flag_start, flag_end = string.find(text, "flag:", index)
         if flag_start == nil then
 --            print(string.sub(text, index))
-            width = width + font:write(x + width, y, string.sub(text, index), size, r, g, b, a)
+            width = width + field_write(font, x + width, y, string.sub(text, index), size, r, g, b, a)
             return width
         else
             if flag_start > 1 then
 --                print(string.sub(text, index, flag_start-1))
-                width = width + font:write(x + width, y, string.sub(text, index, flag_start-1), size, r, g, b, a)
+                width = width + field_write(font, x + width, y, string.sub(text, index, flag_start-1), size, r, g, b, a)
             end
             country = string.sub(text, flag_end+1, flag_end+2)
             countries['flag_' .. country]:draw(x+width, y, x+width+size, y+size, a)
@@ -43,6 +82,8 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
         end
     end
 end
+
+
 
 function M.Animations()
     local anims = {}
