@@ -35,30 +35,6 @@ def get_rain():
 
 def get_weather():
     weather_dict = {}
-    # r = requests.get('http://xml.buienradar.nl/')
-    # tree = ElementTree.fromstring(r.content)
-    #
-    # # prediction
-    # for day1 in tree.iter('dag-plus1'):
-    #     weather_dict['day1'] = {}
-    #     for data in day1:
-    #         weather_dict['day1'][data.tag] = data.text
-    # for day2 in tree.iter('dag-plus2'):
-    #     weather_dict['day2'] = {}
-    #     for data in day2:
-    #         weather_dict['day2'][data.tag] = data.text
-    # for day3 in tree.iter('dag-plus3'):
-    #     weather_dict['day3'] = {}
-    #     for data in day3:
-    #         weather_dict['day3'][data.tag] = data.text
-    #
-    # # current weather
-    # for station in tree.iter('weerstation'):
-    #     if station.attrib['id'] == '6240':
-    #         weather_dict['today'] = {}
-    #         for data in station:
-    #             weather_dict['today'][data.tag] = data.text
-    #         break
 
     # get Schiphol data
     r = requests.get('http://api.buienradar.nl/data/actual/1.0/weatherstation/6240')
