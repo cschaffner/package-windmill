@@ -90,11 +90,14 @@ function M.run(duration, _, fn)
     a.add(function(t)
         if t > 1 and t < E-1 then
             idx = math.ceil(t/E*#radar_data.times)
-    --        print(idx, radar_data[idx].filename)
-    --        gl.scale(10,10)
-    --        gl.translate(-200,-200)
             return util.draw_correct(weather_pics[radar_data.times[idx].filename], 200, y, 200+600, y+420, 1)
---            return radar_pics[radar_data.times[idx].filename]:draw(200, y, 200+600, y+420, 1)
+        end
+    end)
+
+    a.add(function(t)
+        if t > 1 and t < E-1 then
+            idx = math.ceil(t/E*#radar_data.times)
+            return res.font:write(200+20, y+20, radar_data.times[idx].actual_time, 60, 1, 1, 1, 1)
         end
     end)
 
@@ -115,7 +118,7 @@ function M.run(duration, _, fn)
             a.add(anims.moving_bar(S, E, blue, x, y_rain-rain_point.value*3, x+15, y_rain,1))
         end
     end
-    a.add(anims.my_moving_bar(S, E, red, x_rain, y_rain-250, x_rain+5, y_rain, 400, 1))
+--    a.add(anims.my_moving_bar(S, E, red, x_rain, y_rain-250, x_rain+5, y_rain, 400, 1))
 
     a.add(anims.moving_font(t, E, 900, 150, "now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70, 1,1,1,1))
     local title_width = font:width("now:  " .. weather.Schiphol.temperature .. "°C  " .. weather.Schiphol.precipitationmm .. "mm   " .. weather.Schiphol.winddirection .. weather.Schiphol.windspeedBft, 70)
