@@ -324,7 +324,7 @@ Sidebar = (function()
 
         local tower_x = WIDTH-250
         local tower_y = utils.easeInOut(visibility, HEIGHT, 390)
-        res.podium:draw(tower_x-30, tower_y, tower_x + 230, tower_y + 445, visibility*2)
+        res.podium:draw(tower_x-30, tower_y, tower_x + 230, tower_y + 500, visibility*2)
 
 --        local house_x = utils.easeInOut(visibility, WIDTH+100, WIDTH-320)
 --        local house_y = utils.easeInOut(visibility, 900, 650)
