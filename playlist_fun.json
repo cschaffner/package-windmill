@@ -3,18 +3,18 @@
     "options": {
         "videos": [
             {
-                "file": "rotating_elephant_big.mp4",
+                "file": "rotating_elephant_smallish.mp4",
                 "duration": 10,
                 "raw": false,
                 "text": "Welcome to Windmill 2016!"
             }
         ]
     },
-    "chance": 0.2
+    "chance": 0.4
 },
 {
     "module": "swissgames",
-    "chance": 1,
+    "chance": 0.2,
     "options": {
         "division": "open",
         "font_size": 50,
@@ -26,16 +26,16 @@
     }
 }, {
     "module": "playoff",
-    "chance": 1,
+    "chance": 0.2,
     "options": {
         "division": "open",
         "top_title": "Open",
-        "duration": 30
+        "duration": 20
     }
 },
 {
     "module": "swissgames",
-    "chance": 1,
+    "chance": 0.2,
     "options": {
         "division": "women",
         "font_size": 50,
@@ -48,7 +48,7 @@
 },
  {
     "module": "playoff",
-    "chance": 1,
+    "chance": 0.2,
     "options": {
         "division": "women",
         "top_title": "Women",
@@ -56,7 +56,7 @@
     }
 },{
     "module": "swissgames",
-    "chance": 1,
+    "chance": 0.2,
     "options": {
         "division": "mixed",
         "font_size": 42,
@@ -69,7 +69,7 @@
 },
    {
     "module": "playoff",
-    "chance": 1,
+    "chance": 0.2,
     "options": {
         "division": "mixed",
         "top_title": "Mixed",
@@ -78,9 +78,9 @@
 },
 {
     "module": "teams",
-    "chance": 1,
+    "chance": 0.5,
     "options": {
-        "duration": 10
+        "duration": 20
     }
 
 }, {
@@ -88,14 +88,14 @@
     "options": {
         "text": "Welcome to Windmill 2016!"
     },
-    "chance": 0.2
+    "chance": 0.6
 },{
     "module": "twitter"
 }, {
     "module": "weather",
-    "chance": 0.2,
+    "chance": 0.6,
     "options": {
-        "duration": 15
+        "duration": 20
     }
 
 },{
