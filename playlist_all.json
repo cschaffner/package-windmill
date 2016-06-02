@@ -33,7 +33,6 @@
     "options": {
         "duration": 15
     }
-
 },{
     "module": "images",
     "chance": 0.6

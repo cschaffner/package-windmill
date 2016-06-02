@@ -20,6 +20,6 @@
     "chance": 0.2
 },
 {
-    "module": "gvb",
-    "chance": 0.6
+    "module": "weather",
+    "chance": 1
 }]
