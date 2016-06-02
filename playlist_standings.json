@@ -8,7 +8,7 @@
         "top_title": "Open",
         "line_break_fraction_games": 2,
         "line_break_fraction_standings": 7,
-        "duration": 30
+        "duration": 40
     }
 }, {
     "module": "playoff",
@@ -16,7 +16,7 @@
     "options": {
         "division": "open",
         "top_title": "Open",
-        "duration": 20
+        "duration": 30
     }
 },
 {
@@ -29,7 +29,7 @@
         "top_title": "Women",
         "line_break_fraction_games": 2,
         "line_break_fraction_standings": 4,
-        "duration": 30
+        "duration": 40
     }
 },
  {
@@ -38,7 +38,7 @@
     "options": {
         "division": "women",
         "top_title": "Women",
-        "duration": 20
+        "duration": 30
     }
 },{
     "module": "swissgames",
@@ -50,7 +50,7 @@
         "top_title": "Mixed",
         "line_break_fraction_games": 20,
         "line_break_fraction_standings": 8,
-        "duration": 30
+        "duration": 40
     }
 },
    {
@@ -59,14 +59,14 @@
     "options": {
         "division": "mixed",
         "top_title": "Mixed",
-        "duration": 20
+        "duration": 30
     }
 },
 {
     "module": "teams",
     "chance": 1,
     "options": {
-        "duration": 20
+        "duration": 30
     }
 
 }]
