@@ -1,17 +1,17 @@
 #!/usr/bin/python
-import os
 import sys
 import time
 import pytz
 import itertools
 from calendar import timegm
 from datetime import datetime
+from shutil import copyfile
 
 from hosted import CONFIG, NODE
 CONFIG.restart_on_update()
 
 print >> sys.stderr, "now using playlist {0}".format(CONFIG['playlist'])
-os.rename("playlist_{}.json".format(CONFIG['playlist']), "playlist.json")
+copyfile("playlist_{}.json".format(CONFIG['playlist']), "playlist.json")
 
 # CONFIG = {"timezone": "Europe/Berlin"}
 
