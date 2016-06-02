@@ -316,7 +316,7 @@ Sidebar = (function()
             loop:stop()
         end
 
-        local size = 100
+        local size = 95
         local hour, min = Time.walltime()
         local time = string.format("%d:%02d", hour, min)
         local w = res.font:width(time, size)
@@ -333,7 +333,7 @@ Sidebar = (function()
         local clock_x = utils.easeInOut(visibility, WIDTH-220, WIDTH-260)
         local clock_y = utils.easeInOut(visibility, HEIGHT-105, 850)
         res.clockboarder2:draw(clock_x, clock_y-30, clock_x + 230, clock_y + 125)
-        res.font:write(clock_x + 125 - w/2, clock_y+5, time, 95, highlight_a(1))
+        res.font:write(clock_x + 115 - w/2, clock_y+5, time, size, highlight_a(1))
     end
 
     local current_speed = 0
