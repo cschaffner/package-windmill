@@ -14,5 +14,21 @@
             ["Europe/Amsterdam", "Europe/Amsterdam"]
         ],
         "default": "Europe/Amsterdam"
-    }]
+    }, {
+        "title": "Playlist choice",
+        "type": "section"
+    },
+    {
+        "title": "Playlist",
+        "name": "playlist",
+        "ui_width": 6,
+        "type": "select",
+        "options": [
+            ["standings", "standings/games only"],
+            ["fun", "fun only"],
+            ["everything", "everything"],
+            ["test", "test"]
+        ]
+    }
+    ]
 }

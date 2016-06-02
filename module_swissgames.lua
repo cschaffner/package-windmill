@@ -76,7 +76,7 @@ function M.run(duration, args, fn)
     local score_width = 65
     local divider_width = 25
     local x_games = 150
-    local x_standings = 1040
+    local x_standings = 1080
     local rank_width = 60
     local y_lift = args.y_lift -- for scrolling the standings
 
@@ -145,7 +145,7 @@ function M.run(duration, args, fn)
 
         a.add(anims.my_scrolling_font(t, scroll_time, E, x_standings, y, y_lift, string.format("%2.0f", standing.ranking) , font_size, 1,1,1,1))
         a.add(anims.my_scrolling_font(t, scroll_time, E, x_standings+rank_width, y, y_lift, standing.team_name , font_size, 1,1,1,1))
-        a.add(anims.my_scrolling_font(t, scroll_time, E, x_standings+rank_width+team_width, y, y_lift, standing.swiss_score, font_size, 1,1,1,1))
+        a.add(anims.my_scrolling_font(t, scroll_time, E, x_standings+rank_width+team_width+(font_size-45)*2, y, y_lift, standing.swiss_score, font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width, y, "-", font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+score_width+20, y, "" .. game.team_2_score , font_size, 1,1,1,1))
 ----        a.add(anims.my_moving_font(t, E, 150+team_width+2*score_width+20, y, game.team_2 .. " flag:" .. game.team_1_country, font_size, 1,1,1,1))

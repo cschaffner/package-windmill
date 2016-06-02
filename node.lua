@@ -179,19 +179,20 @@ Scroller = (function()
 --        workshops = json.decode(content)
 --    end)
 
-    local open_games = {}
+
+    local open_games = json.decode(resource.load_file "current_games_open.initial.json")
     util.file_watch("current_games_open.json", function(content)
         print("reloading open games")
         open_games = json.decode(content)
     end)
 
-    local mixed_games = {}
+    local mixed_games = json.decode(resource.load_file "current_games_mixed.initial.json")
     util.file_watch("current_games_mixed.json", function(content)
         print("reloading mixed games")
         mixed_games = json.decode(content)
     end)
 
-    local women_games = {}
+    local women_games = json.decode(resource.load_file "current_games_women.initial.json")
     util.file_watch("current_games_women.json", function(content)
         print("reloading women games")
         women_games = json.decode(content)
@@ -392,7 +393,7 @@ local function ModuleLoader()
 end
 
 local function Scheduler(runner, modules)
-    local playlist = {}
+    local playlist = json.decode(resource.load_file "playlist.initial.json")
     local playlist_offset = 0
 
     util.file_watch("playlist.json", function(raw)

@@ -9,7 +9,7 @@ local gray = resource.create_colored_texture(0.28,0.28,0.28,1)
 
 --local black = resource.create_colored_texture(0,0,0,1)
 
-local teams = json.decode(resource.load_file "current_teams.initial.json")
+local teams = {}
 
 local teams_unwatch = util.file_watch("current_teams.json", function(raw)
     teams = json.decode(raw)

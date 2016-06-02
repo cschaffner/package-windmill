@@ -5,9 +5,14 @@ import pytz
 import itertools
 from calendar import timegm
 from datetime import datetime
+from shutil import copyfile
 
 from hosted import CONFIG, NODE
 CONFIG.restart_on_update()
+
+print >> sys.stderr, "now using playlist {0}".format(CONFIG['playlist'])
+copyfile("playlist_{}.json".format(CONFIG['playlist']), "playlist.json")
+
 # CONFIG = {"timezone": "Europe/Berlin"}
 
 # diff = datetime(2016, 6, 5, 9, 30, 00) - datetime.utcnow()
