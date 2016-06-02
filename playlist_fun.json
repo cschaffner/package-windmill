@@ -10,7 +10,7 @@
             }
         ]
     },
-    "chance": 0.2,
+    "chance": 0.2
 },
 {
     "module": "swissgames",
