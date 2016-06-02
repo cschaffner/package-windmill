@@ -102,7 +102,7 @@ function M.run(duration, args, fn)
         local game = game_data.games[idx]
 
         if (idx % 2 == 1) then
-            a.add(anims.moving_bar(t, E, gray, x_games, y, x_games+field_nr_width+2*(team_width+score_width)+20, y+font_size,1))
+            a.add(anims.moving_bar(t, E, gray, x_games, y, x_games+field_nr_width+2*(team_width+score_width)+40, y+font_size,1))
         end
         curx = x_games
         if tonumber(game.field_nr) ~= nil then

@@ -17,8 +17,8 @@ from dateutil import parser
 from datetime import datetime, timedelta
 from calendar import timegm
 
-from hosted import CONFIG
-CONFIG.restart_on_update()
+# from hosted import CONFIG
+# CONFIG.restart_on_update()
 
 with file("windmill2016.json") as f:
 # with file("windmill2016_test.json") as f:
