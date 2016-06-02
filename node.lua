@@ -392,7 +392,7 @@ local function ModuleLoader()
 end
 
 local function Scheduler(runner, modules)
-    local playlist = {}
+    local playlist = json.decode(resource.load_file "playlist.initial.json")
     local playlist_offset = 0
 
     util.file_watch("playlist.json", function(raw)
