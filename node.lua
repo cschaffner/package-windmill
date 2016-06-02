@@ -18,7 +18,7 @@ res = util.resource_loader({
     "font.ttf";
     "bottle.png";
     "house1.png";
-    "clockboarder.png";
+    "clockboarder2.png";
     "tower.png";
     "podium.png"
 })
