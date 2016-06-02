@@ -14,5 +14,19 @@
             ["Europe/Amsterdam", "Europe/Amsterdam"]
         ],
         "default": "Europe/Amsterdam"
-    }]
+    }, {
+        "title": "Standings",
+        "type": "section"
+    },
+    {
+        "title": "Type",
+        "ui_width": 6,
+        "type": "select",
+        "options": [
+            ["standings/games only", "standings"],
+            ["fun only", "fun"],
+            ["everything", "everything"]
+        ]
+    }
+    ]
 }
