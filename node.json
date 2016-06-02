@@ -15,17 +15,19 @@
         ],
         "default": "Europe/Amsterdam"
     }, {
-        "title": "Standings",
+        "title": "Playlist choice",
         "type": "section"
     },
     {
-        "title": "Type",
+        "title": "Playlist",
+        "name": "playlist",
         "ui_width": 6,
         "type": "select",
         "options": [
-            ["standings/games only", "standings"],
-            ["fun only", "fun"],
-            ["everything", "everything"]
+            ["standings", "standings/games only"],
+            ["fun", "fun only"],
+            ["everything", "everything"],
+            ["test", "test"]
         ]
     }
     ]
