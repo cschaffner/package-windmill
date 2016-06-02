@@ -1,4 +1,31 @@
 [{
+    "module": "videos",
+    "options": {
+        "videos": [
+            {
+                "file": "rotating_elephant_big.mp4",
+                "duration": 10,
+                "raw": false,
+                "text": "Welcome to Windmill 2016!"
+            }
+        ]
+    },
+    "chance": 0.2,
+    "hours": "10 11 12 13 14 15 16 17 18 19 20 21"
+},
+{
+    "module": "swissgames",
+    "chance": 1,
+    "options": {
+        "division": "open",
+        "font_size": 50,
+        "y_lift": 300,
+        "top_title": "Open",
+        "line_break_fraction_games": 2,
+        "line_break_fraction_standings": 7,
+        "duration": 20
+    }
+}, {
     "module": "text",
     "options": {
         "text": "Welcome to Windmill 2016!"
