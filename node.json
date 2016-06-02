@@ -27,7 +27,8 @@
             ["standings", "standings/games only"],
             ["fun", "fun only"],
             ["everything", "everything"],
-            ["test", "test"]
+            ["test", "test"],
+            ["images", "image only"]
         ]
     }
     ]
