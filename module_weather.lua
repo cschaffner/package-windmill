@@ -75,6 +75,7 @@ function M.run(duration, _, fn)
 
     -- HEADER
     a.add(anims.moving_font(t, E, 150, y, "Weather @Windmill", 100, 1,1,1,1))
+    a.add(anims.moving_image(t, E, weather_pics['weather_buienradar'], 1000, y, 1000+258, y+50, 0.8))
     y = y + 110
     t = t + 0.03
     local font_size = 40
