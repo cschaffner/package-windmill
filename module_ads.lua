@@ -37,7 +37,7 @@ function M.unload()
 end
 
 -- fill with all available images. we cannot use content_update
--- for that since if might not fire for the initial update since
+-- for that since it might not fire for the initial update since
 -- this module is also loaded by a content_update event. All
 -- content_update events fired before this module is loaded
 -- will be missing. So just use the always correct CONTENTS value.

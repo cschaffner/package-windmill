@@ -3,17 +3,20 @@
     "options": {
         "text": "Welcome to Windmill 2016!"
     },
-    "chance": 1
+    "chance": 0.2
 },{
     "module": "twitter"
 }, {
     "module": "weather",
-    "chance": 1,
+    "chance": 0.2,
     "options": {
         "duration": 15
     }
 
 },{
     "module": "images",
-    "chance": 0.5
+    "chance": 0.2
+},{
+    "module": "ads",
+    "chance": 0.2
 }]
