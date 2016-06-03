@@ -10,9 +10,9 @@
         "videos": [
             {
                 "file": "mov_bikedetail.mp4",
-                "duration": 10,
+                "duration": 15,
                 "raw": false,
-                "text": "Welcome to Windmill 2016!"
+                "text": "Try it, it's fun!"
             }
         ]
     },
