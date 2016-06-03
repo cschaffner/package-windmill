@@ -11,6 +11,12 @@
         ]
     },
     "chance": 0.4
+},{
+    "module": "text",
+    "options": {
+        "text": "Recorded an awesome 10-second video? Bring it to HQ and we'll show it right here!"
+    },
+    "chance": 0.6
 },
 {
     "module": "swissgames",
@@ -86,11 +92,12 @@
 }, {
     "module": "text",
     "options": {
-        "text": "Let the games begin!"
+        "text": "Like the screens? Too slow, too fast? Please let us know at HQ and we'll adjust."
     },
     "chance": 0.6
 },{
-    "module": "twitter"
+    "module": "twitter",
+    "chance": 0.6
 }, {
     "module": "weather",
     "chance": 0.6,
@@ -108,4 +115,10 @@
     "module": "gvb",
     "chance": 0.6,
     "hours": "0 18 19 20 21 22 23 24"
+},{
+    "module": "text",
+    "options": {
+        "text": "What does Swiss Score mean? If Team A with a Swiss score of 3.0 plays Team B with Swissscore of -2.0, A is expected to win by 5 points."
+    },
+    "chance": 0.6
 }]
