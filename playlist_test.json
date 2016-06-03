@@ -10,19 +10,5 @@
         ]
     },
     "chance": 1
-},
-    {
-    "module": "videos",
-    "options": {
-        "videos": [
-            {
-                "file": "mov_bikedetail.mp4",
-                "raw": false,
-                "text": "Try this!"
-            }
-        ]
-    },
-    "chance": 1
 }
-
 ]
