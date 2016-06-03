@@ -106,5 +106,6 @@
     "chance": 0.6
 },{
     "module": "gvb",
-    "chance": 0.6
+    "chance": 0.6,
+    "hours": "0 18 19 20 21 22 23 24"
 }]
