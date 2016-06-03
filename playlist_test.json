@@ -1,25 +1,28 @@
 [{
-    "module": "teams",
-    "chance": 1,
-    "options": {
-        "duration": 10
-    }
-
-}, {
     "module": "videos",
     "options": {
         "videos": [
             {
-                "file": "rotating_elephant_smallish.mp4",
-                "duration": 10,
+                "file": "mov_bikes.mp4",
                 "raw": false,
-                "text": "Welcome to Windmill 2016!"
+                "text": "Windmill 2016 impression"
             }
         ]
     },
-    "chance": 0.2
-},
-{
-    "module": "weather",
     "chance": 1
-}]
+},
+    {
+    "module": "videos",
+    "options": {
+        "videos": [
+            {
+                "file": "mov_bikedetail.mp4",
+                "raw": false,
+                "text": "Try this!"
+            }
+        ]
+    },
+    "chance": 1
+}
+
+]
