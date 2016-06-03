@@ -20,12 +20,6 @@
     }
 
 }, {
-    "module": "text",
-    "options": {
-        "text": "Welcome to Windmill 2016!"
-    },
-    "chance": 0.2
-},{
     "module": "twitter"
 }, {
     "module": "weather",
