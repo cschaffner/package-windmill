@@ -582,7 +582,7 @@ def main():
             print >> sys.stderr, "failed to update current teams"
             traceback.print_exc()
 
-        time.sleep(60)
+        time.sleep(150)
 
 
 if __name__ == "__main__":
