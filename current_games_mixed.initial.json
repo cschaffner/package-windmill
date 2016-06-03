@@ -181,13 +181,13 @@
       "swiss_score":"0",
       "team":{
         "leaguevine_url":"https://www.leaguevine.com/teams/29783/mr-t-party/",
-        "short_name":"MTP",
+        "short_name":"Mr. T Party",
         "id":29783,
         "resource_uri":"https://api.leaguevine.com/v1/teams/29783/",
         "name":"Mr. T Party"
       },
       "ties":0,
-      "team_name":"flag:us MTP",
+      "team_name":"flag:us Mr. T Party",
       "avg_goal_difference":"0.00"
     },
     {
@@ -200,13 +200,13 @@
       "swiss_score":"0",
       "team":{
         "leaguevine_url":"https://www.leaguevine.com/teams/29774/geos-disc-throwers/",
-        "short_name":"GDT",
+        "short_name":"Geo's Disc T",
         "id":29774,
         "resource_uri":"https://api.leaguevine.com/v1/teams/29774/",
         "name":"Geo's Disc Throwers"
       },
       "ties":0,
-      "team_name":"flag:us GDT",
+      "team_name":"flag:us Geo's Disc T",
       "avg_goal_difference":"0.00"
     },
     {
@@ -219,13 +219,13 @@
       "swiss_score":"0",
       "team":{
         "leaguevine_url":"https://www.leaguevine.com/teams/29785/off-to-grandmas/",
-        "short_name":"OtG's",
+        "short_name":"OtGrandma's",
         "id":29785,
         "resource_uri":"https://api.leaguevine.com/v1/teams/29785/",
         "name":"Off to Grandma's"
       },
       "ties":0,
-      "team_name":"flag:us OtG's",
+      "team_name":"flag:us OtGrandma's",
       "avg_goal_difference":"0.00"
     },
     {
@@ -295,13 +295,13 @@
       "swiss_score":"0",
       "team":{
         "leaguevine_url":"https://www.leaguevine.com/teams/29765/brown-chicken-brown-cow/",
-        "short_name":"BCBC",
+        "short_name":"ChickenCow",
         "id":29765,
         "resource_uri":"https://api.leaguevine.com/v1/teams/29765/",
         "name":"Brown Chicken Brown Cow "
       },
       "ties":0,
-      "team_name":"flag:us BCBC",
+      "team_name":"flag:us ChickenCow",
       "avg_goal_difference":"0.00"
     },
     {
@@ -766,14 +766,14 @@
   "games":[
     {
       "field":"Field 1 stadium",
-      "team_1_country":"dk",
+      "team_1_country":"pl",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"Denmark ",
-      "team_2":"Rusty Bikes",
+      "team_1":"Poland ",
+      "team_2":"2600",
       "is_final":false,
       "start_time":"Fri 11:15",
-      "team_2_country":"nl",
+      "team_2_country":"co",
       "field_nr":"1"
     },
     {
@@ -781,7 +781,7 @@
       "team_1_country":"us",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"MTP",
+      "team_1":"Mr. T Party",
       "team_2":"FR & BB",
       "is_final":false,
       "start_time":"Fri 11:15",
@@ -850,14 +850,14 @@
     },
     {
       "field":"Field 8",
-      "team_1_country":"pl",
+      "team_1_country":"dk",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"Poland ",
-      "team_2":"2600",
+      "team_1":"Denmark ",
+      "team_2":"Rusty Bikes",
       "is_final":false,
       "start_time":"Fri 11:15",
-      "team_2_country":"co",
+      "team_2_country":"nl",
       "field_nr":"8"
     },
     {
@@ -889,7 +889,7 @@
       "team_1_country":"us",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"GDT",
+      "team_1":"Geo's Disc T",
       "team_2":"Guayota",
       "is_final":false,
       "start_time":"Fri 11:15",
@@ -901,7 +901,7 @@
       "team_1_country":"us",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"OtG's",
+      "team_1":"OtGrandma's",
       "team_2":"Jabba",
       "is_final":false,
       "start_time":"Fri 11:15",
@@ -925,7 +925,7 @@
       "team_1_country":"us",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"BCBC",
+      "team_1":"ChickenCow",
       "team_2":"Disctèrics",
       "is_final":false,
       "start_time":"Fri 11:15",
