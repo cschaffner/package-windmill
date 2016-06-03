@@ -61,13 +61,5 @@
         "top_title": "Mixed",
         "duration": 30
     }
-},
-{
-    "module": "teams",
-    "chance": 1,
-    "options": {
-        "duration": 30
-    }
-
 }]
 
