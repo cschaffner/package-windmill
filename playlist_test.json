@@ -4,5 +4,18 @@
         "text": "Like the screens? Too slow, too fast? Please let us know at HQ and we'll adjust."
     },
     "chance": 1
+}, {
+    "module": "videos",
+    "options": {
+        "videos": [
+            {
+                "file": "rotating_elephant_smallish.mp4",
+                "duration": 10,
+                "raw": false,
+                "text": "Welcome to Windmill 2016!"
+            }
+        ]
+    },
+    "chance": 0.4
 }
 ]
