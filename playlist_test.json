@@ -9,27 +9,12 @@
     "options": {
         "videos": [
             {
-                "file": "mov_bikedetail.mp4",
-                "duration": 15,
+                "file": "mov_tank.mp4",
+                "duration": 10,
                 "raw": false,
                 "text": "Try it, it's fun!"
             }
         ]
     },
-    "chance": 0.4
-}, {
-    "module": "videos",
-    "options": {
-        "videos": [
-            {
-                "file": "mov_bikes.mp4",
-                "duration": 16,
-                "raw": false,
-                "text": "Windmill"
-            }
-        ]
-    },
-    "chance": 0.4
-}
-
-]
+    "chance": 0.9
+}]
