@@ -39,6 +39,19 @@
         "top_title": "Open",
         "duration": 20
     }
+},{
+    "module": "videos",
+    "options": {
+        "videos": [
+            {
+                "file": "mov_tank.mp4",
+                "duration": 10,
+                "raw": false,
+                "text": "Windmill"
+            }
+        ]
+    },
+    "chance": 0.8
 },
 {
     "module": "swissgames",
