@@ -3,15 +3,16 @@
     "options": {
         "videos": [
             {
-                "file": "rotating_elephant_smallish.mp4",
-                "duration": 10,
+                "file": "mov_bikedetail.mp4",
+                "duration": 15,
                 "raw": false,
-                "text": "Welcome to Windmill 2016!"
+                "text": "Try it, it's fun!"
             }
         ]
     },
     "chance": 0.4
-},{
+},
+{
     "module": "text",
     "options": {
         "text": "Recorded an awesome 10-second video? Bring it to HQ and we'll show it right here!"
@@ -118,7 +119,20 @@
 },{
     "module": "text",
     "options": {
-        "text": "What does Swiss Score mean? If Team A with a Swiss score of 3.0 plays Team B with Swissscore of -2.0, A is expected to win by 5 points."
+        "text": "What does Swiss Score mean? If Team A with a Swiss score of 3.0 plays Team B with Swissscore of -2.0, A is expected to win by 5."
     },
     "chance": 0.6
+},{
+    "module": "videos",
+    "options": {
+        "videos": [
+            {
+                "file": "mov_bikes.mp4",
+                "duration": 16,
+                "raw": false,
+                "text": "Windmill"
+            }
+        ]
+    },
+    "chance": 0.4
 }]
