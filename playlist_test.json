@@ -17,5 +17,19 @@
         ]
     },
     "chance": 0.4
+}, {
+    "module": "videos",
+    "options": {
+        "videos": [
+            {
+                "file": "mov_bikes.mp4",
+                "duration": 16,
+                "raw": false,
+                "text": "Windmill impressions"
+            }
+        ]
+    },
+    "chance": 0.4
 }
+
 ]
