@@ -101,9 +101,9 @@
     "chance": 0.6
 }, {
     "module": "weather",
-    "chance": 0.6,
+    "chance": 0.3,
     "options": {
-        "duration": 20
+        "duration": 15
     }
 
 },{
@@ -119,7 +119,7 @@
 },{
     "module": "text",
     "options": {
-        "text": "What does Swiss Score mean? If Team A with a Swiss score of 3.0 plays Team B with Swissscore of -2.0, A is expected to win by 5."
+        "text": "Swiss Score, eh? If Team A with a Swiss Score of 3.0 plays Team B with Swiss Score of -2.0, A is expected to win by 5."
     },
     "chance": 0.6
 },{
