@@ -1,5 +1,17 @@
 {
     "name": "Leaguevine Data",
     "permissions": {"network": "HTTP requests"},
-    "options": []
+    "options": [
+            {
+        "title": "Leaguevine Data source",
+        "name": "lv_data_source",
+        "ui_width": 7,
+        "type": "select",
+        "options": [
+            ["windmill2016.json", "real 2016"],
+            ["windmill2016_test.json", "test 2016"],
+            ["windmill2017.json", "real 2017"],
+            ["windmill2017_test.json", "test 2017"]
+        ]
+    } ]
 }
