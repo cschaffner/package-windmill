@@ -18,7 +18,7 @@
         "title": "Playlist choice",
         "type": "section"
     },
-    {
+    [{
         "title": "Playlist",
         "name": "playlist",
         "ui_width": 6,
@@ -30,6 +30,16 @@
             ["test", "test"],
             ["images", "image only"]
         ]
-    }
+        },{
+        "title": "Division",
+        "name": "division",
+        "ui_width": 6,
+        "type": "select",
+        "options": [
+            ["open", "open"],
+            ["mixed", "mixed"],
+            ["women", "women"]
+        ]
+    }]
     ]
 }
