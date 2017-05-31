@@ -20,7 +20,10 @@ from calendar import timegm
 from hosted import CONFIG
 CONFIG.restart_on_update()
 
-with file("windmill2016.json") as f:
+# with file("config.json") as f:
+#     CONFIG = json.load(f)
+
+with file(CONFIG['lv_data_source']) as f:
 # with file("windmill2016_test.json") as f:
 # with file("windmill2015.json") as f:
     WINDMILL = json.load(f)
