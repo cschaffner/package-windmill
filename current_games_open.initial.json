@@ -5,6 +5,25 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
+      "team_id":31754,
+      "team_country":"",
+      "swiss_score":"0",
+      "team":{
+        "leaguevine_url":"https://www.leaguevine.com/teams/31754/test-heidees/",
+        "short_name":"",
+        "id":31754,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31754/",
+        "name":"Test Heidees"
+      },
+      "ties":0,
+      "team_name":"flag: ",
+      "avg_goal_difference":"0.00"
+    },
+    {
+      "ranking":2,
+      "wins":0,
+      "losses":0,
+      "swiss_opponent_score_avg":"0",
       "team_id":31249,
       "team_country":"at",
       "swiss_score":"0",
@@ -20,7 +39,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":2,
+      "ranking":3,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -39,7 +58,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":3,
+      "ranking":4,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -58,7 +77,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":4,
+      "ranking":5,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -77,7 +96,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":5,
+      "ranking":6,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -96,7 +115,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":6,
+      "ranking":7,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -115,7 +134,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":7,
+      "ranking":8,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -134,7 +153,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":8,
+      "ranking":9,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -153,7 +172,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":9,
+      "ranking":10,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -172,7 +191,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":10,
+      "ranking":11,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -191,7 +210,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":11,
+      "ranking":12,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -210,7 +229,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":12,
+      "ranking":13,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -229,7 +248,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":13,
+      "ranking":14,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -248,7 +267,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":14,
+      "ranking":15,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -267,7 +286,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":15,
+      "ranking":16,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -286,7 +305,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":16,
+      "ranking":17,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -305,7 +324,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":17,
+      "ranking":18,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -324,7 +343,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":18,
+      "ranking":19,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -343,7 +362,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":19,
+      "ranking":20,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -362,7 +381,7 @@
       "avg_goal_difference":"0.00"
     },
     {
-      "ranking":20,
+      "ranking":21,
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
@@ -378,25 +397,6 @@
       },
       "ties":0,
       "team_name":"flag:gb EMO",
-      "avg_goal_difference":"0.00"
-    },
-    {
-      "ranking":21,
-      "wins":0,
-      "losses":0,
-      "swiss_opponent_score_avg":"0",
-      "team_id":31215,
-      "team_country":"lv",
-      "swiss_score":"0",
-      "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/31215/test-daugava/",
-        "short_name":"Test DAG",
-        "id":31215,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/31215/",
-        "name":"Test Daugava"
-      },
-      "ties":0,
-      "team_name":"flag:lv DAG",
       "avg_goal_difference":"0.00"
     },
     {
@@ -461,7 +461,19 @@
   "start_time":"Fri 10:00",
   "games":[
     {
-      "field":"",
+      "field":"Field 1",
+      "team_1_country":"",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"",
+      "team_2":"Gentle",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"be",
+      "field_nr":"1"
+    },
+    {
+      "field":"Field 2",
       "team_1_country":"at",
       "team_2_score":0,
       "team_1_score":0,
@@ -470,10 +482,10 @@
       "is_final":false,
       "start_time":"Fri 10:00",
       "team_2_country":"de",
-      "field_nr":""
+      "field_nr":"2"
     },
     {
-      "field":"",
+      "field":"Field 3",
       "team_1_country":"de",
       "team_2_score":0,
       "team_1_score":0,
@@ -482,10 +494,10 @@
       "is_final":false,
       "start_time":"Fri 10:00",
       "team_2_country":"ch",
-      "field_nr":""
+      "field_nr":"3"
     },
     {
-      "field":"",
+      "field":"Field 4",
       "team_1_country":"il",
       "team_2_score":0,
       "team_1_score":0,
@@ -494,46 +506,10 @@
       "is_final":false,
       "start_time":"Fri 10:00",
       "team_2_country":"de",
-      "field_nr":""
+      "field_nr":"4"
     },
     {
-      "field":"",
-      "team_1_country":"fr",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"Tchac",
-      "team_2":"Fire",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"gb",
-      "field_nr":""
-    },
-    {
-      "field":"",
-      "team_1_country":"ie",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"Ranelagh",
-      "team_2":"FWD>>",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"at",
-      "field_nr":""
-    },
-    {
-      "field":"",
-      "team_1_country":"ie",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"PELT",
-      "team_2":"EMO",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"gb",
-      "field_nr":""
-    },
-    {
-      "field":"",
+      "field":"Field 5",
       "team_1_country":"us",
       "team_2_score":0,
       "team_1_score":0,
@@ -542,10 +518,34 @@
       "is_final":false,
       "start_time":"Fri 10:00",
       "team_2_country":"nl",
-      "field_nr":""
+      "field_nr":"5"
     },
     {
-      "field":"",
+      "field":"Field 6",
+      "team_1_country":"fr",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"Tchac",
+      "team_2":"Fire",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"gb",
+      "field_nr":"6"
+    },
+    {
+      "field":"Field 7",
+      "team_1_country":"ie",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"Ranelagh",
+      "team_2":"FWD>>",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"at",
+      "field_nr":"7"
+    },
+    {
+      "field":"Field 8",
       "team_1_country":"pl",
       "team_2_score":0,
       "team_1_score":0,
@@ -554,57 +554,57 @@
       "is_final":false,
       "start_time":"Fri 10:00",
       "team_2_country":"cz",
-      "field_nr":""
+      "field_nr":"8"
     },
     {
-      "field":"",
+      "field":"Field 9",
+      "team_1_country":"ie",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"PELT",
+      "team_2":"EMO",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"gb",
+      "field_nr":"9"
+    },
+    {
+      "field":"Field 10",
       "team_1_country":"fi",
       "team_2_score":0,
       "team_1_score":0,
       "team_1":"Otso",
-      "team_2":"DAG",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"lv",
-      "field_nr":""
-    },
-    {
-      "field":"",
-      "team_1_country":"sg",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"Hardcore",
-      "team_2":"Catchup",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"at",
-      "field_nr":""
-    },
-    {
-      "field":"",
-      "team_1_country":"be",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"Gentle",
-      "team_2":"Aurora",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"ru",
-      "field_nr":""
-    },
-    {
-      "field":"",
-      "team_1_country":"be",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"Mooncatchers",
       "team_2":"CU",
       "is_final":false,
       "start_time":"Fri 10:00",
       "team_2_country":"gb",
-      "field_nr":""
+      "field_nr":"10"
+    },
+    {
+      "field":"Field 11",
+      "team_1_country":"be",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"Mooncatchers",
+      "team_2":"Catchup",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"at",
+      "field_nr":"11"
+    },
+    {
+      "field":"Field 12",
+      "team_1_country":"sg",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"Hardcore",
+      "team_2":"Aurora",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"ru",
+      "field_nr":"12"
     }
   ],
-  "time_last_updated_unix":1496174545,
+  "time_last_updated_unix":1496496972,
   "start_time_unix":1496995200
 }
