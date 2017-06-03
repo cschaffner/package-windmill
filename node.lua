@@ -410,6 +410,8 @@ local function Scheduler(runner, modules)
     local next_wake = sys.now()
 
     local function enqueue(item)
+        print('current division is ' .. CONFIG.division)
+--        item.options.divison = CONFIG.division
         local ok, duration, options = pcall(modules[item.module].prepare, item.options or {})
         if not ok then
             print("failed to prepare " .. item.module .. ": " .. duration)
