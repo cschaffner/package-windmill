@@ -50,8 +50,10 @@ local function field_write(font, x, y, text, size, r, g, b, a)
                 field_nr = string.sub(text, field_end+1, field_end+2)
                 index = field_end + 3
             end
-            field_numbers['field_' .. field_nr]:draw(x+width, y, x+width+size, y+size, a)
-            width = width + size
+--            field_numbers['field_' .. field_nr]:draw(x+width, y, x+width+size, y+size, a)
+--            width = width + size
+            number_width = font:write(x + width, y, field_nr, size, r, g, b, a)
+            width = width + number_width
         end
     end
 end
