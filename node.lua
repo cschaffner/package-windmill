@@ -314,7 +314,7 @@ Sidebar = (function()
             gl.translate(0.5*sidebar_width*(1-visibility), 0, (1-visibility)*400)
 --            res.bottle:draw(0, 0, sidebar_width, HEIGHT, 1)
 
-            loop:draw(0, 0, 0+300, 0+1080)
+            loop:draw(0, 0, 0+300, 0+1000)
 
             -- res.font:write(125, HEIGHT-45, "info-beamer.com", 40, 0,0,0, visibility)
             gl.popMatrix()
