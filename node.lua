@@ -18,7 +18,7 @@ res = util.resource_loader({
     "font.ttf";
     "bottle.png";
     "house1.png";
-    "clockboarder2.png";
+    "clockboarder3.png";
     "tower.png";
     "podium.png"
 })
@@ -309,7 +309,7 @@ Sidebar = (function()
             gl.translate(0.5*sidebar_width*(1-visibility), 0, (1-visibility)*400)
 --            res.bottle:draw(0, 0, sidebar_width, HEIGHT, 1)
 
-            loop:draw(10, 80, 10+244, 80+760)
+            loop:draw(10, 10, 10+300, 10+1000)
 
             -- res.font:write(125, HEIGHT-45, "info-beamer.com", 40, 0,0,0, visibility)
             gl.popMatrix()

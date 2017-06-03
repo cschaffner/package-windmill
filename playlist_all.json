@@ -19,7 +19,7 @@
         "duration": 10
     }
 
-}, {
+},  {
     "module": "twitter"
 }, {
     "module": "weather",
