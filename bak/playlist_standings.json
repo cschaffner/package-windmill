@@ -3,6 +3,11 @@
     "chance": 0.9,
     "options": {
         "division": "open",
+        "font_size": 50,
+        "y_lift": 300,
+        "top_title": "Open",
+        "line_break_fraction_games": 2,
+        "line_break_fraction_standings": 7,
         "duration": 40
     }
 }, {
@@ -10,6 +15,7 @@
     "chance": 0.8,
     "options": {
         "division": "open",
+        "top_title": "Open",
         "duration": 31
     }
 },
@@ -18,6 +24,11 @@
     "chance": 0.9,
     "options": {
         "division": "women",
+        "font_size": 50,
+        "y_lift": 0,
+        "top_title": "Women",
+        "line_break_fraction_games": 2,
+        "line_break_fraction_standings": 4,
         "duration": 35
     }
 },
@@ -26,6 +37,7 @@
     "chance": 0.8,
     "options": {
         "division": "women",
+        "top_title": "Women",
         "duration": 29
     }
 },{
@@ -33,6 +45,11 @@
     "chance": 1,
     "options": {
         "division": "mixed",
+        "font_size": 42,
+        "y_lift": 800,
+        "top_title": "Mixed",
+        "line_break_fraction_games": 20,
+        "line_break_fraction_standings": 8,
         "duration": 40
     }
 },
@@ -41,6 +58,7 @@
     "chance": 0.8,
     "options": {
         "division": "mixed",
+        "top_title": "Mixed",
         "duration": 30
     }
 }]

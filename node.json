@@ -15,20 +15,8 @@
         ],
         "default": "Europe/Amsterdam"
     }, {
-        "title": "Playlist choice",
+        "title": "Division choice",
         "type": "section"
-    }, {
-        "title": "Playlist",
-        "name": "playlist",
-        "ui_width": 6,
-        "type": "select",
-        "options": [
-            ["standings", "standings/games only"],
-            ["fun", "fun only"],
-            ["everything", "everything"],
-            ["test", "test"],
-            ["images", "image only"]
-        ]
     }, {
         "title": "Division",
         "name": "division",
@@ -40,6 +28,57 @@
             ["women", "women"]
         ]
     } , {
+        "title": "Playlist",
+        "name": "playlist",
+        "ui_width": 6,
+        "type": "select",
+        "options": [
+            ["standings", "standings/games only"],
+            ["fun", "fun only"],
+            ["everything", "everything"],
+            ["test", "test"],
+            ["images", "image only"]
+        ]
+    },  {
+        "title": "Playlist Elements",
+        "name": "playlist_games",
+        "type": "list",
+        "itemname": "Play Item",
+        "items": [
+            {
+                "title": "Play Item",
+                "ui_width": 6,
+                "name": "item",
+                "type": "resource",
+                "valid": [
+                    "child",
+                    "image",
+                    "video"
+                ],
+                "default": "swissgames"
+            },
+            {
+                "title": "duration",
+                "ui_width": 3,
+                "name": "duration",
+                "type": "duration",
+                "default": 10
+            },
+            {
+                "title": "Custom Settings",
+                "ui_width": 12,
+                "name": "custom",
+                "type": "json",
+                "default": {}
+            }
+            ]
+        },
+    {
+        "title": "Other stuff",
+        "type": "section"
+    },
+
+      {
         "title": "Tracks",
         "name": "tracks",
         "type": "list",

@@ -46,6 +46,14 @@ function M.can_schedule(options)
 end
 
 function M.prepare(options)
+    if options.division == 'open' then
+        options.top_title = 'Open'
+    elseif options.division == 'mixed' then
+        options.top_title = 'Mixed'
+    elseif options.division == 'women' then
+        options.top_title = 'Women'
+    end
+
     return options.duration or 10, options
 end
 
