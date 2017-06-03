@@ -2,46 +2,12 @@
     "module": "swissgames",
     "chance": 0.9,
     "options": {
-        "division": "open",
-        "duration": 40
+        "duration": 20
     }
 }, {
     "module": "playoff",
     "chance": 0.8,
     "options": {
-        "division": "open",
-        "duration": 31
+        "duration": 20
     }
-},
-{
-    "module": "swissgames",
-    "chance": 0.9,
-    "options": {
-        "division": "women",
-        "duration": 35
-    }
-},
- {
-    "module": "playoff",
-    "chance": 0.8,
-    "options": {
-        "division": "women",
-        "duration": 29
-    }
-},{
-    "module": "swissgames",
-    "chance": 1,
-    "options": {
-        "division": "mixed",
-        "duration": 40
-    }
-},
-   {
-    "module": "playoff",
-    "chance": 0.8,
-    "options": {
-        "division": "mixed",
-        "duration": 30
-    }
-}]
-
+}
