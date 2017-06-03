@@ -76,11 +76,11 @@ function M.flag_write(font, x, y, text, size, r, g, b, a)
                 width = width + field_write(font, x + width, y, string.sub(text, index, flag_start-1), size, r, g, b, a)
             end
             country = string.sub(text, flag_end+1, flag_end+2)
-            print('looking for flag_' .. country)
             if not countries['flag_' .. country] then
-                print('country flag ' .. country .. 'not found!')
+                print('ERROR: country flag ' .. country .. ' not found!')
+            else
+                countries['flag_' .. country]:draw(x+width, y, x+width+size, y+size, a)
             end
-            countries['flag_' .. country]:draw(x+width, y, x+width+size, y+size, a)
             width = width + size
             index = flag_end + 3
         end
