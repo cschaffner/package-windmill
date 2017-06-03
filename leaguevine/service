@@ -39,7 +39,8 @@ TEAMS = {}
 SCHEDULE = WINDMILL['schedule']
 BRACKETS = {}
 
-# TIMEDIFF = datetime(2016, 6, 5, 7, 30, 00) - datetime.now()
+TIMEDIFF = datetime(2017, 6, 9, 16, 00, 00) - datetime.utcnow()
+# TIMEDIFF = datetime.now() - datetime.now()
 
 HOST = 'https://api.leaguevine.com/v1'
 LOCALHOST = 'http://api.localhost:8000/v1'
@@ -565,7 +566,7 @@ def main():
                 update(division)
                 current_brackets(division)
                 # current_games(division, datetime.now() + TIMEDIFF)
-                now = datetime.utcnow()
+                now = datetime.utcnow() + TIMEDIFF
                 now = now.replace(tzinfo=pytz.utc)
                 now = now.astimezone(pytz.timezone('Europe/Amsterdam'))
                 now = now.replace(tzinfo=None)
