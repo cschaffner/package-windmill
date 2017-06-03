@@ -49,6 +49,11 @@ local function highlight_a(a)
     return 0.94, 0.57, 0.14, a
 end
 
+local function pink_a(a)
+    return 0.85, 0.227, 0.7, a
+end
+
+
 local white_transparent = resource.create_shader[[
     uniform sampler2D Texture;
     varying vec2 TexCoord;
@@ -334,7 +339,7 @@ Sidebar = (function()
         local clock_x = utils.easeInOut(visibility, WIDTH-220, WIDTH-272)
         local clock_y = utils.easeInOut(visibility, HEIGHT-105, 850)
         res.clockboarder2:draw(clock_x, clock_y-30, clock_x + 230, clock_y + 125)
-        res.font:write(clock_x + 115 - w/2, clock_y+5, time, size, highlight_a(1))
+        res.font:write(clock_x + 115 - w/2, clock_y+5, time, size, pink_a(1))
     end
 
     local current_speed = 0
