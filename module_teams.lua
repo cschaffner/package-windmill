@@ -25,7 +25,9 @@ function M.can_schedule(options)
 end
 
 function M.prepare(options)
-    options.team, team_idx = utils.cycled(teams, team_idx)
+    repeat
+        options.team, team_idx = utils.cycled(teams, team_idx)
+    until options.team.division == options.division
     return options.duration or 10, options
 end
 
