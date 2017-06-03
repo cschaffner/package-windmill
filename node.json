@@ -35,7 +35,7 @@
         "options": [
             ["standings", "standings/games only"],
             ["fun", "fun only"],
-            ["everything", "everything"],
+            ["all", "everything"],
             ["test", "test"],
             ["images", "image only"]
         ]
