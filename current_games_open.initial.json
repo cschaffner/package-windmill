@@ -5,18 +5,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29732,
-      "team_country":"gb",
+      "team_id":31249,
+      "team_country":"at",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29732/gb-open-national-team/",
-        "short_name":"GB Open",
-        "id":29732,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29732/",
-        "name":"GB Open National Team"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31249/test-thebigez/",
+        "short_name":"Test thebigEZ",
+        "id":31249,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31249/",
+        "name":"Test thebigEZ"
       },
       "ties":0,
-      "team_name":"flag:gb GB ",
+      "team_name":"flag:at thebigEZ",
       "avg_goal_difference":"0.00"
     },
     {
@@ -24,18 +24,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29711,
-      "team_country":"fr",
+      "team_id":31248,
+      "team_country":"de",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29711/france-open-national-team/",
-        "short_name":"France Open",
-        "id":29711,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29711/",
-        "name":"France Open National Team"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31248/test-wall-city/",
+        "short_name":"Test Wall City",
+        "id":31248,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31248/",
+        "name":"Test Wall City"
       },
       "ties":0,
-      "team_name":"flag:fr France ",
+      "team_name":"flag:de Wall City",
       "avg_goal_difference":"0.00"
     },
     {
@@ -43,18 +43,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29689,
-      "team_country":"de",
+      "team_id":31247,
+      "team_country":"il",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29689/bad-skid/",
-        "short_name":"Bad Skid",
-        "id":29689,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29689/",
-        "name":"Bad Skid"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31247/test-touchless/",
+        "short_name":"Test TL",
+        "id":31247,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31247/",
+        "name":"Test Touchless"
       },
       "ties":0,
-      "team_name":"flag:de Bad Skid",
+      "team_name":"flag:il TL",
       "avg_goal_difference":"0.00"
     },
     {
@@ -62,18 +62,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29746,
-      "team_country":"it",
+      "team_id":31246,
+      "team_country":"us",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29746/italy-open-national-team/",
-        "short_name":"Italy Open",
-        "id":29746,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29746/",
-        "name":"Italy Open National Team"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31246/test-team-eric/",
+        "short_name":"Test Team E.R.I.C.",
+        "id":31246,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31246/",
+        "name":"Test Team E.R.I.C."
       },
       "ties":0,
-      "team_name":"flag:it Italy ",
+      "team_name":"flag:us Team E.R.I.C.",
       "avg_goal_difference":"0.00"
     },
     {
@@ -81,18 +81,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29752,
-      "team_country":"se",
+      "team_id":31245,
+      "team_country":"fr",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29752/sweden-open-national-team/",
-        "short_name":"Sweden Open",
-        "id":29752,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29752/",
-        "name":"Sweden Open National Team"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31245/test-tchac/",
+        "short_name":"Test Tchac",
+        "id":31245,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31245/",
+        "name":"Test Tchac"
       },
       "ties":0,
-      "team_name":"flag:se Sweden ",
+      "team_name":"flag:fr Tchac",
       "avg_goal_difference":"0.00"
     },
     {
@@ -100,18 +100,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29716,
-      "team_country":"ch",
+      "team_id":31244,
+      "team_country":"ie",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29716/freespeed/",
-        "short_name":"Freespeed",
-        "id":29716,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29716/",
-        "name":"Freespeed"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31244/test-ranelagh/",
+        "short_name":"Test Ranelagh",
+        "id":31244,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31244/",
+        "name":"Test Ranelagh"
       },
       "ties":0,
-      "team_name":"flag:ch Freespeed",
+      "team_name":"flag:ie Ranelagh",
       "avg_goal_difference":"0.00"
     },
     {
@@ -119,18 +119,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29745,
-      "team_country":"ie",
+      "team_id":31243,
+      "team_country":"pl",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29745/ireland-open-national-team/",
-        "short_name":"Ireland Open",
-        "id":29745,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29745/",
-        "name":"Ireland Open National Team"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31243/test-polish-open-national-team/",
+        "short_name":"Test Poland Open",
+        "id":31243,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31243/",
+        "name":"Test Polish Open National Team"
       },
       "ties":0,
-      "team_name":"flag:ie Ireland ",
+      "team_name":"flag:pl Poland ",
       "avg_goal_difference":"0.00"
     },
     {
@@ -138,18 +138,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29707,
-      "team_country":"dk",
+      "team_id":31242,
+      "team_country":"ie",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29707/denmark-open-national-team/",
-        "short_name":"Denmark Open",
-        "id":29707,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29707/",
-        "name":"Denmark Open National Team"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31242/test-pelt-ultimate/",
+        "short_name":"Test PELT",
+        "id":31242,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31242/",
+        "name":"Test PELT Ultimate"
       },
       "ties":0,
-      "team_name":"flag:dk Denmark ",
+      "team_name":"flag:ie PELT",
       "avg_goal_difference":"0.00"
     },
     {
@@ -157,18 +157,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29735,
-      "team_country":"de",
+      "team_id":31241,
+      "team_country":"fi",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29735/heidees/",
-        "short_name":"Heidees",
-        "id":29735,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29735/",
-        "name":"Heidees"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31241/test-otso/",
+        "short_name":"Test Otso",
+        "id":31241,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31241/",
+        "name":"Test Otso"
       },
       "ties":0,
-      "team_name":"flag:de Heidees",
+      "team_name":"flag:fi Otso",
       "avg_goal_difference":"0.00"
     },
     {
@@ -176,18 +176,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29731,
-      "team_country":"gb",
+      "team_id":31240,
+      "team_country":"be",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29731/gb-master-open-national-team/",
-        "short_name":"GB Master Open",
-        "id":29731,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29731/",
-        "name":"GB Master Open National Team"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31240/test-mooncatchers/",
+        "short_name":"Test Mooncatchers",
+        "id":31240,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31240/",
+        "name":"Test Mooncatchers"
       },
       "ties":0,
-      "team_name":"flag:gb GB Master ",
+      "team_name":"flag:be Mooncatchers",
       "avg_goal_difference":"0.00"
     },
     {
@@ -195,18 +195,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29749,
-      "team_country":"nl",
+      "team_id":31239,
+      "team_country":"sg",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29749/netherlands-open-national-team/",
-        "short_name":"Netherlands Open",
-        "id":29749,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29749/",
-        "name":"Netherlands Open National Team"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31239/test-hardcore-ultimate/",
+        "short_name":"Test Hardcore",
+        "id":31239,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31239/",
+        "name":"Test Hardcore Ultimate"
       },
       "ties":0,
-      "team_name":"flag:nl Netherlands ",
+      "team_name":"flag:sg Hardcore",
       "avg_goal_difference":"0.00"
     },
     {
@@ -214,18 +214,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29709,
-      "team_country":"gb",
+      "team_id":31237,
+      "team_country":"be",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29709/fire-of-london/",
-        "short_name":"Fire",
-        "id":29709,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29709/",
-        "name":"Fire of London"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31237/test-gentle-open/",
+        "short_name":"Test Gentle",
+        "id":31237,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31237/",
+        "name":"Test Gentle Open"
       },
       "ties":0,
-      "team_name":"flag:gb Fire",
+      "team_name":"flag:be Gentle",
       "avg_goal_difference":"0.00"
     },
     {
@@ -233,18 +233,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29695,
-      "team_country":"at",
+      "team_id":31232,
+      "team_country":"de",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29695/catchup-graz/",
-        "short_name":"Catchup",
-        "id":29695,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29695/",
-        "name":"Catchup Graz"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31232/test-frizzly-bears/",
+        "short_name":"Test FrizzlyBears",
+        "id":31232,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31232/",
+        "name":"Test Frizzly Bears"
       },
       "ties":0,
-      "team_name":"flag:at Catchup",
+      "team_name":"flag:de FrizzlyBears",
       "avg_goal_difference":"0.00"
     },
     {
@@ -252,18 +252,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29734,
-      "team_country":"be",
+      "team_id":31227,
+      "team_country":"ch",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29734/gentle-open/",
-        "short_name":"Gentle",
-        "id":29734,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29734/",
-        "name":"Gentle Open"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31227/test-freespeed/",
+        "short_name":"Test Freespeed",
+        "id":31227,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31227/",
+        "name":"Test Freespeed"
       },
       "ties":0,
-      "team_name":"flag:be Gentle",
+      "team_name":"flag:ch Freespeed",
       "avg_goal_difference":"0.00"
     },
     {
@@ -271,18 +271,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29708,
-      "team_country":"cz",
+      "team_id":31224,
+      "team_country":"de",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29708/fuj/",
-        "short_name":"FUJ",
-        "id":29708,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29708/",
-        "name":"FUJ"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31224/test-frank-n/",
+        "short_name":"Test Frank N",
+        "id":31224,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31224/",
+        "name":"Test Frank N"
       },
       "ties":0,
-      "team_name":"flag:cz FUJ",
+      "team_name":"flag:de Frank N",
       "avg_goal_difference":"0.00"
     },
     {
@@ -290,18 +290,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29702,
-      "team_country":"ch",
+      "team_id":31223,
+      "team_country":"nl",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29702/crazy-dogs/",
-        "short_name":"Crazy Dogs",
-        "id":29702,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29702/",
-        "name":"Crazy Dogs"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31223/test-force/",
+        "short_name":"Test Force",
+        "id":31223,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31223/",
+        "name":"Test Force"
       },
       "ties":0,
-      "team_name":"flag:ch Crazy Dogs",
+      "team_name":"flag:nl Force",
       "avg_goal_difference":"0.00"
     },
     {
@@ -309,18 +309,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29694,
-      "team_country":"ch",
+      "team_id":31220,
+      "team_country":"gb",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29694/bern-ultimate/",
-        "short_name":"Bern",
-        "id":29694,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29694/",
-        "name":"Bern Ultimate"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31220/test-fire-of-london/",
+        "short_name":"Test Fire",
+        "id":31220,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31220/",
+        "name":"Test Fire of London"
       },
       "ties":0,
-      "team_name":"flag:ch Bern",
+      "team_name":"flag:gb Fire",
       "avg_goal_difference":"0.00"
     },
     {
@@ -328,18 +328,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29753,
+      "team_id":31219,
       "team_country":"at",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29753/thebigez/",
-        "short_name":"thebigEZ",
-        "id":29753,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29753/",
-        "name":"ThebigEZ"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31219/test-fwd/",
+        "short_name":"Test FWD>>",
+        "id":31219,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31219/",
+        "name":"Test FWD>>"
       },
       "ties":0,
-      "team_name":"flag:at thebigEZ",
+      "team_name":"flag:at FWD>>",
       "avg_goal_difference":"0.00"
     },
     {
@@ -347,18 +347,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29712,
-      "team_country":"de",
+      "team_id":31217,
+      "team_country":"cz",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29712/frank-n/",
-        "short_name":"Frank N",
-        "id":29712,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29712/",
-        "name":"Frank N"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31217/test-fuj/",
+        "short_name":"Test FUJ",
+        "id":31217,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31217/",
+        "name":"Test FUJ"
       },
       "ties":0,
-      "team_name":"flag:de Frank N",
+      "team_name":"flag:cz FUJ",
       "avg_goal_difference":"0.00"
     },
     {
@@ -366,18 +366,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29723,
-      "team_country":"de",
+      "team_id":31216,
+      "team_country":"gb",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29723/frizzly-bears/",
-        "short_name":"FrizzlyBears",
-        "id":29723,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29723/",
-        "name":"Frizzly Bears"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31216/test-east-midlands-open/",
+        "short_name":"Test EMO",
+        "id":31216,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31216/",
+        "name":"Test East Midlands Open"
       },
       "ties":0,
-      "team_name":"flag:de FrizzlyBears",
+      "team_name":"flag:gb EMO",
       "avg_goal_difference":"0.00"
     },
     {
@@ -385,18 +385,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29743,
-      "team_country":"at",
+      "team_id":31215,
+      "team_country":"lv",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29743/innsiders-kundl/",
-        "short_name":"INNsiders",
-        "id":29743,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29743/",
-        "name":"INNsiders Kundl"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31215/test-daugava/",
+        "short_name":"Test DAG",
+        "id":31215,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31215/",
+        "name":"Test Daugava"
       },
       "ties":0,
-      "team_name":"flag:at INNsiders",
+      "team_name":"flag:lv DAG",
       "avg_goal_difference":"0.00"
     },
     {
@@ -404,18 +404,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29751,
-      "team_country":"co",
+      "team_id":31214,
+      "team_country":"gb",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29751/psychodisco-ultimate/",
-        "short_name":"Psycho",
-        "id":29751,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29751/",
-        "name":"PsychoDisco Ultimate"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31214/test-clapham-ultimate/",
+        "short_name":"Test CU",
+        "id":31214,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31214/",
+        "name":"Test Clapham Ultimate"
       },
       "ties":0,
-      "team_name":"flag:co Psycho",
+      "team_name":"flag:gb CU",
       "avg_goal_difference":"0.00"
     },
     {
@@ -423,18 +423,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29952,
-      "team_country":"ru",
+      "team_id":31209,
+      "team_country":"at",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29952/sokol/",
-        "short_name":"Sokol",
-        "id":29952,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29952/",
-        "name":"Sokol"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31209/test-catchup-graz/",
+        "short_name":"Test Catchup",
+        "id":31209,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31209/",
+        "name":"Test Catchup Graz"
       },
       "ties":0,
-      "team_name":"flag:ru Sokol",
+      "team_name":"flag:at Catchup",
       "avg_goal_difference":"0.00"
     },
     {
@@ -442,18 +442,18 @@
       "wins":0,
       "losses":0,
       "swiss_opponent_score_avg":"0",
-      "team_id":29747,
-      "team_country":"hu",
+      "team_id":31208,
+      "team_country":"ru",
       "swiss_score":"0",
       "team":{
-        "leaguevine_url":"https://www.leaguevine.com/teams/29747/lezer-pavak/",
-        "short_name":"Lézer Pávák",
-        "id":29747,
-        "resource_uri":"https://api.leaguevine.com/v1/teams/29747/",
-        "name":"Lézer Pávák"
+        "leaguevine_url":"https://www.leaguevine.com/teams/31208/test-aurora/",
+        "short_name":"Test Aurora",
+        "id":31208,
+        "resource_uri":"https://api.leaguevine.com/v1/teams/31208/",
+        "name":"Test Aurora"
       },
       "ties":0,
-      "team_name":"flag:hu Lézer Pávák",
+      "team_name":"flag:ru Aurora",
       "avg_goal_difference":"0.00"
     }
   ],
@@ -461,150 +461,150 @@
   "start_time":"Fri 10:00",
   "games":[
     {
-      "field":"Field 1 stadium",
-      "team_1_country":"gb",
+      "field":"",
+      "team_1_country":"at",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"Fire",
-      "team_2":"Lézer Pávák",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"hu",
-      "field_nr":"1"
-    },
-    {
-      "field":"Field 2 stadium",
-      "team_1_country":"ch",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"Freespeed",
-      "team_2":"thebigEZ",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"at",
-      "field_nr":"2"
-    },
-    {
-      "field":"Field 5 far",
-      "team_1_country":"de",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"Bad Skid",
-      "team_2":"FUJ",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"cz",
-      "field_nr":"5"
-    },
-    {
-      "field":"Field 6 far",
-      "team_1_country":"it",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"Italy ",
-      "team_2":"Crazy Dogs",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"ch",
-      "field_nr":"6"
-    },
-    {
-      "field":"Field 7 far",
-      "team_1_country":"se",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"Sweden ",
-      "team_2":"Bern",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"ch",
-      "field_nr":"7"
-    },
-    {
-      "field":"Field 12 art turf",
-      "team_1_country":"fr",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"France ",
-      "team_2":"Gentle",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"be",
-      "field_nr":"12"
-    },
-    {
-      "field":"Field 13 art turf",
-      "team_1_country":"ie",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"Ireland ",
-      "team_2":"Frank N",
-      "is_final":false,
-      "start_time":"Fri 10:00",
-      "team_2_country":"de",
-      "field_nr":"13"
-    },
-    {
-      "field":"Field 14 art turf",
-      "team_1_country":"dk",
-      "team_2_score":0,
-      "team_1_score":0,
-      "team_1":"Denmark ",
+      "team_1":"thebigEZ",
       "team_2":"FrizzlyBears",
       "is_final":false,
       "start_time":"Fri 10:00",
       "team_2_country":"de",
-      "field_nr":"14"
+      "field_nr":""
     },
     {
-      "field":"Field 15 art turf",
+      "field":"",
       "team_1_country":"de",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"Heidees",
-      "team_2":"INNsiders",
+      "team_1":"Wall City",
+      "team_2":"Freespeed",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"ch",
+      "field_nr":""
+    },
+    {
+      "field":"",
+      "team_1_country":"il",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"TL",
+      "team_2":"Frank N",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"de",
+      "field_nr":""
+    },
+    {
+      "field":"",
+      "team_1_country":"fr",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"Tchac",
+      "team_2":"Fire",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"gb",
+      "field_nr":""
+    },
+    {
+      "field":"",
+      "team_1_country":"ie",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"Ranelagh",
+      "team_2":"FWD>>",
       "is_final":false,
       "start_time":"Fri 10:00",
       "team_2_country":"at",
-      "field_nr":"15"
+      "field_nr":""
     },
     {
-      "field":"Field 16",
-      "team_1_country":"nl",
+      "field":"",
+      "team_1_country":"ie",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"Netherlands ",
-      "team_2":"Sokol",
+      "team_1":"PELT",
+      "team_2":"EMO",
       "is_final":false,
       "start_time":"Fri 10:00",
-      "team_2_country":"ru",
-      "field_nr":"16"
+      "team_2_country":"gb",
+      "field_nr":""
     },
     {
-      "field":"Field 17",
-      "team_1_country":"gb",
+      "field":"",
+      "team_1_country":"us",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"GB Master ",
-      "team_2":"Psycho",
+      "team_1":"Team E.R.I.C.",
+      "team_2":"Force",
       "is_final":false,
       "start_time":"Fri 10:00",
-      "team_2_country":"co",
-      "field_nr":"17"
+      "team_2_country":"nl",
+      "field_nr":""
     },
     {
-      "field":"Field 18",
-      "team_1_country":"gb",
+      "field":"",
+      "team_1_country":"pl",
       "team_2_score":0,
       "team_1_score":0,
-      "team_1":"GB ",
+      "team_1":"Poland ",
+      "team_2":"FUJ",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"cz",
+      "field_nr":""
+    },
+    {
+      "field":"",
+      "team_1_country":"fi",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"Otso",
+      "team_2":"DAG",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"lv",
+      "field_nr":""
+    },
+    {
+      "field":"",
+      "team_1_country":"sg",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"Hardcore",
       "team_2":"Catchup",
       "is_final":false,
       "start_time":"Fri 10:00",
       "team_2_country":"at",
-      "field_nr":"18"
+      "field_nr":""
+    },
+    {
+      "field":"",
+      "team_1_country":"be",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"Gentle",
+      "team_2":"Aurora",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"ru",
+      "field_nr":""
+    },
+    {
+      "field":"",
+      "team_1_country":"be",
+      "team_2_score":0,
+      "team_1_score":0,
+      "team_1":"Mooncatchers",
+      "team_2":"CU",
+      "is_final":false,
+      "start_time":"Fri 10:00",
+      "team_2_country":"gb",
+      "field_nr":""
     }
   ],
-  "time_last_updated_unix":1464808488,
-  "start_time_unix":1464940800
+  "time_last_updated_unix":1496174545,
+  "start_time_unix":1496995200
 }
