@@ -39,7 +39,23 @@
             ["test", "test"],
             ["images", "image only"]
         ]
-    },  {
+    }, {
+        "title": "Playlist",
+        "type": "section"
+    },
+        {
+        "title": "Swiss games",
+        "ui_width": 5,
+        "name": "swiss_games_chance",
+        "type": "float"
+        },
+        {
+        "title": "Swiss games",
+        "ui_width": 5,
+        "name": "swiss_games_duration",
+        "type": "duration"
+        },
+        {
         "title": "Playlist Elements",
         "name": "playlist_games",
         "type": "list",
