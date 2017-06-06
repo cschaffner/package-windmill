@@ -100,13 +100,27 @@
         "default": 20
         },
         {
-        "title": "Playlist Elements",
-        "name": "playlist_games",
+        "title": "gvb chance",
+        "ui_width": 5,
+        "name": "gvb_chance",
+        "type": "float",
+        "default": 0.5
+        },
+        {
+        "title": "gvb duration",
+        "ui_width": 5,
+        "name": "gvb_duration",
+        "type": "duration",
+        "default": 20
+        },
+        {
+        "title": "Advertisement Elements",
+        "name": "ads_list",
         "type": "list",
-        "itemname": "Play Item",
+        "itemname": "Ad Item",
         "items": [
             {
-                "title": "Play Item",
+                "title": "Ad Item",
                 "ui_width": 6,
                 "name": "item",
                 "type": "resource",
@@ -114,7 +128,7 @@
                     "image",
                     "video"
                 ],
-                "default": "swissgames"
+                "default": "empty.png"
             },
             {
                 "title": "duration",
