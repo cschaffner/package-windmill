@@ -5,7 +5,7 @@
             {
         "title": "Leaguevine Data source",
         "name": "lv_data_source",
-        "ui_width": 7,
+        "ui_width": 5,
         "type": "select",
         "options": [
             ["windmill2016.json", "real 2016"],
@@ -17,12 +17,12 @@
         {
             "title": "Leaguevine server",
             "name": "lv_server",
-            "uit_width": 7,
+            "uit_width": 5,
             "type": "select",
             "options": [
-                ["http://api.leaguevine.com", "leaguevine server"],
+                ["https://api.leaguevine.com", "leaguevine server"],
                 ["http://api.playwithlv.com", "playwithlv server"],
-                ["http://api.localhost}", "local leaguevine server"]
+                ["http://api.localhost:8000", "local leaguevine server"]
             ]
         }]
 }
