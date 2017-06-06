@@ -22,7 +22,7 @@
             "options": [
                 ["https://api.leaguevine.com", "leaguevine server"],
                 ["http://api.playwithlv.com", "playwithlv server"],
-                ["http://api.localhost:8000", "local leaguevine server"]
+                ["http://192.168.10.38:8000", "local leaguevine server"]
             ]
         }]
 }
