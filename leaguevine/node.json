@@ -20,8 +20,8 @@
             "ui_width": 5,
             "type": "select",
             "options": [
-                ["https://api.leaguevine.com", "leaguevine server"],
-                ["http://api.playwithlv.com", "playwithlv server"],
+                ["lv", "leaguevine server"],
+                ["playwithlv", "playwithlv server"],
                 ["local", "local leaguevine server"]
             ]
         }]
