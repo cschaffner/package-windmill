@@ -128,7 +128,6 @@
                     "image",
                     "video"
                 ],
-                "default": "empty.png"
             },
             {
                 "title": "duration",
