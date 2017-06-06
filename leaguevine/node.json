@@ -13,10 +13,10 @@
             ["windmill2017.json", "real 2017"],
             ["windmill2017_test.json", "test 2017"]
         ]
-    },
+        },
         {
             "title": "Leaguevine server",
-            "name": "lv_server",
+            "name": "leaguevine_server",
             "ui_width": 5,
             "type": "select",
             "options": [
