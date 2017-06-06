@@ -44,7 +44,7 @@ TIMEDIFF = datetime(2017, 6, 9, 16, 00, 00) - datetime.utcnow()
 
 # HOST = 'https://api.leaguevine.com/v1'.format(CONFIG['lv_server'])
 LOCALHOST = 'http://api.localhost:8000/v1'
-LOCALHOST = 'http://192.168.10.38:8000'
+LOCALHOST = 'http://192.168.10.38:8000/api/'
 
 print('current host is {0}'.format(CONFIG['lv_server']))
 print(CONFIG)
