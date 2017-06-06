@@ -17,7 +17,7 @@
         {
             "title": "Leaguevine server",
             "name": "lv_server",
-            "uit_width": 5,
+            "ui_width": 5,
             "type": "select",
             "options": [
                 ["https://api.leaguevine.com", "leaguevine server"],
