@@ -1,0 +1,15 @@
+{
+  "timezone": "Europe/Berlin",
+  "division": "open",
+  "playlist": "all",
+  "swissgames_chance": 1,
+  "swissgames_duration": 20,
+  "playoff_chance": 1,
+  "playoff_duration": 20,
+  "teams_chance": 1,
+  "teams_duration": 20,
+  "weather_chance": 1,
+  "weather_duration": 20,
+  "gvb_chance": 1,
+  "gvb_duration": 20
+}

@@ -46,7 +46,7 @@
         {
         "title": "swissgames chance",
         "ui_width": 5,
-        "name": "swiss_games_chance",
+        "name": "swissgames_chance",
         "type": "float",
         "default": 1
         },
