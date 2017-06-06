@@ -13,5 +13,16 @@
             ["windmill2017.json", "real 2017"],
             ["windmill2017_test.json", "test 2017"]
         ]
-    } ]
+    },
+        {
+            "title": "Leaguevine server",
+            "name": "lv_server",
+            "uit_width": 7,
+            "type": "select",
+            "options": [
+                ["http://api.leaguevine.com", "leaguevine server"],
+                ["http://api.playwithlv.com", "playwithlv server"],
+                ["http://api.localhost}", "local leaguevine server"]
+            ]
+        }]
 }
