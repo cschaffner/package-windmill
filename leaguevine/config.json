@@ -1,1 +1,4 @@
-{"lv_data_source":"windmill2017_test.json"}
+{
+  "lv_data_source": "windmill2017_test.json",
+  "lv_server": "https://api.leaguevine.com"
+}
