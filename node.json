@@ -127,7 +127,8 @@
                 "valid": [
                     "image",
                     "video"
-                ]
+                ],
+                "default": "events_fri.png"
             },
             {
                 "title": "duration",
