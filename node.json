@@ -44,16 +44,60 @@
         "type": "section"
     },
         {
-        "title": "Swiss games",
+        "title": "swissgames chance",
         "ui_width": 5,
         "name": "swiss_games_chance",
-        "type": "float"
+        "type": "float",
+        "default": 1
         },
         {
-        "title": "Swiss games",
+        "title": "swissgames duration",
         "ui_width": 5,
-        "name": "swiss_games_duration",
-        "type": "duration"
+        "name": "swissgames_duration",
+        "type": "duration",
+        "default": 20
+        },
+        {
+        "title": "playoff chance",
+        "ui_width": 5,
+        "name": "playoff_chance",
+        "type": "float",
+        "default": 1
+        },
+        {
+        "title": "playoff duration",
+        "ui_width": 5,
+        "name": "playoff_duration",
+        "type": "duration",
+        "default": 20
+        },
+        {
+        "title": "teams chance",
+        "ui_width": 5,
+        "name": "teams_chance",
+        "type": "float",
+        "default": "1"
+        },
+        {
+        "title": "teams duration",
+        "ui_width": 5,
+        "name": "teams_duration",
+        "type": "duration",
+        "default": 20
+        },
+        {
+        "title": "weather chance",
+        "ui_width": 5,
+        "name": "weather_chance",
+        "type": "float",
+        "default": 0.5
+        },
+        {
+        "title": "weather duration",
+        "ui_width": 5,
+        "name": "weather_duration",
+        "type": "duration",
+        "default": 20
         },
         {
         "title": "Playlist Elements",
@@ -67,7 +111,6 @@
                 "name": "item",
                 "type": "resource",
                 "valid": [
-                    "child",
                     "image",
                     "video"
                 ],
