@@ -76,7 +76,7 @@
         "ui_width": 5,
         "name": "teams_chance",
         "type": "float",
-        "default": "1"
+        "default": 0.5
         },
         {
         "title": "teams duration",
@@ -90,7 +90,7 @@
         "ui_width": 5,
         "name": "weather_chance",
         "type": "float",
-        "default": "0.5"
+        "default": 0.5
         },
         {
         "title": "weather duration",
