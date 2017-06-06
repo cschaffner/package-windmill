@@ -1,4 +1,4 @@
 {
   "lv_data_source": "windmill2017_test.json",
-  "leaguevine_server": "https://api.leaguevine.com"
+  "leaguevine_server": "lv"
 }
