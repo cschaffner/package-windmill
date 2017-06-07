@@ -47,8 +47,8 @@
         "title": "swissgames chance",
         "ui_width": 5,
         "name": "swissgames_chance",
-        "type": "float",
-        "default": 1
+        "type": "integer",
+        "default": 100
         },
         {
         "title": "swissgames duration",
@@ -61,8 +61,8 @@
         "title": "playoff chance",
         "ui_width": 5,
         "name": "playoff_chance",
-        "type": "float",
-        "default": 1
+        "type": "integer",
+        "default": 100
         },
         {
         "title": "playoff duration",
@@ -75,8 +75,8 @@
         "title": "teams chance",
         "ui_width": 5,
         "name": "teams_chance",
-        "type": "float",
-        "default": 0.5
+        "type": "integer",
+        "default": 100
         },
         {
         "title": "teams duration",
@@ -89,8 +89,8 @@
         "title": "weather chance",
         "ui_width": 5,
         "name": "weather_chance",
-        "type": "float",
-        "default": 0.5
+        "type": "integer",
+        "default": 50
         },
         {
         "title": "weather duration",
@@ -103,8 +103,8 @@
         "title": "gvb chance",
         "ui_width": 5,
         "name": "gvb_chance",
-        "type": "float",
-        "default": 0.5
+        "type": "integer",
+        "default": 50
         },
         {
         "title": "gvb duration",
